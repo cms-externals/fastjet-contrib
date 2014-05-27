@@ -163,14 +163,14 @@ double CoreJetAlgorithm::GetAngleBetweenJets(const PseudoJet& j1, const PseudoJe
 
   double angle = acos(dot);
 
-  if(isnan(angle))
+  if(std::isnan(angle))
     angle = 2*PI;
 
   return angle;
 }
 
 double CoreJetAlgorithm::GetDeltaRBetweenJets(const PseudoJet& j1, const PseudoJet& j2) const {
-  return pow(j1.plain_distance(j2),0.5);
+  return std::pow(j1.plain_distance(j2),0.5);
 }
 
 ThreeVector CoreJetAlgorithm::GetThreeVector(const PseudoJet& jet) const {
@@ -187,7 +187,7 @@ void CoreJetAlgorithm::PrintJet(const PseudoJet& jet) const {
 }
 
 void CoreJetAlgorithm::NormalizeThreeVector(ThreeVector & tv) const {
-  double mag = pow(pow(tv.x,2.0)+pow(tv.y,2.0)+pow(tv.z,2.0),0.5);
+  double mag = std::pow(std::pow(tv.x,2.0)+std::pow(tv.y,2.0)+std::pow(tv.z,2.0),0.5);
   tv.x *= 1/mag;
   tv.y *= 1/mag;
   tv.z *= 1/mag;
@@ -296,9 +296,9 @@ string AKTVR::description () const {
 
 // get the dij between two jets
 double AKTVR::GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, double R) const{
-  double ptm2_j1 = pow(j1.perp(),-2.0);
-  double ptm2_j2 = pow(j2.perp(),-2.0);
-  double min_ptm2 = min(ptm2_j1,ptm2_j2);
+  double ptm2_j1 = std::pow(j1.perp(),-2.0);
+  double ptm2_j2 = std::pow(j2.perp(),-2.0);
+  double min_ptm2 = std::min(ptm2_j1,ptm2_j2);
   
   double dr = GetDeltaRBetweenJets(j1,j2);
 
@@ -308,14 +308,14 @@ double AKTVR::GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, dou
   if(dr > my_max_r)
     return LARGE_NUMBER;
 
-  return min_ptm2 * pow(dr,2.0);
+  return min_ptm2 * std::pow(dr,2.0);
 }
 
 // get the jet-beam distance
 double AKTVR::GetJBDistanceMeasure(const PseudoJet& jet) const{
-  double ptm4 = pow(jet.perp(),-4.0);
+  double ptm4 = std::pow(jet.perp(),-4.0);
 
-  return pow(my_rho,2.0) * ptm4;
+  return std::pow(my_rho,2.0) * ptm4;
 }
 
 ////////
@@ -348,13 +348,13 @@ double CAVR::GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, doub
   if(dr > my_max_r)
     return LARGE_NUMBER;
 
-  return pow(dr,2.0);
+  return std::pow(dr,2.0);
 }
 
 // get the jet-beam distance
 double CAVR::GetJBDistanceMeasure(const PseudoJet& jet) const{
-  double ptm2 = pow(jet.perp(),-2.0);
-  return pow(my_rho,2.0) * ptm2;
+  double ptm2 = std::pow(jet.perp(),-2.0);
+  return std::pow(my_rho,2.0) * ptm2;
 }
 
 
