@@ -1,0 +1,49 @@
+The Nsubjettiness package is based on the physics described in:
+
+   Identifying Boosted Objects with N-subjettiness.
+   Jesse Thaler and Ken Van Tilburg.
+   JHEP 1103:015 (2011), arXiv:1011.2268.
+
+   Maximizing Boosted Top Identification by Minimizing N-subjettiness. 
+   Jesse Thaler and Ken Van Tilburg. 
+   JHEP 1202:093 (2012), arXiv:1108.2701.
+
+There are three different ways to access Nsubjettiness variables:
+   Nsubjettiness.hh:  A simple FunctionOfPseudoJet<float> interface to measure N-subjettiness
+   NjettinessPlugin.hh:  A FastJet plugin for finding jets by minimizing N-jettiness
+   Njettiness.hh:  Core code for N-(sub)jettiness minimization (users typically will not need to use this directly)
+
+The code assumes that you have FastJet 3, though Njettiness.hh should continue to work with FastJet 2.4.3.
+
+Nsubjettiness.hh (i.e. Nsubjettiness functor):
+
+The Nsubjettiness class is a simple wrapper that implements the fastjet::FunctionOfPseudoJet<float> interface for ease of plugging in to other analyses.  Since Nsubjettiness operates the same way as Njettiness, just on constituents instead of all particles in an event, the Nsubjettiness constructor is identical to the one for the plugin (other than the name).
+
+NjettinessPlugin.hh (i.e. Njettiness jet finding plugin):
+
+The Njettiness FastJet plugin represents an exclusive jet finder (yielding a fixed N number of jets). The algorithm finds N axes, and jets are simply the sum of particles closest to a given axis.  Axes can be found by minimizing the event shape Njettiness, exclusive kT, or one-pass minimization from kT seeds, which is much cheaper than full minimization and nearly as effective.
+
+Njettiness.hh (i.e. core Njettiness framework):
+
+Most users will want to use the Nsubjettiness.hh or NjettinessPlugin.hh headers.  For direct access to the Njettiness class, one can use Njettiness.hh directly 
+
+   The basic functionality is given by:
+
+   NsubParameters paraNsub(beta, R0, Rcutoff);
+   // beta = 1 for jet broadening, beta = 2 for thrust
+   // R0 = normalization jet radius
+   // Rcutoff = jet radius cutoff if doing jet finding through minimization
+   
+   Njettiness nSub(axesMode,paraNsub);
+   // axesMode is nsub_kt_axes, nsub_min_axes (100 iterations), nsub_1pass_from_kt_axes, etc..
+   
+   // get constituents of jet
+   vector<PseudoJet> jet_constituents = clust_seq.constituents(some jet);  
+
+   // get tau values
+   double tauN = nSub.getTau(N,jet_constituents);
+
+   // get axes used (if desired)
+   vector<fastjet::PseudoJet> axes = nSub.currentAxes();
+
+While the code is rather slow in nsub_min_axes mode, for most cases, running with nsub_1pass_from_kt_axes gives reasonable results (and the results are IR safe).  Also, beta = 1.1 is faster than beta = 1, with comparable performance.

@@ -1,0 +1,76 @@
+2013-05-01  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION:
+	* NEWS:
+	release of version 1.0.1
+
+	* README: 
+	updated to reflect v1.0 interface.
+
+2013-05-01  Jesse Thaler
+
+	* EnergyCorrelator.cc
+	Switched from NAN to std::numeric_limits<double>::quiet_NaN()
+
+2013-04-30  Jesse Thaler
+
+	* EnergyCorrelator.cc
+	Implemented Gregory Soyez's suggestions on errors/asserts
+
+2013-04-30  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION:
+	* NEWS:
+	released v. 1.0.0
+
+	* EnergyCorrelator.hh:
+	* example.cc
+	small changes to documentation to reflect the change below + an
+	gave an explicit command-line in the example.
+
+2013-04-29 Jesse Thaler
+
+	* EnergyCorrelator.cc
+	- Added support for N = 5
+
+	* example.cc|.ref
+	- Added N = 5 to test suite.
+
+2013-04-29  Gavin Salam  <gavin.salam@cern.ch>
+
+	* EnergyCorrelator.hh|cc:
+	- reduced memory usage from roughly 8n^2 to 4n^2 bytes (note that
+	  sums are now performed in a different order, so results may
+	  change to within rounding error).
+
+	- Implemented description() for all three classes.
+
+	- Worked on doxygen-style comments and moved some bits of code into
+	  the .cc file.
+
+	* Doxyfile:  *** ADDED ***
+
+	* example.cc:
+	developers' timing component now uses clock(), to get
+	finer-grained timing, and also outputs a description for some of
+	the correlators being used.
+
+2013-04-26 + 04-27 Jesse Thaler <jthaler@MIT.EDU>
+
+	* EnergyCorrelator.hh|cc:
+	added temporary storage array for interparticle angles, to speed
+	up the energy correlator calculation for N>2
+
+        * example.cc
+	has internal option for printing out timing info.
+
+2013-04-26  Gavin Salam  <gavin.salam@cern.ch> + Jesse & Andrew
+
+	* Makefile:
+	added explicit dependencies
+
+	* example.cc (analyze):
+	added a little bit of commented code for timing tests.
+
+2013-03-10 <jthaler>
+   Initial creation

@@ -1,0 +1,14 @@
+2013-08-26 <jthaler>
+   Added inlines to fix compile issue
+   Put some of the minimization code inside of the AxesFinderFromKmeansMinimization class
+2013-02-23 <jthaler>
+   Fixed dependency issue (now using make depend)
+2013-02-22 <jthaler>
+   Fixed memory management and failed make check issues.
+2013-02-21 <jthaler>
+   First version submitted to fjcontrib
+2013-02-20 <jthaler>
+   Initial creation based on previous plugin hosted at http://www.jthaler.net/jets/
+
+
+

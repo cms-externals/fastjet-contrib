@@ -1,0 +1,29 @@
+GenericSubtractor is part of the fastjet-contrib project.
+
+The GenericSubtractor class allows one to subtract pile-up
+contamination from jet shapes as described in
+
+   Pileup subtraction for jet shapes
+   Gregory Soyez, Gavin P. Salam, Jihun Kim, Souvik Dutta, Matteo Cacciari. 
+   arXiv:1211.2811 
+
+The code example.cc illustrates how to use the class in a simple case.
+It can be built using
+
+    make example
+
+example.cc makes use of an input datafile which is provided in the
+/data directory, and it should be run with
+
+   ./example < ../data/Pythia-Zp2jets-lhc-pileup-1ev.dat
+ 
+The expected output can be found in example.ref
+
+A more advanced example (shapes made up of several components) is
+given in example_with_components.cc, which can be built and run with 
+
+    make example_with_components
+   ./example_with_components < ../data/Pythia-Zp2jets-lhc-pileup-1ev.dat
+
+and compared to the expected output example_with_components.ref 
+

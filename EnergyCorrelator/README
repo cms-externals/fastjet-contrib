@@ -1,0 +1,28 @@
+The EnergyCorrelator package is based on the physics described in:
+
+   Energy Correlation Functions for Jet Substructure.
+   Andrew J. Larkoski, Gavin Salam, and Jesse Thaler.
+   arXiv:1305.xxxx.
+
+This FastJet-contrib package contains three classes derived from
+FunctionOfPseudoJet<double> :
+
+EnergyCorrelator(int N, double beta, Measure measure)
+
+  Called ECF(N,beta) in the publication.  Corresponds to the N-point
+  correlation function, with beta the angular exponent, while measure
+  = pt_R (default) or E_theta sets how energies and angles are
+  determined.
+
+EnergyCorrelatorRatio(int N, double beta, Measure measure)
+
+  Called r_N^(beta) in the publication.  
+  Equals ECF(N+1,beta)/ECF(N,beta).
+
+EnergyCorrelatorDoubleRatio(int N, double beta, Measure measure)
+
+  Called C_N^(beta) in the publication.  Equals r_N/r_{N-1}.  This is
+  the recommended function for boosted N-prong object discrimination.
+  (N=1 for quark/gluon, N=2 for boosted W/Z/H, N=3 for boosted top)
+
+Usage is shown in the example.cc program.

@@ -1,0 +1,42 @@
+2014-02-03: release of version 1.009 with
+* new make targets fragile-shared and fragile-shared-install
+  which build and install a single libfastjetcontribfragile.so
+  for the whole of fjcontrib. This is a temporary fix to 
+  provide a shared lib and will change at some future date.
+
+2013-09-24: release of version 1.008, with
+* new contrib: JetCleanser 1.0.0 (from David Krohn, Matthew Low, 
+  Matthew D. Schwartz, and Lian-Tao Wang)
+* replacement of the data file with pileup in data/, so as to also
+  include particle ID and charge information
+
+2013-09-03: release of version 1.007, with
+* new contrib: SubjetCounting 1.0.1 (from Sonia El Hedri, Anson Hook, 
+  Martin Jankowiak, Jay G. Wacker)
+* fix for a bug that was preventing configuration with explicit inclusion 
+  or exclusion of more than one contrib
+
+2013-08-27: release of version 1.006 with
+* Nsubjettiness updated to 1.0.3 (compiler fixes, minor code reorganisation)
+
+2013-06-04: release of version 1.005 with
+* new contrib: ScJet 1.1.0 (from Jeff Tseng)
+
+2013-05-28: release of version 1.004 with
+* GenericSubtractor updated to version 1.2.0 (new constructors, example bug-fix)
+
+2013-05-01: release of version 1.003 with 
+* new contrib: EnergyCorrelator 1.0.1 (from Jesse Thaler, Gavin Salam 
+  and Andrew Larkoski)
+
+2013-04-12: release of version 1.002, with
+* GenericSubtractor updated to version 1.1.0 (fixes an important bug wrt 1.0.0)
+
+2013-02-23: release of version 1.001, with
+* new contrib: VariableR     1.0.1  (from Jesse Thaler)
+* new contrib: Nsubjettiness 1.0.2  (from Jesse Thaler)
+* improved output from configure, fixes of typos in documentation
+
+2013-02-07: release of version 1.000, containing
+* JetFFMoments, version 1.0.0
+* GenericSubtractor, version 1.0.0

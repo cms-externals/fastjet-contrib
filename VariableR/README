@@ -1,0 +1,11 @@
+The VariableR package is based on the physics described in:
+
+   Jets with Variable R.
+   David Krohn, Jesse Thaler, and Lian-Tao Wang.
+   JHEP 0906:059 (2009), arXiv:0903.0392.
+
+There are two VR modes available:
+   AKTVR:  variable-R anti-kT algorithm
+   CAVR:  variable-R Cambridge-Aachen algorithm
+
+The example file shows the usage.  In addition, there is a CoreJetAlgorithm class which the user need not access under ordinary circumstances, but allows the definition of generic pairwise recombination schemes.  (This functionality is now available in the FastJet NNH classm, but the Variable R algorithms were developed before that was available.)
