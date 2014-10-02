@@ -5,7 +5,7 @@
 # (for developers, make sure you only edit Makefile.in)
 
 # installation setup
-SUBDIRS=EnergyCorrelator GenericSubtractor JetCleanser JetFFMoments Nsubjettiness ScJet SubjetCounting VariableR
+SUBDIRS=EnergyCorrelator GenericSubtractor JetCleanser JetFFMoments Nsubjettiness ScJet SubjetCounting ConstituentSubtractor JetsWithoutJets RecursiveTools SoftKiller
 SUBDIRS.all=$(SUBDIRS:=.all)
 
 # these will be overriden if the user specifies CXX or CXXFLAGS with configure
@@ -29,7 +29,7 @@ install: all $(SUBDIRS)
 
 examples clean: $(SUBDIRS)
 
-distclean: $(SUBDIRS) CMS-shared-distclean
+distclean: $(SUBDIRS) fragile-shared-distclean
 
 check: check_init $(SUBDIRS)
 	@echo ""
@@ -52,7 +52,7 @@ distclean:
 # in order for all the headers to be installed
 fragile-shared: libfastjetcontribfragile.so
 
-fragile_SHARED_SRC_LIST=EnergyCorrelator/EnergyCorrelator.cc GenericSubtractor/GenericSubtractor.cc JetCleanser/JetCleanser.cc JetFFMoments/JetFFMoments.cc Nsubjettiness/Nsubjettiness.cc ScJet/ScJet.cc SubjetCounting/SubjetCounting.cc VariableR/VariableR.cc
+fragile_SHARED_SRC_LIST=EnergyCorrelator/EnergyCorrelator.cc GenericSubtractor/GenericSubtractor.cc JetCleanser/JetCleanser.cc JetFFMoments/JetFFMoments.cc Nsubjettiness/Nsubjettiness.cc Nsubjettiness/Njettiness.cc Nsubjettiness/NjettinessPlugin.cc Nsubjettiness/MeasureFunction.cc Nsubjettiness/AxesFinder.cc Nsubjettiness/WinnerTakeAllRecombiner.cc Nsubjettiness/NjettinessDefinition.cc ScJet/ScJet.cc SubjetCounting/SubjetCounting.cc ConstituentSubtractor/ConstituentSubtractor.cc JetsWithoutJets/JetsWithoutJets.cc JetsWithoutJets/EventStorage.cc RecursiveTools/Recluster.cc RecursiveTools/RecursiveSymmetryCutBase.cc RecursiveTools/ModifiedMassDropTagger.cc RecursiveTools/SoftDrop.cc SoftKiller/SoftKiller.cc
 libfastjetcontribfragile.so: $(fragile_SHARED_SRC_LIST)
 	$(CXX) -shared -fPIC -DPIC $(CXXFLAGS) `$(FASTJETCONFIG) --cxxflags --libs` $(fragile_SHARED_SRC_LIST) -o libfastjetcontribfragile.so
 
