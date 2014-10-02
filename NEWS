@@ -1,3 +1,26 @@
+2014-08-17: release of version 1.014 with
+* new contrib: SoftKiller 1.0.0 pileup removal tool (from Matteo
+  Cacciari, Gavin Salam and Gregory Soyez)
+* update of JetCleanser to version 1.0.1, fixing a C++11 compilation issue
+
+2014-07-09: release of version 1.013 with
+* Nsubjettiness updated to version 2.1.0 (from 1.0.3). Maintains
+  backward compatibility and adds a new recommended interface.
+* new contrib: RecursiveTools with v1.0.0 including ModifiedMassDropTagger
+  and SoftDrop (from Gavin Salam, Gregory Soyez and Jesse Thaler)
+
+2014-06-03: release of version 1.012 with
+* VariableR updated to version 1.1.1 (from 1.0.1), with optimized code 
+  and new recommended interface.
+
+2014-04-06: release of version 1.011 with 
+* new contrib: ConstituentSubtractor (from Peter Berta, Martin
+  Spousta, David W. Miller and Rupert Leitner) 
+
+2014-02-26: release of version 1.010 with
+* new contrib: JetsWithoutJets (from Daniele Bertolini, Tucker Chan, 
+  Jesse Thaler)
+
 2014-02-03: release of version 1.009 with
 * new make targets fragile-shared and fragile-shared-install
   which build and install a single libfastjetcontribfragile.so

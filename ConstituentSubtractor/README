@@ -1,0 +1,19 @@
+ConstituentSubtractor is part of the fastjet-contrib project.
+
+The ConstituentSubtractor class corrects jets for background contamination at particle-level as described in
+
+   Particle-level pileup subtraction for jets and jet shapes
+   Peter Berta, Martin Spousta, David W. Miller, Rupert Leitner
+   arXiv:1403.3108
+
+The code example.cc illustrates how to use the class.
+It can be built using
+
+    make example
+
+example.cc makes use of an input datafile which is provided in the
+/data directory, and it should be run with
+
+   ./example < ../data/Pythia-Zp2jets-lhc-pileup-1ev.dat
+ 
+The expected output can be found in example.ref

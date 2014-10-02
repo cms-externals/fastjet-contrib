@@ -1,9 +1,10 @@
 //  Nsubjettiness Package
 //  Questions/Comments?  jthaler@jthaler.net
 //
-//  Copyright (c) 2011-13
-//  Jesse Thaler, Ken Van Tilburg, and Christopher K. Vermilion
+//  Copyright (c) 2011-14
+//  Jesse Thaler, Ken Van Tilburg, Christopher K. Vermilion, and TJ Wilkason
 //
+//  $Id: Nsubjettiness.cc 597 2014-04-16 23:07:55Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -22,15 +23,28 @@
 //----------------------------------------------------------------------
 
 #include "Nsubjettiness.hh"
-#include "Njettiness.hh"
-#include "NjettinessPlugin.hh"
 
 FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
-namespace contrib{
+namespace contrib {
 
-// This file is blank, since all of the code is contained in the header files.
-// TODO:  Allow for a fastjet contrib without a .cc file
+//result returns tau_N with normalization dependent on what is specified in constructor
+double Nsubjettiness::result(const PseudoJet& jet) const {
+   std::vector<fastjet::PseudoJet> particles = jet.constituents();
+   return _njettinessFinder.getTau(_N, particles);
+}
+
+TauComponents Nsubjettiness::component_result(const PseudoJet& jet) const {
+   std::vector<fastjet::PseudoJet> particles = jet.constituents();
+   return _njettinessFinder.getTauComponents(_N, particles);
+}
+
+//ratio result uses Nsubjettiness result to find the ratio tau_N/tau_M, where N and M are specified by user
+double NsubjettinessRatio::result(const PseudoJet& jet) const {
+   double numerator = _nsub_numerator.result(jet);
+   double denominator = _nsub_denominator.result(jet);
+   return numerator/denominator;
+}
 
 } // namespace contrib
 

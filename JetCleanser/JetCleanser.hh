@@ -103,7 +103,9 @@ public:
 
 
 private:
-  static const double jc_zero = 1.0e-6;
+  // Modification to satisfy C++11 (thanks to Gavin Salam)
+  //static const double jc_zero = 1.0e-6;
+  static const double jc_zero;
 
   double _rsub;
   double _fcut;

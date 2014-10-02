@@ -319,11 +319,16 @@ sed -e "s/@CONTRIB_BUILD_LIST@/$escaped_built_list/g;\
 #------------------------------------------------------------------------
 # write output and config.log file
 #------------------------------------------------------------------------
-echo 
+# order contribs alphabetically (making sure we use LC_ALL=C")
+LC_ALL=C
+sorted_built_contribs=`echo $built_contribs | tr " " "\n" | sort | tr "\n" " "`
+#
+# output to screen
+#echo 
 echo "Configuring fjcontrib version" `cat VERSION`
 echo
 echo -e "Enabled contribs: "
-for contrib in $built_contribs
+for contrib in $sorted_built_contribs
 do
     # check if a contrib has an associated svn directory; if so include info about the svn repo
     if [ -e $contrib/.svn ] ; then 
@@ -331,8 +336,11 @@ do
     else
         svninfo=""
     fi
-    printf "        %-20s v%-15s $svninfo\n" $contrib `cat $contrib/VERSION` 
+    printf "        %-22s v%-15s $svninfo\n" $contrib `cat $contrib/VERSION` 
 done
+#
+# output to config.log
+#
 echo
 echo -e "Installation prefix: "$prefix
 echo "--------------------------------------------------"
@@ -341,8 +349,8 @@ echo -e "Now run 'make', optionally 'make check', and 'make install'\n"
 echo -e "This file was created by the fastjet contrib configure on "`date`"\n"  > config.log
 echo -e "The command line invocation was\n"                                >> config.log
 echo -e "    $0 $@\n"                                                      >> config.log
-for contrib in $built_contribs
+for contrib in $sorted_built_contribs
 do
-    printf "        %-20s v%s\n" $contrib `cat $contrib/VERSION`           >> config.log
+    printf "        %-22s v%s\n" $contrib `cat $contrib/VERSION`           >> config.log
 done
-echo -e "Installation prefix: "$prefix"\n"                                 >> config.log
+echo -e "\nInstallation prefix: "$prefix"\n"                                 >> config.log
