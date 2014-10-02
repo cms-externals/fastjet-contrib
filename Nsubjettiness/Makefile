@@ -3,7 +3,7 @@
 FASTJETCONFIG=fastjet-config
 PREFIX=`$(FASTJETCONFIG) --prefix`
 CXX=g++
-CXXFLAGS= -O3 -Wall -Woverloaded-virtual -g
+CXXFLAGS= -O3 -Wall -Woverloaded-virtual -g -Wunused-parameter
 install_script = $(SHELL) ../utils/install-sh
 check_script = ../utils/check.sh
 
@@ -15,9 +15,9 @@ check_script = ../utils/check.sh
 #------------------------------------------------------------------------
 # things that are specific to this contrib
 NAME=Nsubjettiness
-SRCS=Nsubjettiness.cc
-EXAMPLES=example
-INSTALLED_HEADERS=Nsubjettiness.hh Njettiness.hh NjettinessPlugin.hh
+SRCS=Nsubjettiness.cc Njettiness.cc NjettinessPlugin.cc MeasureFunction.cc AxesFinder.cc WinnerTakeAllRecombiner.cc NjettinessDefinition.cc
+EXAMPLES=example_basic_usage example_advanced_usage example_v1p0p3
+INSTALLED_HEADERS=Nsubjettiness.hh Njettiness.hh NjettinessPlugin.hh MeasureFunction.hh AxesFinder.hh WinnerTakeAllRecombiner.hh NjettinessDefinition.hh
 #------------------------------------------------------------------------
 
 CXXFLAGS+= $(shell $(FASTJETCONFIG) --cxxflags)
@@ -77,5 +77,25 @@ depend:
 	makedepend -Y --   -- $(SRCS) $(EXAMPLES_SRCS)
 # DO NOT DELETE
 
-Nsubjettiness.o: Nsubjettiness.hh Njettiness.hh NjettinessPlugin.hh
-example.o: Nsubjettiness.hh Njettiness.hh NjettinessPlugin.hh
+Nsubjettiness.o: Nsubjettiness.hh Njettiness.hh MeasureFunction.hh
+Nsubjettiness.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+Nsubjettiness.o: NjettinessDefinition.hh
+Njettiness.o: Njettiness.hh MeasureFunction.hh AxesFinder.hh
+Njettiness.o: WinnerTakeAllRecombiner.hh NjettinessDefinition.hh
+NjettinessPlugin.o: NjettinessPlugin.hh Njettiness.hh MeasureFunction.hh
+NjettinessPlugin.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+NjettinessPlugin.o: NjettinessDefinition.hh
+MeasureFunction.o: MeasureFunction.hh
+AxesFinder.o: AxesFinder.hh WinnerTakeAllRecombiner.hh MeasureFunction.hh
+WinnerTakeAllRecombiner.o: WinnerTakeAllRecombiner.hh
+NjettinessDefinition.o: NjettinessDefinition.hh MeasureFunction.hh
+NjettinessDefinition.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+example_basic_usage.o: Nsubjettiness.hh Njettiness.hh MeasureFunction.hh
+example_basic_usage.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+example_basic_usage.o: NjettinessDefinition.hh NjettinessPlugin.hh
+example_advanced_usage.o: Nsubjettiness.hh Njettiness.hh MeasureFunction.hh
+example_advanced_usage.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+example_advanced_usage.o: NjettinessDefinition.hh NjettinessPlugin.hh
+example_v1p0p3.o: Nsubjettiness.hh Njettiness.hh MeasureFunction.hh
+example_v1p0p3.o: AxesFinder.hh WinnerTakeAllRecombiner.hh
+example_v1p0p3.o: NjettinessDefinition.hh NjettinessPlugin.hh

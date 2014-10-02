@@ -4,6 +4,7 @@
 //  Copyright (c) 2009-2013
 //  David Krohn, Jesse Thaler, and Lian-Tao Wang
 //
+//  $Id: VariableR.hh 599 2014-04-18 14:29:54Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -29,133 +30,38 @@
 #include "fastjet/JetDefinition.hh"
 #include "fastjet/PseudoJet.hh"
 #include "fastjet/ClusterSequence.hh"
+#include "VariableRPlugin.hh"
 #include <map>
 #include <queue>
 
 using namespace std;
 
-
 FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib {
+    
+   ////////
+   //
+   //  For backwards compatibility with v1.0, keep old constructors
+   //  These just call the VR constructor with certain parameter choice
+   //
+   ////////
+   
+   class AKTVR : public VariableRPlugin {
+   public:
+      AKTVR (double rho, double max_r) : VariableRPlugin(rho,0.0,max_r,AKTLIKE) {}
+   };
 
-////////
-//
-//  Helper Functions and Types
-//
-////////
+   class CAVR : public VariableRPlugin {
+   public:
+      CAVR (double rho, double max_r) : VariableRPlugin(rho,0.0,max_r,CALIKE) {}
+   };
 
-void print_jets (const fastjet::ClusterSequence &, 
-                 const vector<fastjet::PseudoJet> &);
-
-// Store two jets and a distance measure
-struct JetDistancePair{
-  int j1,j2;
-  double distance;
-};
-
-struct PTVectorAndMap{
-  bool pts_sorted, boost_vector_set;
-  PseudoJet boost_vector;
-  vector<double> pts;
-  map<double,int> map_pt_to_indx;
-  ClusterSequence * clust_seq;
-};
-
-struct ThreeVector{
-  double x,y,z;
-};
-
-enum MergeType {Unmerged, MergedWithBeam, MergedWithJet};
-
-// Class for comparing JetDistancePairs
-class CompareJetDistancePair {
-public:
-  CompareJetDistancePair(){};
-  bool operator() (const JetDistancePair & lhs, const JetDistancePair &rhs) const {
-    return (lhs.distance > rhs.distance);
-  }
-};
-
-////////
-//
-//  CoreJetAlgorithm
-//
-////////
-
-class CoreJetAlgorithm : public JetDefinition::Plugin {
-public:
-  CoreJetAlgorithm (){};
-
-  virtual bool supports_ghosted_passive_areas() const {return true;}
-  virtual void set_ghost_separation_scale(double scale) const {};
-
-  // the things that are required by base class
-  virtual std::string description () const;
-  virtual void run_clustering(ClusterSequence &) const;                      
-  virtual double R() const {return 0.0;}
-
-private:
-
-  PTVectorAndMap GetPTVectorAndMap(map<int,MergeType>& jet_merged,ClusterSequence & clust_seq) const;
-  void run_smart_clustering(ClusterSequence &) const;                      
-  virtual double GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, double R) const;
-  virtual double GetJBDistanceMeasure(const PseudoJet& j1) const;                   
-  virtual double GetJJDistanceMeasureFull(const PseudoJet& j1, const PseudoJet& j2, double R, PTVectorAndMap & ptvm) const;
-  virtual double GetJBDistanceMeasureFull(const PseudoJet& j1, PTVectorAndMap & ptvm) const;
-  virtual bool ShouldCompilePTInfo() const;
-protected:
-  void SortPTVectorAndMap(PTVectorAndMap &ptvm, int num_vects)const;
-  void SetupDistanceMeasures(ClusterSequence & clust_seq, priority_queue< JetDistancePair, vector<JetDistancePair>, CompareJetDistancePair >& jet_queue,   map<int,MergeType> & jet_merged) const;
-  void MergeJetWithBeam(ClusterSequence & clust_seq, JetDistancePair & jdp, map<int,MergeType>& jet_merged) const;
-  void MergeJets(ClusterSequence & clust_seq,JetDistancePair & jdp,priority_queue< JetDistancePair, vector<JetDistancePair>, CompareJetDistancePair > &jet_queue, map<int,MergeType>& jet_merged) const;
-  void NormalizeThreeVector(ThreeVector & tv) const;
-  ThreeVector GetThreeVector(const PseudoJet& jet) const;
-  double Dot3D(ThreeVector &tv1, ThreeVector& tv2) const;
-  double GetAngleBetweenJets(const PseudoJet& j1, const PseudoJet& j2) const;
-  double GetDeltaRBetweenJets(const PseudoJet& j1, const PseudoJet& j2) const;
-  void PrintJet(const PseudoJet& jet) const;
-};
-
-////////
-//
-//  AKTVR
-//
-////////
-
-class AKTVR : public CoreJetAlgorithm{
-public:
-  AKTVR (double rho, double max_r);
-  
-  virtual std::string description () const;
-  virtual double R() const {return 0.0;}
-private:
-  double my_rho, my_max_r;
-
-  double GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, double R) const;
-  double GetJBDistanceMeasure(const PseudoJet& j1) const;
-};
-
-////////
-//
-//  CAVR
-//
-////////
-
-class CAVR : public CoreJetAlgorithm{
-public:
-  CAVR (double rho, double max_r);
-  
-  virtual std::string description () const;
-  virtual double R() const {return 0.0;}
-private:
-  double my_rho, my_max_r;
-
-  double GetJJDistanceMeasure(const PseudoJet& j1, const PseudoJet& j2, double R) const;
-  double GetJBDistanceMeasure(const PseudoJet& j1) const;
-};
-
-
+   class KTVR : public VariableRPlugin {
+   public:
+      KTVR (double rho, double max_r) : VariableRPlugin(rho,0.0,max_r,KTLIKE) {}
+   };
+   
 } // namespace contrib
 
 FASTJET_END_NAMESPACE

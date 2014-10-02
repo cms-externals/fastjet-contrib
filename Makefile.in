@@ -29,7 +29,7 @@ install: all $(SUBDIRS)
 
 examples clean: $(SUBDIRS)
 
-distclean: $(SUBDIRS) CMS-shared-distclean
+distclean: $(SUBDIRS) fragile-shared-distclean
 
 check: check_init $(SUBDIRS)
 	@echo ""

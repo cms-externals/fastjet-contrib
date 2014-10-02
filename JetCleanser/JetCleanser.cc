@@ -29,6 +29,9 @@ FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib{
 
+  // Modification to satisfy C++11 (thanks to Gavin Salam)
+  const double JetCleanser::jc_zero = 1.0e-6;
+
   /////////////////////////////
   // constructor
   JetCleanser::JetCleanser(JetDefinition subjet_def, cleansing_mode cmode, input_mode imode) {
@@ -397,6 +400,10 @@ namespace contrib{
     std::vector<PseudoJet> rescaled_jets;
     if ( s_factor == 0.0 ) return rescaled_jets;
     for (unsigned i=0; i<jets.size(); i++){ rescaled_jets.push_back( s_factor*jets[i] ); }
+    //for (unsigned i=0; i<jets.size(); i++){ rescaled_jets.push_back( PseudoJet(s_factor*jets[i].px(),
+    //                                                                           s_factor*jets[i].py(),
+    //                                                                           s_factor*jets[i].pz(),
+    //                                                                           s_factor*jets[i].e()) ); }
     return rescaled_jets;
   }
 
