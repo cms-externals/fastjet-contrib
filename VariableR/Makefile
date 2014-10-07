@@ -15,9 +15,9 @@ check_script = ../utils/check.sh
 #------------------------------------------------------------------------
 # things that are specific to this contrib
 NAME=VariableR
-SRCS=VariableR.cc
-EXAMPLES=example
-INSTALLED_HEADERS=VariableR.hh
+SRCS=VariableRPlugin.cc
+EXAMPLES=example 
+INSTALLED_HEADERS=VariableR.hh VariableRPlugin.hh
 #------------------------------------------------------------------------
 
 CXXFLAGS+= $(shell $(FASTJETCONFIG) --cxxflags)
@@ -77,5 +77,5 @@ depend:
 	makedepend -Y --   -- $(SRCS) $(EXAMPLES_SRCS)
 # DO NOT DELETE
 
-VariableR.o: VariableR.hh
-example.o: VariableR.hh
+VariableRPlugin.o: VariableRPlugin.hh
+example.o: VariableRPlugin.hh

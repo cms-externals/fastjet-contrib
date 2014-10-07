@@ -1,3 +1,85 @@
+2014-08-17  Gavin Salam  <gavin.salam@cern.ch>
+
+	* NEWS:
+	* VERSION:
+	updated version to 1.014 and prepared NEWS
+
+	* contribs.svn: 
+	added SoftKiller 1.0.0
+
+2014-08-16  Gavin Salam  <gavin.salam@cern.ch>
+
+	* contribs.svn: 
+	updated JetCleanser version to tags/1.0.1
+
+2014-07-09  Gregory Soyez  <soyez@fastjet.fr>
+
+	* VERSION:
+	* NEWS:
+	updated version to 1.013 and prepared NEWS for release.
+
+	* contribs.svn:
+	  . updated Nsubjettiness to version 2.1.0
+	  . added release 1.0.0 of the new RecursiveTools contrib by
+	    G. Salam, G. Soyez and J. Thaler
+
+2014-06-12  Gregory Soyez  <soyez@fastjet.fr>
+
+	* configure (sorted_built_contribs):
+	slightly enlarged the space for printing contribs summary
+
+2014-06-03  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION:
+	* NEWS:
+	updated version to 1.012 and prepared NEWS for release.
+
+	* contribs.svn:
+	updated VariableR to version 1.1.1
+
+2014-04-06  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION:
+	* NEWS:
+	upped version to 1.011 for new contrib with ConstituentSubtractor
+	and prepared NEWS for the release.
+
+	* contribs.svn:
+	added release 1.0.0 of the new ConstituentSubtractor by Peter
+	Berta et al.
+
+2014-04-02  Gavin Salam  <gavin.salam@cern.ch>
+
+	* DEVEL-GUIDELINES:
+	added details of how to set svn:keywords on source files.
+
+2014-03-14  Gavin Salam  <gavin.salam@cern.ch>
+
+	* Makefile.in (distclean):
+	distclean depended on CMS-shared-distclean when it should have
+	been fragile-shared-distclean.
+
+2014-03-01  Matteo Cacciari <cacciari@lpthe.jussieu.fr>
+
+        * scripts/internal/generate-html-contents.pl
+        added (and set) option to list the contribs alphabetically.
+        Also added (but not activated) option to include the date using the
+        time stamp of the svn tag
+
+2014-02-26  Matteo Cacciari <cacciari@lpthe.jussieu.fr>
+
+	* NEWS:
+	* VERSION:
+	upped version to 1.010 for release with new contrib JetsWithoutJets 
+        and added release date to NEWS.
+
+        * contribs.svn
+        added JetsWithoutJets v1.0.0
+
+        * configure
+        - added a blank line in output to config.log
+        - enabled alphabetically ordered output of enabled contribs
+
 2014-02-03  Gavin Salam  <gavin.salam@cern.ch>
 
 	* NEWS:
@@ -8,9 +90,9 @@
 
 	* configure:
 	* Makefile.in:
-	added targets CMS-shared CMS-shared-install and CMS-shared-distclean;
-	the CMS-shared(-install) builds (installs) a
-	libfastjetcontrib4CMS.so file. This is currently very fragile, in 
+	added targets fragile-shared fragile-shared-install and fragile-shared-distclean;
+	the fragile-shared(-install) builds (installs) a
+	libfastjetcontribfragile.so file. This is currently very fragile, in 
 	that it relies on just the SRCS formatting in the individual
 	contrib makefiles (all sources on a single line, without wildcards).
 

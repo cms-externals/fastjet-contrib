@@ -4,6 +4,10 @@
 //  Copyright (c) 2011-13
 //  Jesse Thaler, Ken Van Tilburg, and Christopher K. Vermilion
 //
+//  Run this example with:
+//     ./example_v1p0p3 < ../data/single-event.dat
+//
+//  $Id: example_v1p0p3.cc 704 2014-07-07 14:30:43Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -50,6 +54,12 @@ void PrintJets(const vector <PseudoJet>& jets);
 void analyze(const vector<PseudoJet> & input_particles);
 
 //----------------------------------------------------------------------
+//
+//  Note: This example file is here to test the previous v1.0.3 interface
+//  to make sure it is backwards compatable
+//
+//----------------------------------------------------------------------
+
 int main(){
 
   //----------------------------------------------------------
@@ -266,67 +276,71 @@ void analyze(const vector<PseudoJet> & input_particles) {
       }
    }
    
-   
-   ////////// N-jettiness as a jet algorithm ///////////////////////////
 
-   // WARNING:  This is extremely preliminary.  You should not use for
-   //   physics studies without contacting the authors.
-   // You can also find jets with Njettiness:
+// Note:  Removed all from example file since none of the NjettinessPlugin is strictly backwards compatible.
    
-   NjettinessPlugin njet_plugin(3, Njettiness::onepass_kt_axes, 1.0, 1.0, 1.0);
-   JetDefinition njet_jetDef(&njet_plugin);
-   ClusterSequence njet_seq(input_particles, njet_jetDef);
-   vector<PseudoJet> njet_jets = njet_seq.inclusive_jets();
-
-   NjettinessPlugin geo_plugin(3, NsubGeometricParameters(1.0));
-   JetDefinition geo_jetDef(&geo_plugin);
-   ClusterSequence geo_seq(input_particles, geo_jetDef);
-   vector<PseudoJet> geo_jets = geo_seq.inclusive_jets();
-      
-   // The axes might point in a different direction than the jets
-   // Using the NjettinessExtras pointer (ClusterSequence::Extras) to access that information
-   vector<PseudoJet> njet_axes;
-   const NjettinessExtras * extras = njettiness_extras(njet_seq);
-   if (extras != NULL) {
-      njet_axes = extras->axes();
-   }
-   
-   printf("-------------------------------------------------------------------------------------"); printf("\n");
-   cout << "Event-wide Jets from One-Pass Minimization (beta = 1.0)" << endl;
-   PrintJets(njet_jets);
-   cout << "Event-wide Axis Location for Above Jets" << endl;
-   PrintJets(njet_axes);
-   cout << "Event-wide Jets from Geometric Measure" << endl;
-   PrintJets(geo_jets);
-   printf("-------------------------------------------------------------------------------------"); printf("\n");
-
-   // You can also find jet areas using this method (quite slow, though)
-
-   double ghost_maxrap = 5.0; // e.g. if particles go up to y=5
-   AreaDefinition area_def(active_area_explicit_ghosts, GhostedAreaSpec(ghost_maxrap));
-   
-   ClusterSequenceArea njet_seq_area(input_particles, njet_jetDef,area_def);
-   vector<PseudoJet> njet_jets_area = njet_seq_area.inclusive_jets();
-
-   ClusterSequenceArea geo_seq_area(input_particles, geo_jetDef,area_def);
-   vector<PseudoJet> geo_jets_area = geo_seq_area.inclusive_jets();
-      
-   // The axes might point in a different direction than the jets
-   // Using the NjettinessExtras pointer (ClusterSequence::Extras) to access that information
-   vector<PseudoJet> njet_axes_area;
-   const NjettinessExtras * extras_area = njettiness_extras(njet_seq_area);
-   if (extras_area != NULL) {
-      njet_axes_area = extras_area->axes();
-   }
-   
-   printf("-------------------------------------------------------------------------------------"); printf("\n");
-   cout << "Event-wide Jets from One-Pass Minimization (beta = 1.0) (with area information)" << endl;
-   PrintJets(njet_jets_area);
-   cout << "Event-wide Axis Location for Above Jets (with area information)" << endl;
-   PrintJets(njet_axes_area);
-   cout << "Event-wide Jets from Geometric Measure (with area information)" << endl;
-   PrintJets(geo_jets_area);
-   printf("-------------------------------------------------------------------------------------"); printf("\n");
+//   ////////// N-jettiness as a jet algorithm ///////////////////////////
+//
+//   // WARNING:  This is extremely preliminary.  You should not use for
+//   //   physics studies without contacting the authors.
+//   // You can also find jets with Njettiness:
+//   
+//   NjettinessPlugin njet_plugin(3, Njettiness::onepass_kt_axes, 1.0, 1.0, 1.0);
+//   JetDefinition njet_jetDef(&njet_plugin);
+//   ClusterSequence njet_seq(input_particles, njet_jetDef);
+//   vector<PseudoJet> njet_jets = njet_seq.inclusive_jets();
+//
+//   
+//   NjettinessPlugin geo_plugin(3, NsubGeometricParameters(1.0));
+//   JetDefinition geo_jetDef(&geo_plugin);
+//   ClusterSequence geo_seq(input_particles, geo_jetDef);
+//   vector<PseudoJet> geo_jets = geo_seq.inclusive_jets();
+//      
+//   // The axes might point in a different direction than the jets
+//   // Using the NjettinessExtras pointer (ClusterSequence::Extras) to access that information
+//   vector<PseudoJet> njet_axes;
+//   const NjettinessExtras * extras = njettiness_extras(njet_seq);
+//   if (extras != NULL) {
+//      njet_axes = extras->axes();
+//   }
+//   
+//   printf("-------------------------------------------------------------------------------------"); printf("\n");
+//   cout << "Event-wide Jets from One-Pass Minimization (beta = 1.0)" << endl;
+//   PrintJets(njet_jets);
+//   cout << "Event-wide Axis Location for Above Jets" << endl;
+//   PrintJets(njet_axes);
+//
+//   cout << "Event-wide Jets from Geometric Measure" << endl;
+//   PrintJets(geo_jets);
+//   printf("-------------------------------------------------------------------------------------"); printf("\n");
+//
+//   // You can also find jet areas using this method (quite slow, though)
+//
+//   double ghost_maxrap = 5.0; // e.g. if particles go up to y=5
+//   AreaDefinition area_def(active_area_explicit_ghosts, GhostedAreaSpec(ghost_maxrap));
+//   
+//   ClusterSequenceArea njet_seq_area(input_particles, njet_jetDef,area_def);
+//   vector<PseudoJet> njet_jets_area = njet_seq_area.inclusive_jets();
+//
+//   ClusterSequenceArea geo_seq_area(input_particles, geo_jetDef,area_def);
+//   vector<PseudoJet> geo_jets_area = geo_seq_area.inclusive_jets();
+//      
+//   // The axes might point in a different direction than the jets
+//   // Using the NjettinessExtras pointer (ClusterSequence::Extras) to access that information
+//   vector<PseudoJet> njet_axes_area;
+//   const NjettinessExtras * extras_area = njettiness_extras(njet_seq_area);
+//   if (extras_area != NULL) {
+//      njet_axes_area = extras_area->axes();
+//   }
+//   
+//   printf("-------------------------------------------------------------------------------------"); printf("\n");
+//   cout << "Event-wide Jets from One-Pass Minimization (beta = 1.0) (with area information)" << endl;
+//   PrintJets(njet_jets_area);
+//   cout << "Event-wide Axis Location for Above Jets (with area information)" << endl;
+//   PrintJets(njet_axes_area);
+//   cout << "Event-wide Jets from Geometric Measure (with area information)" << endl;
+//   PrintJets(geo_jets_area);
+//   printf("-------------------------------------------------------------------------------------"); printf("\n");
 
 }
 

@@ -11,7 +11,7 @@ Instructions for generic users
 You should have downloaded a tarball for the contrib. Unpack it, enter
 the resulting directory and run
 
-  ./configure [--fastjet-config=PATH] [--prefix=...] [...]
+  ./configure [--fastjet-config=FILE] [--prefix=...] [...]
   make
   make check   # optional
   make install
