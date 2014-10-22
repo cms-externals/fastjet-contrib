@@ -110,8 +110,6 @@ public:
 
 
 private:
-
-
 #if __cplusplus >= 201103L
   static constexpr double jc_zero = 1.0e-6;
 #else
