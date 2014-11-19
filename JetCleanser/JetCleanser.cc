@@ -29,8 +29,11 @@ FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib{
 
+#if __cplusplus >= 201103L
+#else
   // Modification to satisfy C++11 (thanks to Gavin Salam)
   const double JetCleanser::jc_zero = 1.0e-6;
+#endif
 
   /////////////////////////////
   // constructor
