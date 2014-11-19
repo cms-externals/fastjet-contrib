@@ -1,0 +1,20 @@
+This file was created by the fastjet contrib configure on Thu Oct 2 12:21:30 CDT 2014
+
+The command line invocation was
+
+    ./configure --fastjet-config=/uscms_data/d2/rappocc/fastjet/fastjet_cms/install/bin/fastjet-config --prefix=/uscms/home/rappocc/nobackup/fastjet/fastjet_cms/fastjet-contrib CXXFLAGS=-I/uscms_data/d2/rappocc/fastjet/fastjet_cms/install/include -I/uscms_data/d2/rappocc/fastjet/fastjet_cms/install/tools
+
+        ConstituentSubtractor  v1.0.0
+        EnergyCorrelator       v1.0.1
+        GenericSubtractor      v1.2.0
+        JetCleanser            v1.0.1
+        JetFFMoments           v1.0.0
+        JetsWithoutJets        v1.0.0
+        Nsubjettiness          v2.1.0
+        RecursiveTools         v1.0.0
+        ScJet                  v1.1.0
+        SoftKiller             v1.0.0
+        SubjetCounting         v1.0.1
+
+Installation prefix: /uscms/home/rappocc/nobackup/fastjet/fastjet_cms/fastjet-contrib
+
