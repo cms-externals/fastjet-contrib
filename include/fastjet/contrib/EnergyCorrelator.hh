@@ -7,7 +7,7 @@
 //  Copyright (c) 2013
 //  Andrew Larkoski, Gavin Salam, and Jesse Thaler
 //
-//  $Id: EnergyCorrelator.hh 252 2013-04-30 07:31:31Z gsalam $
+//  $Id: EnergyCorrelator.hh 759 2014-11-20 23:00:34Z larkoski $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -38,18 +38,23 @@ namespace contrib{
 /// \mainpage EnergyCorrelator contrib
 /// 
 /// The EnergyCorrelator contrib provides an implementation of energy
-/// correlators and their ratios as described in arXiv:1305.XXXX by
-/// Larkoski, Salam and Thaler.
+/// correlators and their ratios as described in arXiv:1305.0007 by
+/// Larkoski, Salam and Thaler.  Additionally, the ratio observable
+/// D2 described in arXiv:1409.6298 by Larkoski, Moult and Neill
+/// is also included in this contrib.
 ///
-/// <p>There are three main classes:
+/// <p>There are four main classes:
 ///
 /// - EnergyCorrelator
 /// - EnergyCorrelatorRatio
 /// - EnergyCorrelatorDoubleRatio
+/// - EnergyCorrelatorD2
 ///
 /// each of which is a FastJet
 /// FunctionOfPseudoJet. EnergyCorrelatorDoubleRatio in particular is
 /// useful for quark/gluon discrimination and boosted object tagging.
+/// EnergyCorrelationD2 has been shown to be the optimal discrimination
+/// observable for boosted 2-prong jets.
 ///
 /// See the file example.cc for an illustration of usage.
 
@@ -115,6 +120,7 @@ public:
 
   /// returns the the part of the description related to the parameters
   std::string description_parameters() const;
+  std::string description_no_N() const;
 
 private:
 
@@ -232,6 +238,155 @@ inline double EnergyCorrelatorDoubleRatio::result(const PseudoJet& jet) const {
    double denominator = pow(EnergyCorrelator(_N, _beta, _measure, _strategy).result(jet), 2.0);
 
    return numerator/denominator;
+
+}
+
+
+//------------------------------------------------------------------------
+/// \class EnergyCorrelatorD2
+/// A class to calculate the observable formed from the ratio of the 
+/// 3-point and 2-point energy correlators,
+///     ECF(3,beta)*ECF(1,beta)^3/ECF(2,beta)^3,
+/// called \f$ D_2^{(\beta)} \f$ in the publication.
+class EnergyCorrelatorD2 : public FunctionOfPseudoJet<double> {
+
+public:
+
+  /// constructs an 3-point to 2-point correlator ratio with
+  /// angular exponent beta, using the specified choice of energy and
+  /// angular measure as well one of two possible underlying
+  /// computational strategies
+  EnergyCorrelatorD2(double  beta,
+                        EnergyCorrelator::Measure  measure  = EnergyCorrelator::pt_R,
+                        EnergyCorrelator::Strategy strategy = EnergyCorrelator::storage_array)
+    : _beta(beta), _measure(measure), _strategy(strategy) {};
+
+  virtual ~EnergyCorrelatorD2() {}
+
+  /// returns the value of the energy correlator ratio for a jet's
+  /// constituents. (Normally accessed by the parent class's
+  /// operator()).
+  double result(const PseudoJet& jet) const;
+
+  std::string description() const;
+
+private:
+
+   double _beta;
+
+   EnergyCorrelator::Measure _measure;
+   EnergyCorrelator::Strategy _strategy;
+
+
+};
+
+
+inline double EnergyCorrelatorD2::result(const PseudoJet& jet) const {
+
+   double numerator3 = EnergyCorrelator(3, _beta, _measure, _strategy).result(jet);
+   double numerator1 = EnergyCorrelator(1, _beta, _measure, _strategy).result(jet);
+   double denominator2 = EnergyCorrelator(2, _beta, _measure, _strategy).result(jet);
+
+   return numerator3*numerator1*numerator1*numerator1/denominator2/denominator2/denominator2;
+
+}
+
+
+
+//------------------------------------------------------------------------
+/// \class EnergyCorrelatorC1
+/// A class to calculate the normalized 2-point energy correlators,
+///     ECF(2,beta)/ECF(1,beta)^2,
+/// called \f$ C_1^{(\beta)} \f$ in the publication.
+class EnergyCorrelatorC1 : public FunctionOfPseudoJet<double> {
+
+public:
+
+  /// constructs a 2-point correlator ratio with
+  /// angular exponent beta, using the specified choice of energy and
+  /// angular measure as well one of two possible underlying
+  /// computational strategies
+  EnergyCorrelatorC1(double  beta,
+                        EnergyCorrelator::Measure  measure  = EnergyCorrelator::pt_R,
+                        EnergyCorrelator::Strategy strategy = EnergyCorrelator::storage_array)
+    : _beta(beta), _measure(measure), _strategy(strategy) {};
+
+  virtual ~EnergyCorrelatorC1() {}
+
+  /// returns the value of the energy correlator ratio for a jet's
+  /// constituents. (Normally accessed by the parent class's
+  /// operator()).
+  double result(const PseudoJet& jet) const;
+
+  std::string description() const;
+
+private:
+
+   double _beta;
+
+   EnergyCorrelator::Measure _measure;
+   EnergyCorrelator::Strategy _strategy;
+
+
+};
+
+
+inline double EnergyCorrelatorC1::result(const PseudoJet& jet) const {
+
+   double numerator = EnergyCorrelator(2, _beta, _measure, _strategy).result(jet);
+   double denominator = EnergyCorrelator(1, _beta, _measure, _strategy).result(jet);
+
+   return numerator/denominator/denominator;
+
+}
+
+
+//------------------------------------------------------------------------
+/// \class EnergyCorrelatorC2
+/// A class to calculate the double ratio of 3-point to 2-point 
+/// energy correlators, 
+///     ECF(3,beta)*ECF(1,beta)/ECF(2,beta)^2,
+/// called \f$ C_2^{(\beta)} \f$ in the publication.
+class EnergyCorrelatorC2 : public FunctionOfPseudoJet<double> {
+
+public:
+
+  /// constructs a 3-point to 2-point correlator double ratio with
+  /// angular exponent beta, using the specified choice of energy and
+  /// angular measure as well one of two possible underlying
+  /// computational strategies
+  EnergyCorrelatorC2(double  beta,
+                        EnergyCorrelator::Measure  measure  = EnergyCorrelator::pt_R,
+                        EnergyCorrelator::Strategy strategy = EnergyCorrelator::storage_array)
+    : _beta(beta), _measure(measure), _strategy(strategy) {};
+
+  virtual ~EnergyCorrelatorC2() {}
+
+  /// returns the value of the energy correlator ratio for a jet's
+  /// constituents. (Normally accessed by the parent class's
+  /// operator()).
+  double result(const PseudoJet& jet) const;
+
+  std::string description() const;
+
+private:
+
+   double _beta;
+
+   EnergyCorrelator::Measure _measure;
+   EnergyCorrelator::Strategy _strategy;
+
+
+};
+
+
+inline double EnergyCorrelatorC2::result(const PseudoJet& jet) const {
+
+   double numerator3 = EnergyCorrelator(3, _beta, _measure, _strategy).result(jet);
+   double numerator1 = EnergyCorrelator(1, _beta, _measure, _strategy).result(jet);
+   double denominator = EnergyCorrelator(2, _beta, _measure, _strategy).result(jet);
+
+   return numerator3*numerator1/denominator/denominator;
 
 }
 
