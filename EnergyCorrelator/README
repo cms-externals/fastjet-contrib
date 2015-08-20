@@ -2,27 +2,65 @@ The EnergyCorrelator package is based on the physics described in:
 
    Energy Correlation Functions for Jet Substructure.
    Andrew J. Larkoski, Gavin Salam, and Jesse Thaler.
-   arXiv:1305.xxxx.
+   JHEP 1306, 108 (2013)
+   arXiv:1305.0007.
 
-This FastJet-contrib package contains three classes derived from
+Additional information and a new observable formed from the 
+energy correlation functions was described in
+
+   Power Counting to Better Jet Observables.
+   Andrew J. Larkoski, Ian Moult, and Duff Neill.
+   arXiv:1409.6298.
+
+This FastJet-contrib package contains four classes derived from
 FunctionOfPseudoJet<double> :
 
 EnergyCorrelator(int N, double beta, Measure measure)
 
-  Called ECF(N,beta) in the publication.  Corresponds to the N-point
+  Called ECF(N,beta) in arXiv:1305.0007.  Corresponds to the N-point
   correlation function, with beta the angular exponent, while measure
   = pt_R (default) or E_theta sets how energies and angles are
   determined.
 
 EnergyCorrelatorRatio(int N, double beta, Measure measure)
 
-  Called r_N^(beta) in the publication.  
+  Called r_N^(beta) in arXiv:1305.0007.  
   Equals ECF(N+1,beta)/ECF(N,beta).
 
 EnergyCorrelatorDoubleRatio(int N, double beta, Measure measure)
 
-  Called C_N^(beta) in the publication.  Equals r_N/r_{N-1}.  This is
-  the recommended function for boosted N-prong object discrimination.
+  Called C_N^(beta) in arXiv:1305.0007.  Equals r_N/r_{N-1}.  This 
+  observable provides good boosted N-prong object discrimination.
   (N=1 for quark/gluon, N=2 for boosted W/Z/H, N=3 for boosted top)
+
+EnergyCorrelatorC1(double beta, Measure measure)
+
+  This calculates the double ratio observable C_1^(beta) which is
+  useful for quark versus gluon discrimination.
+
+EnergyCorrelatorC2(double beta, Measure measure)
+
+  This calculates the double ratio observable C_2^(beta) which is
+  useful for boosted W/Z/H identification.
+
+EnergyCorrelatorD2(double beta, Measure measure)
+
+  Called D_2^(beta) in arXiv:1409.6298.  
+  Equals ECF(3,beta)*ECF(1,beta)^3/ECF(2,beta)^3.  
+  This is the recommended function for boosted 2-prong object
+  discrimination (boosted W/Z/H).
+
+The argument Measure in each of these functions sets how energies
+and angles are defined in the observable.  The measure 
+  
+  pt_R
+
+uses hadron collider coordinates (transverse momenta and boost-invariant 
+angles).  The measure
+
+  E_theta
+
+uses particle energies and angles and is appropriate for e+e-
+collider applications.
 
 Usage is shown in the example.cc program.

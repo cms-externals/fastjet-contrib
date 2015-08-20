@@ -1,3 +1,6 @@
+2014-11-25: release of version 1.015 with
+* update of EnergyCorrelator to 1.1.0 (adds C1, C2 and D2 observables)
+
 2014-08-17: release of version 1.014 with
 * new contrib: SoftKiller 1.0.0 pileup removal tool (from Matteo
   Cacciari, Gavin Salam and Gregory Soyez)
