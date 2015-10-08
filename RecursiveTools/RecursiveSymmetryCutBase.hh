@@ -196,7 +196,7 @@ public:
   class StructureType;
 
   /// for testing 
-  static bool _verbose;
+  static std::atomic<bool> _verbose;
 
 protected:
   // the methods below have to be defined by deerived classes
