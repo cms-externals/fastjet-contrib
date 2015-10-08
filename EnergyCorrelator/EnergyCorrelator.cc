@@ -4,7 +4,7 @@
 //  Copyright (c) 2013
 //  Andrew Larkoski, Gavin Salam, and Jesse Thaler
 //
-//  $Id: EnergyCorrelator.cc 259 2013-05-01 12:52:35Z jthaler $
+//  $Id: EnergyCorrelator.cc 759 2014-11-20 23:00:34Z larkoski $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -287,6 +287,21 @@ string EnergyCorrelator::description_parameters() const {
   return oss.str();
 }
 
+string EnergyCorrelator::description_no_N() const {
+  ostringstream oss;
+  oss << "beta=" << _beta;
+
+  if      (_measure == pt_R)    oss << ", pt_R measure";
+  else if (_measure == E_theta) oss << ", E_theta measure";
+  else throw Error("unrecognized measure");
+
+  if      (_strategy == slow)   oss << " and 'slow' strategy";
+  else if (_strategy == storage_array)   oss << " and 'storage_array' strategy";
+  else throw Error("unrecognized strategy");
+
+  return oss.str();
+}
+
 string EnergyCorrelator::description() const {
   ostringstream oss;
   oss << "Energy Correlator ECF(N,beta) for ";
@@ -307,6 +322,28 @@ string EnergyCorrelatorDoubleRatio::description() const {
   oss << EnergyCorrelator(_N,_beta,_measure,_strategy).description_parameters();
   return oss.str();
 }
+
+string EnergyCorrelatorD2::description() const {
+  ostringstream oss;
+  oss << "Energy Correlator observable D2 ECF(3,beta)*ECF(1,beta)^3/ECF(2,beta)^3 for ";
+  oss << EnergyCorrelator(3,_beta,_measure,_strategy).description_no_N();
+  return oss.str();
+}
+
+string EnergyCorrelatorC1::description() const {
+  ostringstream oss;
+  oss << "Energy Correlator observable C1 ECF(2,beta)/ECF(1,beta)^2 for ";
+  oss << EnergyCorrelator(2,_beta,_measure,_strategy).description_no_N();
+  return oss.str();
+}
+
+string EnergyCorrelatorC2::description() const {
+  ostringstream oss;
+  oss << "Energy Correlator observable C2 ECF(3,beta)*ECF(1,beta)/ECF(2,beta)^2 for ";
+  oss << EnergyCorrelator(3,_beta,_measure,_strategy).description_no_N();
+  return oss.str();
+}
+
 
 
 
