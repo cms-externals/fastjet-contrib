@@ -1,3 +1,26 @@
+2015-10-05: release of version 1.020 with
+* update of Nsubjettiness to version 2.2.1 (fixes a bug in the Makefile
+  that broke building of shared libraries)
+* install permissions of libfastjetcontribfragile.so switched from
+  0644 to 0755
+
+2015-09-21: release of version 1.019 with
+* update of GenericSubtractor to version 1.3.0 (adds rho_m support for
+  FastJet v3.1)
+
+2015-09-07: release of version 1.018 with
+* update of Nsubjettiness to version 2.2.0 (inclusion of the XCone jet
+  algorithm; inclusion of new measures; interface improvements; bugs fixed)
+
+2015-05-05: release of version 1.017 with
+* new contrib: ClusteringVetoPlugin, version 1.0.0
+
+2015-04-07: release of version 1.016 with
+* new contrib: ValenciaPlugin, version 2.0.0 (new e+e- clustering algorithms)
+
+2014-11-25: release of version 1.015 with
+* update of EnergyCorrelator to 1.1.0 (adds C1, C2 and D2 observables)
+
 2014-08-17: release of version 1.014 with
 * new contrib: SoftKiller 1.0.0 pileup removal tool (from Matteo
   Cacciari, Gavin Salam and Gregory Soyez)

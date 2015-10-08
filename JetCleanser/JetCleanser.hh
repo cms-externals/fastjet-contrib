@@ -37,13 +37,6 @@
 #include <sstream>
 #include <string>
 
-//CMS change: 
-// Change not endorsed by fastjet collaboration
-#if __cplusplus >= 201103L
-#include <atomic>
-#endif
-
-
 FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib{
@@ -110,12 +103,9 @@ public:
 
 
 private:
-#if __cplusplus >= 201103L
-  static constexpr double jc_zero = 1.0e-6;
-#else
+  // Modification to satisfy C++11 (thanks to Gavin Salam)
+  //static const double jc_zero = 1.0e-6;
   static const double jc_zero;
-#endif
-
 
   double _rsub;
   double _fcut;

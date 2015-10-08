@@ -27,9 +27,6 @@
 #include "fastjet/tools/Transformer.hh"
 #include "fastjet/WrappedStructure.hh"
 
-//CMS Fix
-#include <atomic>
-
 #include "Recluster.hh"
 
 /** \mainpage RecursiveTools contrib 
@@ -197,8 +194,7 @@ public:
   class StructureType;
 
   /// for testing 
-  //CMS fix
-  static std::atomic<bool> _verbose;
+  static bool _verbose;
 
 protected:
   // the methods below have to be defined by deerived classes
