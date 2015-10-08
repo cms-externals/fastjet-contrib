@@ -171,7 +171,11 @@ namespace contrib{
       if (particles_fraction_of_pt[i]>0) subtracted_pt=particles[i].pt()*particles_fraction_of_pt[i];
       double subtracted_mtMinusPt=0;
       if (particles_fraction_of_mtMinusPt[i]>0) subtracted_mtMinusPt=(particles[i].mt()-particles[i].pt())*particles_fraction_of_mtMinusPt[i];
-      PseudoJet subtracted_const(subtracted_pt*cos(azimuth),subtracted_pt*sin(azimuth),(subtracted_pt+subtracted_mtMinusPt)*sinh(rapidity),(subtracted_pt+subtracted_mtMinusPt)*cosh(rapidity));
+      //CMS change: 
+      // Change not endorsed by fastjet collaboration
+      PseudoJet subtracted_const = particles[i];
+      subtracted_const.reset_momentum(subtracted_pt*cos(azimuth),subtracted_pt*sin(azimuth),(subtracted_pt+subtracted_mtMinusPt)*sinh(rapidity),(subtracted_pt+subtracted_mtMinusPt)*cosh(rapidity));
+      //PseudoJet subtracted_const(subtracted_pt*cos(azimuth),subtracted_pt*sin(azimuth),(subtracted_pt+subtracted_mtMinusPt)*sinh(rapidity),(subtracted_pt+subtracted_mtMinusPt)*cosh(rapidity));
       subtracted_particles.push_back(subtracted_const);
     }
     fastjet::PseudoJet subtracted_jet=join(subtracted_particles);
