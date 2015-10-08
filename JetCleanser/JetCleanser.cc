@@ -28,10 +28,13 @@
 FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib{
-
+//CMS change: 
+// Change not endorsed by fastjet collaboration
+#if __cplusplus >= 201103L
+#else
   // Modification to satisfy C++11 (thanks to Gavin Salam)
   const double JetCleanser::jc_zero = 1.0e-6;
-
+#endif
   /////////////////////////////
   // constructor
   JetCleanser::JetCleanser(JetDefinition subjet_def, cleansing_mode cmode, input_mode imode) {

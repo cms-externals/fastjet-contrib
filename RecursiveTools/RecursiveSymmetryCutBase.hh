@@ -26,6 +26,8 @@
 #include <fastjet/internal/base.hh>
 #include "fastjet/tools/Transformer.hh"
 #include "fastjet/WrappedStructure.hh"
+//CMS Fix
+#include <atomic>
 
 #include "Recluster.hh"
 
