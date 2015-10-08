@@ -4,7 +4,7 @@
 //  Copyright (c) 2011-14
 //  Jesse Thaler, Ken Van Tilburg, Christopher K. Vermilion, and TJ Wilkason
 //
-//  $Id: Nsubjettiness.cc 597 2014-04-16 23:07:55Z jthaler $
+//  $Id: Nsubjettiness.cc 821 2015-06-15 18:50:53Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -28,6 +28,9 @@ FASTJET_BEGIN_NAMESPACE      // defined in fastjet/internal/base.hh
 
 namespace contrib {
 
+LimitedWarning Nsubjettiness::_old_constructor_warning;
+   
+   
 //result returns tau_N with normalization dependent on what is specified in constructor
 double Nsubjettiness::result(const PseudoJet& jet) const {
    std::vector<fastjet::PseudoJet> particles = jet.constituents();

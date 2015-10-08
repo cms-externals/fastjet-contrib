@@ -1,3 +1,97 @@
+2015-10-05  Matteo Cacciari <cacciari@lpthe.jussieu.fr>
+
+        * Makefile.in
+	install permissions of libfastjetcontribfragile.so switched
+	from 0644 to 0755 (reported by Dario Berzano).
+	This will go into 1.020
+        * NEWS
+	mentioned item above
+
+2015-10-04  Matteo Cacciari <cacciari@lpthe.jussieu.fr>
+
+	* NEWS:
+	* VERSION:
+	prepared for release 1.020 with Nsubjettiness 2.2.1
+
+2015-10-04  Gavin Salam  <gavin.salam@cern.ch>
+
+	* DEVEL-GUIDELINES:
+	mentioned the need to check that "make fragile-shared" works. 
+
+	* scripts/internal/release-fjcontrib.sh:
+	added a check that "make fragile-shared" works. 
+
+2015-09-28  Gregory Soyez  <soyez@fastjet.fr>
+
+	* contribs.svn:
+	switched to version 2.2.1 of Nsubjettiness [minor bug in Makefile]
+
+2015-09-24  Matteo Cacciari <cacciari@lpthe.jussieu.fr>
+
+        * scripts/internal/generate-html-contents.pl
+        set up to extract from svn date of tag of last version and 
+        output it in the table with the list of contribs
+
+2015-09-21  Gregory Soyez  <soyez@fastjet.fr>
+
+	* NEWS:
+	* VERSION:
+	prepared for release 1.019 GenericSubtractor 1.3.0
+
+	* contribs.svn:
+	switched GenericSubtractor to version 1.3.0
+
+2015-09-07  Gregory Soyez  <soyez@fastjet.fr>
+
+	* NEWS:
+	* VERSION:
+	prepared for release 1.018 with Nsubjettiness 2.2.0
+
+2015-07-23  Gregory Soyez  <soyez@fastjet.fr>
+
+	* data/single-ee-event.dat:    *** ADDED ***
+	added a simple e+e- event for tests in e+e- coordinates
+
+2015-05-05  Gavin Salam  <gavin.salam@cern.ch>
+
+	* NEWS: 
+	* VERSION:
+	prepared NEWS and VERSION files for release 1.017 with
+	ClusteringVetoPlugin 1.0.0
+
+2015-05-04  Gavin Salam  <gavin.salam@cern.ch>
+
+	* contribs.svn:
+	added ClusteringVetoPlugin 1.0.0
+
+2015-04-07  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION:
+	* NEWS:
+	updated version to 1.016 and mentioned ValenciaPlugin 2.0.0 in NEWS
+
+	* contribs.svn:
+	added ValenciaPlugin (tags/2.0.0)
+
+2015-02-20  Gavin Salam  <gavin.salam@cern.ch> + Matteo
+
+	* DEVEL-GUIDELINES:
+	mentioned that people should set svn:keywords to Id on relevant
+	files. 
+
+	* scripts/internal/Template/example.cc
+	modified template example header to include a line showing
+	how to run the example.
+
+2014-11-25  Gavin Salam  <gavin.salam@cern.ch>
+
+	* NEWS:
+	* VERSION:
+	updated version 1.015 and prepared NEWS
+
+	* contribs.svn: 
+	updated EnergyCorrelator to version 1.1.0
+
 2014-08-17  Gavin Salam  <gavin.salam@cern.ch>
 
 	* NEWS:
