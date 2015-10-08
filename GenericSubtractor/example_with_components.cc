@@ -5,7 +5,7 @@
 //  ./example_with_components < ../data/Pythia-Zp2jets-lhc-pileup-1ev.dat
 //----------------------------------------------------------------------
 
-// $Id: example_with_components.cc 3001 2013-01-29 10:41:40Z soyez $
+// $Id: example_with_components.cc 859 2015-09-21 10:11:32Z gsalam $
 //
 // Copyright (c) 2012-, Matteo Cacciari, Jihun Kim, Gavin P. Salam and Gregory Soyez
 //
