@@ -1,4 +1,4 @@
-// $Id: ExampleShapes.hh 3001 2013-01-29 10:41:40Z soyez $
+// $Id: ExampleShapes.hh 859 2015-09-21 10:11:32Z gsalam $
 //
 // Copyright (c) 2012-, Matteo Cacciari, Jihun Kim, Gavin P. Salam and Gregory Soyez
 //

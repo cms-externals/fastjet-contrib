@@ -7,7 +7,7 @@
 //  Run this example with:
 //     ./example_v1p0p3 < ../data/single-event.dat
 //
-//  $Id: example_v1p0p3.cc 704 2014-07-07 14:30:43Z jthaler $
+//  $Id: example_v1p0p3.cc 800 2015-05-22 17:58:19Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -56,7 +56,8 @@ void analyze(const vector<PseudoJet> & input_particles);
 //----------------------------------------------------------------------
 //
 //  Note: This example file is here to test the previous v1.0.3 interface
-//  to make sure it is backwards compatable
+//  to make sure it is backwards compatable.  Please do not use this old
+//  interface unless you know what you are doing.
 //
 //----------------------------------------------------------------------
 
