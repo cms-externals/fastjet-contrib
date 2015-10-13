@@ -26,6 +26,8 @@
 #include <fastjet/internal/base.hh>
 #include "fastjet/tools/Transformer.hh"
 #include "fastjet/WrappedStructure.hh"
+//CMS Fix
+#include <atomic>
 
 #include "Recluster.hh"
 
@@ -194,7 +196,7 @@ public:
   class StructureType;
 
   /// for testing 
-  static bool _verbose;
+  static std::atomic<bool> _verbose;
 
 protected:
   // the methods below have to be defined by deerived classes
