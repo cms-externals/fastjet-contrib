@@ -1,3 +1,73 @@
+2016-02-09  Peter Berta  <berta@ipnp.troja.mff.cuni.cz>
+
+	* VERSION:
+	set version number to 1.1.1
+
+        * ConstituentSubtractor.hh:
+	* ConstituentSubtractor.cc:
+	- Faster algorithm for subtraction in the "do_subtraction" member function.
+	- New member function: subtract_event_using_charged_info
+		- whole event subtraction
+		- 4 additional inputs: two vectors of PseudoJets for charged background and charged signal, and two doubles, charged background scale (CBS) and charged signal scale (CSS)
+		- the scales CBS and CSS scale the input charged particles. Useful if one assumes correlation between charged and neutral particles or in case the inputs from calorimeter are miscalibrated wrt tracks. In case CBS=CSS=0, the input charged particles are not used. In case CBS=CSS=1, the input charged particles are not scaled. Recommending to try several combinations for CBS and CSS from range [0.8, 1.5].
+		- the background estimation is built in this function using GridMedianBackgroundEstimator with possibility to rescale
+		- see example file "example_whole_event_using_charged_info.cc" for usage
+
+	
+	* example_whole_event_using_charged_info.cc:
+	* example_whole_event_using_charged_info.ref:
+	- New files: example in which the ConstituentSubtractor is used for the whole event subtraction using tracking information for charged particles
+
+
+	* functions.h:
+	- Updated function "read_event". Now, obtaining also the vectors of charged particles originating from signal and background.
+
+
+
+
+	
+2015-11-05  Peter Berta  <berta@ipnp.troja.mff.cuni.cz>
+
+	* VERSION:
+	set version number to 1.1.0
+
+	* Makefile:
+	- added "-fPIC" CXX flag
+
+	
+        * ConstituentSubtractor.hh:
+	* ConstituentSubtractor.cc:
+	- updated output for result(PseudoJet): copying the "user_index" from the input jet and its constituents to the output corrected jet and its constituents
+	- discarded the original max_deltaR parameter, and replaced it by parameter max_standardDeltaR defined as  standardDeltaR=sqrt(deltay^2 + deltaphi^2). This new parameter restricts the usage of ghost-particle pairs which have too large distance standardDeltaR, i.e. not the distance deltaR which is the standardDeltaR multiplied by other factors as in the previous version.
+	- added a new multiplicative factor (sin(theta_i))^polarAngleExp into the definition of distance for a ghost-particle pair. Angle theta_i is the polar angle of partile i. The polarAngleExp is a free parameter with default value polarAngleExp=0, i.e. the default definition of deltaR has not changed wrt previous version. It can be changed using set_polarAngleExp member function
+	- changed the structure of the package and its member functions
+		- the standard usage with result(PseudoJet) is the same and it gives the same results as in previous version
+		- new member functions are available to simplify the whole event subtraction: subtract_event, set_background_estimator, set_scalar_background_density, see example file example_whole_event.cc
+	- similar changes as in GenericSubtractor due to FJ>=3.1:
+		- added set_common_bge_for_rho_and_rhom() and removed use_common_bge_for_rho_and_rhom()
+		- added set_use_bge_rhom_rhom() to tweak how rho_m is obtained  when ConstituentSubtractor has been constructed with two estimators
+	        - altered common_bge_for_rho_and_rhom() and added use_bge_rhom_rhom() to retrieve the behaviour
+        	- added a warning when rhom is non-zero and unused
+	- Updated the terminology:
+		- ghosts - soft particles distributed with high density
+		- background proxies - particles used in the "do_subtraction" member function. They can be obtained from ghosts or in other way. Previously, these particles were also called "ghosts"
+
+	
+	
+	
+	* example_whole_event.cc:
+	* example_whole_event.ref:
+	-new files: example in which the ConstituentSubtractor is used for the whole event
+
+
+	* functions.h:
+	-new file: contains useful functions for the example files
+
+	* example.hh:
+	-removed. Content moved to file functions.h
+	
+
+	
 2014-04-06  Peter Berta <berta@ipnp.troja.mff.cuni.cz>
 
         * VERSION

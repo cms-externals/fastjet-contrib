@@ -64,17 +64,20 @@ test -e ./$2 || { echo "ERROR: the datafile $2 cannot be found."; print_status_a
 }
 
 # run the example
-./$1 < $2 2>/dev/null | grep -v "^#" > $1.tmp_ref
+#./$1 < $2 2>/dev/null | grep -v "^#" > $1.tmp_ref
+./$1 < $2 2>$1.tmp_err | grep -v "^#" > $1.tmp_ref
 
 DIFF=`cat $1.ref | grep -v "^#" | diff $1.tmp_ref -`
 if [[ -n $DIFF ]]; then 
     cat $1.ref | grep -v "^#" | diff $1.tmp_ref - > $1.diff
-    echo "ERROR: Outputs differ (diff available in $1.diff)"
+    echo "ERROR: Outputs differ (output, stderr and diff available in "
+    echo "       $1.tmp_ref , $1.tmp_err and $1.diff)"
     echo
-    rm $1.tmp_ref
+    #rm $1.tmp_ref
     print_status_and_exit "$1" "Failed (see difference file)"
 fi
 
+rm $1.tmp_err
 rm $1.tmp_ref
 
 print_status_and_exit "$1" "Success"

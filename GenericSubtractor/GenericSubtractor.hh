@@ -1,4 +1,4 @@
-// $Id: GenericSubtractor.hh 3001 2013-01-29 10:41:40Z soyez $
+// $Id: GenericSubtractor.hh 861 2015-09-21 10:35:22Z gsoyez $
 //
 // Copyright (c) 2012-, Matteo Cacciari, Jihun Kim, Gavin P. Salam and Gregory Soyez
 //
@@ -24,6 +24,7 @@
 
 #include "fastjet/PseudoJet.hh"
 #include "fastjet/FunctionOfPseudoJet.hh"
+#include "fastjet/LimitedWarning.hh"
 #include "fastjet/tools/BackgroundEstimatorBase.hh"
 
 #include "ShapeWithComponents.hh"
@@ -42,7 +43,7 @@ class GenericSubtractorInfo;
 /// A class to perform subtraction of background (eg pileup or
 /// underlying event) from a jet shape.
 ///
-/// This class is a tool that allows one to subtract jet shapes
+/// This class is a tool that allows one to subtract pileup from jet shapes
 /// (i.e. a FunctionOfPseudoJet<double>). It implements the method
 /// described in:
 /// Gregory Soyez, Gavin P. Salam, Jihun Kim, Souvik Dutta and Matteo Cacciari,
@@ -50,9 +51,43 @@ class GenericSubtractorInfo;
 ///
 /// The basic usage of this class is as follows:
 ///
-///   GenericSubtractor gensub(& _some_background_estimator);
+///   GenericSubtractor gensub(& some_background_estimator);
 ///   FunctionOfPseudoJet<double> shape;
 ///   double subtracted_shape_value = gensub(shape, jet);
+///
+/// By default, this only subtracts the transverse momentum density
+/// rho (obtained from the background estimator provided to the
+/// class).
+///
+/// Two options allow also for the inclusion of the "particle mass"
+/// contribution to the background density (the "rho_m" term): one can
+/// either instruct the GenericSubtractor class to compute rho_m from
+/// the same background estimator using
+/// 
+///   gensub.set_common_bge_for_rho_and_rhom();                   (1)
+/// 
+/// or explicitly construct gensub with two background estimators
+/// 
+///   GenericSubtractor gensub(& background_estimator_for_rho,
+///                            & background_estimator_for_rhom);  (2)
+///
+/// Note that since FastJet 3.1, the option (1) will work with any
+/// background estimator that internally computes rho_m (and has that
+/// computation enabled). For FastJet 3.0, the first option is only
+/// available for JetMedianBackgroundEstimator.
+///
+/// For the option (2), 'gensub' will obtain rho_m using
+///
+///   background_estimator_for_rhom->rho()   [NOT rho_m()!]  
+///
+/// unless one calls gensub.set_use_bge_rhom_rhom() (it requires
+/// FJ>=3.1) in which case it will be obtained using
+///
+///   background_estimator_for_rhom->rhom()
+///
+/// The right choice between these two procedures for option (2)
+/// depends on the details of 'background_estimator_for_rhom'.
+///
 ///
 /// If the background transverse momentum density rho (and optionally the 
 /// density of sqrt(pt^2+m^2) - pt, denoted by rhom) are known, the
@@ -70,17 +105,21 @@ public:
   /// default constructor
   /// leaves the object unusable
   GenericSubtractor() : 
-    _bge_rho(0), _bge_rhom(0), _jet_pt_fraction(0.01), _common_bge(false), 
+    _bge_rho(0), _bge_rhom(0), _jet_pt_fraction(0.01),
+    _common_bge(false), _rhom_from_bge_rhom(false), 
     _rho(_invalid_rho), _externally_supplied_rho_rhom(false) {}
 
   /// Constructor that takes a pointer to a background estimator for
   /// rho and optionally a pointer to a background estimator for
   /// rho_m.  If the latter is not supplied, rho_m is assumed to
   /// always be zero (this behaviour can be changed by calling
-  /// use_common_bge_for_rho_and_rhom).
+  /// set_common_bge_for_rho_and_rhom).
+  /// See also the discussion above (in particular for the use of
+  /// bge_rhom)
   GenericSubtractor(BackgroundEstimatorBase *bge_rho,
 		    BackgroundEstimatorBase *bge_rhom=0) :
-    _bge_rho(bge_rho), _bge_rhom(bge_rhom), _jet_pt_fraction(0.01), _common_bge(false), 
+    _bge_rho(bge_rho), _bge_rhom(bge_rhom), _jet_pt_fraction(0.01),
+    _common_bge(false), _rhom_from_bge_rhom(false), 
      _rho(_invalid_rho), _externally_supplied_rho_rhom(false)  {}
 
   /// Constructor that takes an externally supplied value for rho and,
@@ -112,12 +151,39 @@ public:
   /// calculated from the same background estimator as rho, instead of
   /// being set to zero. 
   ///
-  /// Currently this only works if the estimator is a
-  /// JetMedianBackgroundEstimator (or derived from it), and makes use
-  /// of that class's set_jet_density_class(...) facility.
+  /// Since FastJet 3.1, this will use the rho_m calculation from the
+  /// background estimator if it is available [the default for both
+  /// GridMedianBackgroundEstimator and JetMedianBackgroundEstimator].
+  /// In all other cases, the use of a common background estimator for
+  /// rho and rho_m only works if the estimator is a
+  /// JetMedianBackgroundEstimator (or derived from it), [since it
+  /// makes use of that class's set_jet_density_class(...) facility].
   /// 
+  void set_common_bge_for_rho_and_rhom(bool value=true);
+
+  /// equivalent to 'set_common_bge_for_rho_and_rhom'
+  ///
+  /// NOTE: this is DEPRECATED and kept only for backwards
+  /// compatibility reasons. Use 'set_common_bge_for_rho_and_rhom'
+  /// instead.
   void use_common_bge_for_rho_and_rhom(bool value=true);
 
+  /// returns true if it uses a common background estimator for both
+  /// rho and rho_m (see set_common_bge_for_rho_and_rhom for
+  /// details)
+  bool common_bge_for_rho_and_rhom() const { return _common_bge; }
+  
+  /// when the GenericSubtractor has been created with two background
+  /// estimators (one for rho, the second for rho_m), setting this to
+  /// true will result in rho_m being estimated using
+  /// bge_rhom->rho_m() instead of bge_rhom->rho()
+  /// See also the discussion at the top of the class.
+  void set_use_bge_rhom_rhom(bool value=true);
+
+  /// returns true if rho_m is being estimated using
+  /// bge_rhom->rho_m(). (s
+  bool use_bge_rhom_rhom() const { return _rhom_from_bge_rhom; }
+  
   /// sets the fraction of the jet pt that will be used in the
   /// stability condition when computing the derivatives
   void set_jet_pt_fraction_for_stability(double jet_pt_fraction){
@@ -170,7 +236,7 @@ protected:
 
   BackgroundEstimatorBase *_bge_rho, *_bge_rhom;
   double _jet_pt_fraction;
-  bool _common_bge;
+  bool _common_bge, _rhom_from_bge_rhom;
   double _rho, _rhom;
   bool _externally_supplied_rho_rhom;
   /// a value of rho that is used as a default to label that the stored
@@ -181,6 +247,10 @@ protected:
   // we anyway like -infinity as a default, and since that's a function,
   // that's not allowed in an include file.
   static const double _invalid_rho;
+
+  /// deprecated "use_common_bge_for_rho_and_rhom"
+  static LimitedWarning _warning_depracated_use_common_bge;
+  static LimitedWarning _warning_unused_rhom;
 };
 
 //------------------------------------------------------------------------

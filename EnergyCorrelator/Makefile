@@ -16,7 +16,7 @@ check_script = ../utils/check.sh
 # things that are specific to this contrib
 NAME=EnergyCorrelator
 SRCS=EnergyCorrelator.cc
-EXAMPLES=example
+EXAMPLES=example example_basic_usage
 INSTALLED_HEADERS=EnergyCorrelator.hh
 #------------------------------------------------------------------------
 

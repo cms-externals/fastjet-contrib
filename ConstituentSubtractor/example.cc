@@ -1,4 +1,4 @@
-// $Id: example.cc 587 2014-04-06 13:44:24Z berta $
+// $Id: example.cc 893 2015-11-06 09:10:35Z berta $
 //
 //----------------------------------------------------------------------
 // Example on how to use this contribution
@@ -25,14 +25,8 @@
 //----------------------------------------------------------------------
 
 
-#include "example.hh"
+#include "functions.hh"
 
-
-using namespace std;
-using namespace fastjet;
-
-// forward declaration to make things clearer
-void read_event(vector<PseudoJet> &hard_event, vector<PseudoJet> &full_event);
 
 //----------------------------------------------------------------------
 int main(){
@@ -71,7 +65,7 @@ int main(){
 
   JetMedianBackgroundEstimator bge_rho(rho_range, jet_def_for_rho, area_def);
   BackgroundJetScalarPtDensity *scalarPtDensity=new BackgroundJetScalarPtDensity();
-  bge_rho.set_jet_density_class(scalarPtDensity); // this changes the computation of pt of patches from vector sum to scalar sum. Theoretically, the scalar sum seems more reasonable.
+  bge_rho.set_jet_density_class(scalarPtDensity); // this changes the computation of pt of patches from vector sum to scalar sum. The scalar sum seems more reasonable.
   bge_rho.set_particles(full_event);
 
   // subtractor:
@@ -79,7 +73,7 @@ int main(){
   contrib::ConstituentSubtractor subtractor(&bge_rho);
 
   // this sets the same background estimator to be used for deltaMass density, rho_m, as for pt density, rho:
-  subtractor.use_common_bge_for_rho_and_rhom(true); // for massless input particles it does not make any difference (rho_m is always zero)
+  subtractor.set_common_bge_for_rho_and_rhom(true); // for massless input particles it does not make any difference (rho_m is always zero)
   cout << subtractor.description() << endl;
 
   // shape variables:
@@ -125,40 +119,4 @@ int main(){
 }
 
 
-
-
-// read in input particles
-void read_event(vector<PseudoJet> &hard_event, vector<PseudoJet> &full_event){
-  string line;
-  int  nsub  = 0; // counter to keep track of which sub-event we're reading
-  while (getline(cin, line)) {
-    istringstream linestream(line);
-    // take substrings to avoid problems when there are extra "pollution"
-    // characters (e.g. line-feed).
-    if (line.substr(0,4) == "#END") {break;}
-    if (line.substr(0,9) == "#SUBSTART") {
-      // if more sub events follow, make copy of first one (the hard one) here
-      if (nsub == 1) hard_event = full_event;
-      nsub += 1;
-    }
-    if (line.substr(0,1) == "#") {continue;}
-    double px,py,pz,E;
-    linestream >> px >> py >> pz >> E;
-    PseudoJet particle(px,py,pz,E);
-
-    // push event onto back of full_event vector
-    full_event.push_back(particle);
-  }
-
-  // if we have read in only one event, copy it across here...
-  if (nsub == 1) hard_event = full_event;
-
-  // if there was nothing in the event 
-  if (nsub == 0) {
-    cerr << "Error: read empty event\n";
-    exit(-1);
-  }
-
-  cout << "# " << nsub-1 << " pileup events on top of the hard event" << endl;
-}
 

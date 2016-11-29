@@ -1,1 +1,10 @@
+2016/02/09: relaease of version 1.1.1:
+	   - faster algortihm for subtraction
+	   - added new function for Constituent Subtraction using tracking information
+2015/11/05: relaease of version 1.1.0:
+	   - added FastJet v3.1 rho_m support
+	   - simplified way for Constituent Subtraction of the whole event
+	   - updated the meaning of parameter max_deltaR
+	   - added new parameter to the definition of the distance
+	   - added examples for the whole event subtraction
 2014/04/06: release of version 1.0.0

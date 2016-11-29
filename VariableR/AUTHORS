@@ -1,7 +1,9 @@
-The VariableR FastJet contrib was written and is maintained and developed by:
+The VariableR FastJet contrib is written, maintained,
+and developed by:
 
-   David Krohn <dkrohn@gmail.com>
-   Jesse Thaler <jthaler@jthaler.net>
+   David Krohn   <dkrohn@gmail.com>
+   Gregory Soyez <soyez@fastjet.fr>
+   Jesse Thaler  <jthaler@jthaler.net>
    Lian-Tao Wang <liantaow@uchicago.edu>
 
 For physics details, see:
