@@ -1,0 +1,173 @@
+# 20 pileup events on top of the hard event
+# read an event with 203 signal particles and 1714 background particles with pseudo-rapidity |eta|<4
+#--------------------------------------------------------------------------
+#                         FastJet release 3.1.3
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the terms of the GNU GPLv2.
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+ConstituentSubtractor using [JetMedianBackgroundEstimator, using Longitudinally invariant kt algorithm with R = 0.4 and E scheme recombination with Active area (explicit ghosts) with ghosts of area 0.00997331 (had requested 0.01), placed up to y = 4, scattered wrt to perfect grid by (rel) 1, mean_ghost_pt = 1e-100, rel pt_scatter =  0.1, n repetitions of ghost distributions =  1 and selecting jets with |eta| <= 3.6] to estimate the background
+perform mass subtraction: 1
+
+
+Corrected particles in the whole event:
+pt = 14.3157, phi = 2.9648, rap = 2.1793, |mass| = 0.4936
+pt = 0.6274, phi = 2.2565, rap = 1.5072, |mass| = 0.0000
+pt = 2.2739, phi = 2.0002, rap = 1.2478, |mass| = 0.0000
+pt = 1.8819, phi = 3.4712, rap = 0.6823, |mass| = 0.4936
+pt = 8.8154, phi = 3.4972, rap = 0.7090, |mass| = 0.4936
+pt = 0.1895, phi = 3.6682, rap = 1.1423, |mass| = 0.2283
+pt = 7.7212, phi = 2.8981, rap = 2.1901, |mass| = 0.1396
+pt = 7.2954, phi = 2.8741, rap = 2.2979, |mass| = 0.4977
+pt = 8.3485, phi = 2.9077, rap = 2.1933, |mass| = 0.4977
+pt = 2.8765, phi = 2.8874, rap = 2.1989, |mass| = 0.4977
+pt = 3.2188, phi = 2.9009, rap = 2.0914, |mass| = 0.4977
+pt = 8.1435, phi = 2.9158, rap = 2.1664, |mass| = 0.1396
+pt = 1.3576, phi = 2.6610, rap = 1.5637, |mass| = 0.0000
+pt = 2.0546, phi = 2.7272, rap = 1.6053, |mass| = 0.0000
+pt = 1.5091, phi = 2.4587, rap = 1.7761, |mass| = 0.0245
+pt = 0.5684, phi = 2.4491, rap = 1.0845, |mass| = 0.7009
+pt = 1.7619, phi = 2.1993, rap = 1.0685, |mass| = 0.9396
+pt = 0.9457, phi = 2.1008, rap = 1.3221, |mass| = 0.0000
+pt = 1.5669, phi = 5.8328, rap = 3.8261, |mass| = 0.0000
+pt = 4.5951, phi = 0.0865, rap = -1.0003, |mass| = 0.0000
+pt = 1.9769, phi = 3.3996, rap = 0.6533, |mass| = 0.1396
+pt = 4.5495, phi = 3.4551, rap = 0.5839, |mass| = 0.4936
+pt = 6.5754, phi = 3.4530, rap = 0.7207, |mass| = 0.0000
+pt = 2.8740, phi = 3.4624, rap = 0.6911, |mass| = 0.0000
+pt = 2.5392, phi = 3.3178, rap = 0.6756, |mass| = 0.1396
+pt = 4.3862, phi = 3.4572, rap = 0.6241, |mass| = 0.1396
+pt = 1.8902, phi = 3.4727, rap = 0.6368, |mass| = 0.1396
+pt = 0.8184, phi = 3.8805, rap = 1.1281, |mass| = 0.4331
+pt = 5.9625, phi = 2.9472, rap = 2.2211, |mass| = 0.4977
+pt = 0.6089, phi = 2.8476, rap = 2.0854, |mass| = 0.0521
+pt = 0.9731, phi = 2.9942, rap = 2.2515, |mass| = 0.0000
+pt = 2.4679, phi = 3.0890, rap = 2.0668, |mass| = 0.4181
+pt = 2.2629, phi = 2.7201, rap = 1.8501, |mass| = 0.1396
+pt = 2.4067, phi = 2.6740, rap = 1.8754, |mass| = 0.1396
+pt = 5.8516, phi = 2.7960, rap = 1.8007, |mass| = 0.1396
+pt = 5.8164, phi = 2.7803, rap = 1.8695, |mass| = 0.1396
+pt = 2.8969, phi = 6.2357, rap = -0.9621, |mass| = 0.0000
+pt = 4.2042, phi = 3.4258, rap = 0.5413, |mass| = 0.0000
+pt = 5.6895, phi = 3.4260, rap = 0.6768, |mass| = 0.0000
+pt = 13.7509, phi = 3.4120, rap = 0.7074, |mass| = 0.1396
+pt = 6.7198, phi = 3.4263, rap = 0.6685, |mass| = 0.1396
+pt = 1.7340, phi = 3.3710, rap = 0.5773, |mass| = 0.0000
+pt = 10.7997, phi = 3.4717, rap = 0.6706, |mass| = 0.0000
+pt = 10.1706, phi = 3.4104, rap = 0.6385, |mass| = 0.1396
+pt = 5.1586, phi = 3.4756, rap = 0.6166, |mass| = 0.1396
+pt = 5.3858, phi = 3.4490, rap = 0.7170, |mass| = 0.0000
+pt = 3.4646, phi = 3.4360, rap = 0.5910, |mass| = 0.0000
+pt = 8.3256, phi = 3.4533, rap = 0.6359, |mass| = 0.1396
+pt = 1.9006, phi = 3.4744, rap = 0.6420, |mass| = 0.0000
+pt = 2.0955, phi = 3.5194, rap = 0.5915, |mass| = 0.0000
+pt = 22.7084, phi = 0.0773, rap = -1.0854, |mass| = 0.4936
+pt = 24.4459, phi = 0.0579, rap = -1.0933, |mass| = 0.1396
+pt = 20.5108, phi = 0.0834, rap = -1.0851, |mass| = 0.1396
+pt = 12.6654, phi = 0.0757, rap = -1.0660, |mass| = 0.4977
+pt = 12.7933, phi = 0.1181, rap = -1.0377, |mass| = 0.1396
+pt = 3.6505, phi = 6.2190, rap = -1.0143, |mass| = 0.1319
+pt = 9.4544, phi = 3.4142, rap = 0.7452, |mass| = 0.4936
+pt = 1.6145, phi = 3.4793, rap = 0.6577, |mass| = 0.0000
+pt = 1.9264, phi = 3.4087, rap = 0.6874, |mass| = 0.0000
+pt = 0.1761, phi = 3.6197, rap = 0.5925, |mass| = 0.0000
+pt = 2.3729, phi = 3.5442, rap = 0.6111, |mass| = 0.0000
+pt = 10.2391, phi = 0.0731, rap = -1.0859, |mass| = 0.0000
+pt = 70.5496, phi = 0.0743, rap = -1.0811, |mass| = 0.0001
+pt = 3.4166, phi = 0.0345, rap = -1.0580, |mass| = 0.0000
+pt = 6.0000, phi = 0.0565, rap = -1.0434, |mass| = 0.0000
+pt = 5.5091, phi = 3.4245, rap = 0.6858, |mass| = 0.0000
+pt = 1.7564, phi = 3.4329, rap = 0.6449, |mass| = 0.0000
+pt = 4.4508, phi = 0.0586, rap = -1.0426, |mass| = 0.0000
+pt = 8.1149, phi = 0.0626, rap = -1.0644, |mass| = 0.0000
+pt = 2.5949, phi = 5.0940, rap = -2.8440, |mass| = 0.1396
+pt = 0.9266, phi = 3.7925, rap = -2.6181, |mass| = 0.1096
+pt = 0.7935, phi = 5.1006, rap = -2.8366, |mass| = 0.0000
+pt = 1.5483, phi = 2.9165, rap = 0.1176, |mass| = 0.1364
+pt = 0.2975, phi = 3.0096, rap = -3.2831, |mass| = 0.0000
+pt = 1.8579, phi = 0.7335, rap = 0.4255, |mass| = 0.1396
+pt = 0.9388, phi = 4.7690, rap = 1.4731, |mass| = 0.6753
+pt = 2.1279, phi = 5.2340, rap = 1.6192, |mass| = 0.9098
+pt = 1.5709, phi = 2.9748, rap = 0.1206, |mass| = 0.1337
+pt = 4.0321, phi = 5.8902, rap = 0.8995, |mass| = 0.1396
+pt = 0.9909, phi = 6.0737, rap = 0.8541, |mass| = 0.1139
+pt = 1.1087, phi = 5.8830, rap = 0.8746, |mass| = 0.0000
+pt = 1.6771, phi = 0.3563, rap = -0.3342, |mass| = 0.0000
+pt = 0.4587, phi = 0.7584, rap = -0.5473, |mass| = 0.6044
+pt = 0.7660, phi = 0.9729, rap = 0.0474, |mass| = 0.0000
+pt = 2.6460, phi = 0.8053, rap = 0.5295, |mass| = 0.9396
+pt = 0.1296, phi = 6.2096, rap = 0.9917, |mass| = 0.0551
+pt = 3.3981, phi = 3.1301, rap = -3.0963, |mass| = 0.0000
+pt = 2.0197, phi = 5.9042, rap = 0.9416, |mass| = 0.4228
+pt = 0.4814, phi = 0.6815, rap = 0.6313, |mass| = 0.0000
+pt = 1.9157, phi = 2.9511, rap = 0.0737, |mass| = 0.0000
+pt = 0.5987, phi = 2.9835, rap = 0.5077, |mass| = 0.0906
+pt = 1.1157, phi = 5.5777, rap = 1.5689, |mass| = 0.6715
+pt = 0.3107, phi = 2.6248, rap = 0.9718, |mass| = 0.2455
+pt = 1.8887, phi = 2.4207, rap = 0.8200, |mass| = 0.0000
+pt = 0.2720, phi = 1.8427, rap = 0.2980, |mass| = 0.2588
+pt = 0.5894, phi = 2.2633, rap = 0.5336, |mass| = 0.0000
+pt = 0.0581, phi = 2.3648, rap = -0.4499, |mass| = 0.2068
+pt = 0.7030, phi = 1.4696, rap = 0.8781, |mass| = 0.6745
+pt = 1.3624, phi = 5.4574, rap = -2.9496, |mass| = 0.4865
+pt = 2.0206, phi = 5.8966, rap = -3.3435, |mass| = 0.0000
+pt = 1.5458, phi = 5.6871, rap = -3.0433, |mass| = 0.6217
+pt = 0.2616, phi = 5.4112, rap = -3.4232, |mass| = 0.0000
+pt = 1.2545, phi = 3.7716, rap = 1.1266, |mass| = 0.1396
+pt = 0.8545, phi = 5.6925, rap = -3.0015, |mass| = 0.0000
+pt = 1.2836, phi = 5.2599, rap = -3.6581, |mass| = 0.0000
+pt = 0.9060, phi = 5.2605, rap = -2.9511, |mass| = 0.0000
+pt = 1.8318, phi = 2.2491, rap = 1.1824, |mass| = 0.4936
+pt = 1.4397, phi = 2.1470, rap = 1.1299, |mass| = 0.4392
+pt = 1.9234, phi = 2.6275, rap = 2.1787, |mass| = 0.7772
+pt = 0.6465, phi = 1.4775, rap = 0.8066, |mass| = 0.0000
+pt = 0.8705, phi = 2.1577, rap = 0.6338, |mass| = 0.7641
+pt = 0.6540, phi = 3.4751, rap = 0.6708, |mass| = 0.0000
+pt = 0.2580, phi = 3.4732, rap = 1.3242, |mass| = 0.0000
+pt = 1.6055, phi = 2.4614, rap = 1.2917, |mass| = 0.7927
+pt = 0.7058, phi = 2.4110, rap = 1.0565, |mass| = 0.0000
+pt = 0.5492, phi = 1.9752, rap = 0.7563, |mass| = 0.0000
+pt = 1.1092, phi = 0.4795, rap = -0.3768, |mass| = 0.8112
+pt = 1.1181, phi = 5.2473, rap = -2.5999, |mass| = 0.1315
+pt = 0.7314, phi = 0.9692, rap = 0.4178, |mass| = 0.0000
+pt = 1.3727, phi = 0.9594, rap = 0.0939, |mass| = 0.8060
+pt = 0.5052, phi = 0.8566, rap = 0.3299, |mass| = 0.0000
+pt = 1.2408, phi = 2.5866, rap = -0.0260, |mass| = 0.4511
+pt = 0.1636, phi = 2.9014, rap = 1.6933, |mass| = 0.2194
+pt = 1.7198, phi = 2.6652, rap = 1.4574, |mass| = 0.1396
+pt = 0.5203, phi = 2.3563, rap = 0.0151, |mass| = 0.0000
+pt = 1.5868, phi = 5.7996, rap = -3.1614, |mass| = 0.0000
+pt = 1.4457, phi = 5.9358, rap = -3.1711, |mass| = 0.0000
+pt = 0.3933, phi = 4.4399, rap = -3.1188, |mass| = 0.0000
+pt = 1.5569, phi = 3.6233, rap = 0.8190, |mass| = 0.9011
+pt = 1.0377, phi = 4.3266, rap = -2.7104, |mass| = 0.7060
+pt = 1.4854, phi = 1.2971, rap = 0.7623, |mass| = 0.4098
+pt = 1.1115, phi = 1.2803, rap = 0.5848, |mass| = 0.0000
+pt = 0.9409, phi = 2.4215, rap = 0.7229, |mass| = 0.0000
+pt = 0.5650, phi = 1.2481, rap = -0.2241, |mass| = 0.0000
+pt = 2.0912, phi = 1.9405, rap = 1.0063, |mass| = 0.4936
+pt = 1.2714, phi = 1.8193, rap = 0.9987, |mass| = 0.3618
+pt = 1.0364, phi = 5.0883, rap = 1.7570, |mass| = 0.0000
+
+# original hard jets
+pt = 89.57, rap = 2.088, mass = 21.55, width = 0.1866
+pt = 144.5, rap = 0.6689, mass = 19.34, width = 0.06909
+pt = 220.1, rap = -1.068, mass = 18.09, width = 0.0337
+
+# unsubtracted full jets
+pt = 115.3, rap = 2.08, mass = 45.33, width = 0.2569
+pt = 167.3, rap = 0.6891, mass = 58.31, width = 0.1268
+pt = 230.5, rap = -1.065, mass = 46.2, width = 0.05647
+
+# subtracted full jets
+pt = 86.45, rap = 2.077, mass = 22.24, width = 0.1965
+pt = 142.7, rap = 0.6767, mass = 20.41, width = 0.06754
+pt = 207, rap = -1.072, mass = 8.063, width = 0.02351
+

@@ -1,0 +1,20 @@
+2017/01/20: release of version 1.1.4:
+           - fixed few bugs concerning the correction of masses
+
+2016/11/14: release of version 1.1.3:
+           - updated rho rescaling functions
+	   - new function for pileup subtraction: sequential_subtraction
+	   - possibility to change the computation of distance between particles and background proxies
+
+2016/03/11: release of version 1.1.2:
+	   - added two FunctionOfPseudojet<object> classes for rho rescaling: one using root TH1 rapidity parametrization, and the other for heavy ions rapidity-azimuth parametrization
+2016/02/09: release of version 1.1.1:
+	   - faster algortihm for subtraction
+	   - added new function for Constituent Subtraction using tracking information
+2015/11/05: release of version 1.1.0:
+	   - added FastJet v3.1 rho_m support
+	   - simplified way for Constituent Subtraction of the whole event
+	   - updated the meaning of parameter max_deltaR
+	   - added new parameter to the definition of the distance
+	   - added examples for the whole event subtraction
+2014/04/06: release of version 1.0.0
