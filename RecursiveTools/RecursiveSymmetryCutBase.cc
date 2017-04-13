@@ -36,7 +36,7 @@ LimitedWarning RecursiveSymmetryCutBase::_mu2_gt1_warning;
 //LimitedWarning RecursiveSymmetryCutBase::_nonca_warning;
 LimitedWarning RecursiveSymmetryCutBase::_explicit_ghost_warning;
 
-bool RecursiveSymmetryCutBase::_verbose = false;
+std::atomic<bool> RecursiveSymmetryCutBase::_verbose {false};
 
 //----------------------------------------------------------------------
 PseudoJet RecursiveSymmetryCutBase::result(const PseudoJet & jet) const {

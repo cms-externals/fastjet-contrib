@@ -383,8 +383,13 @@ std::vector<LightLikeAxis> DefaultMeasure::UpdateAxesFast(const std::vector <Lig
                                                           ) const {
    assert(old_axes.size() == N);
    
+   // some storage, declared static to save allocation/re-allocation costs
    LightLikeAxis new_axes[N];
    fastjet::PseudoJet new_jets[N];
+   for (int n = 0; n < N; ++n) {
+      new_axes[n].reset(0.0,0.0,0.0,0.0);
+      new_jets[n].reset_momentum(0.0,0.0,0.0,0.0);
+   }
 
    double precision = accuracy;  //TODO: actually cascade this in
    
