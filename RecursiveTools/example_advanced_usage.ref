@@ -1,17 +1,3 @@
-# read an event with 354 particles
-#--------------------------------------------------------------------------
-#                         FastJet release 3.0.6
-#                 M. Cacciari, G.P. Salam and G. Soyez                  
-#     A software package for jet finding and analysis at colliders      
-#                           http://fastjet.fr                           
-#	                                                                      
-# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
-# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
-#                                                                       
-# FastJet is provided without warranty under the terms of the GNU GPLv2.
-# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
-# and 3rd party plugin jet algorithms. See COPYING file for details.
-#--------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 Soft Drops to be tested:
 ---------------------------------------------------------------------------------------------
@@ -149,7 +135,7 @@ b=3 z=.2 larger_mt   71.5847  20.0943 -1.1761  6.1254      37  0.6803  0.0730  0
  b=3 z=.2 larger_m   71.5847  20.0943 -1.1761  6.1254      37  0.6803  0.0730  0.5627  0.0111
    b=2 z=.1 mu=1.0   71.5847  20.0943 -1.1761  6.1254      37  0.6803  0.0730  0.5627  0.0111
    b=2 z=.1 mu=0.8   71.5847  20.0943 -1.1761  6.1254      37  0.6803  0.0730  0.5627  0.0111
-   b=2 z=.1 mu=0.5 ---- untagged jet ----
+   b=2 z=.1 mu=0.5   10.2806   0.1396 -1.1761  6.0554       1 -1.0000 -1.0000 -1.0000  0.0000
      b=2.0 z=.2 kT   72.9429  23.4022 -1.1908  6.1199      43  0.2517  0.3453  0.4508  0.0000
      b=1.0 z=.2 kT   72.9429  23.4022 -1.1908  6.1199      43  0.2517  0.3453  0.4508  0.0000
      b=0.5 z=.2 kT   72.9429  23.4022 -1.1908  6.1199      43  0.2517  0.3453  0.4508  0.0000

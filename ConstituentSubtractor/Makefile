@@ -3,7 +3,7 @@
 FASTJETCONFIG=fastjet-config
 PREFIX=`$(FASTJETCONFIG) --prefix`
 CXX=g++
-CXXFLAGS= -O3 -Wall -g
+CXXFLAGS= -O3 -Wall -g -fPIC
 install_script = $(SHELL) ../utils/install-sh
 check_script = ../utils/check.sh
 
@@ -15,13 +15,15 @@ check_script = ../utils/check.sh
 #------------------------------------------------------------------------
 # things that are specific to this contrib
 NAME=ConstituentSubtractor
-SRCS=ConstituentSubtractor.cc
-EXAMPLES=example
-INSTALLED_HEADERS=ConstituentSubtractor.hh
+SRCS=ConstituentSubtractor.cc RescalingClasses.cc
+EXAMPLES=example_whole_event example example_background_rescaling example_whole_event_using_charged_info
+INSTALLED_HEADERS=ConstituentSubtractor.hh RescalingClasses.hh
 #------------------------------------------------------------------------
 
 CXXFLAGS+= $(shell $(FASTJETCONFIG) --cxxflags)
 LDFLAGS += -lm $(shell $(FASTJETCONFIG) --libs)
+#CXXFLAGS+= $(shell root-config --cflags)
+#LDFLAGS+= -lm $(shell root-config --libs)
 
 OBJS  = $(SRCS:.cc=.o)
 EXAMPLES_SRCS  = $(EXAMPLES:=.cc)

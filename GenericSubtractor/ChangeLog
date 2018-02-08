@@ -1,3 +1,62 @@
+2016-03-30  Gregory Soyez  <soyez@fastjet.fr>
+
+	* VERSION:
+	release of version 1.3.1
+
+2016-03-29  Gregory Soyez  <soyez@fastjet.fr>
+
+	* NEWS:
+	updated in preparation of v1.3.1 release
+
+	* GenericSubtractor.cc:
+	replaced an auto_ptr by a SharedPtr (following the deprecation of
+	auto_ptr in C++11)
+
+	* VERSION:
+	upped version number to 1.3.1-devel
+
+2015-09-21  Gregory Soyez  <soyez@fastjet.fr> + Gavin + Matteo
+
+	* NEWS:
+	* VERSION:
+	set version number to 1.3.0
+
+	* GenericSubtractor.{hh,cc}:
+	added a warning when rhom is non-zero and unused (FJ>=3.1)
+
+	* NEWS:
+	prepared for the release of GenericSubtractor v1.3.0
+
+	* GenericSubtractor.hh:
+	* GenericSubtractor.cc:
+	clarified comments and renamed a few things:
+	- added set_common_bge_for_rho_and_rhom() and deprecated
+	  use_common_bge_for_rho_and_rhom()
+	- added set_use_bge_rhom_rhom() to tweak how rho_m is obtained
+	  when GenericSubtractor has been constructed with two estimators
+	- added common_bge_for_rho_and_rhom() and use_bge_rhom_rhom()
+	  to retrieve the behaviour
+
+2015-09-10  Gregory Soyez  <soyez@fastjet.fr>
+
+	* GenericSubtractor.cc:
+	added GenericSubtractor::use_rhom_from_bge_rhom(bool value)
+	to allow the use of bge_rhom->rho_m() instead of bge_rhom->rho()
+	(FJ>=3.1 only)
+
+2015-09-03  Gregory Soyez  <soyez@fastjet.fr>
+
+	* GenericSubtractor.cc:
+	added support for the internal calculation of rhom for versions of
+	FJ >=3.1 and BackgroundEstimators which support an internal
+	calculation of rho_m.
+
+	* GenericSubtractor.hh (contrib):
+	updated the (doxygen) desciption of the class
+
+	* README:
+	added a description of teh GenericSubtraction usage (basic and advanced)
+
 2013-05-28  Gavin Salam  <gavin.salam@cern.ch>
 
 	* NEWS:

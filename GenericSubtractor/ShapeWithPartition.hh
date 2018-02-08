@@ -1,4 +1,4 @@
-// $Id: Shapes.hh 2995 2013-01-28 17:10:55Z salam $
+// $Id: ShapeWithPartition.hh 859 2015-09-21 10:11:32Z gsalam $
 //
 // Copyright (c) 2012-, Matteo Cacciari, Jihun Kim, Gavin P. Salam and Gregory Soyez
 //
