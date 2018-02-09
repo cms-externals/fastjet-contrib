@@ -11,7 +11,7 @@
 /// \endverbatim
 //----------------------------------------------------------------------
 
-// $Id: example_softdrop.cc 686 2014-06-14 03:25:09Z jthaler $
+// $Id: example_advanced_usage.cc 1016 2017-04-20 16:51:52Z knzhou $
 //
 // Copyright (c) 2014, Gavin P. Salam
 //

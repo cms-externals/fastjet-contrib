@@ -1,1 +1,47 @@
+2017/12/18: release of version 1.2.4:
+	    - Added back the test example_whole_event_using_charged_info. The problem with this test was fixed by printing all the output particles (also with zero pt and zeo mtMinusPt values).
+
+
+2017/09/08: release of version 1.2.3:
+	    - Fixed warning for too low pt particles in case of active area computation
+	    - Temporarily removed the test example_whole_event_using_charged_info
+
+2017/08/21: release of version 1.2.2:
+	    - Added function set_max_standardDeltaR for backward compatibility. It was replaced in version 1.1.3 by function set_max_distance. In this version, it does the same as the function set_max_distance.
+	    - Further speed improvement for whole event subtraction (especially for small _max_distance parameters, such as 0.25)
+
+
+2017/08/07: release of version 1.2.1:
+	    - Fixed bug for distance enum ConstituentSubtractor::angle
+	    - Added check for the jet-by-jet correction to not use the speed optimization
+
+2017/07/20: release of version 1.2.0:
+	    - Important change for the output corrected particles in case of correction of massive particles. The corrected zero pt particles with non-zero corrected delta_m (massive particles in rest) are now included in the output by default. This is the recommended usage. The user can change this behaviour by using function "set_remove_all_zero_pt_particles". By using argument true, all the zero pt corrected particles are removed.
+	    - Significant change in the speed of the whole event CS procedure. For small values of the _max_distance parameter (~0.25), the speed is now ~10-times greater.
+	    - Added new rescaling classes: rapidity vs azimuth dependence in TH2 Root histogram or in vector<vector<double> >, and rapidity vs azimuth dependence for heavy ions where the rapidity dependence is taken from a vector<double>.
+
+2017/07/11: release of version 1.1.6:
+	    - added new functions "get_ghosts" and "get_ghosts_area".
+	    - now the user can modify the ghosts outside the CS after constructing them with function "construct_ghosts_uniformly" and getting them with "get_ghosts" and "get_ghosts_area"
+	    - added new rescaling class useful for heavy ion events. Now the rapidity dependence can be taken from a Root TH1 object.
+
+2017/01/20: release of version 1.1.4:
+           - fixed few bugs concerning the correction of masses
+
+2016/11/14: release of version 1.1.3:
+           - updated rho rescaling functions
+	   - new function for pileup subtraction: sequential_subtraction
+	   - possibility to change the computation of distance between particles and background proxies
+
+2016/03/11: release of version 1.1.2:
+	   - added two FunctionOfPseudojet<object> classes for rho rescaling: one using root TH1 rapidity parametrization, and the other for heavy ions rapidity-azimuth parametrization
+2016/02/09: release of version 1.1.1:
+	   - faster algortihm for subtraction
+	   - added new function for Constituent Subtraction using tracking information
+2015/11/05: release of version 1.1.0:
+	   - added FastJet v3.1 rho_m support
+	   - simplified way for Constituent Subtraction of the whole event
+	   - updated the meaning of parameter max_deltaR
+	   - added new parameter to the definition of the distance
+	   - added examples for the whole event subtraction
 2014/04/06: release of version 1.0.0

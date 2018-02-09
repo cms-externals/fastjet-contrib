@@ -306,15 +306,15 @@ else
 fi
 
 # write out the Makefile
-sed -e "s/@CONTRIB_BUILD_LIST@/$escaped_built_list/g;\
-        s/@FJCONFIG@/$escaped_fjconfig/g;\
-        s/@PREFIX@/${escaped_prefix}/g;\
-        s/template gets processed/was generated automatically/;\
-        s/@contrib_commandline@/$escaped_commandline/;\
-        s/@FRAGILE_SHARED_SRC_LIST@/$escaped_srclist/;\
-        s/@DYNLIBOPT@/$dynlibopt/g;s/@DYNLIBEXT@/$dynlibext/g;\
-        s/@DYNLIBPOSTPROC@ \(.*\)/$dynlibpostproc/g;\
-        s/any edits fit with the rest of the build system/you only edit Makefile.in/" Makefile.in > Makefile
+sed -e "s/@CONTRIB_BUILD_LIST@/$escaped_built_list/g" \
+    -e "s/@FJCONFIG@/$escaped_fjconfig/g" \
+    -e "s/@PREFIX@/${escaped_prefix}/g" \
+    -e "s/template gets processed/was generated automatically/" \
+    -e "s/@contrib_commandline@/$escaped_commandline/" \
+    -e "s/@FRAGILE_SHARED_SRC_LIST@/$escaped_srclist/" \
+    -e "s/@DYNLIBOPT@/$dynlibopt/g;s/@DYNLIBEXT@/$dynlibext/g" \
+    -e "s/@DYNLIBPOSTPROC@ \(.*\)/$dynlibpostproc/g" \
+    -e "s/any edits fit with the rest of the build system/you only edit Makefile.in/" Makefile.in > Makefile
 
 #------------------------------------------------------------------------
 # write output and config.log file

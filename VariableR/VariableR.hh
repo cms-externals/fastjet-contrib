@@ -1,10 +1,10 @@
 //  VariableR Package
 //  Questions/Comments?  jthaler@jthaler.net
 //
-//  Copyright (c) 2009-2013
-//  David Krohn, Jesse Thaler, and Lian-Tao Wang
+//  Copyright (c) 2009-2016
+//  David Krohn, Gregory Soyez, Jesse Thaler, and Lian-Tao Wang
 //
-//  $Id: VariableR.hh 599 2014-04-18 14:29:54Z jthaler $
+//  $Id: VariableR.hh 903 2016-03-09 16:31:58Z jthaler $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
