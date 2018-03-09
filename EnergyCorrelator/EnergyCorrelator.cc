@@ -6,7 +6,7 @@
 //  Copyright (c) 2013-2016
 //  Andrew Larkoski, Lina Necib, Gavin Salam, and Jesse Thaler
 //
-//  $Id: EnergyCorrelator.cc 1098 2018-01-07 20:17:52Z linoush $
+//  $Id: EnergyCorrelator.cc 1106 2018-02-09 01:47:28Z linoush $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -103,6 +103,13 @@ namespace contrib {
             } else {
                 assert(_N <= 5);
             }
+            // Deleting arrays
+            delete[] energyStore;
+
+            for (unsigned int i = 0; i < particles.size(); i++) {
+                delete[] angleStore[i];
+            }
+            delete[] angleStore;
 
         } else if (_strategy == slow) {
             if (_N == 3) {
@@ -459,9 +466,11 @@ namespace contrib {
 
             unsigned int nC = particles.size();
             // Make energy storage
+//            double energyStore[nC];
             double *energyStore = new double[nC];
 
             // Make angular storage
+//            double angleStore[nC][nC];
             double **angleStore = new double*[nC];
 
             precompute_energies_and_angles(particles, energyStore, angleStore);
@@ -481,6 +490,13 @@ namespace contrib {
             } else {
                 assert(_N <= 5);
             }
+            // Deleting arrays
+            delete[] energyStore;
+
+            for (unsigned int i = 0; i < particles.size(); i++) {
+                delete[] angleStore[i];
+            }
+            delete[] angleStore;
         } else if (_strategy == EnergyCorrelator::slow) {
             if (_N == 3) {
                 unsigned int N_total = 3;
@@ -600,7 +616,6 @@ namespace contrib {
         } else {
             assert(_strategy == EnergyCorrelator::slow ||  _strategy == EnergyCorrelator::storage_array);
         }
-
         return answer;
     }
 

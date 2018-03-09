@@ -1,3 +1,7 @@
+2018-02-15: release of 1.033 with
+* update of EnergyCorrelator to 1.3.1
+  (memory leak fixed, functionality unchanged)
+
 2018-01-17: release of 1.032 with
 * update of EnergyCorrelator to 1.3.0
   (Speed up of core ECF code, functionality unchanged)

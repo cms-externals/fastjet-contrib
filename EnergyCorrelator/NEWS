@@ -1,3 +1,5 @@
+2018-02-08: Release of version 1.3.1:
+   Fixing memory leak, functionality unchanged.
 2018-01-09: Release of version 1.3.0:
    Speed up of core ECF code, functionality unchanged.
 2016-10-07: Release of version 1.2.0:
