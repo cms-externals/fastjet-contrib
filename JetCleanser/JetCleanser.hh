@@ -105,7 +105,13 @@ public:
 private:
   // Modification to satisfy C++11 (thanks to Gavin Salam)
   //static const double jc_zero = 1.0e-6;
+//CMS change:
+// Change not endorsed by fastjet collaboration
+#if __cplusplus >= 201103L
+  static constexpr double jc_zero = 1.0e-6;
+#else
   static const double jc_zero;
+#endif 
 
   double _rsub;
   double _fcut;
