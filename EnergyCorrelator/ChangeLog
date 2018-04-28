@@ -1,3 +1,73 @@
+2018-02-08 Jesse Thaler  <jthaler@jthaler.net>
+
+	* NEWS
+	* VERSION
+	Making 1.3.1
+
+
+2018-02-08 Lina Necib  <lnecib@caltech.edu>
+
+	* EnergyCorrelator.cc
+	Debugging memory allocation, deleting energyStore/angleStore properly this time
+
+
+2018-02-04 Lina Necib  <lnecib@caltech.edu>
+
+	* EnergyCorrelator.cc
+	Debugging memory allocation, deleting energyStore/angleStore
+
+	* VERSION
+	Making 1.3.1-devel  
+
+2018-01-09 Jesse Thaler  <jthaler@jthaler.net>
+
+	* NEWS
+	* VERSION
+	Finalizing 1.3.0
+
+2018-01-09 Lina Necib  <lnecib@caltech.edu>
+
+	* NEWS
+	Preparing for version candidate
+
+	* VERSION
+	Making 1.3.0-rc1
+
+2018-01-07 Lina Necib  <lnecib@caltech.edu>
+
+	* EnergyCorrelator.hh/cc
+	Sped up evaluations of ECFs.
+	Functions are defined in ECFs and called to evaluate ECFGs.
+
+	* VERSION
+	Making 1.2.3-devel
+
+
+2018-01-04 Lina Necib  <lnecib@caltech.edu>
+
+	* EnergyCorrelator.hh/cc
+	Sped up evaluations of ECFG by a factor of 4.
+	Refactored some of the code in functions
+
+	* VERSION
+	Making 1.2.2-devel
+
+	* example.cc
+	Added some timings tests for ECFGs, N2, and N3.
+
+
+2017-01-25 Jesse Thaler  <jthaler@jthaler.net>
+
+	* EnergyCorrelator.hh/cc
+	Converting all _N to unsigned integers, removing _N < 0 warning
+	Added warning to constructors for N < 1 in some cases.
+
+	* VERSION
+	Making 1.2.1-devel
+
+	* Makefile
+	Added -Wextra to compiler flags
+
 2016-10-07 Jesse Thaler  <jthaler@jthaler.net>
 
 	* AUTHORS/COPYING:

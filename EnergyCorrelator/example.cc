@@ -7,7 +7,7 @@
 // Copyright (c) 2013-2016
 // Andrew Larkoski, Lina Necib, Gavin Salam, and Jesse Thaler
 //
-// $Id: example.cc 977 2016-09-23 21:35:09Z linoush $
+// $Id: example.cc 1097 2018-01-05 00:04:20Z linoush $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -326,8 +326,8 @@ void analyze(const vector<PseudoJet> & input_particles) {
                     EnergyCorrelatorNseries N2(2,beta,measurelist[M]);
                     EnergyCorrelatorNseries N3(3,beta,measurelist[M]);
 
-
                     printf("%7.3f %14.6f %14.6f %14.6f \n",beta,N1(myJet),N2(myJet),N3(myJet));
+
                 }
                 cout << "-------------------------------------------------------------------------------------" << endl << endl;
 
@@ -568,13 +568,6 @@ void analyze(const vector<PseudoJet> & input_particles) {
                     num_iter = 10;
                     clock_begin = clock();
 
-                    for (int t = 0; t < num_iter; t++) {
-                        EnergyCorrelatorN2 N2(beta,measurelist[M],EnergyCorrelator::slow);
-                        N2(myJet);
-                    }
-                    clock_end = clock();
-                    cout << "Slow method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per N2"<< endl;
-
                     num_iter = 300;
                     clock_begin = clock();
                     for (int t = 0; t < num_iter; t++) {
@@ -582,18 +575,11 @@ void analyze(const vector<PseudoJet> & input_particles) {
                         N2(myJet);
                     }
                     clock_end = clock();
+                    EnergyCorrelatorN2 N2test(beta,measurelist[M],EnergyCorrelator::storage_array);
+                    cout << "Beta is: "<< beta << endl;
+                    cout << "Result of N2: "<< N2test(myJet) << endl;
                     cout << "Storage array method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per N2"<< endl;
 
-                    // test N3
-                    num_iter = 10;
-                    clock_begin = clock();
-
-                    for (int t = 0; t < num_iter; t++) {
-                        EnergyCorrelatorN3 N3(beta,measurelist[M],EnergyCorrelator::slow);
-                        N3(myJet);
-                    }
-                    clock_end = clock();
-                    cout << "Slow method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per N3"<< endl;
 
                     num_iter = 300;
                     clock_begin = clock();
@@ -602,7 +588,52 @@ void analyze(const vector<PseudoJet> & input_particles) {
                         N3(myJet);
                     }
                     clock_end = clock();
+                    EnergyCorrelatorN3 N3test(beta,measurelist[M],EnergyCorrelator::storage_array);
+                    cout << "Beta is: "<< beta << endl;
+                    cout << "Result of N3: "<< N3test(myJet) << endl;
                     cout << "Storage array method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per N3"<< endl;
+
+
+
+
+                    num_iter = 300;
+                    clock_begin = clock();
+                    for (int t = 0; t < num_iter; t++) {
+                        EnergyCorrelatorGeneralized ECF1(2,3, beta,  measurelist[M]);
+                        ECF1(myJet);
+                    }
+                    clock_end = clock();
+                    EnergyCorrelatorGeneralized ECF1test(2,3, beta,  measurelist[M]);
+                    cout << "Beta is: "<< beta << endl;
+                    cout << "Result of 2e3: "<< ECF1test(myJet) << endl;
+                    cout << "Storage array method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per 2e3"<< endl;
+
+
+                    num_iter = 300;
+                    clock_begin = clock();
+                    for (int t = 0; t < num_iter; t++) {
+                        EnergyCorrelatorGeneralized ECF3(2,4, beta,  measurelist[M]);
+                        ECF3(myJet);
+                    }
+                    clock_end = clock();
+                    EnergyCorrelatorGeneralized ECF2test(2,4, beta,  measurelist[M]);
+                    cout << "Beta is: "<< beta << endl;
+                    cout << "Result of 2e4: "<< ECF2test(myJet) << endl;
+                    cout << "Storage array method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per 2e4"<< endl;
+
+
+//                    num_iter = 300;
+//                    clock_begin = clock();
+//                    for (int t = 0; t < num_iter; t++) {
+//                        EnergyCorrelatorGeneralized ECF5(2,5, beta,  measurelist[M]);
+//                        ECF5(myJet);
+//                    }
+//                    clock_end = clock();
+//                    EnergyCorrelatorGeneralized ECF5test(2,5, beta,  measurelist[M]);
+//                    cout << "Beta is: "<< beta << endl;
+//                    cout << "Result of 2e5: "<< ECF5test(myJet) << endl;
+//                    cout << "Storage array method: " << (clock_end-clock_begin)/double(CLOCKS_PER_SEC*num_iter)*1000 << " ms per 2e5"<< endl;
+//
 
                     // test M2
                     num_iter = 10;

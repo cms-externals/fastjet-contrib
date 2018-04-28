@@ -6,7 +6,7 @@
 //  Copyright (c) 2013-2016
 //  Andrew Larkoski, Lina Necib, Gavin Salam, and Jesse Thaler
 //
-//  $Id: EnergyCorrelator.cc 977 2016-09-23 21:35:09Z linoush $
+//  $Id: EnergyCorrelator.cc 1106 2018-02-09 01:47:28Z linoush $
 //----------------------------------------------------------------------
 // This file is part of FastJet contrib.
 //
@@ -82,95 +82,34 @@ namespace contrib {
         if (_strategy == storage_array) {
 
             // For N > 2, fill static storage array to save computation time.
-
+            unsigned int nC = particles.size();
             // Make energy storage
-            std::vector<double> energyStore;
-            energyStore.resize(particles.size());
+            double *energyStore = new double[nC];
 
             // Make angular storage
-            std::vector< std::vector<double> > angleStore;
-            angleStore.resize(particles.size());
-            for (unsigned int i = 0; i < angleStore.size(); i++) {
-                angleStore[i].resize(i);
-            }
+            double **angleStore = new double*[nC];
 
-            // Fill storage with energy/angle information
-            for (unsigned int i = 0; i < particles.size(); i++) {
-                energyStore[i] = energy(particles[i]);
-                for (unsigned int j = 0; j < i; j++) {
-                    angleStore[i][j] = pow(angleSquared(particles[i],particles[j]), half_beta);
-                }
-            }
+            precompute_energies_and_angles(particles, energyStore, angleStore);
 
+            // Define n_angles so it is the same function for ECFs and ECFGs
+            unsigned int n_angles = _N * (_N - 1) / 2;
             // now do recursion
             if (_N == 3) {
-                for (unsigned int i = 2; i < particles.size(); i++) {
-                    for (unsigned int j = 1; j < i; j++) {
-                        double ans_ij = energyStore[i]
-                                        * energyStore[j]
-                                        * angleStore[i][j];
-                        for (unsigned int k = 0; k < j; k++) {
-                            answer += ans_ij
-                                      * energyStore[k]
-                                      * angleStore[i][k]
-                                      * angleStore[j][k];
-                        }
-                    }
-                }
+                answer = evaluate_n3(nC, n_angles, energyStore, angleStore);
             } else if (_N == 4) {
-                for (unsigned int i = 3; i < particles.size(); i++) {
-                    for (unsigned int j = 2; j < i; j++) {
-                        double ans_ij = energyStore[i]
-                                        * energyStore[j]
-                                        * angleStore[i][j];
-                        for (unsigned int k = 1; k < j; k++) {
-                            double ans_ijk = ans_ij
-                                             * energyStore[k]
-                                             * angleStore[i][k]
-                                             * angleStore[j][k];
-                            for (unsigned int l = 0; l < k; l++) {
-                                answer += ans_ijk
-                                          * energyStore[l]
-                                          * angleStore[i][l]
-                                          * angleStore[j][l]
-                                          * angleStore[k][l];
-                            }
-                        }
-                    }
-                }
+                answer = evaluate_n4(nC, n_angles, energyStore, angleStore);
             } else if (_N == 5) {
-                for (unsigned int i = 4; i < particles.size(); i++) {
-                    for (unsigned int j = 3; j < i; j++) {
-                        double ans_ij = energyStore[i]
-                                        * energyStore[j]
-                                        * angleStore[i][j];
-                        for (unsigned int k = 2; k < j; k++) {
-                            double ans_ijk = ans_ij
-                                             * energyStore[k]
-                                             * angleStore[i][k]
-                                             * angleStore[j][k];
-                            for (unsigned int l = 1; l < k; l++) {
-                                double ans_ijkl = ans_ijk
-                                                  * energyStore[l]
-                                                  * angleStore[i][l]
-                                                  * angleStore[j][l]
-                                                  * angleStore[k][l];
-                                for (unsigned int m = 0; m < l; m++) {
-                                    answer += ans_ijkl
-                                              * energyStore[m]
-                                              * angleStore[i][m]
-                                              * angleStore[j][m]
-                                              * angleStore[k][m]
-                                              * angleStore[l][m];
-                                }
-                            }
-                        }
-                    }
-                }
-
+                answer = evaluate_n5(nC, n_angles, energyStore, angleStore);
             } else {
                 assert(_N <= 5);
             }
+            // Deleting arrays
+            delete[] energyStore;
+
+            for (unsigned int i = 0; i < particles.size(); i++) {
+                delete[] angleStore[i];
+            }
+            delete[] angleStore;
 
         } else if (_strategy == slow) {
             if (_N == 3) {
@@ -284,14 +223,198 @@ namespace contrib {
         }
     }
 
+
+    double EnergyCorrelator::multiply_angles(double angle_list[], int n_angles, unsigned int N_total) const {
+        // Compute the product of the n_angles smallest angles.
+        // std::partial_sort could also work, but since angle_list contains
+        // less than 10 elements, this way is usually faster.
+        double product = 1;
+
+        for (int a = 0; a < n_angles; a++) {
+            double cur_min = angle_list[0];
+            int cur_min_pos = 0;
+            for (unsigned int b = 1; b < N_total; b++) {
+                if (angle_list[b] < cur_min) {
+                    cur_min = angle_list[b];
+                    cur_min_pos = b;
+                }
+            }
+
+            // multiply it by the next smallest
+            product *= cur_min;
+            angle_list[cur_min_pos] = INT_MAX;
+        }
+        return product;
+    }
+
+    void EnergyCorrelator::precompute_energies_and_angles(std::vector<fastjet::PseudoJet> const &particles, double* energyStore, double** angleStore) const {
+        // Fill storage with energy/angle information
+        unsigned int nC = particles.size();
+        for (unsigned int i = 0; i < nC; i++) {
+            angleStore[i] = new double[i];
+        }
+
+        double half_beta = _beta/2.0;
+        for (unsigned int i = 0; i < particles.size(); i++) {
+            energyStore[i] = energy(particles[i]);
+            for (unsigned int j = 0; j < i; j++) {
+                if (half_beta == 1.0){
+                    angleStore[i][j] = angleSquared(particles[i], particles[j]);
+                } else {
+                    angleStore[i][j] = pow(angleSquared(particles[i], particles[j]), half_beta);
+                }
+            }
+        }
+    }
+
+    double EnergyCorrelator::evaluate_n3(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+        unsigned int N_total = 3;
+        double angle1, angle2, angle3;
+        double angle;
+        double answer = 0;
+
+        for (unsigned int i = 2; i < nC; i++) {
+            for (unsigned int j = 1; j < i; j++) {
+                double mult_energy_i_j = energyStore[i] * energyStore[j];
+
+                for (unsigned int k = 0; k < j; k++) {
+                    angle1 = angleStore[i][j];
+                    angle2 = angleStore[i][k];
+                    angle3 = angleStore[j][k];
+
+                    double angle_list[] = {angle1, angle2, angle3};
+
+                    if (n_angles == N_total) {
+                        angle = angle1 * angle2 * angle3;
+                    } else {
+                        angle = multiply_angles(angle_list, n_angles, N_total);
+                    }
+
+                    answer += mult_energy_i_j
+                              * energyStore[k]
+                              * angle;
+                }
+            }
+        }
+        return answer;
+    }
+
+    double EnergyCorrelator::evaluate_n4(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+        double answer = 0;
+        double angle1, angle2, angle3, angle4, angle5, angle6;
+        unsigned int N_total = 6;
+        double angle;
+
+        for (unsigned int i = 3; i < nC; i++) {
+            for (unsigned int j = 2; j < i; j++) {
+                for (unsigned int k = 1; k < j; k++) {
+                    for (unsigned int l = 0; l < k; l++) {
+
+                        angle1 = angleStore[i][j];
+                        angle2 = angleStore[i][k];
+                        angle3 = angleStore[i][l];
+                        angle4 = angleStore[j][k];
+                        angle5 = angleStore[j][l];
+                        angle6 = angleStore[k][l];
+
+                        double angle_list[] = {angle1, angle2, angle3, angle4, angle5, angle6};
+
+                        if (n_angles == N_total) {
+                            angle = angle1 * angle2 * angle3 * angle4 * angle5 * angle6;
+                        } else {
+                            angle = multiply_angles(angle_list, n_angles, N_total);
+                        }
+
+                        answer += energyStore[i]
+                                  * energyStore[j]
+                                  * energyStore[k]
+                                  * energyStore[l]
+                                  * angle;
+                    }
+                }
+            }
+        }
+        return answer;
+    }
+
+    double EnergyCorrelator::evaluate_n5(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+
+        double answer = 0;
+        double angle1, angle2, angle3, angle4, angle5, angle6, angle7, angle8, angle9, angle10;
+        unsigned int N_total = 10;
+        double angle;
+
+        for (unsigned int i = 4; i < nC; i++) {
+            for (unsigned int j = 3; j < i; j++) {
+                for (unsigned int k = 2; k < j; k++) {
+                    for (unsigned int l = 1; l < k; l++) {
+                        for (unsigned int m = 0; m < l; m++) {
+
+                            angle1 = angleStore[i][j];
+                            angle2 = angleStore[i][k];
+                            angle3 = angleStore[i][l];
+                            angle4 = angleStore[i][m];
+                            angle5 = angleStore[j][k];
+                            angle6 = angleStore[j][l];
+                            angle7 = angleStore[j][m];
+                            angle8 = angleStore[k][l];
+                            angle9 = angleStore[k][m];
+                            angle10 = angleStore[l][m];
+
+                            double angle_list[] = {angle1, angle2, angle3, angle4, angle5, angle6, angle7, angle8,
+                                                   angle9, angle10};
+
+                            angle = multiply_angles(angle_list, n_angles, N_total);
+
+                            answer += energyStore[i]
+                                      * energyStore[j]
+                                      * energyStore[k]
+                                      * energyStore[l]
+                                      * energyStore[m]
+                                      * angle;
+                        }
+                    }
+                }
+            }
+        }
+        return answer;
+    }
+
+
+
+    double EnergyCorrelatorGeneralized::multiply_angles(double angle_list[], int n_angles, unsigned int N_total) const {
+
+        return _helper_correlator.multiply_angles(angle_list, n_angles, N_total);
+    }
+
+    void EnergyCorrelatorGeneralized::precompute_energies_and_angles(std::vector<fastjet::PseudoJet> const &particles, double* energyStore, double** angleStore) const {
+
+        return _helper_correlator.precompute_energies_and_angles(particles, energyStore, angleStore);
+    }
+
+    double EnergyCorrelatorGeneralized::evaluate_n3(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+
+        return _helper_correlator.evaluate_n3(nC, n_angles, energyStore, angleStore);
+    }
+
+    double EnergyCorrelatorGeneralized::evaluate_n4(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+
+        return _helper_correlator.evaluate_n4(nC, n_angles, energyStore, angleStore);
+    }
+
+    double EnergyCorrelatorGeneralized::evaluate_n5(unsigned int nC, unsigned int n_angles, double* energyStore, double** angleStore) const {
+
+        return _helper_correlator.evaluate_n5(nC, n_angles, energyStore, angleStore);
+    }
+
     double EnergyCorrelatorGeneralized::result(const PseudoJet& jet) const {
 
         // if jet does not have constituents, throw error
         if (!jet.has_constituents()) throw Error("EnergyCorrelator called on jet with no constituents.");
 
         // Throw an error if N < 0
-        if (_N < 0 ) throw Error("N cannot be negative");
-        
+        // Not needed if N is unsigned integer
+        //if (_N < 0 ) throw Error("N cannot be negative");
         // get N = 0 case out of the way
         if (_N == 0) return 1.0;
 
@@ -341,150 +464,39 @@ namespace contrib {
 
             // For N > 2, fill static storage array to save computation time.
 
+            unsigned int nC = particles.size();
             // Make energy storage
-            std::vector<double> energyStore;
-            energyStore.resize(particles.size());
+//            double energyStore[nC];
+            double *energyStore = new double[nC];
 
             // Make angular storage
-            std::vector < std::vector<double> > angleStore;
-            angleStore.resize(particles.size());
-            for (unsigned int i = 0; i < angleStore.size(); i++) {
-                angleStore[i].resize(i);
-            }
+//            double angleStore[nC][nC];
+            double **angleStore = new double*[nC];
 
-            // Fill storage with energy/angle information
-            for (unsigned int i = 0; i < particles.size(); i++) {
-                energyStore[i] = energy(particles[i]);
-                for (unsigned int j = 0; j < i; j++) {
-                    if (half_beta == 1.0){
-                        angleStore[i][j] = angleSquared(particles[i], particles[j]);
-                    } else {
-                        angleStore[i][j] = pow(angleSquared(particles[i], particles[j]), half_beta);
-                    }
-                }
+            precompute_energies_and_angles(particles, energyStore, angleStore);
+
+            unsigned int n_angles = _angles;
+            if (_angles < 0) {
+                n_angles = N_total;
             }
 
             // now do recursion
             if (_N == 3) {
-                unsigned int N_total = 3;
-                double angle1, angle2, angle3;
-                double angle;
-
-                for (unsigned int i = 2; i < particles.size(); i++) {
-                    for (unsigned int j = 1; j < i; j++) {
-                        for (unsigned int k = 0; k < j; k++) {
-
-                            angle1 = angleStore[i][j];
-                            angle2 = angleStore[i][k];
-                            angle3 = angleStore[j][k];
-
-                            if (_angles == -1){
-                                // When _angles = -1, it defaults to considering all angles.
-                                angle = angle1*angle2*angle3;
-                            } else {
-                                double angle_list[] = {angle1, angle2, angle3};
-                                std::vector<double> angle_vector(angle_list, angle_list + N_total);
-                                std::partial_sort(angle_vector.begin(), angle_vector.begin() + _angles, angle_vector.begin() + N_total);
-
-                                angle = angle_vector[0];
-                                for ( int l = 1; l < _angles; l++) { angle *= angle_vector[l]; }
-                            }
-
-                            answer += energyStore[i]
-                                      * energyStore[j]
-                                      * energyStore[k]
-                                      * angle /norm;
-                        }
-                    }
-                }
+                answer = evaluate_n3(nC, n_angles, energyStore, angleStore) / norm;
             } else if (_N == 4) {
-                double angle1, angle2, angle3, angle4, angle5, angle6;
-                unsigned int N_total = 6;
-                double angle;
-
-                for (unsigned int i = 3; i < particles.size(); i++) {
-                    for (unsigned int j = 2; j < i; j++) {
-                        for (unsigned int k = 1; k < j; k++) {
-                            for (unsigned int l = 0; l < k; l++) {
-
-                                angle1 = angleStore[i][j];
-                                angle2 = angleStore[i][k];
-                                angle3 = angleStore[i][l];
-                                angle4 = angleStore[j][k];
-                                angle5 = angleStore[j][l];
-                                angle6 = angleStore[k][l];
-
-                                if(_angles == -1) {
-                                    angle = angle1*angle2*angle3*angle4*angle5*angle6;
-                                } else {
-
-                                    double angle_list[] = {angle1, angle2, angle3, angle4, angle5, angle6};
-                                    std::vector<double> angle_vector(angle_list, angle_list + N_total);
-                                    std::partial_sort(angle_vector.begin(), angle_vector.begin() + _angles, angle_vector.begin() + N_total);
-
-                                    angle = angle_vector[0];
-                                    for ( int s = 1; s < _angles; s++) { angle *= angle_vector[s]; }
-
-                                }
-                                answer +=  energyStore[i]
-                                          * energyStore[j]
-                                          * energyStore[k]
-                                          * energyStore[l]
-                                          * angle /norm;
-
-                            }
-                        }
-                    }
-                }
+                answer = evaluate_n4(nC, n_angles, energyStore, angleStore) / norm;
             } else if (_N == 5) {
-                double angle1, angle2, angle3, angle4, angle5, angle6, angle7, angle8, angle9, angle10;
-                unsigned int N_total = 10;
-                double angle;
-
-                for (unsigned int i = 4; i < particles.size(); i++) {
-                    for (unsigned int j = 3; j < i; j++) {
-                        for (unsigned int k = 2; k < j; k++) {
-                            for (unsigned int l = 1; l < k; l++) {
-                                for (unsigned int m = 0; m < l; m++) {
-
-                                    angle1 = angleStore[i][j];
-                                    angle2 = angleStore[i][k];
-                                    angle3 = angleStore[i][l];
-                                    angle4 = angleStore[i][m];
-                                    angle5 = angleStore[j][k];
-                                    angle6 = angleStore[j][l];
-                                    angle7 = angleStore[j][m];
-                                    angle8 = angleStore[k][l];
-                                    angle9 = angleStore[k][m];
-                                    angle10 = angleStore[l][m];
-
-                                    if (_angles == -1){
-                                        angle = angle1*angle2*angle3*angle4*angle5*angle6*angle7*angle8*angle9*angle10;
-                                    } else {
-                                        double angle_list[] = {angle1, angle2, angle3, angle4, angle5, angle6,
-                                                               angle7, angle8, angle9, angle10};
-                                        std::vector<double> angle_vector(angle_list, angle_list + N_total);
-                                        std::partial_sort(angle_vector.begin(), angle_vector.begin() + _angles, angle_vector.begin() + N_total);
-
-                                        angle = angle_vector[0];
-                                        for ( int s = 1; s < _angles; s++) { angle *= angle_vector[s]; }
-                                    }
-
-                                    answer +=  energyStore[i]
-                                               * energyStore[j]
-                                               * energyStore[k]
-                                               * energyStore[l]
-                                               * energyStore[m]
-                                               * angle /norm;
-                                }
-                            }
-                        }
-                    }
-                }
-
+                answer = evaluate_n5(nC, n_angles, energyStore, angleStore) / norm;
             } else {
                 assert(_N <= 5);
             }
+            // Deleting arrays
+            delete[] energyStore;
+
+            for (unsigned int i = 0; i < particles.size(); i++) {
+                delete[] angleStore[i];
+            }
+            delete[] angleStore;
         } else if (_strategy == EnergyCorrelator::slow) {
             if (_N == 3) {
                 unsigned int N_total = 3;
@@ -604,7 +616,6 @@ namespace contrib {
         } else {
             assert(_strategy == EnergyCorrelator::slow ||  _strategy == EnergyCorrelator::storage_array);
         }
-
         return answer;
     }
 
@@ -772,7 +783,7 @@ namespace contrib {
 
 
                                     double angle_list[] = {angle1, angle2, angle3, angle4, angle5, angle6,
-                                                               angle7, angle8, angle9, angle10};
+                                                           angle7, angle8, angle9, angle10};
                                     std::vector<double> angle_vector(angle_list, angle_list + N_total);
                                     std::sort(angle_vector.begin(), angle_vector.begin() + N_total);
 
@@ -916,7 +927,7 @@ namespace contrib {
     double EnergyCorrelatorGeneralized::energy(const PseudoJet& jet) const {
         return _helper_correlator.energy(jet);
     }
- 
+
     // call _helper_correlator to get angle information
     double EnergyCorrelatorGeneralized::angleSquared(const PseudoJet& jet1, const PseudoJet& jet2) const {
         return _helper_correlator.angleSquared(jet1, jet2);
