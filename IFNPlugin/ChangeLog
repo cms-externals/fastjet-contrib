@@ -1,0 +1,66 @@
+2024-12-13 Fri  <gavin.salam@physics.ox.ac.uk> (with Matteo and Gregory)
+
+	* FJCONTRIB.cfg:
+	* NEWS:
+	Preparing release of 1.0.4
+
+	* Makefile:
+	removed spurious dependency on RecursiveTools, left over
+	from dependency testing
+
+2024-12-10 Thu  <gavin.salam@physics.ox.ac.uk> (with Matteo and Gregory)
+
+	* FJCONTRIB.cfg:
+	* NEWS:
+	Preparing release of 1.0.3
+
+2024-12-10 Thu  <gavin.salam@physics.ox.ac.uk> (with Matteo)
+
+	* FJCONTRIB.cfg:
+	added "minimal_fastjet_version: 3.4.1" given support
+	for this requirement now available in fjcontrib.
+	Upped version to 1.0.3-alpha3, to be consistent
+	with the versioning of the original git repo
+
+2024-12-10 Tue  <gavin.salam@physics.ox.ac.uk>
+
+	* Renamed this contrib as IFNPlugin:
+	since FJContrib now supports dependencies, it is now feasible for
+	each group's flavour code to live in a separate contrib and for them
+	to depend on the IFNPlugin contrib for its common infrastructure
+	(JetFlav). 
+
+	* *.hh -> include/fastjet/contrib/*.hh:
+
+	* FJCONTRIB.cfg:
+	updated version number to 1.0.0-alpha2
+	[NB: this was inconsistent with the git repo, fixed
+	subsequently; should have been 1.0.3-alpha2]
+
+2024-05-21 Tue  <gavin.salam@physics.ox.ac.uk>
+
+	* FlavNeutraliser.cc:
+	* IFNPlugin.cc:
+	* IFNPlugin.hh:
+
+	Removed some of the default arguments from the old IFNPlugin
+	constructor to avoid it being used by mistake. Added several
+	LimitedWarnings if old (deprecated or non-tested) measures are used.
+	The description() output should now be a little more informative when
+	non-standard measures are used.
+
+	Moved "general" measure to be first in the in the pp
+	FlavNeutraliser::neutralisation_distance switch statement, since
+	it is the one most likely to be used.
+
+	This mirrors git commit 6907232b in the original IFNPlugin git repo, 
+	corresponding to tag 1.0.2
+
+2024-03-19 Gavin:
+	* [many files]:
+	Initial creation and import of IFNPlugin version 1.0.1 from 
+	https://github.com/jetflav/IFNPlugin (7673166d9dc)
+
+
+
+

@@ -1,0 +1,19 @@
+2024-06-10  Peter Berta <peter.berta@cern.ch>
+
+        * VERSION
+        Release of version 1.0.1
+
+	* SignalFreeBackgroundEstimator.cc
+	* SignalFreeBackgroundEstimator.hh
+	Fixed the bug which caused that the signal seeda were not overwritten
+	Renamed the function for providing signal seeds from the user
+	Added a new function which allows to disable weights when computing median
+
+	* example.cc
+	Updated information how to use user-provided signal seeds.
+
+
+2024-02-01  Peter Berta <peter.berta@cern.ch>
+
+        * VERSION
+        Release of version 1.0.0

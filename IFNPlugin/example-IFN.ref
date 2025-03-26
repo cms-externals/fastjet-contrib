@@ -1,0 +1,2698 @@
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.2
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+base jet definition: Longitudinally invariant anti-kt algorithm with R = 0.4 and E scheme recombination and net_flav flavour recombination 
+IFN jet definition:  Interleaved Flavour Neutralisation (IFN) plugin based on Longitudinally invariant anti-kt algorithm with R = 0.4 and E scheme recombination and net_flav flavour recombination , using a standard uij  neutralisation measure with alpha = 2, omega = 1, with modulo_2 = 0 and recursive = 1
+
+#---------------------------------------------------------------
+# read event 0 with 64 particles
+
+base jet 0: pt=160.77 rap=0.90783 phi=0.366217, flav = [u ]
+IFN jet  0: pt=160.77 rap=0.90783 phi=0.366217, flav = [u ]
+constituents:
+  pt =    114.031, orig. flav =     [u ], final flav =     [u ]
+  pt =    24.5336, orig. flav =      [g], final flav =      [g]
+  pt =    11.6832, orig. flav =      [g], final flav =      [g]
+  pt =    7.65296, orig. flav =      [g], final flav =      [g]
+  pt =    3.02296, orig. flav =      [g], final flav =      [g]
+  pt =   0.241429, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=8.49978 rap=0.550912 phi=0.0241549, flav = [d u ]
+IFN jet  1: pt=8.49978 rap=0.550912 phi=0.0241549, flav = [d u ]
+constituents:
+  pt =    4.47811, orig. flav =     [u ], final flav =     [u ]
+  pt =    3.05929, orig. flav =      [g], final flav =      [g]
+  pt =   0.991028, orig. flav =     [d ], final flav =     [d ]
+
+base jet 2: pt=7.96449 rap=1.98751 phi=4.56023, flav = [bbar bbar ]
+IFN jet  2: pt=7.96449 rap=1.98751 phi=4.56023, flav = [bbar bbar ]
+constituents:
+  pt =    4.19673, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    3.11948, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =   0.662626, orig. flav =      [g], final flav =      [g]
+
+base jet 3: pt=7.44626 rap=0.0690523 phi=0.605221, flav = [u s ]
+IFN jet  3: pt=7.44626 rap=0.0690523 phi=0.605221, flav = [u s ]
+constituents:
+  pt =    4.07363, orig. flav =     [u ], final flav =     [u ]
+  pt =    2.97687, orig. flav =      [g], final flav =      [g]
+  pt =   0.401654, orig. flav =     [s ], final flav =     [s ]
+
+base jet 4: pt=7.3402 rap=0.00843489 phi=1.28811, flav = [dbar ubar ]
+IFN jet  4: pt=7.3402 rap=0.00843489 phi=1.28811, flav = [ubar ]
+constituents:
+  pt =     4.4678, orig. flav =      [g], final flav =      [g]
+  pt =    2.07394, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =   0.482026, orig. flav =  [dbar ], final flav =      [g]
+  pt =   0.382845, orig. flav =      [g], final flav =      [g]
+
+base jet 5: pt=3.27161 rap=-0.407406 phi=4.65289, flav = [g]
+IFN jet  5: pt=3.27161 rap=-0.407406 phi=4.65289, flav = [g]
+constituents:
+  pt =    2.50909, orig. flav =      [g], final flav =      [g]
+  pt =   0.763508, orig. flav =      [g], final flav =      [g]
+
+base jet 6: pt=3.21146 rap=0.501387 phi=4.22762, flav = [g]
+IFN jet  6: pt=3.21146 rap=0.501387 phi=4.22762, flav = [g]
+constituents:
+  pt =    2.61083, orig. flav =      [g], final flav =      [g]
+  pt =   0.614037, orig. flav =      [g], final flav =      [g]
+
+base jet 7: pt=2.96585 rap=3.85741 phi=5.05258, flav = [d ]
+IFN jet  7: pt=2.96585 rap=3.85741 phi=5.05258, flav = [d ]
+constituents:
+  pt =    2.96585, orig. flav =     [d ], final flav =     [d ]
+
+base jet 8: pt=2.84607 rap=1.24282 phi=1.60851, flav = [sbar ]
+IFN jet  8: pt=2.84607 rap=1.24282 phi=1.60851, flav = [sbar ]
+constituents:
+  pt =    2.27791, orig. flav =      [g], final flav =      [g]
+  pt =   0.341298, orig. flav =      [g], final flav =      [g]
+  pt =   0.238383, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 9: pt=1.94069 rap=1.56491 phi=4.28638, flav = [g]
+IFN jet  9: pt=1.94069 rap=1.56491 phi=4.28638, flav = [g]
+constituents:
+  pt =    1.94069, orig. flav =      [g], final flav =      [g]
+
+base jet 10: pt=1.87908 rap=3.51836 phi=5.38263, flav = [dbar ]
+IFN jet  10: pt=1.87908 rap=3.51836 phi=5.38263, flav = [dbar ]
+constituents:
+  pt =    1.87908, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 11: pt=1.82013 rap=1.72083 phi=1.98468, flav = [g]
+IFN jet  11: pt=1.82013 rap=1.72083 phi=1.98468, flav = [g]
+constituents:
+  pt =    1.82013, orig. flav =      [g], final flav =      [g]
+
+base jet 12: pt=1.71472 rap=-0.0741472 phi=3.83835, flav = [g]
+IFN jet  12: pt=1.71472 rap=-0.0741472 phi=3.83835, flav = [g]
+constituents:
+  pt =    1.71472, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=1.45959 rap=0.180121 phi=0.199993, flav = [cbar ]
+IFN jet  13: pt=1.45959 rap=0.180121 phi=0.199993, flav = [cbar ]
+constituents:
+  pt =    1.45959, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 14: pt=1.44142 rap=-2.62404 phi=3.36924, flav = [sbar ]
+IFN jet  14: pt=1.44142 rap=-2.62404 phi=3.36924, flav = [sbar ]
+constituents:
+  pt =    1.44142, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 15: pt=1.23947 rap=6.23036 phi=4.31063, flav = [d u ]
+IFN jet  15: pt=1.23947 rap=6.23036 phi=4.31063, flav = [d u ]
+constituents:
+  pt =    1.23947, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 16: pt=1.21019 rap=-1.34209 phi=4.33514, flav = [bbar ]
+IFN jet  16: pt=1.21019 rap=-1.34209 phi=4.33514, flav = [bbar ]
+constituents:
+  pt =    1.21019, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 17: pt=1.16347 rap=-0.368498 phi=2.92186, flav = [cbar ]
+IFN jet  17: pt=1.16347 rap=-0.368498 phi=2.92186, flav = [cbar ]
+constituents:
+  pt =   0.973153, orig. flav =      [g], final flav =      [g]
+  pt =   0.191189, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 18: pt=1.15743 rap=0.113967 phi=5.07935, flav = [g]
+IFN jet  18: pt=1.15743 rap=0.113967 phi=5.07935, flav = [g]
+constituents:
+  pt =    1.15743, orig. flav =      [g], final flav =      [g]
+
+base jet 19: pt=1.06287 rap=1.22708 phi=2.585, flav = [c ]
+IFN jet  19: pt=1.06287 rap=1.22708 phi=2.585, flav = [c ]
+constituents:
+  pt =    1.06284, orig. flav =     [c ], final flav =     [c ]
+  pt = 3.2513e-05, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=1.02474 rap=-2.46634 phi=4.40107, flav = [g]
+IFN jet  20: pt=1.02474 rap=-2.46634 phi=4.40107, flav = [g]
+constituents:
+  pt =    1.02474, orig. flav =      [g], final flav =      [g]
+
+base jet 21: pt=0.853336 rap=-0.301915 phi=1.00563, flav = [d ]
+IFN jet  21: pt=0.853336 rap=-0.301915 phi=1.00563, flav = [g]
+constituents:
+  pt =   0.853336, orig. flav =     [d ], final flav =      [g]
+
+base jet 22: pt=0.769826 rap=-0.786678 phi=4.07458, flav = [u ]
+IFN jet  22: pt=0.769826 rap=-0.786678 phi=4.07458, flav = [u ]
+constituents:
+  pt =   0.462864, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.314516, orig. flav =      [g], final flav =      [g]
+
+base jet 23: pt=0.760885 rap=0.633055 phi=0.678284, flav = [g]
+IFN jet  23: pt=0.760885 rap=0.633055 phi=0.678284, flav = [g]
+constituents:
+  pt =   0.760885, orig. flav =      [g], final flav =      [g]
+
+base jet 24: pt=0.67701 rap=2.89705 phi=5.54088, flav = [g]
+IFN jet  24: pt=0.67701 rap=2.89705 phi=5.54088, flav = [g]
+constituents:
+  pt =    0.67701, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=0.630838 rap=-1.60383 phi=3.31619, flav = [g]
+IFN jet  25: pt=0.630838 rap=-1.60383 phi=3.31619, flav = [g]
+constituents:
+  pt =   0.630838, orig. flav =      [g], final flav =      [g]
+
+base jet 26: pt=0.576939 rap=-7.47203 phi=4.25877, flav = [d u ]
+IFN jet  26: pt=0.576939 rap=-7.47203 phi=4.25877, flav = [d u ]
+constituents:
+  pt =   0.576939, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 27: pt=0.512529 rap=-2.37706 phi=1.70759, flav = [g]
+IFN jet  27: pt=0.512529 rap=-2.37706 phi=1.70759, flav = [g]
+constituents:
+  pt =   0.512529, orig. flav =      [g], final flav =      [g]
+
+base jet 28: pt=0.50689 rap=0.940743 phi=5.67736, flav = [g]
+IFN jet  28: pt=0.50689 rap=0.940743 phi=5.67736, flav = [g]
+constituents:
+  pt =    0.50689, orig. flav =      [g], final flav =      [g]
+
+base jet 29: pt=0.481995 rap=-1.11306 phi=2.77235, flav = [g]
+IFN jet  29: pt=0.481995 rap=-1.11306 phi=2.77235, flav = [g]
+constituents:
+  pt =   0.481995, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.44368 rap=1.07817 phi=4.91583, flav = [g]
+IFN jet  30: pt=0.44368 rap=1.07817 phi=4.91583, flav = [g]
+constituents:
+  pt =    0.44368, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.439767 rap=3.6931 phi=1.64782, flav = [c ]
+IFN jet  31: pt=0.439767 rap=3.6931 phi=1.64782, flav = [c ]
+constituents:
+  pt =   0.439767, orig. flav =     [c ], final flav =     [c ]
+
+base jet 32: pt=0.417598 rap=-1.75011 phi=0.660275, flav = [d ]
+IFN jet  32: pt=0.417598 rap=-1.75011 phi=0.660275, flav = [d ]
+constituents:
+  pt =   0.304438, orig. flav =      [g], final flav =      [g]
+  pt =   0.116765, orig. flav =     [d ], final flav =     [d ]
+
+base jet 33: pt=0.388286 rap=-6.47478 phi=0.45092, flav = [u ]
+IFN jet  33: pt=0.388286 rap=-6.47478 phi=0.45092, flav = [u ]
+constituents:
+  pt =   0.388286, orig. flav =     [u ], final flav =     [u ]
+
+base jet 34: pt=0.386049 rap=1.39697 phi=0.0759585, flav = [dbar ]
+IFN jet  34: pt=0.386049 rap=1.39697 phi=0.0759585, flav = [dbar ]
+constituents:
+  pt =   0.386049, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 35: pt=0.328926 rap=0.0540854 phi=6.06608, flav = [g]
+IFN jet  35: pt=0.328926 rap=0.0540854 phi=6.06608, flav = [g]
+constituents:
+  pt =   0.328926, orig. flav =      [g], final flav =      [g]
+
+base jet 36: pt=0.318562 rap=2.26857 phi=2.89181, flav = [u ]
+IFN jet  36: pt=0.318562 rap=2.26857 phi=2.89181, flav = [u ]
+constituents:
+  pt =   0.318562, orig. flav =     [u ], final flav =     [u ]
+
+base jet 37: pt=0.249964 rap=-0.616062 phi=2.05125, flav = [g]
+IFN jet  37: pt=0.249964 rap=-0.616062 phi=2.05125, flav = [g]
+constituents:
+  pt =   0.249964, orig. flav =      [g], final flav =      [g]
+
+base jet 38: pt=0.247897 rap=2.10803 phi=5.56523, flav = [bbar ]
+IFN jet  38: pt=0.247897 rap=2.10803 phi=5.56523, flav = [bbar ]
+constituents:
+  pt =   0.247897, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 39: pt=0.222556 rap=0.768118 phi=1.34336, flav = [g]
+IFN jet  39: pt=0.222556 rap=0.768118 phi=1.34336, flav = [g]
+constituents:
+  pt =   0.222556, orig. flav =      [g], final flav =      [g]
+
+base jet 40: pt=0.0517697 rap=-1.69026 phi=4.56152, flav = [g]
+IFN jet  40: pt=0.0517697 rap=-1.69026 phi=4.56152, flav = [g]
+constituents:
+  pt =  0.0517697, orig. flav =      [g], final flav =      [g]
+
+base jet 41: pt=0.00736101 rap=0.780826 phi=3.63937, flav = [g]
+IFN jet  41: pt=0.00736101 rap=0.780826 phi=3.63937, flav = [g]
+constituents:
+  pt = 0.00736101, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 1 with 91 particles
+
+base jet 0: pt=143.136 rap=1.00816 phi=0.315751, flav = [bbar tbar ]
+IFN jet  0: pt=143.136 rap=1.00816 phi=0.315751, flav = [g]
+constituents:
+  pt =     108.45, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =    20.9132, orig. flav =     [d ], final flav =     [d ]
+  pt =    7.55253, orig. flav =  [bbar ], final flav =      [g]
+  pt =     6.1231, orig. flav =      [g], final flav =      [g]
+  pt =   0.428857, orig. flav =  [tbar ], final flav =      [g]
+
+base jet 1: pt=6.05867 rap=0.0649657 phi=3.29464, flav = [g]
+IFN jet  1: pt=6.05867 rap=0.0649657 phi=3.29464, flav = [g]
+constituents:
+  pt =    6.05867, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=3.58636 rap=0.193706 phi=5.36693, flav = [d ]
+IFN jet  2: pt=3.58636 rap=0.193706 phi=5.36693, flav = [d ]
+constituents:
+  pt =    3.58636, orig. flav =     [d ], final flav =     [d ]
+
+base jet 3: pt=3.49044 rap=-0.149006 phi=0.716449, flav = [d b ]
+IFN jet  3: pt=3.49044 rap=-0.149006 phi=0.716449, flav = [d ]
+constituents:
+  pt =     2.2083, orig. flav =     [d ], final flav =     [d ]
+  pt =    1.29322, orig. flav =     [b ], final flav =      [g]
+
+base jet 4: pt=3.41124 rap=2.29203 phi=3.90154, flav = [g]
+IFN jet  4: pt=3.41124 rap=2.29203 phi=3.90154, flav = [g]
+constituents:
+  pt =    2.69181, orig. flav =      [g], final flav =      [g]
+  pt =   0.391893, orig. flav =      [g], final flav =      [g]
+  pt =    0.33422, orig. flav =      [g], final flav =      [g]
+
+base jet 5: pt=3.01848 rap=3.14716 phi=5.74679, flav = [g]
+IFN jet  5: pt=3.01848 rap=3.14716 phi=5.74679, flav = [g]
+constituents:
+  pt =    3.01848, orig. flav =      [g], final flav =      [g]
+
+base jet 6: pt=2.82862 rap=-3.73093 phi=1.35695, flav = [d ]
+IFN jet  6: pt=2.82862 rap=-3.73093 phi=1.35695, flav = [d ]
+constituents:
+  pt =    2.56255, orig. flav =      [g], final flav =      [g]
+  pt =   0.266146, orig. flav =     [d ], final flav =     [d ]
+
+base jet 7: pt=2.80011 rap=-0.469935 phi=2.60928, flav = [s ]
+IFN jet  7: pt=2.80011 rap=-0.469935 phi=2.60928, flav = [s ]
+constituents:
+  pt =    2.01037, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.809622, orig. flav =      [g], final flav =      [g]
+
+base jet 8: pt=2.77666 rap=0.391043 phi=6.2483, flav = [s c ]
+IFN jet  8: pt=2.77666 rap=0.391043 phi=6.2483, flav = [s c ]
+constituents:
+  pt =    1.13492, orig. flav =     [c ], final flav =     [c ]
+  pt =   0.937829, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.750851, orig. flav =      [g], final flav =      [g]
+
+base jet 9: pt=2.77306 rap=2.38653 phi=6.2755, flav = [d u ]
+IFN jet  9: pt=2.77306 rap=2.38653 phi=6.2755, flav = [d u ]
+constituents:
+  pt =    2.25214, orig. flav =     [d ], final flav =     [d ]
+  pt =   0.521758, orig. flav =     [u ], final flav =     [u ]
+
+base jet 10: pt=2.68261 rap=-1.97425 phi=3.65305, flav = [u ]
+IFN jet  10: pt=2.68261 rap=-1.97425 phi=3.65305, flav = [u ]
+constituents:
+  pt =    2.49986, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.183492, orig. flav =      [g], final flav =      [g]
+
+base jet 11: pt=2.61389 rap=-1.62422 phi=0.381118, flav = [s ]
+IFN jet  11: pt=2.61389 rap=-1.62422 phi=0.381118, flav = [s ]
+constituents:
+  pt =    2.61389, orig. flav =     [s ], final flav =     [s ]
+
+base jet 12: pt=2.29673 rap=-2.33543 phi=5.56451, flav = [g]
+IFN jet  12: pt=2.29673 rap=-2.33543 phi=5.56451, flav = [g]
+constituents:
+  pt =    1.66747, orig. flav =      [g], final flav =      [g]
+  pt =   0.640752, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=2.06971 rap=-3.70133 phi=4.17462, flav = [g]
+IFN jet  13: pt=2.06971 rap=-3.70133 phi=4.17462, flav = [g]
+constituents:
+  pt =    2.06971, orig. flav =      [g], final flav =      [g]
+
+base jet 14: pt=1.92048 rap=0.53675 phi=0.960671, flav = [sbar ]
+IFN jet  14: pt=1.92048 rap=0.53675 phi=0.960671, flav = [sbar ]
+constituents:
+  pt =    1.61666, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.308706, orig. flav =      [g], final flav =      [g]
+
+base jet 15: pt=1.92 rap=-3.26105 phi=2.39568, flav = [cbar ]
+IFN jet  15: pt=1.92 rap=-3.26105 phi=2.39568, flav = [cbar ]
+constituents:
+  pt =     1.2742, orig. flav =      [g], final flav =      [g]
+  pt =   0.645797, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 16: pt=1.48458 rap=1.55754 phi=2.47298, flav = [g]
+IFN jet  16: pt=1.48458 rap=1.55754 phi=2.47298, flav = [g]
+constituents:
+  pt =   0.953865, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =   0.543457, orig. flav =     [d ], final flav =     [d ]
+
+base jet 17: pt=1.44491 rap=1.68236 phi=4.80464, flav = [dbar ]
+IFN jet  17: pt=1.44491 rap=1.68236 phi=4.80464, flav = [dbar ]
+constituents:
+  pt =    1.44491, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 18: pt=1.38599 rap=0.335099 phi=4.26118, flav = [b ]
+IFN jet  18: pt=1.38599 rap=0.335099 phi=4.26118, flav = [g]
+constituents:
+  pt =   0.735846, orig. flav =      [g], final flav =      [g]
+  pt =   0.453002, orig. flav =      [g], final flav =      [g]
+  pt =   0.210092, orig. flav =     [b ], final flav =      [g]
+
+base jet 19: pt=1.35669 rap=4.20634 phi=2.47973, flav = [d ]
+IFN jet  19: pt=1.35669 rap=4.20634 phi=2.47973, flav = [d ]
+constituents:
+  pt =    1.35669, orig. flav =     [d ], final flav =     [d ]
+
+base jet 20: pt=1.22377 rap=2.75199 phi=5.85133, flav = [dbar ]
+IFN jet  20: pt=1.22377 rap=2.75199 phi=5.85133, flav = [dbar ]
+constituents:
+  pt =    1.22377, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 21: pt=1.18313 rap=2.81888 phi=0.313522, flav = [g]
+IFN jet  21: pt=1.18313 rap=2.81888 phi=0.313522, flav = [g]
+constituents:
+  pt =    1.18313, orig. flav =      [g], final flav =      [g]
+
+base jet 22: pt=1.17584 rap=-0.493954 phi=3.58193, flav = [g]
+IFN jet  22: pt=1.17584 rap=-0.493954 phi=3.58193, flav = [g]
+constituents:
+  pt =    1.17584, orig. flav =      [g], final flav =      [g]
+
+base jet 23: pt=1.11816 rap=-2.10896 phi=0.526007, flav = [b ]
+IFN jet  23: pt=1.11816 rap=-2.10896 phi=0.526007, flav = [g]
+constituents:
+  pt =    1.11816, orig. flav =     [b ], final flav =      [g]
+
+base jet 24: pt=1.08848 rap=-1.34539 phi=1.07665, flav = [g]
+IFN jet  24: pt=1.08848 rap=-1.34539 phi=1.07665, flav = [g]
+constituents:
+  pt =    1.08848, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=1.07877 rap=-4.11914 phi=4.3603, flav = [d ]
+IFN jet  25: pt=1.07877 rap=-4.11914 phi=4.3603, flav = [d ]
+constituents:
+  pt =    1.07877, orig. flav =     [d ], final flav =     [d ]
+
+base jet 26: pt=0.953084 rap=-1.50513 phi=3.0102, flav = [g]
+IFN jet  26: pt=0.953084 rap=-1.50513 phi=3.0102, flav = [g]
+constituents:
+  pt =   0.953084, orig. flav =      [g], final flav =      [g]
+
+base jet 27: pt=0.945861 rap=-5.4698 phi=6.12483, flav = [d ]
+IFN jet  27: pt=0.945861 rap=-5.4698 phi=6.12483, flav = [d ]
+constituents:
+  pt =   0.945861, orig. flav =     [d ], final flav =     [d ]
+
+base jet 28: pt=0.878457 rap=2.69632 phi=2.31983, flav = [sbar ]
+IFN jet  28: pt=0.878457 rap=2.69632 phi=2.31983, flav = [sbar ]
+constituents:
+  pt =   0.878457, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 29: pt=0.873632 rap=0.190396 phi=2.56701, flav = [bbar ]
+IFN jet  29: pt=0.873632 rap=0.190396 phi=2.56701, flav = [g]
+constituents:
+  pt =   0.482919, orig. flav =  [bbar ], final flav =      [g]
+  pt =   0.396541, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.856031 rap=1.2279 phi=4.62162, flav = [tbar tbar ]
+IFN jet  30: pt=0.856031 rap=1.2279 phi=4.62162, flav = [tbar ]
+constituents:
+  pt =   0.494308, orig. flav =  [tbar ], final flav =  [tbar ]
+  pt =   0.363351, orig. flav =  [tbar ], final flav =      [g]
+
+base jet 31: pt=0.852897 rap=-0.654192 phi=1.43833, flav = [d s ]
+IFN jet  31: pt=0.852897 rap=-0.654192 phi=1.43833, flav = [d s ]
+constituents:
+  pt =   0.770177, orig. flav =     [d ], final flav =     [d ]
+  pt =  0.0856672, orig. flav =     [s ], final flav =     [s ]
+
+base jet 32: pt=0.782025 rap=-3.82596 phi=5.01091, flav = [sbar ]
+IFN jet  32: pt=0.782025 rap=-3.82596 phi=5.01091, flav = [sbar ]
+constituents:
+  pt =   0.782025, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 33: pt=0.779432 rap=-1.7142 phi=5.49623, flav = [sbar ]
+IFN jet  33: pt=0.779432 rap=-1.7142 phi=5.49623, flav = [sbar ]
+constituents:
+  pt =    0.53115, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.253966, orig. flav =      [g], final flav =      [g]
+
+base jet 34: pt=0.771015 rap=4.3702 phi=1.83947, flav = [d ]
+IFN jet  34: pt=0.771015 rap=4.3702 phi=1.83947, flav = [d ]
+constituents:
+  pt =   0.771015, orig. flav =     [d ], final flav =     [d ]
+
+base jet 35: pt=0.759793 rap=-4.63334 phi=0.348931, flav = [g]
+IFN jet  35: pt=0.759793 rap=-4.63334 phi=0.348931, flav = [g]
+constituents:
+  pt =   0.759793, orig. flav =      [g], final flav =      [g]
+
+base jet 36: pt=0.743978 rap=-1.25191 phi=4.17609, flav = [t ]
+IFN jet  36: pt=0.743978 rap=-1.25191 phi=4.17609, flav = [g]
+constituents:
+  pt =   0.375902, orig. flav =     [t ], final flav =      [g]
+  pt =    0.36837, orig. flav =      [g], final flav =      [g]
+
+base jet 37: pt=0.728298 rap=3.25587 phi=2.61844, flav = [ubar ]
+IFN jet  37: pt=0.728298 rap=3.25587 phi=2.61844, flav = [ubar ]
+constituents:
+  pt =   0.728298, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 38: pt=0.719598 rap=-2.11331 phi=2.20152, flav = [g]
+IFN jet  38: pt=0.719598 rap=-2.11331 phi=2.20152, flav = [g]
+constituents:
+  pt =   0.719598, orig. flav =      [g], final flav =      [g]
+
+base jet 39: pt=0.682855 rap=-1.90111 phi=1.64187, flav = [g]
+IFN jet  39: pt=0.682855 rap=-1.90111 phi=1.64187, flav = [g]
+constituents:
+  pt =   0.682855, orig. flav =      [g], final flav =      [g]
+
+base jet 40: pt=0.668062 rap=-3.55152 phi=3.41624, flav = [g]
+IFN jet  40: pt=0.668062 rap=-3.55152 phi=3.41624, flav = [g]
+constituents:
+  pt =   0.668062, orig. flav =      [g], final flav =      [g]
+
+base jet 41: pt=0.611448 rap=3.3453 phi=3.75899, flav = [dbar ]
+IFN jet  41: pt=0.611448 rap=3.3453 phi=3.75899, flav = [dbar ]
+constituents:
+  pt =   0.611448, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 42: pt=0.591053 rap=7.16017 phi=1.91984, flav = [u ]
+IFN jet  42: pt=0.591053 rap=7.16017 phi=1.91984, flav = [u ]
+constituents:
+  pt =   0.591053, orig. flav =     [u ], final flav =     [u ]
+
+base jet 43: pt=0.558173 rap=-4.24347 phi=3.66288, flav = [dbar ]
+IFN jet  43: pt=0.558173 rap=-4.24347 phi=3.66288, flav = [dbar ]
+constituents:
+  pt =   0.558173, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 44: pt=0.487133 rap=2.1083 phi=2.35829, flav = [g]
+IFN jet  44: pt=0.487133 rap=2.1083 phi=2.35829, flav = [g]
+constituents:
+  pt =   0.487133, orig. flav =      [g], final flav =      [g]
+
+base jet 45: pt=0.453849 rap=1.60355 phi=5.26047, flav = [g]
+IFN jet  45: pt=0.453849 rap=1.60355 phi=5.26047, flav = [g]
+constituents:
+  pt =   0.453849, orig. flav =      [g], final flav =      [g]
+
+base jet 46: pt=0.431865 rap=5.46715 phi=3.61077, flav = [u ]
+IFN jet  46: pt=0.431865 rap=5.46715 phi=3.61077, flav = [u ]
+constituents:
+  pt =   0.431865, orig. flav =     [u ], final flav =     [u ]
+
+base jet 47: pt=0.429176 rap=-1.22649 phi=2.33468, flav = [g]
+IFN jet  47: pt=0.429176 rap=-1.22649 phi=2.33468, flav = [g]
+constituents:
+  pt =   0.429176, orig. flav =      [g], final flav =      [g]
+
+base jet 48: pt=0.391055 rap=-2.77206 phi=1.33661, flav = [t ]
+IFN jet  48: pt=0.391055 rap=-2.77206 phi=1.33661, flav = [g]
+constituents:
+  pt =   0.391055, orig. flav =     [t ], final flav =      [g]
+
+base jet 49: pt=0.370242 rap=-2.85766 phi=4.76131, flav = [g]
+IFN jet  49: pt=0.370242 rap=-2.85766 phi=4.76131, flav = [g]
+constituents:
+  pt =   0.370242, orig. flav =      [g], final flav =      [g]
+
+base jet 50: pt=0.361895 rap=1.96591 phi=3.55174, flav = [s ]
+IFN jet  50: pt=0.361895 rap=1.96591 phi=3.55174, flav = [s ]
+constituents:
+  pt =   0.361895, orig. flav =     [s ], final flav =     [s ]
+
+base jet 51: pt=0.361562 rap=-1.46941 phi=1.61668, flav = [g]
+IFN jet  51: pt=0.361562 rap=-1.46941 phi=1.61668, flav = [g]
+constituents:
+  pt =   0.361562, orig. flav =      [g], final flav =      [g]
+
+base jet 52: pt=0.352232 rap=0.692781 phi=2.85168, flav = [g]
+IFN jet  52: pt=0.352232 rap=0.692781 phi=2.85168, flav = [g]
+constituents:
+  pt =   0.352232, orig. flav =      [g], final flav =      [g]
+
+base jet 53: pt=0.345302 rap=-5.77666 phi=5.7911, flav = [c ]
+IFN jet  53: pt=0.345302 rap=-5.77666 phi=5.7911, flav = [c ]
+constituents:
+  pt =   0.345302, orig. flav =     [c ], final flav =     [c ]
+
+base jet 54: pt=0.297851 rap=2.7629 phi=1.8896, flav = [d ]
+IFN jet  54: pt=0.297851 rap=2.7629 phi=1.8896, flav = [g]
+constituents:
+  pt =   0.297851, orig. flav =     [d ], final flav =      [g]
+
+base jet 55: pt=0.279278 rap=3.51562 phi=4.97096, flav = [g]
+IFN jet  55: pt=0.279278 rap=3.51562 phi=4.97096, flav = [g]
+constituents:
+  pt =   0.279278, orig. flav =      [g], final flav =      [g]
+
+base jet 56: pt=0.213923 rap=1.06514 phi=1.18679, flav = [dbar ]
+IFN jet  56: pt=0.213923 rap=1.06514 phi=1.18679, flav = [g]
+constituents:
+  pt =   0.213923, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 57: pt=0.213736 rap=-6.54445 phi=5.44883, flav = [d u ]
+IFN jet  57: pt=0.213736 rap=-6.54445 phi=5.44883, flav = [d u ]
+constituents:
+  pt =   0.213736, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 58: pt=0.202974 rap=-3.2913 phi=1.1752, flav = [ubar ]
+IFN jet  58: pt=0.202974 rap=-3.2913 phi=1.1752, flav = [ubar ]
+constituents:
+  pt =   0.202974, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 59: pt=0.197693 rap=-2.4371 phi=4.07095, flav = [bbar ]
+IFN jet  59: pt=0.197693 rap=-2.4371 phi=4.07095, flav = [g]
+constituents:
+  pt =   0.197693, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 60: pt=0.196554 rap=2.53804 phi=1.55713, flav = [ubar ]
+IFN jet  60: pt=0.196554 rap=2.53804 phi=1.55713, flav = [ubar ]
+constituents:
+  pt =   0.196554, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 61: pt=0.194348 rap=-1.67692 phi=4.83327, flav = [g]
+IFN jet  61: pt=0.194348 rap=-1.67692 phi=4.83327, flav = [g]
+constituents:
+  pt =   0.194348, orig. flav =      [g], final flav =      [g]
+
+base jet 62: pt=0.173009 rap=3.47812 phi=3.29596, flav = [g]
+IFN jet  62: pt=0.173009 rap=3.47812 phi=3.29596, flav = [g]
+constituents:
+  pt =   0.173009, orig. flav =      [g], final flav =      [g]
+
+base jet 63: pt=0.172712 rap=-6.74206 phi=4.07209, flav = [u ]
+IFN jet  63: pt=0.172712 rap=-6.74206 phi=4.07209, flav = [u ]
+constituents:
+  pt =   0.172712, orig. flav =     [u ], final flav =     [u ]
+
+base jet 64: pt=0.159647 rap=-0.65415 phi=4.27448, flav = [g]
+IFN jet  64: pt=0.159647 rap=-0.65415 phi=4.27448, flav = [g]
+constituents:
+  pt =   0.159647, orig. flav =      [g], final flav =      [g]
+
+base jet 65: pt=0.151099 rap=-2.34689 phi=3.37457, flav = [g]
+IFN jet  65: pt=0.151099 rap=-2.34689 phi=3.37457, flav = [g]
+constituents:
+  pt =   0.151099, orig. flav =      [g], final flav =      [g]
+
+base jet 66: pt=0.0642579 rap=-3.11322 phi=1.7564, flav = [g]
+IFN jet  66: pt=0.0642579 rap=-3.11322 phi=1.7564, flav = [g]
+constituents:
+  pt =  0.0642579, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 2 with 67 particles
+
+base jet 0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [dbar u c ]
+IFN jet  0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [u bbar ]
+constituents:
+  pt =    18.6706, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    12.7679, orig. flav =     [d ], final flav =      [g]
+  pt =    10.1756, orig. flav =  [dbar ], final flav =      [g]
+  pt =    8.94454, orig. flav =      [g], final flav =      [g]
+  pt =    7.34392, orig. flav =     [u ], final flav =     [u ]
+  pt =    5.58361, orig. flav =      [g], final flav =      [g]
+  pt =    4.67571, orig. flav =     [b ], final flav =      [g]
+  pt =    2.22102, orig. flav =      [g], final flav =      [g]
+  pt =    2.19169, orig. flav =  [dbar ], final flav =      [g]
+  pt =   0.621727, orig. flav =     [c ], final flav =      [g]
+
+base jet 1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [ubar bbar t ]
+IFN jet  1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [ubar t ]
+constituents:
+  pt =     9.5194, orig. flav =      [g], final flav =      [g]
+  pt =    8.99998, orig. flav =     [d ], final flav =     [d ]
+  pt =    4.95131, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =     3.5341, orig. flav =     [t ], final flav =     [t ]
+  pt =     2.1663, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    1.41552, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 2: pt=21.2516 rap=0.467594 phi=5.0756, flav = [cbar cbar ]
+IFN jet  2: pt=21.2516 rap=0.467594 phi=5.0756, flav = [cbar cbar ]
+constituents:
+  pt =    9.83542, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =    5.38943, orig. flav =      [g], final flav =      [g]
+  pt =    3.31887, orig. flav =     [d ], final flav =      [g]
+  pt =     2.1902, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =   0.592653, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 3: pt=20.9087 rap=0.858619 phi=5.39029, flav = [ubar ]
+IFN jet  3: pt=20.9087 rap=0.858619 phi=5.39029, flav = [ubar ]
+constituents:
+  pt =    12.2809, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    8.06371, orig. flav =     [d ], final flav =      [g]
+  pt =   0.605757, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 4: pt=19.611 rap=1.0372 phi=1.25711, flav = [cbar b t ]
+IFN jet  4: pt=19.611 rap=1.0372 phi=1.25711, flav = [cbar t ]
+constituents:
+  pt =    6.76525, orig. flav =     [t ], final flav =     [t ]
+  pt =    4.53693, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =    3.26098, orig. flav =      [g], final flav =      [g]
+  pt =    2.40436, orig. flav =      [g], final flav =      [g]
+  pt =    1.65216, orig. flav =      [g], final flav =      [g]
+  pt =    1.25691, orig. flav =     [b ], final flav =      [g]
+
+base jet 5: pt=18.1229 rap=0.951132 phi=6.13624, flav = [cbar cbar bbar ]
+IFN jet  5: pt=18.1229 rap=0.951132 phi=6.13624, flav = [cbar cbar ]
+constituents:
+  pt =    7.16765, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =    2.72211, orig. flav =      [g], final flav =      [g]
+  pt =    2.54494, orig. flav =      [g], final flav =      [g]
+  pt =    2.29452, orig. flav =  [bbar ], final flav =      [g]
+  pt =    2.28934, orig. flav =      [g], final flav =      [g]
+  pt =    1.28272, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 6: pt=9.64769 rap=-0.34528 phi=5.73185, flav = [cbar ]
+IFN jet  6: pt=9.64769 rap=-0.34528 phi=5.73185, flav = [cbar ]
+constituents:
+  pt =    9.64769, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 7: pt=6.70531 rap=0.415159 phi=0.886058, flav = [u cbar ]
+IFN jet  7: pt=6.70531 rap=0.415159 phi=0.886058, flav = [u ]
+constituents:
+  pt =    6.36857, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.337198, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 8: pt=6.3585 rap=3.17208 phi=3.4689, flav = [sbar ]
+IFN jet  8: pt=6.3585 rap=3.17208 phi=3.4689, flav = [sbar ]
+constituents:
+  pt =    4.72172, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =    1.65618, orig. flav =      [g], final flav =      [g]
+
+base jet 9: pt=3.52758 rap=-0.619235 phi=2.98305, flav = [c ]
+IFN jet  9: pt=3.52758 rap=-0.619235 phi=2.98305, flav = [c ]
+constituents:
+  pt =    3.52758, orig. flav =     [c ], final flav =     [c ]
+
+base jet 10: pt=3.26785 rap=-1.98045 phi=1.33641, flav = [dbar ]
+IFN jet  10: pt=3.26785 rap=-1.98045 phi=1.33641, flav = [dbar ]
+constituents:
+  pt =    3.26785, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 11: pt=2.95687 rap=-0.46936 phi=3.53134, flav = [bbar ]
+IFN jet  11: pt=2.95687 rap=-0.46936 phi=3.53134, flav = [g]
+constituents:
+  pt =    2.95687, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 12: pt=2.39443 rap=-1.04658 phi=1.77051, flav = [t ]
+IFN jet  12: pt=2.39443 rap=-1.04658 phi=1.77051, flav = [t ]
+constituents:
+  pt =    2.39443, orig. flav =     [t ], final flav =     [t ]
+
+base jet 13: pt=2.17275 rap=2.71029 phi=4.02432, flav = [s ]
+IFN jet  13: pt=2.17275 rap=2.71029 phi=4.02432, flav = [s ]
+constituents:
+  pt =    2.17275, orig. flav =     [s ], final flav =     [s ]
+
+base jet 14: pt=2.00771 rap=-2.66636 phi=1.9793, flav = [g]
+IFN jet  14: pt=2.00771 rap=-2.66636 phi=1.9793, flav = [g]
+constituents:
+  pt =    2.00771, orig. flav =      [g], final flav =      [g]
+
+base jet 15: pt=1.68935 rap=0.54944 phi=1.45194, flav = [g]
+IFN jet  15: pt=1.68935 rap=0.54944 phi=1.45194, flav = [g]
+constituents:
+  pt =    1.68935, orig. flav =      [g], final flav =      [g]
+
+base jet 16: pt=1.56645 rap=-2.45543 phi=0.857032, flav = [g]
+IFN jet  16: pt=1.56645 rap=-2.45543 phi=0.857032, flav = [g]
+constituents:
+  pt =    1.56645, orig. flav =      [g], final flav =      [g]
+
+base jet 17: pt=1.25273 rap=2.2372 phi=4.98823, flav = [d ]
+IFN jet  17: pt=1.25273 rap=2.2372 phi=4.98823, flav = [g]
+constituents:
+  pt =    1.25273, orig. flav =     [d ], final flav =      [g]
+
+base jet 18: pt=1.04324 rap=-0.0410581 phi=4.79549, flav = [g]
+IFN jet  18: pt=1.04324 rap=-0.0410581 phi=4.79549, flav = [g]
+constituents:
+  pt =    1.04324, orig. flav =      [g], final flav =      [g]
+
+base jet 19: pt=0.98457 rap=-0.90234 phi=1.03741, flav = [g]
+IFN jet  19: pt=0.98457 rap=-0.90234 phi=1.03741, flav = [g]
+constituents:
+  pt =    0.98457, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=0.940359 rap=-7.05493 phi=4.47708, flav = [d u ]
+IFN jet  20: pt=0.940359 rap=-7.05493 phi=4.47708, flav = [d u ]
+constituents:
+  pt =   0.940359, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 21: pt=0.656026 rap=7.36601 phi=2.83859, flav = [d u ]
+IFN jet  21: pt=0.656026 rap=7.36601 phi=2.83859, flav = [d u ]
+constituents:
+  pt =   0.656026, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 22: pt=0.606412 rap=3.31014 phi=4.20996, flav = [s ]
+IFN jet  22: pt=0.606412 rap=3.31014 phi=4.20996, flav = [s ]
+constituents:
+  pt =   0.606412, orig. flav =     [s ], final flav =     [s ]
+
+base jet 23: pt=0.572105 rap=-3.68589 phi=0.864249, flav = [b ]
+IFN jet  23: pt=0.572105 rap=-3.68589 phi=0.864249, flav = [g]
+constituents:
+  pt =   0.572105, orig. flav =     [b ], final flav =      [g]
+
+base jet 24: pt=0.552919 rap=1.8734 phi=5.59751, flav = [g]
+IFN jet  24: pt=0.552919 rap=1.8734 phi=5.59751, flav = [g]
+constituents:
+  pt =   0.552919, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=0.522022 rap=1.66103 phi=1.55341, flav = [g]
+IFN jet  25: pt=0.522022 rap=1.66103 phi=1.55341, flav = [g]
+constituents:
+  pt =   0.470604, orig. flav =      [g], final flav =      [g]
+  pt =   0.051762, orig. flav =      [g], final flav =      [g]
+
+base jet 26: pt=0.479117 rap=-4.48708 phi=5.41494, flav = [b ]
+IFN jet  26: pt=0.479117 rap=-4.48708 phi=5.41494, flav = [b ]
+constituents:
+  pt =   0.479117, orig. flav =     [b ], final flav =     [b ]
+
+base jet 27: pt=0.474687 rap=0.934876 phi=4.28687, flav = [t ]
+IFN jet  27: pt=0.474687 rap=0.934876 phi=4.28687, flav = [t ]
+constituents:
+  pt =   0.474687, orig. flav =     [t ], final flav =     [t ]
+
+base jet 28: pt=0.300278 rap=3.76919 phi=5.04174, flav = [b ]
+IFN jet  28: pt=0.300278 rap=3.76919 phi=5.04174, flav = [b ]
+constituents:
+  pt =   0.300278, orig. flav =     [b ], final flav =     [b ]
+
+base jet 29: pt=0.288055 rap=1.21298 phi=2.73595, flav = [s ]
+IFN jet  29: pt=0.288055 rap=1.21298 phi=2.73595, flav = [s ]
+constituents:
+  pt =   0.288055, orig. flav =     [s ], final flav =     [s ]
+
+base jet 30: pt=0.283717 rap=-2.51705 phi=2.86873, flav = [g]
+IFN jet  30: pt=0.283717 rap=-2.51705 phi=2.86873, flav = [g]
+constituents:
+  pt =   0.283717, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.277488 rap=-1.26759 phi=0.396167, flav = [g]
+IFN jet  31: pt=0.277488 rap=-1.26759 phi=0.396167, flav = [g]
+constituents:
+  pt =   0.277488, orig. flav =      [g], final flav =      [g]
+
+base jet 32: pt=0.181345 rap=-3.192 phi=4.5503, flav = [g]
+IFN jet  32: pt=0.181345 rap=-3.192 phi=4.5503, flav = [g]
+constituents:
+  pt =   0.181345, orig. flav =      [g], final flav =      [g]
+
+base jet 33: pt=0.0214389 rap=-0.76379 phi=2.51577, flav = [g]
+IFN jet  33: pt=0.0214389 rap=-0.76379 phi=2.51577, flav = [g]
+constituents:
+  pt =  0.0214389, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 3 with 62 particles
+
+base jet 0: pt=113.596 rap=0.884767 phi=2.15347, flav = [u sbar cbar bbar ]
+IFN jet  0: pt=113.596 rap=0.884767 phi=2.15347, flav = [u sbar bbar ]
+constituents:
+  pt =    84.5779, orig. flav =     [u ], final flav =     [u ]
+  pt =    18.8333, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =    6.43962, orig. flav =      [g], final flav =      [g]
+  pt =    2.05959, orig. flav =  [cbar ], final flav =      [g]
+  pt =    1.07016, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =   0.670671, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=3.10448 rap=3.11464 phi=3.8646, flav = [ubar sbar ]
+IFN jet  1: pt=3.10448 rap=3.11464 phi=3.8646, flav = [ubar sbar ]
+constituents:
+  pt =     1.0283, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.825185, orig. flav =      [g], final flav =      [g]
+  pt =   0.661745, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    0.62945, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=3.0582 rap=0.648404 phi=3.39078, flav = [d s ]
+IFN jet  2: pt=3.0582 rap=0.648404 phi=3.39078, flav = [d s ]
+constituents:
+  pt =    1.88358, orig. flav =     [s ], final flav =     [s ]
+  pt =    1.17498, orig. flav =     [d ], final flav =     [d ]
+
+base jet 3: pt=2.69438 rap=0.14305 phi=2.06223, flav = [bbar ]
+IFN jet  3: pt=2.69438 rap=0.14305 phi=2.06223, flav = [bbar ]
+constituents:
+  pt =    1.86788, orig. flav =      [g], final flav =      [g]
+  pt =   0.854628, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 4: pt=2.65086 rap=-4.60299 phi=0.987066, flav = [d ]
+IFN jet  4: pt=2.65086 rap=-4.60299 phi=0.987066, flav = [d ]
+constituents:
+  pt =    1.92757, orig. flav =     [d ], final flav =     [d ]
+  pt =   0.726881, orig. flav =      [g], final flav =      [g]
+
+base jet 5: pt=2.08811 rap=-0.43226 phi=1.74763, flav = [s ]
+IFN jet  5: pt=2.08811 rap=-0.43226 phi=1.74763, flav = [s ]
+constituents:
+  pt =    2.08811, orig. flav =     [s ], final flav =     [s ]
+
+base jet 6: pt=1.77403 rap=3.12402 phi=3.18288, flav = [d ]
+IFN jet  6: pt=1.77403 rap=3.12402 phi=3.18288, flav = [d ]
+constituents:
+  pt =    1.77403, orig. flav =     [d ], final flav =     [d ]
+
+base jet 7: pt=1.66544 rap=-5.04812 phi=3.72053, flav = [d ]
+IFN jet  7: pt=1.66544 rap=-5.04812 phi=3.72053, flav = [d ]
+constituents:
+  pt =    1.66544, orig. flav =     [d ], final flav =     [d ]
+
+base jet 8: pt=1.63373 rap=-0.82687 phi=2.08532, flav = [sbar ]
+IFN jet  8: pt=1.63373 rap=-0.82687 phi=2.08532, flav = [sbar ]
+constituents:
+  pt =    1.63373, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 9: pt=1.5966 rap=-2.62067 phi=1.81629, flav = [ubar ]
+IFN jet  9: pt=1.5966 rap=-2.62067 phi=1.81629, flav = [ubar ]
+constituents:
+  pt =     1.5966, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 10: pt=1.53071 rap=2.11665 phi=5.80676, flav = [g]
+IFN jet  10: pt=1.53071 rap=2.11665 phi=5.80676, flav = [g]
+constituents:
+  pt =    1.53071, orig. flav =      [g], final flav =      [g]
+
+base jet 11: pt=1.38297 rap=2.92509 phi=4.83591, flav = [u ]
+IFN jet  11: pt=1.38297 rap=2.92509 phi=4.83591, flav = [u ]
+constituents:
+  pt =    1.38297, orig. flav =     [u ], final flav =     [u ]
+
+base jet 12: pt=1.17851 rap=-5.30359 phi=1.19263, flav = [g]
+IFN jet  12: pt=1.17851 rap=-5.30359 phi=1.19263, flav = [g]
+constituents:
+  pt =    1.17851, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=1.16211 rap=-3.00612 phi=1.19331, flav = [u b ]
+IFN jet  13: pt=1.16211 rap=-3.00612 phi=1.19331, flav = [u ]
+constituents:
+  pt =   0.593377, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.575222, orig. flav =     [b ], final flav =      [g]
+
+base jet 14: pt=1.14817 rap=6.6527 phi=2.39345, flav = [s ]
+IFN jet  14: pt=1.14817 rap=6.6527 phi=2.39345, flav = [s ]
+constituents:
+  pt =    1.14817, orig. flav =     [s ], final flav =     [s ]
+
+base jet 15: pt=1.12759 rap=2.0369 phi=4.74048, flav = [sbar b ]
+IFN jet  15: pt=1.12759 rap=2.0369 phi=4.74048, flav = [sbar ]
+constituents:
+  pt =   0.697385, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.430464, orig. flav =     [b ], final flav =      [g]
+
+base jet 16: pt=1.09642 rap=-0.67831 phi=5.89701, flav = [c bbar ]
+IFN jet  16: pt=1.09642 rap=-0.67831 phi=5.89701, flav = [bbar ]
+constituents:
+  pt =   0.565059, orig. flav =     [c ], final flav =      [g]
+  pt =      0.538, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 17: pt=1.08025 rap=-1.19107 phi=5.63343, flav = [ubar ]
+IFN jet  17: pt=1.08025 rap=-1.19107 phi=5.63343, flav = [ubar ]
+constituents:
+  pt =    1.08025, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 18: pt=1.06428 rap=-0.289554 phi=0.999268, flav = [t ]
+IFN jet  18: pt=1.06428 rap=-0.289554 phi=0.999268, flav = [t ]
+constituents:
+  pt =    1.06428, orig. flav =     [t ], final flav =     [t ]
+
+base jet 19: pt=1.0457 rap=6.05529 phi=1.52444, flav = [d u ]
+IFN jet  19: pt=1.0457 rap=6.05529 phi=1.52444, flav = [d u ]
+constituents:
+  pt =     1.0457, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 20: pt=1.01488 rap=-1.44591 phi=4.03646, flav = [u ]
+IFN jet  20: pt=1.01488 rap=-1.44591 phi=4.03646, flav = [u ]
+constituents:
+  pt =    1.01488, orig. flav =     [u ], final flav =     [u ]
+
+base jet 21: pt=0.993602 rap=-0.0869548 phi=4.15804, flav = [d bbar ]
+IFN jet  21: pt=0.993602 rap=-0.0869548 phi=4.15804, flav = [d ]
+constituents:
+  pt =   0.620255, orig. flav =     [d ], final flav =     [d ]
+  pt =   0.386927, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 22: pt=0.985143 rap=1.96485 phi=4.02595, flav = [g]
+IFN jet  22: pt=0.985143 rap=1.96485 phi=4.02595, flav = [g]
+constituents:
+  pt =   0.654448, orig. flav =      [g], final flav =      [g]
+  pt =   0.331912, orig. flav =      [g], final flav =      [g]
+
+base jet 23: pt=0.945258 rap=-0.810838 phi=3.6483, flav = [u ]
+IFN jet  23: pt=0.945258 rap=-0.810838 phi=3.6483, flav = [u ]
+constituents:
+  pt =   0.945258, orig. flav =     [u ], final flav =     [u ]
+
+base jet 24: pt=0.901582 rap=1.47923 phi=4.01952, flav = [g]
+IFN jet  24: pt=0.901582 rap=1.47923 phi=4.01952, flav = [g]
+constituents:
+  pt =   0.901582, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=0.856581 rap=-3.49619 phi=1.14963, flav = [g]
+IFN jet  25: pt=0.856581 rap=-3.49619 phi=1.14963, flav = [g]
+constituents:
+  pt =   0.856581, orig. flav =      [g], final flav =      [g]
+
+base jet 26: pt=0.735732 rap=-1.52619 phi=1.92998, flav = [cbar ]
+IFN jet  26: pt=0.735732 rap=-1.52619 phi=1.92998, flav = [g]
+constituents:
+  pt =   0.735732, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 27: pt=0.714956 rap=-1.07483 phi=1.08822, flav = [bbar ]
+IFN jet  27: pt=0.714956 rap=-1.07483 phi=1.08822, flav = [bbar ]
+constituents:
+  pt =   0.714956, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 28: pt=0.635763 rap=-2.31917 phi=0.438751, flav = [c ]
+IFN jet  28: pt=0.635763 rap=-2.31917 phi=0.438751, flav = [g]
+constituents:
+  pt =   0.635763, orig. flav =     [c ], final flav =      [g]
+
+base jet 29: pt=0.616757 rap=0.233943 phi=1.47353, flav = [sbar ]
+IFN jet  29: pt=0.616757 rap=0.233943 phi=1.47353, flav = [sbar ]
+constituents:
+  pt =   0.313318, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.311052, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.587412 rap=-4.58221 phi=3.70546, flav = [bbar ]
+IFN jet  30: pt=0.587412 rap=-4.58221 phi=3.70546, flav = [g]
+constituents:
+  pt =   0.587412, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 31: pt=0.538598 rap=0.369704 phi=2.99212, flav = [g]
+IFN jet  31: pt=0.538598 rap=0.369704 phi=2.99212, flav = [g]
+constituents:
+  pt =   0.538598, orig. flav =      [g], final flav =      [g]
+
+base jet 32: pt=0.458607 rap=-0.371276 phi=2.87821, flav = [c ]
+IFN jet  32: pt=0.458607 rap=-0.371276 phi=2.87821, flav = [g]
+constituents:
+  pt =   0.458607, orig. flav =     [c ], final flav =      [g]
+
+base jet 33: pt=0.367634 rap=-1.92733 phi=2.4454, flav = [sbar ]
+IFN jet  33: pt=0.367634 rap=-1.92733 phi=2.4454, flav = [sbar ]
+constituents:
+  pt =   0.367634, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 34: pt=0.344187 rap=1.6731 phi=1.1241, flav = [g]
+IFN jet  34: pt=0.344187 rap=1.6731 phi=1.1241, flav = [g]
+constituents:
+  pt =   0.344187, orig. flav =      [g], final flav =      [g]
+
+base jet 35: pt=0.326826 rap=-4.0666 phi=1.26604, flav = [cbar ]
+IFN jet  35: pt=0.326826 rap=-4.0666 phi=1.26604, flav = [g]
+constituents:
+  pt =   0.326826, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 36: pt=0.315411 rap=3.50524 phi=4.60533, flav = [ubar ]
+IFN jet  36: pt=0.315411 rap=3.50524 phi=4.60533, flav = [ubar ]
+constituents:
+  pt =   0.315411, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 37: pt=0.282369 rap=0.0609496 phi=3.55799, flav = [g]
+IFN jet  37: pt=0.282369 rap=0.0609496 phi=3.55799, flav = [g]
+constituents:
+  pt =   0.282369, orig. flav =      [g], final flav =      [g]
+
+base jet 38: pt=0.275342 rap=-1.41152 phi=4.65817, flav = [g]
+IFN jet  38: pt=0.275342 rap=-1.41152 phi=4.65817, flav = [g]
+constituents:
+  pt =   0.275342, orig. flav =      [g], final flav =      [g]
+
+base jet 39: pt=0.270557 rap=-6.42821 phi=1.9268, flav = [d u ]
+IFN jet  39: pt=0.270557 rap=-6.42821 phi=1.9268, flav = [d u ]
+constituents:
+  pt =   0.270557, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 40: pt=0.236389 rap=-1.39315 phi=1.53166, flav = [g]
+IFN jet  40: pt=0.236389 rap=-1.39315 phi=1.53166, flav = [g]
+constituents:
+  pt =   0.236389, orig. flav =      [g], final flav =      [g]
+
+base jet 41: pt=0.180563 rap=-2.61987 phi=3.47406, flav = [s ]
+IFN jet  41: pt=0.180563 rap=-2.61987 phi=3.47406, flav = [s ]
+constituents:
+  pt =   0.180563, orig. flav =     [s ], final flav =     [s ]
+
+base jet 42: pt=0.116413 rap=-3.54693 phi=5.82437, flav = [g]
+IFN jet  42: pt=0.116413 rap=-3.54693 phi=5.82437, flav = [g]
+constituents:
+  pt =   0.116413, orig. flav =      [g], final flav =      [g]
+
+base jet 43: pt=0.0409862 rap=0.0572104 phi=6.27533, flav = [g]
+IFN jet  43: pt=0.0409862 rap=0.0572104 phi=6.27533, flav = [g]
+constituents:
+  pt =  0.0409862, orig. flav =      [g], final flav =      [g]
+
+base jet 44: pt=0.000367874 rap=-1.87847 phi=4.91532, flav = [g]
+IFN jet  44: pt=0.000367874 rap=-1.87847 phi=4.91532, flav = [g]
+constituents:
+  pt = 0.000367874, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 4 with 93 particles
+
+base jet 0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [u c tbar ]
+IFN jet  0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [u c ]
+constituents:
+  pt =    41.6981, orig. flav =     [u ], final flav =     [u ]
+  pt =    5.50916, orig. flav =  [ubar ], final flav =      [g]
+  pt =    3.68609, orig. flav =     [u ], final flav =      [g]
+  pt =    3.67113, orig. flav =     [s ], final flav =      [g]
+  pt =    2.92951, orig. flav =      [g], final flav =      [g]
+  pt =    2.68583, orig. flav =  [sbar ], final flav =      [g]
+  pt =    1.77594, orig. flav =      [g], final flav =      [g]
+  pt =    1.29025, orig. flav =  [tbar ], final flav =      [g]
+  pt =    1.09112, orig. flav =     [c ], final flav =     [c ]
+  pt =   0.549747, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [d ubar bbar tbar ]
+IFN jet  1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [d ubar bbar tbar ]
+constituents:
+  pt =     20.604, orig. flav =     [d ], final flav =     [d ]
+  pt =    16.7998, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    5.36742, orig. flav =      [g], final flav =      [g]
+  pt =    4.42483, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    4.22446, orig. flav =      [g], final flav =      [g]
+  pt =    4.19527, orig. flav =  [sbar ], final flav =      [g]
+  pt =    2.38599, orig. flav =  [tbar ], final flav =  [tbar ]
+  pt =    1.60754, orig. flav =     [s ], final flav =      [g]
+  pt =    1.20698, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=8.27633 rap=-2.79808 phi=4.26636, flav = [g]
+IFN jet  2: pt=8.27633 rap=-2.79808 phi=4.26636, flav = [g]
+constituents:
+  pt =    6.00207, orig. flav =     [u ], final flav =     [u ]
+  pt =    2.24363, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =   0.135296, orig. flav =      [g], final flav =      [g]
+
+base jet 3: pt=7.33896 rap=1.12216 phi=5.90749, flav = [g]
+IFN jet  3: pt=7.33896 rap=1.12216 phi=5.90749, flav = [g]
+constituents:
+  pt =    4.75356, orig. flav =      [g], final flav =      [g]
+  pt =    2.60351, orig. flav =      [g], final flav =      [g]
+
+base jet 4: pt=5.6391 rap=-2.22665 phi=3.29502, flav = [dbar dbar t ]
+IFN jet  4: pt=5.6391 rap=-2.22665 phi=3.29502, flav = [dbar dbar t ]
+constituents:
+  pt =    3.10986, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =    2.12228, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.486026, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 5: pt=3.09749 rap=0.126394 phi=1.32143, flav = [d c ]
+IFN jet  5: pt=3.09749 rap=0.126394 phi=1.32143, flav = [d ]
+constituents:
+  pt =    1.83144, orig. flav =     [c ], final flav =      [g]
+  pt =   0.856199, orig. flav =      [g], final flav =      [g]
+  pt =   0.420541, orig. flav =     [d ], final flav =     [d ]
+
+base jet 6: pt=3.07467 rap=-0.446667 phi=1.16557, flav = [d cbar ]
+IFN jet  6: pt=3.07467 rap=-0.446667 phi=1.16557, flav = [d ]
+constituents:
+  pt =    1.78678, orig. flav =  [cbar ], final flav =      [g]
+  pt =   0.659543, orig. flav =     [d ], final flav =     [d ]
+  pt =   0.630736, orig. flav =      [g], final flav =      [g]
+
+base jet 7: pt=2.99946 rap=1.23103 phi=3.12769, flav = [g]
+IFN jet  7: pt=2.99946 rap=1.23103 phi=3.12769, flav = [g]
+constituents:
+  pt =    2.26413, orig. flav =      [g], final flav =      [g]
+  pt =   0.736181, orig. flav =      [g], final flav =      [g]
+
+base jet 8: pt=2.72094 rap=1.77131 phi=1.80173, flav = [ubar sbar ]
+IFN jet  8: pt=2.72094 rap=1.77131 phi=1.80173, flav = [ubar sbar ]
+constituents:
+  pt =    1.96345, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.782091, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 9: pt=2.2549 rap=-2.18162 phi=0.109749, flav = [g]
+IFN jet  9: pt=2.2549 rap=-2.18162 phi=0.109749, flav = [g]
+constituents:
+  pt =     2.2549, orig. flav =      [g], final flav =      [g]
+
+base jet 10: pt=2.1835 rap=0.0633507 phi=1.75445, flav = [t ]
+IFN jet  10: pt=2.1835 rap=0.0633507 phi=1.75445, flav = [g]
+constituents:
+  pt =     2.1835, orig. flav =     [t ], final flav =      [g]
+
+base jet 11: pt=1.91865 rap=2.82374 phi=6.20892, flav = [t ]
+IFN jet  11: pt=1.91865 rap=2.82374 phi=6.20892, flav = [g]
+constituents:
+  pt =    1.91865, orig. flav =     [t ], final flav =      [g]
+
+base jet 12: pt=1.77941 rap=-1.85137 phi=1.34849, flav = [g]
+IFN jet  12: pt=1.77941 rap=-1.85137 phi=1.34849, flav = [g]
+constituents:
+  pt =    1.21968, orig. flav =      [g], final flav =      [g]
+  pt =   0.567604, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=1.49371 rap=5.45794 phi=4.04488, flav = [u ]
+IFN jet  13: pt=1.49371 rap=5.45794 phi=4.04488, flav = [u ]
+constituents:
+  pt =    1.49371, orig. flav =     [u ], final flav =     [u ]
+
+base jet 14: pt=1.40893 rap=-1.07484 phi=6.27594, flav = [u sbar ]
+IFN jet  14: pt=1.40893 rap=-1.07484 phi=6.27594, flav = [u sbar ]
+constituents:
+  pt =   0.849208, orig. flav =      [g], final flav =      [g]
+  pt =   0.305598, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.261449, orig. flav =     [u ], final flav =     [u ]
+
+base jet 15: pt=1.29223 rap=-0.416627 phi=2.9184, flav = [d ]
+IFN jet  15: pt=1.29223 rap=-0.416627 phi=2.9184, flav = [d ]
+constituents:
+  pt =    1.28053, orig. flav =     [d ], final flav =     [d ]
+  pt =  0.0117738, orig. flav =      [g], final flav =      [g]
+
+base jet 16: pt=1.22843 rap=-2.45955 phi=5.48621, flav = [u ]
+IFN jet  16: pt=1.22843 rap=-2.45955 phi=5.48621, flav = [u ]
+constituents:
+  pt =    1.22843, orig. flav =     [u ], final flav =     [u ]
+
+base jet 17: pt=1.19431 rap=-5.62653 phi=2.95634, flav = [u ]
+IFN jet  17: pt=1.19431 rap=-5.62653 phi=2.95634, flav = [u ]
+constituents:
+  pt =    1.19431, orig. flav =     [u ], final flav =     [u ]
+
+base jet 18: pt=1.09939 rap=-6.62034 phi=2.55075, flav = [d u ]
+IFN jet  18: pt=1.09939 rap=-6.62034 phi=2.55075, flav = [d u ]
+constituents:
+  pt =    1.09939, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 19: pt=1.05201 rap=1.50084 phi=5.70623, flav = [g]
+IFN jet  19: pt=1.05201 rap=1.50084 phi=5.70623, flav = [g]
+constituents:
+  pt =    1.05201, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=0.943416 rap=-0.267713 phi=0.607747, flav = [sbar b ]
+IFN jet  20: pt=0.943416 rap=-0.267713 phi=0.607747, flav = [g]
+constituents:
+  pt =   0.672854, orig. flav =     [b ], final flav =      [g]
+  pt =   0.270679, orig. flav =  [sbar ], final flav =      [g]
+
+base jet 21: pt=0.921789 rap=-2.5209 phi=4.8201, flav = [g]
+IFN jet  21: pt=0.921789 rap=-2.5209 phi=4.8201, flav = [g]
+constituents:
+  pt =   0.921789, orig. flav =      [g], final flav =      [g]
+
+base jet 22: pt=0.875809 rap=0.61858 phi=2.22812, flav = [g]
+IFN jet  22: pt=0.875809 rap=0.61858 phi=2.22812, flav = [g]
+constituents:
+  pt =   0.875809, orig. flav =      [g], final flav =      [g]
+
+base jet 23: pt=0.844818 rap=1.08393 phi=0.835088, flav = [g]
+IFN jet  23: pt=0.844818 rap=1.08393 phi=0.835088, flav = [g]
+constituents:
+  pt =   0.844818, orig. flav =      [g], final flav =      [g]
+
+base jet 24: pt=0.833654 rap=2.58714 phi=5.13165, flav = [g]
+IFN jet  24: pt=0.833654 rap=2.58714 phi=5.13165, flav = [g]
+constituents:
+  pt =   0.440816, orig. flav =      [g], final flav =      [g]
+  pt =   0.394859, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=0.795921 rap=5.79971 phi=1.50809, flav = [u ]
+IFN jet  25: pt=0.795921 rap=5.79971 phi=1.50809, flav = [u ]
+constituents:
+  pt =   0.795921, orig. flav =     [u ], final flav =     [u ]
+
+base jet 26: pt=0.771756 rap=3.82285 phi=1.35606, flav = [d ]
+IFN jet  26: pt=0.771756 rap=3.82285 phi=1.35606, flav = [d ]
+constituents:
+  pt =   0.771756, orig. flav =     [d ], final flav =     [d ]
+
+base jet 27: pt=0.713651 rap=-3.72448 phi=4.96354, flav = [ubar ]
+IFN jet  27: pt=0.713651 rap=-3.72448 phi=4.96354, flav = [ubar ]
+constituents:
+  pt =   0.713651, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 28: pt=0.707698 rap=1.99622 phi=5.55461, flav = [bbar ]
+IFN jet  28: pt=0.707698 rap=1.99622 phi=5.55461, flav = [g]
+constituents:
+  pt =   0.707698, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 29: pt=0.639731 rap=0.991284 phi=5.19785, flav = [g]
+IFN jet  29: pt=0.639731 rap=0.991284 phi=5.19785, flav = [g]
+constituents:
+  pt =   0.639731, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.639004 rap=6.11083 phi=3.66267, flav = [g]
+IFN jet  30: pt=0.639004 rap=6.11083 phi=3.66267, flav = [g]
+constituents:
+  pt =   0.639004, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.633122 rap=4.27978 phi=4.04482, flav = [g]
+IFN jet  31: pt=0.633122 rap=4.27978 phi=4.04482, flav = [g]
+constituents:
+  pt =   0.633122, orig. flav =      [g], final flav =      [g]
+
+base jet 32: pt=0.605937 rap=5.37129 phi=3.26461, flav = [t ]
+IFN jet  32: pt=0.605937 rap=5.37129 phi=3.26461, flav = [t ]
+constituents:
+  pt =   0.605937, orig. flav =     [t ], final flav =     [t ]
+
+base jet 33: pt=0.590525 rap=1.2242 phi=4.8405, flav = [c ]
+IFN jet  33: pt=0.590525 rap=1.2242 phi=4.8405, flav = [c ]
+constituents:
+  pt =   0.590525, orig. flav =     [c ], final flav =     [c ]
+
+base jet 34: pt=0.581598 rap=4.38855 phi=1.48003, flav = [dbar u ]
+IFN jet  34: pt=0.581598 rap=4.38855 phi=1.48003, flav = [dbar u ]
+constituents:
+  pt =   0.307412, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.276227, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 35: pt=0.546297 rap=0.937221 phi=0.35331, flav = [g]
+IFN jet  35: pt=0.546297 rap=0.937221 phi=0.35331, flav = [g]
+constituents:
+  pt =   0.546297, orig. flav =      [g], final flav =      [g]
+
+base jet 36: pt=0.543966 rap=-2.97743 phi=5.54568, flav = [ubar ]
+IFN jet  36: pt=0.543966 rap=-2.97743 phi=5.54568, flav = [ubar ]
+constituents:
+  pt =   0.543966, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 37: pt=0.521387 rap=-1.65433 phi=0.707898, flav = [g]
+IFN jet  37: pt=0.521387 rap=-1.65433 phi=0.707898, flav = [g]
+constituents:
+  pt =   0.521387, orig. flav =      [g], final flav =      [g]
+
+base jet 38: pt=0.480634 rap=5.95519 phi=2.61508, flav = [d ]
+IFN jet  38: pt=0.480634 rap=5.95519 phi=2.61508, flav = [d ]
+constituents:
+  pt =   0.480634, orig. flav =     [d ], final flav =     [d ]
+
+base jet 39: pt=0.465609 rap=2.14305 phi=3.10075, flav = [bbar ]
+IFN jet  39: pt=0.465609 rap=2.14305 phi=3.10075, flav = [bbar ]
+constituents:
+  pt =   0.465609, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 40: pt=0.442244 rap=3.11583 phi=5.25811, flav = [ubar ]
+IFN jet  40: pt=0.442244 rap=3.11583 phi=5.25811, flav = [ubar ]
+constituents:
+  pt =   0.442244, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 41: pt=0.43722 rap=0.150514 phi=2.75431, flav = [g]
+IFN jet  41: pt=0.43722 rap=0.150514 phi=2.75431, flav = [g]
+constituents:
+  pt =    0.43722, orig. flav =      [g], final flav =      [g]
+
+base jet 42: pt=0.42787 rap=0.436933 phi=1.57366, flav = [s ]
+IFN jet  42: pt=0.42787 rap=0.436933 phi=1.57366, flav = [g]
+constituents:
+  pt =    0.42787, orig. flav =     [s ], final flav =      [g]
+
+base jet 43: pt=0.411842 rap=-1.26415 phi=2.08269, flav = [g]
+IFN jet  43: pt=0.411842 rap=-1.26415 phi=2.08269, flav = [g]
+constituents:
+  pt =   0.411842, orig. flav =      [g], final flav =      [g]
+
+base jet 44: pt=0.400929 rap=3.63984 phi=2.14692, flav = [g]
+IFN jet  44: pt=0.400929 rap=3.63984 phi=2.14692, flav = [g]
+constituents:
+  pt =   0.400929, orig. flav =      [g], final flav =      [g]
+
+base jet 45: pt=0.339731 rap=-1.62643 phi=4.26943, flav = [g]
+IFN jet  45: pt=0.339731 rap=-1.62643 phi=4.26943, flav = [g]
+constituents:
+  pt =   0.339731, orig. flav =      [g], final flav =      [g]
+
+base jet 46: pt=0.323149 rap=3.35167 phi=3.43394, flav = [g]
+IFN jet  46: pt=0.323149 rap=3.35167 phi=3.43394, flav = [g]
+constituents:
+  pt =   0.323149, orig. flav =      [g], final flav =      [g]
+
+base jet 47: pt=0.311072 rap=2.12474 phi=2.13269, flav = [g]
+IFN jet  47: pt=0.311072 rap=2.12474 phi=2.13269, flav = [g]
+constituents:
+  pt =   0.311072, orig. flav =      [g], final flav =      [g]
+
+base jet 48: pt=0.309475 rap=-1.22922 phi=5.53698, flav = [s ]
+IFN jet  48: pt=0.309475 rap=-1.22922 phi=5.53698, flav = [s ]
+constituents:
+  pt =   0.309475, orig. flav =     [s ], final flav =     [s ]
+
+base jet 49: pt=0.298757 rap=5.19963 phi=4.52078, flav = [u ]
+IFN jet  49: pt=0.298757 rap=5.19963 phi=4.52078, flav = [u ]
+constituents:
+  pt =   0.298757, orig. flav =     [u ], final flav =     [u ]
+
+base jet 50: pt=0.278128 rap=3.94799 phi=3.03891, flav = [g]
+IFN jet  50: pt=0.278128 rap=3.94799 phi=3.03891, flav = [g]
+constituents:
+  pt =   0.278128, orig. flav =      [g], final flav =      [g]
+
+base jet 51: pt=0.265764 rap=-0.885221 phi=2.64341, flav = [tbar ]
+IFN jet  51: pt=0.265764 rap=-0.885221 phi=2.64341, flav = [g]
+constituents:
+  pt =   0.265764, orig. flav =  [tbar ], final flav =      [g]
+
+base jet 52: pt=0.241476 rap=-0.612924 phi=5.34811, flav = [g]
+IFN jet  52: pt=0.241476 rap=-0.612924 phi=5.34811, flav = [g]
+constituents:
+  pt =   0.241476, orig. flav =      [g], final flav =      [g]
+
+base jet 53: pt=0.217796 rap=3.41688 phi=0.451923, flav = [sbar ]
+IFN jet  53: pt=0.217796 rap=3.41688 phi=0.451923, flav = [sbar ]
+constituents:
+  pt =   0.217796, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 54: pt=0.162116 rap=-0.173813 phi=5.41056, flav = [g]
+IFN jet  54: pt=0.162116 rap=-0.173813 phi=5.41056, flav = [g]
+constituents:
+  pt =   0.162116, orig. flav =      [g], final flav =      [g]
+
+base jet 55: pt=0.112512 rap=-0.0545497 phi=2.39963, flav = [g]
+IFN jet  55: pt=0.112512 rap=-0.0545497 phi=2.39963, flav = [g]
+constituents:
+  pt =   0.112512, orig. flav =      [g], final flav =      [g]
+
+base jet 56: pt=0.0428028 rap=-1.882 phi=2.17436, flav = [g]
+IFN jet  56: pt=0.0428028 rap=-1.882 phi=2.17436, flav = [g]
+constituents:
+  pt =  0.0428028, orig. flav =      [g], final flav =      [g]
+
+base jet 57: pt=0.0182354 rap=1.83065 phi=4.04384, flav = [sbar ]
+IFN jet  57: pt=0.0182354 rap=1.83065 phi=4.04384, flav = [sbar ]
+constituents:
+  pt =  0.0182354, orig. flav =  [sbar ], final flav =  [sbar ]
+
+#---------------------------------------------------------------
+# read event 5 with 104 particles
+
+base jet 0: pt=103.576 rap=0.670846 phi=5.56992, flav = [ubar c c t ]
+IFN jet  0: pt=103.576 rap=0.670846 phi=5.56992, flav = [dbar c t ]
+constituents:
+  pt =    23.9763, orig. flav =      [g], final flav =      [g]
+  pt =    22.4901, orig. flav =      [g], final flav =      [g]
+  pt =    14.9044, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =    7.06066, orig. flav =      [g], final flav =      [g]
+  pt =    6.14926, orig. flav =  [bbar ], final flav =      [g]
+  pt =    5.69092, orig. flav =      [g], final flav =      [g]
+  pt =    4.89757, orig. flav =      [g], final flav =      [g]
+  pt =    3.99553, orig. flav =     [c ], final flav =     [c ]
+  pt =    2.26013, orig. flav =     [d ], final flav =      [g]
+  pt =    1.89047, orig. flav =  [ubar ], final flav =      [g]
+  pt =    1.86911, orig. flav =     [t ], final flav =     [t ]
+  pt =    1.81841, orig. flav =     [c ], final flav =      [g]
+  pt =    1.71179, orig. flav =     [b ], final flav =      [g]
+  pt =    1.69529, orig. flav =      [g], final flav =      [g]
+  pt =    1.31468, orig. flav =     [s ], final flav =      [g]
+  pt =    1.25161, orig. flav =  [sbar ], final flav =      [g]
+  pt =   0.604694, orig. flav =     [b ], final flav =      [g]
+  pt =   0.492421, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 1: pt=4.58178 rap=-1.90869 phi=2.36617, flav = [dbar ]
+IFN jet  1: pt=4.58178 rap=-1.90869 phi=2.36617, flav = [dbar ]
+constituents:
+  pt =    3.24287, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =    1.00752, orig. flav =      [g], final flav =      [g]
+  pt =   0.377775, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=3.3254 rap=1.18649 phi=5.73498, flav = [d c ]
+IFN jet  2: pt=3.3254 rap=1.18649 phi=5.73498, flav = [d c ]
+constituents:
+  pt =    2.54573, orig. flav =     [d ], final flav =     [d ]
+  pt =   0.810232, orig. flav =     [c ], final flav =     [c ]
+
+base jet 3: pt=3.17718 rap=2.72848 phi=5.65978, flav = [d ]
+IFN jet  3: pt=3.17718 rap=2.72848 phi=5.65978, flav = [d ]
+constituents:
+  pt =    3.17718, orig. flav =     [d ], final flav =     [d ]
+
+base jet 4: pt=3.07538 rap=-2.94002 phi=5.57259, flav = [cbar ]
+IFN jet  4: pt=3.07538 rap=-2.94002 phi=5.57259, flav = [cbar ]
+constituents:
+  pt =    3.07538, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 5: pt=2.91546 rap=4.90048 phi=0.0643643, flav = [dbar b ]
+IFN jet  5: pt=2.91546 rap=4.90048 phi=0.0643643, flav = [dbar b ]
+constituents:
+  pt =    2.28586, orig. flav =     [b ], final flav =     [b ]
+  pt =   0.639866, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 6: pt=2.79087 rap=-0.0839135 phi=3.72992, flav = [g]
+IFN jet  6: pt=2.79087 rap=-0.0839135 phi=3.72992, flav = [g]
+constituents:
+  pt =    2.14707, orig. flav =      [g], final flav =      [g]
+  pt =   0.645637, orig. flav =      [g], final flav =      [g]
+
+base jet 7: pt=2.66046 rap=-1.36723 phi=2.09926, flav = [ubar ]
+IFN jet  7: pt=2.66046 rap=-1.36723 phi=2.09926, flav = [g]
+constituents:
+  pt =    1.74647, orig. flav =  [ubar ], final flav =      [g]
+  pt =   0.920829, orig. flav =      [g], final flav =      [g]
+
+base jet 8: pt=2.56647 rap=3.36059 phi=5.47546, flav = [b ]
+IFN jet  8: pt=2.56647 rap=3.36059 phi=5.47546, flav = [b ]
+constituents:
+  pt =    2.56647, orig. flav =     [b ], final flav =     [b ]
+
+base jet 9: pt=2.19566 rap=0.816755 phi=4.80042, flav = [cbar ]
+IFN jet  9: pt=2.19566 rap=0.816755 phi=4.80042, flav = [g]
+constituents:
+  pt =    2.19566, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 10: pt=1.90258 rap=-0.368807 phi=4.16633, flav = [b ]
+IFN jet  10: pt=1.90258 rap=-0.368807 phi=4.16633, flav = [b ]
+constituents:
+  pt =    1.90258, orig. flav =     [b ], final flav =     [b ]
+
+base jet 11: pt=1.77874 rap=1.71841 phi=2.12888, flav = [g]
+IFN jet  11: pt=1.77874 rap=1.71841 phi=2.12888, flav = [g]
+constituents:
+  pt =    1.13429, orig. flav =      [g], final flav =      [g]
+  pt =   0.652451, orig. flav =      [g], final flav =      [g]
+
+base jet 12: pt=1.75906 rap=-0.441818 phi=0.900447, flav = [u tbar ]
+IFN jet  12: pt=1.75906 rap=-0.441818 phi=0.900447, flav = [g]
+constituents:
+  pt =     1.1012, orig. flav =      [g], final flav =      [g]
+  pt =   0.317973, orig. flav =      [g], final flav =      [g]
+  pt =   0.215601, orig. flav =     [u ], final flav =      [g]
+  pt =   0.137049, orig. flav =  [tbar ], final flav =      [g]
+
+base jet 13: pt=1.66894 rap=-0.0808496 phi=2.67093, flav = [ubar ]
+IFN jet  13: pt=1.66894 rap=-0.0808496 phi=2.67093, flav = [g]
+constituents:
+  pt =    1.24928, orig. flav =  [ubar ], final flav =      [g]
+  pt =   0.427242, orig. flav =      [g], final flav =      [g]
+
+base jet 14: pt=1.65914 rap=-1.10639 phi=1.73822, flav = [u ]
+IFN jet  14: pt=1.65914 rap=-1.10639 phi=1.73822, flav = [g]
+constituents:
+  pt =    1.65914, orig. flav =     [u ], final flav =      [g]
+
+base jet 15: pt=1.57407 rap=0.375704 phi=0.286954, flav = [b ]
+IFN jet  15: pt=1.57407 rap=0.375704 phi=0.286954, flav = [b ]
+constituents:
+  pt =    1.57407, orig. flav =     [b ], final flav =     [b ]
+
+base jet 16: pt=1.56625 rap=-0.638066 phi=2.98326, flav = [g]
+IFN jet  16: pt=1.56625 rap=-0.638066 phi=2.98326, flav = [g]
+constituents:
+  pt =    1.09436, orig. flav =      [g], final flav =      [g]
+  pt =   0.479972, orig. flav =      [g], final flav =      [g]
+
+base jet 17: pt=1.53099 rap=0.666093 phi=2.54593, flav = [s ]
+IFN jet  17: pt=1.53099 rap=0.666093 phi=2.54593, flav = [s ]
+constituents:
+  pt =    1.27797, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.264861, orig. flav =      [g], final flav =      [g]
+
+base jet 18: pt=1.52508 rap=-1.62383 phi=1.52316, flav = [g]
+IFN jet  18: pt=1.52508 rap=-1.62383 phi=1.52316, flav = [g]
+constituents:
+  pt =    1.52508, orig. flav =      [g], final flav =      [g]
+
+base jet 19: pt=1.48377 rap=4.79271 phi=2.36556, flav = [g]
+IFN jet  19: pt=1.48377 rap=4.79271 phi=2.36556, flav = [g]
+constituents:
+  pt =    1.48377, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=1.48009 rap=0.430208 phi=5.19574, flav = [g]
+IFN jet  20: pt=1.48009 rap=0.430208 phi=5.19574, flav = [g]
+constituents:
+  pt =    1.48009, orig. flav =      [g], final flav =      [g]
+
+base jet 21: pt=1.38769 rap=3.19928 phi=0.885113, flav = [g]
+IFN jet  21: pt=1.38769 rap=3.19928 phi=0.885113, flav = [g]
+constituents:
+  pt =   0.890343, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.427447, orig. flav =      [g], final flav =      [g]
+  pt =  0.0784818, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 22: pt=1.37067 rap=4.3294 phi=4.95068, flav = [ubar ]
+IFN jet  22: pt=1.37067 rap=4.3294 phi=4.95068, flav = [ubar ]
+constituents:
+  pt =    1.37067, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 23: pt=1.33857 rap=2.90865 phi=6.11471, flav = [g]
+IFN jet  23: pt=1.33857 rap=2.90865 phi=6.11471, flav = [g]
+constituents:
+  pt =    1.33857, orig. flav =      [g], final flav =      [g]
+
+base jet 24: pt=1.3384 rap=-0.684202 phi=2.09932, flav = [ubar t ]
+IFN jet  24: pt=1.3384 rap=-0.684202 phi=2.09932, flav = [t ]
+constituents:
+  pt =   0.900871, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.446251, orig. flav =  [ubar ], final flav =      [g]
+
+base jet 25: pt=1.25816 rap=2.68646 phi=4.78388, flav = [sbar b ]
+IFN jet  25: pt=1.25816 rap=2.68646 phi=4.78388, flav = [sbar b ]
+constituents:
+  pt =   0.674191, orig. flav =     [b ], final flav =     [b ]
+  pt =   0.600112, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 26: pt=1.20045 rap=3.36562 phi=2.312, flav = [u ]
+IFN jet  26: pt=1.20045 rap=3.36562 phi=2.312, flav = [u ]
+constituents:
+  pt =    1.20045, orig. flav =     [u ], final flav =     [u ]
+
+base jet 27: pt=1.1616 rap=2.31063 phi=0.674491, flav = [g]
+IFN jet  27: pt=1.1616 rap=2.31063 phi=0.674491, flav = [g]
+constituents:
+  pt =     1.1616, orig. flav =      [g], final flav =      [g]
+
+base jet 28: pt=1.16047 rap=-1.91441 phi=3.09778, flav = [u t ]
+IFN jet  28: pt=1.16047 rap=-1.91441 phi=3.09778, flav = [u t ]
+constituents:
+  pt =   0.771884, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.388772, orig. flav =     [u ], final flav =     [u ]
+
+base jet 29: pt=1.13847 rap=0.117427 phi=4.26462, flav = [g]
+IFN jet  29: pt=1.13847 rap=0.117427 phi=4.26462, flav = [g]
+constituents:
+  pt =    1.13847, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=1.13016 rap=1.72204 phi=4.21821, flav = [g]
+IFN jet  30: pt=1.13016 rap=1.72204 phi=4.21821, flav = [g]
+constituents:
+  pt =    1.13016, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=1.12958 rap=1.40598 phi=0.188041, flav = [dbar ]
+IFN jet  31: pt=1.12958 rap=1.40598 phi=0.188041, flav = [g]
+constituents:
+  pt =    1.12958, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 32: pt=0.953686 rap=5.34921 phi=0.943114, flav = [d ]
+IFN jet  32: pt=0.953686 rap=5.34921 phi=0.943114, flav = [d ]
+constituents:
+  pt =   0.953686, orig. flav =     [d ], final flav =     [d ]
+
+base jet 33: pt=0.926798 rap=2.70564 phi=1.28736, flav = [ubar ]
+IFN jet  33: pt=0.926798 rap=2.70564 phi=1.28736, flav = [ubar ]
+constituents:
+  pt =   0.926798, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 34: pt=0.915089 rap=-0.973834 phi=3.47696, flav = [u ]
+IFN jet  34: pt=0.915089 rap=-0.973834 phi=3.47696, flav = [g]
+constituents:
+  pt =   0.769102, orig. flav =     [u ], final flav =      [g]
+  pt =   0.152873, orig. flav =      [g], final flav =      [g]
+
+base jet 35: pt=0.863148 rap=3.05011 phi=0.304023, flav = [t ]
+IFN jet  35: pt=0.863148 rap=3.05011 phi=0.304023, flav = [t ]
+constituents:
+  pt =   0.863148, orig. flav =     [t ], final flav =     [t ]
+
+base jet 36: pt=0.849618 rap=-3.29141 phi=3.95914, flav = [d ]
+IFN jet  36: pt=0.849618 rap=-3.29141 phi=3.95914, flav = [d ]
+constituents:
+  pt =   0.849618, orig. flav =     [d ], final flav =     [d ]
+
+base jet 37: pt=0.845184 rap=-0.197754 phi=1.6774, flav = [g]
+IFN jet  37: pt=0.845184 rap=-0.197754 phi=1.6774, flav = [g]
+constituents:
+  pt =   0.845184, orig. flav =      [g], final flav =      [g]
+
+base jet 38: pt=0.741224 rap=0.481294 phi=1.33954, flav = [cbar ]
+IFN jet  38: pt=0.741224 rap=0.481294 phi=1.33954, flav = [g]
+constituents:
+  pt =   0.423977, orig. flav =      [g], final flav =      [g]
+  pt =   0.317445, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 39: pt=0.736037 rap=-1.90851 phi=4.50608, flav = [u ]
+IFN jet  39: pt=0.736037 rap=-1.90851 phi=4.50608, flav = [g]
+constituents:
+  pt =   0.736037, orig. flav =     [u ], final flav =      [g]
+
+base jet 40: pt=0.681616 rap=5.45311 phi=3.53289, flav = [u u ]
+IFN jet  40: pt=0.681616 rap=5.45311 phi=3.53289, flav = [u u ]
+constituents:
+  pt =   0.681616, orig. flav =   [u u ], final flav =   [u u ]
+
+base jet 41: pt=0.620594 rap=-0.716159 phi=2.52013, flav = [g]
+IFN jet  41: pt=0.620594 rap=-0.716159 phi=2.52013, flav = [g]
+constituents:
+  pt =   0.620594, orig. flav =      [g], final flav =      [g]
+
+base jet 42: pt=0.611938 rap=4.29183 phi=0.984259, flav = [d ]
+IFN jet  42: pt=0.611938 rap=4.29183 phi=0.984259, flav = [g]
+constituents:
+  pt =   0.611938, orig. flav =     [d ], final flav =      [g]
+
+base jet 43: pt=0.573457 rap=4.45941 phi=2.65817, flav = [dbar ]
+IFN jet  43: pt=0.573457 rap=4.45941 phi=2.65817, flav = [dbar ]
+constituents:
+  pt =   0.573457, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 44: pt=0.55851 rap=1.78007 phi=4.71025, flav = [g]
+IFN jet  44: pt=0.55851 rap=1.78007 phi=4.71025, flav = [g]
+constituents:
+  pt =    0.55851, orig. flav =      [g], final flav =      [g]
+
+base jet 45: pt=0.524854 rap=1.09899 phi=5.12445, flav = [sbar ]
+IFN jet  45: pt=0.524854 rap=1.09899 phi=5.12445, flav = [sbar ]
+constituents:
+  pt =   0.524854, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 46: pt=0.524141 rap=1.92472 phi=6.10194, flav = [d ]
+IFN jet  46: pt=0.524141 rap=1.92472 phi=6.10194, flav = [g]
+constituents:
+  pt =   0.524141, orig. flav =     [d ], final flav =      [g]
+
+base jet 47: pt=0.51969 rap=-0.568329 phi=3.69806, flav = [t ]
+IFN jet  47: pt=0.51969 rap=-0.568329 phi=3.69806, flav = [g]
+constituents:
+  pt =   0.306612, orig. flav =      [g], final flav =      [g]
+  pt =    0.21377, orig. flav =     [t ], final flav =      [g]
+
+base jet 48: pt=0.501863 rap=1.06045 phi=1.63218, flav = [dbar ]
+IFN jet  48: pt=0.501863 rap=1.06045 phi=1.63218, flav = [g]
+constituents:
+  pt =   0.501863, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 49: pt=0.490545 rap=-1.52154 phi=3.80641, flav = [cbar ]
+IFN jet  49: pt=0.490545 rap=-1.52154 phi=3.80641, flav = [g]
+constituents:
+  pt =   0.490545, orig. flav =  [cbar ], final flav =      [g]
+
+base jet 50: pt=0.455524 rap=3.31398 phi=1.5314, flav = [dbar ]
+IFN jet  50: pt=0.455524 rap=3.31398 phi=1.5314, flav = [g]
+constituents:
+  pt =   0.455524, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 51: pt=0.432599 rap=3.61361 phi=1.03093, flav = [g]
+IFN jet  51: pt=0.432599 rap=3.61361 phi=1.03093, flav = [g]
+constituents:
+  pt =   0.432599, orig. flav =      [g], final flav =      [g]
+
+base jet 52: pt=0.417599 rap=0.300434 phi=2.8921, flav = [c ]
+IFN jet  52: pt=0.417599 rap=0.300434 phi=2.8921, flav = [g]
+constituents:
+  pt =   0.417599, orig. flav =     [c ], final flav =      [g]
+
+base jet 53: pt=0.404257 rap=-1.24984 phi=2.84145, flav = [c ]
+IFN jet  53: pt=0.404257 rap=-1.24984 phi=2.84145, flav = [g]
+constituents:
+  pt =   0.404257, orig. flav =     [c ], final flav =      [g]
+
+base jet 54: pt=0.371215 rap=3.30524 phi=3.6266, flav = [g]
+IFN jet  54: pt=0.371215 rap=3.30524 phi=3.6266, flav = [g]
+constituents:
+  pt =   0.371215, orig. flav =      [g], final flav =      [g]
+
+base jet 55: pt=0.356397 rap=-7.75615 phi=4.44784, flav = [d u ]
+IFN jet  55: pt=0.356397 rap=-7.75615 phi=4.44784, flav = [d u ]
+constituents:
+  pt =   0.356397, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 56: pt=0.333612 rap=-3.56714 phi=3.02511, flav = [sbar ]
+IFN jet  56: pt=0.333612 rap=-3.56714 phi=3.02511, flav = [sbar ]
+constituents:
+  pt =   0.333612, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 57: pt=0.285804 rap=-4.56977 phi=2.47844, flav = [u ]
+IFN jet  57: pt=0.285804 rap=-4.56977 phi=2.47844, flav = [u ]
+constituents:
+  pt =   0.285804, orig. flav =     [u ], final flav =     [u ]
+
+base jet 58: pt=0.278429 rap=-0.558429 phi=0.073587, flav = [g]
+IFN jet  58: pt=0.278429 rap=-0.558429 phi=0.073587, flav = [g]
+constituents:
+  pt =   0.278429, orig. flav =      [g], final flav =      [g]
+
+base jet 59: pt=0.24573 rap=4.30836 phi=1.38816, flav = [g]
+IFN jet  59: pt=0.24573 rap=4.30836 phi=1.38816, flav = [g]
+constituents:
+  pt =    0.24573, orig. flav =      [g], final flav =      [g]
+
+base jet 60: pt=0.191944 rap=0.853899 phi=2.0019, flav = [g]
+IFN jet  60: pt=0.191944 rap=0.853899 phi=2.0019, flav = [g]
+constituents:
+  pt =   0.191944, orig. flav =      [g], final flav =      [g]
+
+base jet 61: pt=0.163946 rap=3.50701 phi=5.0516, flav = [g]
+IFN jet  61: pt=0.163946 rap=3.50701 phi=5.0516, flav = [g]
+constituents:
+  pt =   0.163946, orig. flav =      [g], final flav =      [g]
+
+base jet 62: pt=0.0922454 rap=1.64675 phi=2.57917, flav = [g]
+IFN jet  62: pt=0.0922454 rap=1.64675 phi=2.57917, flav = [g]
+constituents:
+  pt =  0.0922454, orig. flav =      [g], final flav =      [g]
+
+base jet 63: pt=0.077441 rap=3.56506 phi=4.58451, flav = [ubar ]
+IFN jet  63: pt=0.077441 rap=3.56506 phi=4.58451, flav = [g]
+constituents:
+  pt =   0.077441, orig. flav =  [ubar ], final flav =      [g]
+
+base jet 64: pt=0.0505622 rap=1.78424 phi=0.528645, flav = [u ]
+IFN jet  64: pt=0.0505622 rap=1.78424 phi=0.528645, flav = [g]
+constituents:
+  pt =  0.0505622, orig. flav =     [u ], final flav =      [g]
+
+base jet 65: pt=0.000136378 rap=0.33941 phi=2.23264, flav = [g]
+IFN jet  65: pt=0.000136378 rap=0.33941 phi=2.23264, flav = [g]
+constituents:
+  pt = 0.000136378, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 6 with 33 particles
+
+base jet 0: pt=108.088 rap=0.864675 phi=1.32688, flav = [d u cbar tbar ]
+IFN jet  0: pt=108.088 rap=0.864675 phi=1.32688, flav = [d u cbar bbar tbar ]
+constituents:
+  pt =    27.7343, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    25.2055, orig. flav =     [u ], final flav =     [u ]
+  pt =    14.7408, orig. flav =     [u ], final flav =      [g]
+  pt =    7.16849, orig. flav =  [tbar ], final flav =  [tbar ]
+  pt =      6.876, orig. flav =  [ubar ], final flav =      [g]
+  pt =    5.46076, orig. flav =      [g], final flav =      [g]
+  pt =    5.33612, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =     4.3037, orig. flav =      [g], final flav =      [g]
+  pt =    4.12394, orig. flav =     [b ], final flav =      [g]
+  pt =    3.79226, orig. flav =      [g], final flav =      [g]
+  pt =    2.16871, orig. flav =      [g], final flav =      [g]
+  pt =    1.06538, orig. flav =      [g], final flav =      [g]
+  pt =   0.939285, orig. flav =     [d ], final flav =     [d ]
+
+base jet 1: pt=2.86396 rap=-1.68539 phi=4.29098, flav = [cbar ]
+IFN jet  1: pt=2.86396 rap=-1.68539 phi=4.29098, flav = [cbar ]
+constituents:
+  pt =    1.46691, orig. flav =      [g], final flav =      [g]
+  pt =    1.43729, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 2: pt=2.39178 rap=4.42295 phi=3.66959, flav = [cbar ]
+IFN jet  2: pt=2.39178 rap=4.42295 phi=3.66959, flav = [cbar ]
+constituents:
+  pt =    2.39178, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 3: pt=1.54024 rap=6.46583 phi=3.96646, flav = [u u ]
+IFN jet  3: pt=1.54024 rap=6.46583 phi=3.96646, flav = [u u ]
+constituents:
+  pt =    1.54024, orig. flav =   [u u ], final flav =   [u u ]
+
+base jet 4: pt=1.39411 rap=0.46637 phi=1.18941, flav = [sbar ]
+IFN jet  4: pt=1.39411 rap=0.46637 phi=1.18941, flav = [sbar ]
+constituents:
+  pt =    1.39411, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 5: pt=1.10904 rap=-0.112969 phi=1.10605, flav = [bbar ]
+IFN jet  5: pt=1.10904 rap=-0.112969 phi=1.10605, flav = [g]
+constituents:
+  pt =    1.10904, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 6: pt=0.975215 rap=3.92022 phi=0.426372, flav = [g]
+IFN jet  6: pt=0.975215 rap=3.92022 phi=0.426372, flav = [g]
+constituents:
+  pt =   0.975215, orig. flav =      [g], final flav =      [g]
+
+base jet 7: pt=0.90555 rap=1.66034 phi=2.35185, flav = [s ]
+IFN jet  7: pt=0.90555 rap=1.66034 phi=2.35185, flav = [s ]
+constituents:
+  pt =    0.90555, orig. flav =     [s ], final flav =     [s ]
+
+base jet 8: pt=0.893624 rap=4.05149 phi=0.0378413, flav = [ubar ]
+IFN jet  8: pt=0.893624 rap=4.05149 phi=0.0378413, flav = [ubar ]
+constituents:
+  pt =   0.893624, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 9: pt=0.695739 rap=1.86191 phi=5.44268, flav = [g]
+IFN jet  9: pt=0.695739 rap=1.86191 phi=5.44268, flav = [g]
+constituents:
+  pt =   0.695739, orig. flav =      [g], final flav =      [g]
+
+base jet 10: pt=0.678007 rap=4.60405 phi=1.05842, flav = [g]
+IFN jet  10: pt=0.678007 rap=4.60405 phi=1.05842, flav = [g]
+constituents:
+  pt =   0.678007, orig. flav =      [g], final flav =      [g]
+
+base jet 11: pt=0.600427 rap=-6.75668 phi=4.98589, flav = [d ]
+IFN jet  11: pt=0.600427 rap=-6.75668 phi=4.98589, flav = [d ]
+constituents:
+  pt =   0.600427, orig. flav =     [d ], final flav =     [d ]
+
+base jet 12: pt=0.576369 rap=-5.61554 phi=4.04283, flav = [u u ]
+IFN jet  12: pt=0.576369 rap=-5.61554 phi=4.04283, flav = [u u ]
+constituents:
+  pt =   0.576369, orig. flav =   [u u ], final flav =   [u u ]
+
+base jet 13: pt=0.533192 rap=1.68684 phi=4.03219, flav = [sbar ]
+IFN jet  13: pt=0.533192 rap=1.68684 phi=4.03219, flav = [sbar ]
+constituents:
+  pt =   0.533192, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 14: pt=0.498602 rap=-3.10784 phi=2.04505, flav = [b ]
+IFN jet  14: pt=0.498602 rap=-3.10784 phi=2.04505, flav = [b ]
+constituents:
+  pt =   0.498602, orig. flav =     [b ], final flav =     [b ]
+
+base jet 15: pt=0.293106 rap=3.03148 phi=0.86342, flav = [sbar ]
+IFN jet  15: pt=0.293106 rap=3.03148 phi=0.86342, flav = [sbar ]
+constituents:
+  pt =   0.293106, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 16: pt=0.247259 rap=-7.77504 phi=4.93117, flav = [d ]
+IFN jet  16: pt=0.247259 rap=-7.77504 phi=4.93117, flav = [d ]
+constituents:
+  pt =   0.247259, orig. flav =     [d ], final flav =     [d ]
+
+base jet 17: pt=0.196 rap=-0.543337 phi=3.95017, flav = [g]
+IFN jet  17: pt=0.196 rap=-0.543337 phi=3.95017, flav = [g]
+constituents:
+  pt =      0.196, orig. flav =      [g], final flav =      [g]
+
+base jet 18: pt=0.132232 rap=-2.46262 phi=1.16502, flav = [ubar ]
+IFN jet  18: pt=0.132232 rap=-2.46262 phi=1.16502, flav = [ubar ]
+constituents:
+  pt =   0.132232, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 19: pt=0.110357 rap=5.42352 phi=0.391056, flav = [g]
+IFN jet  19: pt=0.110357 rap=5.42352 phi=0.391056, flav = [g]
+constituents:
+  pt =   0.110357, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 7 with 94 particles
+
+base jet 0: pt=100.043 rap=0.69771 phi=5.94573, flav = [s ]
+IFN jet  0: pt=100.043 rap=0.69771 phi=5.94573, flav = [b ]
+constituents:
+  pt =       71.3, orig. flav =     [b ], final flav =     [b ]
+  pt =    16.9088, orig. flav =  [bbar ], final flav =      [g]
+  pt =    5.72472, orig. flav =      [g], final flav =      [g]
+  pt =    4.14052, orig. flav =      [g], final flav =      [g]
+  pt =     2.1564, orig. flav =      [g], final flav =      [g]
+  pt =   0.359787, orig. flav =      [g], final flav =      [g]
+  pt =   0.184212, orig. flav =     [s ], final flav =      [g]
+
+base jet 1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [d t ]
+IFN jet  1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [d t ]
+constituents:
+  pt =    13.1922, orig. flav =     [t ], final flav =     [t ]
+  pt =    4.59694, orig. flav =     [d ], final flav =     [d ]
+  pt =    2.35363, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=6.10882 rap=0.418633 phi=0.0728016, flav = [cbar b ]
+IFN jet  2: pt=6.10882 rap=0.418633 phi=0.0728016, flav = [cbar ]
+constituents:
+  pt =    5.05907, orig. flav =     [b ], final flav =      [g]
+  pt =    1.07335, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 3: pt=6.0838 rap=0.00974429 phi=5.55987, flav = [dbar ]
+IFN jet  3: pt=6.0838 rap=0.00974429 phi=5.55987, flav = [dbar ]
+constituents:
+  pt =    5.68154, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =   0.409733, orig. flav =      [g], final flav =      [g]
+
+base jet 4: pt=5.01801 rap=-0.709537 phi=1.47505, flav = [dbar cbar bbar ]
+IFN jet  4: pt=5.01801 rap=-0.709537 phi=1.47505, flav = [dbar cbar bbar ]
+constituents:
+  pt =    4.07257, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =   0.481526, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =   0.473631, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 5: pt=4.02914 rap=2.68799 phi=5.45891, flav = [u ]
+IFN jet  5: pt=4.02914 rap=2.68799 phi=5.45891, flav = [u ]
+constituents:
+  pt =    4.02914, orig. flav =     [u ], final flav =     [u ]
+
+base jet 6: pt=3.7647 rap=-0.051307 phi=2.18793, flav = [tbar ]
+IFN jet  6: pt=3.7647 rap=-0.051307 phi=2.18793, flav = [tbar ]
+constituents:
+  pt =    2.93008, orig. flav =      [g], final flav =      [g]
+  pt =   0.578734, orig. flav =      [g], final flav =      [g]
+  pt =   0.271102, orig. flav =  [tbar ], final flav =  [tbar ]
+  pt = 0.00043014, orig. flav =      [g], final flav =      [g]
+
+base jet 7: pt=3.35288 rap=-3.29726 phi=4.71972, flav = [tbar ]
+IFN jet  7: pt=3.35288 rap=-3.29726 phi=4.71972, flav = [tbar ]
+constituents:
+  pt =    3.04181, orig. flav =      [g], final flav =      [g]
+  pt =   0.334572, orig. flav =  [tbar ], final flav =  [tbar ]
+
+base jet 8: pt=3.08731 rap=-1.48716 phi=2.65707, flav = [d tbar ]
+IFN jet  8: pt=3.08731 rap=-1.48716 phi=2.65707, flav = [d tbar ]
+constituents:
+  pt =    1.61575, orig. flav =  [tbar ], final flav =  [tbar ]
+  pt =    1.47586, orig. flav =     [d ], final flav =     [d ]
+
+base jet 9: pt=2.64693 rap=-4.17746 phi=5.98502, flav = [g]
+IFN jet  9: pt=2.64693 rap=-4.17746 phi=5.98502, flav = [g]
+constituents:
+  pt =    2.44005, orig. flav =      [g], final flav =      [g]
+  pt =    0.20688, orig. flav =      [g], final flav =      [g]
+
+base jet 10: pt=2.51591 rap=2.12214 phi=1.06596, flav = [b ]
+IFN jet  10: pt=2.51591 rap=2.12214 phi=1.06596, flav = [b ]
+constituents:
+  pt =    1.51211, orig. flav =     [b ], final flav =     [b ]
+  pt =    1.04596, orig. flav =      [g], final flav =      [g]
+
+base jet 11: pt=2.12986 rap=2.50003 phi=2.81918, flav = [g]
+IFN jet  11: pt=2.12986 rap=2.50003 phi=2.81918, flav = [g]
+constituents:
+  pt =    2.12986, orig. flav =      [g], final flav =      [g]
+
+base jet 12: pt=2.09818 rap=3.38805 phi=5.80633, flav = [g]
+IFN jet  12: pt=2.09818 rap=3.38805 phi=5.80633, flav = [g]
+constituents:
+  pt =    2.09818, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=2.04001 rap=-1.08864 phi=1.58205, flav = [g]
+IFN jet  13: pt=2.04001 rap=-1.08864 phi=1.58205, flav = [g]
+constituents:
+  pt =     1.4158, orig. flav =      [g], final flav =      [g]
+  pt =   0.639176, orig. flav =      [g], final flav =      [g]
+
+base jet 14: pt=2.02355 rap=2.8502 phi=3.3782, flav = [d s ]
+IFN jet  14: pt=2.02355 rap=2.8502 phi=3.3782, flav = [d s ]
+constituents:
+  pt =    1.15067, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.874147, orig. flav =     [d ], final flav =     [d ]
+
+base jet 15: pt=1.89426 rap=-3.98317 phi=3.07242, flav = [bbar ]
+IFN jet  15: pt=1.89426 rap=-3.98317 phi=3.07242, flav = [bbar ]
+constituents:
+  pt =    1.89426, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 16: pt=1.65567 rap=0.847511 phi=3.14292, flav = [sbar ]
+IFN jet  16: pt=1.65567 rap=0.847511 phi=3.14292, flav = [sbar ]
+constituents:
+  pt =   0.775803, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.629538, orig. flav =      [g], final flav =      [g]
+  pt =   0.275597, orig. flav =      [g], final flav =      [g]
+
+base jet 17: pt=1.54193 rap=-1.84395 phi=5.93289, flav = [u b ]
+IFN jet  17: pt=1.54193 rap=-1.84395 phi=5.93289, flav = [u b ]
+constituents:
+  pt =    1.49707, orig. flav =     [u ], final flav =     [u ]
+  pt =  0.0469853, orig. flav =     [b ], final flav =     [b ]
+
+base jet 18: pt=1.53931 rap=-3.71442 phi=6.17119, flav = [dbar ]
+IFN jet  18: pt=1.53931 rap=-3.71442 phi=6.17119, flav = [dbar ]
+constituents:
+  pt =    1.53931, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 19: pt=1.53742 rap=0.314811 phi=5.82036, flav = [g]
+IFN jet  19: pt=1.53742 rap=0.314811 phi=5.82036, flav = [g]
+constituents:
+  pt =    1.53742, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=1.45927 rap=0.91276 phi=0.67525, flav = [dbar s s ]
+IFN jet  20: pt=1.45927 rap=0.91276 phi=0.67525, flav = [dbar s s ]
+constituents:
+  pt =   0.998424, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.253251, orig. flav =      [g], final flav =      [g]
+  pt =   0.132804, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =  0.0904704, orig. flav =     [s ], final flav =     [s ]
+
+base jet 21: pt=1.39796 rap=-0.818449 phi=1.00365, flav = [g]
+IFN jet  21: pt=1.39796 rap=-0.818449 phi=1.00365, flav = [g]
+constituents:
+  pt =    1.39796, orig. flav =      [g], final flav =      [g]
+
+base jet 22: pt=1.3216 rap=2.1139 phi=1.88361, flav = [g]
+IFN jet  22: pt=1.3216 rap=2.1139 phi=1.88361, flav = [g]
+constituents:
+  pt =     1.3216, orig. flav =      [g], final flav =      [g]
+
+base jet 23: pt=1.30306 rap=-1.67021 phi=4.0526, flav = [g]
+IFN jet  23: pt=1.30306 rap=-1.67021 phi=4.0526, flav = [g]
+constituents:
+  pt =   0.820865, orig. flav =      [g], final flav =      [g]
+  pt =   0.487904, orig. flav =      [g], final flav =      [g]
+
+base jet 24: pt=1.26129 rap=0.141311 phi=3.50041, flav = [g]
+IFN jet  24: pt=1.26129 rap=0.141311 phi=3.50041, flav = [g]
+constituents:
+  pt =   0.709297, orig. flav =      [g], final flav =      [g]
+  pt =   0.552087, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=1.25112 rap=4.81576 phi=3.55546, flav = [u ]
+IFN jet  25: pt=1.25112 rap=4.81576 phi=3.55546, flav = [u ]
+constituents:
+  pt =    1.25112, orig. flav =     [u ], final flav =     [u ]
+
+base jet 26: pt=1.15424 rap=-1.97734 phi=1.69049, flav = [cbar ]
+IFN jet  26: pt=1.15424 rap=-1.97734 phi=1.69049, flav = [cbar ]
+constituents:
+  pt =   0.700773, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =   0.457504, orig. flav =      [g], final flav =      [g]
+
+base jet 27: pt=1.15412 rap=-1.08305 phi=0.168866, flav = [g]
+IFN jet  27: pt=1.15412 rap=-1.08305 phi=0.168866, flav = [g]
+constituents:
+  pt =    1.15412, orig. flav =      [g], final flav =      [g]
+
+base jet 28: pt=1.07441 rap=-2.87871 phi=5.70802, flav = [g]
+IFN jet  28: pt=1.07441 rap=-2.87871 phi=5.70802, flav = [g]
+constituents:
+  pt =    1.07441, orig. flav =      [g], final flav =      [g]
+
+base jet 29: pt=1.07243 rap=1.20838 phi=5.47757, flav = [sbar sbar ]
+IFN jet  29: pt=1.07243 rap=1.20838 phi=5.47757, flav = [sbar ]
+constituents:
+  pt =   0.921244, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =   0.151724, orig. flav =  [sbar ], final flav =      [g]
+
+base jet 30: pt=0.944379 rap=1.96605 phi=3.56808, flav = [g]
+IFN jet  30: pt=0.944379 rap=1.96605 phi=3.56808, flav = [g]
+constituents:
+  pt =   0.944379, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.937456 rap=1.17551 phi=4.98034, flav = [d ]
+IFN jet  31: pt=0.937456 rap=1.17551 phi=4.98034, flav = [d ]
+constituents:
+  pt =   0.937456, orig. flav =     [d ], final flav =     [d ]
+
+base jet 32: pt=0.793721 rap=6.97727 phi=3.90913, flav = [d u ]
+IFN jet  32: pt=0.793721 rap=6.97727 phi=3.90913, flav = [d u ]
+constituents:
+  pt =   0.793721, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 33: pt=0.75007 rap=-1.31398 phi=1.99757, flav = [cbar ]
+IFN jet  33: pt=0.75007 rap=-1.31398 phi=1.99757, flav = [cbar ]
+constituents:
+  pt =    0.75007, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 34: pt=0.693642 rap=2.03927 phi=5.73989, flav = [ubar ]
+IFN jet  34: pt=0.693642 rap=2.03927 phi=5.73989, flav = [ubar ]
+constituents:
+  pt =   0.693642, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 35: pt=0.656282 rap=-6.61917 phi=2.88598, flav = [d ]
+IFN jet  35: pt=0.656282 rap=-6.61917 phi=2.88598, flav = [d ]
+constituents:
+  pt =   0.656282, orig. flav =     [d ], final flav =     [d ]
+
+base jet 36: pt=0.628089 rap=-0.557147 phi=0.642404, flav = [g]
+IFN jet  36: pt=0.628089 rap=-0.557147 phi=0.642404, flav = [g]
+constituents:
+  pt =   0.628089, orig. flav =      [g], final flav =      [g]
+
+base jet 37: pt=0.612467 rap=-1.38571 phi=3.28684, flav = [c ]
+IFN jet  37: pt=0.612467 rap=-1.38571 phi=3.28684, flav = [c ]
+constituents:
+  pt =   0.612467, orig. flav =     [c ], final flav =     [c ]
+
+base jet 38: pt=0.518823 rap=-0.635398 phi=1.98669, flav = [g]
+IFN jet  38: pt=0.518823 rap=-0.635398 phi=1.98669, flav = [g]
+constituents:
+  pt =   0.518823, orig. flav =      [g], final flav =      [g]
+
+base jet 39: pt=0.512144 rap=-6.29505 phi=2.25328, flav = [u u ]
+IFN jet  39: pt=0.512144 rap=-6.29505 phi=2.25328, flav = [u u ]
+constituents:
+  pt =   0.512144, orig. flav =   [u u ], final flav =   [u u ]
+
+base jet 40: pt=0.496233 rap=1.49261 phi=1.67568, flav = [g]
+IFN jet  40: pt=0.496233 rap=1.49261 phi=1.67568, flav = [g]
+constituents:
+  pt =   0.496233, orig. flav =      [g], final flav =      [g]
+
+base jet 41: pt=0.496007 rap=-1.15019 phi=5.85232, flav = [g]
+IFN jet  41: pt=0.496007 rap=-1.15019 phi=5.85232, flav = [g]
+constituents:
+  pt =   0.496007, orig. flav =      [g], final flav =      [g]
+
+base jet 42: pt=0.451954 rap=1.84306 phi=6.20175, flav = [g]
+IFN jet  42: pt=0.451954 rap=1.84306 phi=6.20175, flav = [g]
+constituents:
+  pt =   0.451954, orig. flav =      [g], final flav =      [g]
+
+base jet 43: pt=0.398146 rap=-2.95606 phi=3.49302, flav = [dbar ]
+IFN jet  43: pt=0.398146 rap=-2.95606 phi=3.49302, flav = [dbar ]
+constituents:
+  pt =   0.398146, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 44: pt=0.385503 rap=2.02407 phi=3.03554, flav = [bbar ]
+IFN jet  44: pt=0.385503 rap=2.02407 phi=3.03554, flav = [bbar ]
+constituents:
+  pt =   0.385503, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 45: pt=0.383139 rap=-0.363772 phi=2.73817, flav = [cbar ]
+IFN jet  45: pt=0.383139 rap=-0.363772 phi=2.73817, flav = [cbar ]
+constituents:
+  pt =   0.239726, orig. flav =      [g], final flav =      [g]
+  pt =   0.145812, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 46: pt=0.365497 rap=-3.62612 phi=1.73476, flav = [c ]
+IFN jet  46: pt=0.365497 rap=-3.62612 phi=1.73476, flav = [c ]
+constituents:
+  pt =   0.365497, orig. flav =     [c ], final flav =     [c ]
+
+base jet 47: pt=0.353789 rap=-5.04981 phi=3.60919, flav = [ubar ]
+IFN jet  47: pt=0.353789 rap=-5.04981 phi=3.60919, flav = [ubar ]
+constituents:
+  pt =   0.353789, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 48: pt=0.34127 rap=1.4751 phi=3.85587, flav = [sbar ]
+IFN jet  48: pt=0.34127 rap=1.4751 phi=3.85587, flav = [sbar ]
+constituents:
+  pt =    0.34127, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 49: pt=0.337966 rap=-1.54452 phi=1.55881, flav = [bbar ]
+IFN jet  49: pt=0.337966 rap=-1.54452 phi=1.55881, flav = [bbar ]
+constituents:
+  pt =   0.337966, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 50: pt=0.316298 rap=-2.26544 phi=6.03144, flav = [g]
+IFN jet  50: pt=0.316298 rap=-2.26544 phi=6.03144, flav = [g]
+constituents:
+  pt =   0.316298, orig. flav =      [g], final flav =      [g]
+
+base jet 51: pt=0.276263 rap=-2.49165 phi=0.129153, flav = [dbar ]
+IFN jet  51: pt=0.276263 rap=-2.49165 phi=0.129153, flav = [dbar ]
+constituents:
+  pt =   0.276263, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 52: pt=0.27515 rap=0.950918 phi=2.10485, flav = [g]
+IFN jet  52: pt=0.27515 rap=0.950918 phi=2.10485, flav = [g]
+constituents:
+  pt =    0.27515, orig. flav =      [g], final flav =      [g]
+
+base jet 53: pt=0.247699 rap=0.8706 phi=1.59508, flav = [g]
+IFN jet  53: pt=0.247699 rap=0.8706 phi=1.59508, flav = [g]
+constituents:
+  pt =   0.247699, orig. flav =      [g], final flav =      [g]
+
+base jet 54: pt=0.240553 rap=3.53152 phi=4.14137, flav = [ubar ]
+IFN jet  54: pt=0.240553 rap=3.53152 phi=4.14137, flav = [ubar ]
+constituents:
+  pt =   0.240553, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 55: pt=0.233844 rap=-2.51833 phi=2.57197, flav = [g]
+IFN jet  55: pt=0.233844 rap=-2.51833 phi=2.57197, flav = [g]
+constituents:
+  pt =   0.233844, orig. flav =      [g], final flav =      [g]
+
+base jet 56: pt=0.178675 rap=-2.11337 phi=3.56086, flav = [s ]
+IFN jet  56: pt=0.178675 rap=-2.11337 phi=3.56086, flav = [s ]
+constituents:
+  pt =   0.178675, orig. flav =     [s ], final flav =     [s ]
+
+base jet 57: pt=0.168943 rap=-4.88523 phi=1.45096, flav = [g]
+IFN jet  57: pt=0.168943 rap=-4.88523 phi=1.45096, flav = [g]
+constituents:
+  pt =   0.168943, orig. flav =      [g], final flav =      [g]
+
+base jet 58: pt=0.145181 rap=0.113626 phi=1.7583, flav = [b ]
+IFN jet  58: pt=0.145181 rap=0.113626 phi=1.7583, flav = [b ]
+constituents:
+  pt =   0.145181, orig. flav =     [b ], final flav =     [b ]
+
+base jet 59: pt=0.144486 rap=-3.69514 phi=5.05525, flav = [dbar ]
+IFN jet  59: pt=0.144486 rap=-3.69514 phi=5.05525, flav = [dbar ]
+constituents:
+  pt =   0.144486, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 60: pt=0.0509278 rap=-2.3873 phi=3.06938, flav = [ubar ]
+IFN jet  60: pt=0.0509278 rap=-2.3873 phi=3.06938, flav = [ubar ]
+constituents:
+  pt =  0.0509278, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 61: pt=0.034093 rap=-1.49812 phi=4.68863, flav = [g]
+IFN jet  61: pt=0.034093 rap=-1.49812 phi=4.68863, flav = [g]
+constituents:
+  pt =   0.034093, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 8 with 54 particles
+
+base jet 0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [s s bbar ]
+IFN jet  0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [s s bbar ]
+constituents:
+  pt =    39.7603, orig. flav =     [d ], final flav =     [d ]
+  pt =    39.4111, orig. flav =     [s ], final flav =     [s ]
+  pt =    10.7681, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    7.84577, orig. flav =      [g], final flav =      [g]
+  pt =    7.61929, orig. flav =      [g], final flav =      [g]
+  pt =    4.14959, orig. flav =     [s ], final flav =     [s ]
+  pt =    3.10819, orig. flav =      [g], final flav =      [g]
+  pt =    1.93998, orig. flav =      [g], final flav =      [g]
+  pt =    1.41042, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [d ]
+IFN jet  1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [g]
+constituents:
+  pt =    13.3616, orig. flav =      [g], final flav =      [g]
+  pt =    4.08276, orig. flav =      [g], final flav =      [g]
+  pt =    2.34136, orig. flav =      [g], final flav =      [g]
+  pt =   0.330765, orig. flav =     [d ], final flav =      [g]
+
+base jet 2: pt=18.6118 rap=-1.09124 phi=4.95011, flav = [u ]
+IFN jet  2: pt=18.6118 rap=-1.09124 phi=4.95011, flav = [u ]
+constituents:
+  pt =    18.6118, orig. flav =     [u ], final flav =     [u ]
+
+base jet 3: pt=6.47879 rap=-2.08208 phi=6.09873, flav = [bbar ]
+IFN jet  3: pt=6.47879 rap=-2.08208 phi=6.09873, flav = [bbar ]
+constituents:
+  pt =    4.46107, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    2.01786, orig. flav =      [g], final flav =      [g]
+
+base jet 4: pt=4.70221 rap=0.0216587 phi=1.47711, flav = [ubar t ]
+IFN jet  4: pt=4.70221 rap=0.0216587 phi=1.47711, flav = [t ]
+constituents:
+  pt =    2.35856, orig. flav =      [g], final flav =      [g]
+  pt =    2.06678, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.295006, orig. flav =  [ubar ], final flav =      [g]
+
+base jet 5: pt=3.13994 rap=-0.691291 phi=4.50375, flav = [dbar s bbar ]
+IFN jet  5: pt=3.13994 rap=-0.691291 phi=4.50375, flav = [s bbar ]
+constituents:
+  pt =    2.12292, orig. flav =     [s ], final flav =     [s ]
+  pt =   0.750056, orig. flav =  [dbar ], final flav =      [g]
+  pt =   0.303804, orig. flav =  [bbar ], final flav =  [bbar ]
+
+base jet 6: pt=2.35082 rap=-1.1166 phi=1.72703, flav = [bbar tbar ]
+IFN jet  6: pt=2.35082 rap=-1.1166 phi=1.72703, flav = [bbar tbar ]
+constituents:
+  pt =    1.04375, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =   0.884844, orig. flav =      [g], final flav =      [g]
+  pt =   0.422325, orig. flav =  [tbar ], final flav =  [tbar ]
+
+base jet 7: pt=1.95982 rap=2.64586 phi=6.04213, flav = [t ]
+IFN jet  7: pt=1.95982 rap=2.64586 phi=6.04213, flav = [t ]
+constituents:
+  pt =    1.82334, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.136625, orig. flav =      [g], final flav =      [g]
+
+base jet 8: pt=1.70931 rap=1.69105 phi=4.08583, flav = [g]
+IFN jet  8: pt=1.70931 rap=1.69105 phi=4.08583, flav = [g]
+constituents:
+  pt =    1.42652, orig. flav =      [g], final flav =      [g]
+  pt =   0.284468, orig. flav =      [g], final flav =      [g]
+
+base jet 9: pt=1.50529 rap=-6.76882 phi=1.10563, flav = [d u ]
+IFN jet  9: pt=1.50529 rap=-6.76882 phi=1.10563, flav = [d u ]
+constituents:
+  pt =    1.50529, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 10: pt=1.44324 rap=-0.30942 phi=4.30172, flav = [dbar tbar ]
+IFN jet  10: pt=1.44324 rap=-0.30942 phi=4.30172, flav = [dbar tbar ]
+constituents:
+  pt =    1.05444, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =   0.400377, orig. flav =  [tbar ], final flav =  [tbar ]
+
+base jet 11: pt=1.3805 rap=6.97565 phi=3.57174, flav = [u u ]
+IFN jet  11: pt=1.3805 rap=6.97565 phi=3.57174, flav = [u u ]
+constituents:
+  pt =     1.3805, orig. flav =   [u u ], final flav =   [u u ]
+
+base jet 12: pt=1.16537 rap=-0.543484 phi=0.899606, flav = [g]
+IFN jet  12: pt=1.16537 rap=-0.543484 phi=0.899606, flav = [g]
+constituents:
+  pt =    1.16537, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=1.09978 rap=0.671207 phi=0.274905, flav = [g]
+IFN jet  13: pt=1.09978 rap=0.671207 phi=0.274905, flav = [g]
+constituents:
+  pt =    1.09978, orig. flav =      [g], final flav =      [g]
+
+base jet 14: pt=0.790334 rap=-1.87131 phi=0.749723, flav = [d ]
+IFN jet  14: pt=0.790334 rap=-1.87131 phi=0.749723, flav = [g]
+constituents:
+  pt =   0.790334, orig. flav =     [d ], final flav =      [g]
+
+base jet 15: pt=0.709179 rap=-1.28386 phi=3.63873, flav = [b ]
+IFN jet  15: pt=0.709179 rap=-1.28386 phi=3.63873, flav = [b ]
+constituents:
+  pt =   0.553698, orig. flav =     [b ], final flav =     [b ]
+  pt =   0.159628, orig. flav =      [g], final flav =      [g]
+
+base jet 16: pt=0.60555 rap=4.24212 phi=1.46277, flav = [g]
+IFN jet  16: pt=0.60555 rap=4.24212 phi=1.46277, flav = [g]
+constituents:
+  pt =    0.60555, orig. flav =      [g], final flav =      [g]
+
+base jet 17: pt=0.587027 rap=-1.37446 phi=1.18073, flav = [dbar ]
+IFN jet  17: pt=0.587027 rap=-1.37446 phi=1.18073, flav = [g]
+constituents:
+  pt =   0.587027, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 18: pt=0.577642 rap=-0.094035 phi=2.99253, flav = [g]
+IFN jet  18: pt=0.577642 rap=-0.094035 phi=2.99253, flav = [g]
+constituents:
+  pt =   0.577642, orig. flav =      [g], final flav =      [g]
+
+base jet 19: pt=0.454481 rap=-2.56721 phi=5.28579, flav = [g]
+IFN jet  19: pt=0.454481 rap=-2.56721 phi=5.28579, flav = [g]
+constituents:
+  pt =   0.454481, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=0.355623 rap=2.4533 phi=1.26269, flav = [g]
+IFN jet  20: pt=0.355623 rap=2.4533 phi=1.26269, flav = [g]
+constituents:
+  pt =   0.355623, orig. flav =      [g], final flav =      [g]
+
+base jet 21: pt=0.327886 rap=2.64178 phi=2.3723, flav = [d ubar ]
+IFN jet  21: pt=0.327886 rap=2.64178 phi=2.3723, flav = [g]
+constituents:
+  pt =   0.327886, orig. flav = [d ubar ], final flav =      [g]
+
+base jet 22: pt=0.263993 rap=2.92169 phi=3.4442, flav = [s ]
+IFN jet  22: pt=0.263993 rap=2.92169 phi=3.4442, flav = [s ]
+constituents:
+  pt =   0.263993, orig. flav =     [s ], final flav =     [s ]
+
+base jet 23: pt=0.247987 rap=2.70088 phi=0.929617, flav = [g]
+IFN jet  23: pt=0.247987 rap=2.70088 phi=0.929617, flav = [g]
+constituents:
+  pt =   0.247987, orig. flav =      [g], final flav =      [g]
+
+base jet 24: pt=0.242465 rap=-1.04439 phi=5.86004, flav = [c ]
+IFN jet  24: pt=0.242465 rap=-1.04439 phi=5.86004, flav = [c ]
+constituents:
+  pt =   0.242465, orig. flav =     [c ], final flav =     [c ]
+
+base jet 25: pt=0.236598 rap=-0.611796 phi=3.18595, flav = [u ]
+IFN jet  25: pt=0.236598 rap=-0.611796 phi=3.18595, flav = [g]
+constituents:
+  pt =   0.236598, orig. flav =     [u ], final flav =      [g]
+
+base jet 26: pt=0.208228 rap=0.375969 phi=0.962109, flav = [g]
+IFN jet  26: pt=0.208228 rap=0.375969 phi=0.962109, flav = [g]
+constituents:
+  pt =   0.208228, orig. flav =      [g], final flav =      [g]
+
+base jet 27: pt=0.15822 rap=0.68517 phi=3.07155, flav = [dbar u ]
+IFN jet  27: pt=0.15822 rap=0.68517 phi=3.07155, flav = [g]
+constituents:
+  pt =    0.15822, orig. flav = [dbar u ], final flav =      [g]
+
+base jet 28: pt=0.113457 rap=-2.47296 phi=5.92295, flav = [g]
+IFN jet  28: pt=0.113457 rap=-2.47296 phi=5.92295, flav = [g]
+constituents:
+  pt =   0.113457, orig. flav =      [g], final flav =      [g]
+
+base jet 29: pt=0.0639358 rap=-3.32117 phi=2.44455, flav = [g]
+IFN jet  29: pt=0.0639358 rap=-3.32117 phi=2.44455, flav = [g]
+constituents:
+  pt =  0.0639358, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.0495317 rap=-2.63427 phi=2.85586, flav = [g]
+IFN jet  30: pt=0.0495317 rap=-2.63427 phi=2.85586, flav = [g]
+constituents:
+  pt =  0.0495317, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.0399471 rap=-1.31163 phi=0.434634, flav = [bbar ]
+IFN jet  31: pt=0.0399471 rap=-1.31163 phi=0.434634, flav = [bbar ]
+constituents:
+  pt =  0.0399471, orig. flav =  [bbar ], final flav =  [bbar ]
+
+#---------------------------------------------------------------
+# read event 9 with 83 particles
+
+base jet 0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [d ubar t ]
+IFN jet  0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [t ]
+constituents:
+  pt =    86.4101, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =    26.5429, orig. flav =     [s ], final flav =     [s ]
+  pt =    12.3206, orig. flav =     [t ], final flav =     [t ]
+  pt =    8.32981, orig. flav =      [g], final flav =      [g]
+  pt =    7.39747, orig. flav =     [d ], final flav =      [g]
+  pt =    5.29169, orig. flav =      [g], final flav =      [g]
+  pt =    5.24981, orig. flav =      [g], final flav =      [g]
+  pt =     1.0182, orig. flav =      [g], final flav =      [g]
+  pt =   0.700695, orig. flav =  [ubar ], final flav =      [g]
+
+base jet 1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [sbar ]
+IFN jet  1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [sbar ]
+constituents:
+  pt =    22.2349, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    5.39818, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =    4.62581, orig. flav =     [u ], final flav =     [u ]
+  pt =   0.575164, orig. flav =      [g], final flav =      [g]
+
+base jet 2: pt=14.5434 rap=-0.236368 phi=4.20355, flav = [s ]
+IFN jet  2: pt=14.5434 rap=-0.236368 phi=4.20355, flav = [s ]
+constituents:
+  pt =    6.64008, orig. flav =     [u ], final flav =     [u ]
+  pt =    5.34996, orig. flav =      [g], final flav =      [g]
+  pt =    1.82746, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =   0.744806, orig. flav =     [s ], final flav =     [s ]
+
+base jet 3: pt=5.86654 rap=-0.108314 phi=0.65315, flav = [g]
+IFN jet  3: pt=5.86654 rap=-0.108314 phi=0.65315, flav = [g]
+constituents:
+  pt =    3.92035, orig. flav =      [g], final flav =      [g]
+  pt =    1.95023, orig. flav =      [g], final flav =      [g]
+
+base jet 4: pt=5.74416 rap=-2.32732 phi=0.756969, flav = [dbar ]
+IFN jet  4: pt=5.74416 rap=-2.32732 phi=0.756969, flav = [dbar ]
+constituents:
+  pt =    5.74416, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 5: pt=5.17296 rap=2.12147 phi=1.68231, flav = [ubar ]
+IFN jet  5: pt=5.17296 rap=2.12147 phi=1.68231, flav = [ubar ]
+constituents:
+  pt =    2.68911, orig. flav =  [ubar ], final flav =  [ubar ]
+  pt =    1.15583, orig. flav =      [g], final flav =      [g]
+  pt =   0.814153, orig. flav =      [g], final flav =      [g]
+  pt =   0.542956, orig. flav =      [g], final flav =      [g]
+
+base jet 6: pt=4.33602 rap=0.46465 phi=2.86917, flav = [b ]
+IFN jet  6: pt=4.33602 rap=0.46465 phi=2.86917, flav = [b ]
+constituents:
+  pt =     4.0004, orig. flav =      [g], final flav =      [g]
+  pt =   0.335726, orig. flav =     [b ], final flav =     [b ]
+
+base jet 7: pt=2.73099 rap=1.78889 phi=1.08078, flav = [dbar s b ]
+IFN jet  7: pt=2.73099 rap=1.78889 phi=1.08078, flav = [dbar b ]
+constituents:
+  pt =    1.92982, orig. flav =      [g], final flav =      [g]
+  pt =   0.396153, orig. flav =  [dbar ], final flav =  [dbar ]
+  pt =   0.272449, orig. flav =     [s ], final flav =      [g]
+  pt =   0.146067, orig. flav =     [b ], final flav =     [b ]
+
+base jet 8: pt=2.62421 rap=-3.75302 phi=0.131404, flav = [sbar ]
+IFN jet  8: pt=2.62421 rap=-3.75302 phi=0.131404, flav = [sbar ]
+constituents:
+  pt =    1.41036, orig. flav =  [sbar ], final flav =  [sbar ]
+  pt =    1.25461, orig. flav =      [g], final flav =      [g]
+
+base jet 9: pt=2.5069 rap=-3.13063 phi=0.752968, flav = [d ]
+IFN jet  9: pt=2.5069 rap=-3.13063 phi=0.752968, flav = [d ]
+constituents:
+  pt =     2.5069, orig. flav =     [d ], final flav =     [d ]
+
+base jet 10: pt=2.41865 rap=-5.27363 phi=5.52323, flav = [u ]
+IFN jet  10: pt=2.41865 rap=-5.27363 phi=5.52323, flav = [u ]
+constituents:
+  pt =    2.41865, orig. flav =     [u ], final flav =     [u ]
+
+base jet 11: pt=2.36685 rap=0.783227 phi=4.1126, flav = [dbar ]
+IFN jet  11: pt=2.36685 rap=0.783227 phi=4.1126, flav = [g]
+constituents:
+  pt =    1.90375, orig. flav =  [dbar ], final flav =      [g]
+  pt =    0.47744, orig. flav =      [g], final flav =      [g]
+
+base jet 12: pt=1.72118 rap=-2.04639 phi=1.19137, flav = [g]
+IFN jet  12: pt=1.72118 rap=-2.04639 phi=1.19137, flav = [g]
+constituents:
+  pt =    1.72118, orig. flav =      [g], final flav =      [g]
+
+base jet 13: pt=1.60989 rap=-2.05891 phi=3.72483, flav = [cbar ]
+IFN jet  13: pt=1.60989 rap=-2.05891 phi=3.72483, flav = [cbar ]
+constituents:
+  pt =    1.15083, orig. flav =  [cbar ], final flav =  [cbar ]
+  pt =   0.459374, orig. flav =      [g], final flav =      [g]
+
+base jet 14: pt=1.60656 rap=2.3736 phi=5.60829, flav = [ubar ]
+IFN jet  14: pt=1.60656 rap=2.3736 phi=5.60829, flav = [ubar ]
+constituents:
+  pt =    1.60656, orig. flav =  [ubar ], final flav =  [ubar ]
+
+base jet 15: pt=1.58014 rap=0.352163 phi=3.36355, flav = [d ]
+IFN jet  15: pt=1.58014 rap=0.352163 phi=3.36355, flav = [g]
+constituents:
+  pt =    1.58014, orig. flav =     [d ], final flav =      [g]
+
+base jet 16: pt=1.41626 rap=1.13344 phi=1.36331, flav = [g]
+IFN jet  16: pt=1.41626 rap=1.13344 phi=1.36331, flav = [g]
+constituents:
+  pt =    1.41626, orig. flav =      [g], final flav =      [g]
+
+base jet 17: pt=1.37282 rap=-0.174236 phi=3.40338, flav = [g]
+IFN jet  17: pt=1.37282 rap=-0.174236 phi=3.40338, flav = [g]
+constituents:
+  pt =    1.37282, orig. flav =      [g], final flav =      [g]
+
+base jet 18: pt=1.25878 rap=0.843536 phi=0.276936, flav = [g]
+IFN jet  18: pt=1.25878 rap=0.843536 phi=0.276936, flav = [g]
+constituents:
+  pt =    1.25878, orig. flav =      [g], final flav =      [g]
+
+base jet 19: pt=1.08516 rap=1.45988 phi=0.801117, flav = [g]
+IFN jet  19: pt=1.08516 rap=1.45988 phi=0.801117, flav = [g]
+constituents:
+  pt =    1.08516, orig. flav =      [g], final flav =      [g]
+
+base jet 20: pt=1.03617 rap=0.344136 phi=3.85723, flav = [s ]
+IFN jet  20: pt=1.03617 rap=0.344136 phi=3.85723, flav = [s ]
+constituents:
+  pt =   0.563972, orig. flav =      [g], final flav =      [g]
+  pt =   0.472635, orig. flav =     [s ], final flav =     [s ]
+
+base jet 21: pt=0.993687 rap=1.28638 phi=2.04483, flav = [g]
+IFN jet  21: pt=0.993687 rap=1.28638 phi=2.04483, flav = [g]
+constituents:
+  pt =    0.70915, orig. flav =     [b ], final flav =      [g]
+  pt =   0.296073, orig. flav =  [bbar ], final flav =      [g]
+
+base jet 22: pt=0.916153 rap=4.35779 phi=3.16858, flav = [d ]
+IFN jet  22: pt=0.916153 rap=4.35779 phi=3.16858, flav = [d ]
+constituents:
+  pt =   0.916153, orig. flav =     [d ], final flav =     [d ]
+
+base jet 23: pt=0.893929 rap=7.10653 phi=2.90556, flav = [d u ]
+IFN jet  23: pt=0.893929 rap=7.10653 phi=2.90556, flav = [d u ]
+constituents:
+  pt =   0.893929, orig. flav =   [d u ], final flav =   [d u ]
+
+base jet 24: pt=0.826875 rap=3.76396 phi=3.0137, flav = [g]
+IFN jet  24: pt=0.826875 rap=3.76396 phi=3.0137, flav = [g]
+constituents:
+  pt =   0.826875, orig. flav =      [g], final flav =      [g]
+
+base jet 25: pt=0.816938 rap=2.12442 phi=2.24043, flav = [g]
+IFN jet  25: pt=0.816938 rap=2.12442 phi=2.24043, flav = [g]
+constituents:
+  pt =   0.816938, orig. flav =      [g], final flav =      [g]
+
+base jet 26: pt=0.766619 rap=-1.35887 phi=4.55501, flav = [t ]
+IFN jet  26: pt=0.766619 rap=-1.35887 phi=4.55501, flav = [t ]
+constituents:
+  pt =   0.438108, orig. flav =     [t ], final flav =     [t ]
+  pt =   0.332392, orig. flav =      [g], final flav =      [g]
+
+base jet 27: pt=0.766349 rap=-3.28078 phi=3.72099, flav = [sbar ]
+IFN jet  27: pt=0.766349 rap=-3.28078 phi=3.72099, flav = [sbar ]
+constituents:
+  pt =   0.766349, orig. flav =  [sbar ], final flav =  [sbar ]
+
+base jet 28: pt=0.70842 rap=-1.08317 phi=4.24765, flav = [dbar ]
+IFN jet  28: pt=0.70842 rap=-1.08317 phi=4.24765, flav = [g]
+constituents:
+  pt =    0.70842, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 29: pt=0.694449 rap=-1.18419 phi=2.49964, flav = [g]
+IFN jet  29: pt=0.694449 rap=-1.18419 phi=2.49964, flav = [g]
+constituents:
+  pt =   0.581701, orig. flav =      [g], final flav =      [g]
+  pt =   0.117691, orig. flav =      [g], final flav =      [g]
+
+base jet 30: pt=0.693864 rap=2.74422 phi=1.60533, flav = [g]
+IFN jet  30: pt=0.693864 rap=2.74422 phi=1.60533, flav = [g]
+constituents:
+  pt =   0.693864, orig. flav =      [g], final flav =      [g]
+
+base jet 31: pt=0.693266 rap=0.908004 phi=3.67408, flav = [c ]
+IFN jet  31: pt=0.693266 rap=0.908004 phi=3.67408, flav = [c ]
+constituents:
+  pt =   0.693266, orig. flav =     [c ], final flav =     [c ]
+
+base jet 32: pt=0.6169 rap=-2.53755 phi=3.33819, flav = [g]
+IFN jet  32: pt=0.6169 rap=-2.53755 phi=3.33819, flav = [g]
+constituents:
+  pt =     0.6169, orig. flav =      [g], final flav =      [g]
+
+base jet 33: pt=0.5545 rap=1.44401 phi=4.53297, flav = [g]
+IFN jet  33: pt=0.5545 rap=1.44401 phi=4.53297, flav = [g]
+constituents:
+  pt =     0.5545, orig. flav =      [g], final flav =      [g]
+
+base jet 34: pt=0.551647 rap=-6.46023 phi=3.54711, flav = [u ]
+IFN jet  34: pt=0.551647 rap=-6.46023 phi=3.54711, flav = [u ]
+constituents:
+  pt =   0.551647, orig. flav =     [u ], final flav =     [u ]
+
+base jet 35: pt=0.537698 rap=2.14596 phi=4.69463, flav = [cbar ]
+IFN jet  35: pt=0.537698 rap=2.14596 phi=4.69463, flav = [cbar ]
+constituents:
+  pt =   0.537698, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 36: pt=0.52627 rap=-0.847703 phi=1.80341, flav = [g]
+IFN jet  36: pt=0.52627 rap=-0.847703 phi=1.80341, flav = [g]
+constituents:
+  pt =   0.354366, orig. flav =      [g], final flav =      [g]
+  pt =   0.172672, orig. flav =      [g], final flav =      [g]
+
+base jet 37: pt=0.493958 rap=4.44654 phi=4.38025, flav = [u ]
+IFN jet  37: pt=0.493958 rap=4.44654 phi=4.38025, flav = [u ]
+constituents:
+  pt =   0.493958, orig. flav =     [u ], final flav =     [u ]
+
+base jet 38: pt=0.473269 rap=-1.08771 phi=3.03462, flav = [d ]
+IFN jet  38: pt=0.473269 rap=-1.08771 phi=3.03462, flav = [g]
+constituents:
+  pt =   0.473269, orig. flav =     [d ], final flav =      [g]
+
+base jet 39: pt=0.451606 rap=1.48924 phi=5.63162, flav = [u ]
+IFN jet  39: pt=0.451606 rap=1.48924 phi=5.63162, flav = [u ]
+constituents:
+  pt =   0.451606, orig. flav =     [u ], final flav =     [u ]
+
+base jet 40: pt=0.444205 rap=2.39205 phi=3.23499, flav = [cbar ]
+IFN jet  40: pt=0.444205 rap=2.39205 phi=3.23499, flav = [cbar ]
+constituents:
+  pt =   0.444205, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 41: pt=0.433439 rap=-3.2787 phi=5.1718, flav = [g]
+IFN jet  41: pt=0.433439 rap=-3.2787 phi=5.1718, flav = [g]
+constituents:
+  pt =   0.433439, orig. flav =      [g], final flav =      [g]
+
+base jet 42: pt=0.385991 rap=3.60074 phi=5.50009, flav = [dbar b ]
+IFN jet  42: pt=0.385991 rap=3.60074 phi=5.50009, flav = [dbar b ]
+constituents:
+  pt =   0.307448, orig. flav =     [b ], final flav =     [b ]
+  pt =  0.0789851, orig. flav =  [dbar ], final flav =  [dbar ]
+
+base jet 43: pt=0.303439 rap=0.859124 phi=2.02855, flav = [s ]
+IFN jet  43: pt=0.303439 rap=0.859124 phi=2.02855, flav = [s ]
+constituents:
+  pt =   0.303439, orig. flav =     [s ], final flav =     [s ]
+
+base jet 44: pt=0.303365 rap=0.0119964 phi=2.88992, flav = [dbar ]
+IFN jet  44: pt=0.303365 rap=0.0119964 phi=2.88992, flav = [g]
+constituents:
+  pt =   0.303365, orig. flav =  [dbar ], final flav =      [g]
+
+base jet 45: pt=0.294963 rap=-0.0219949 phi=0.145883, flav = [t ]
+IFN jet  45: pt=0.294963 rap=-0.0219949 phi=0.145883, flav = [t ]
+constituents:
+  pt =   0.282389, orig. flav =     [t ], final flav =     [t ]
+  pt =  0.0125743, orig. flav =      [g], final flav =      [g]
+
+base jet 46: pt=0.276345 rap=-1.04361 phi=0.382641, flav = [u ]
+IFN jet  46: pt=0.276345 rap=-1.04361 phi=0.382641, flav = [g]
+constituents:
+  pt =   0.276345, orig. flav =     [u ], final flav =      [g]
+
+base jet 47: pt=0.265727 rap=-2.20735 phi=5.83133, flav = [g]
+IFN jet  47: pt=0.265727 rap=-2.20735 phi=5.83133, flav = [g]
+constituents:
+  pt =   0.265727, orig. flav =      [g], final flav =      [g]
+
+base jet 48: pt=0.263552 rap=-0.85791 phi=1.10944, flav = [g]
+IFN jet  48: pt=0.263552 rap=-0.85791 phi=1.10944, flav = [g]
+constituents:
+  pt =   0.263552, orig. flav =      [g], final flav =      [g]
+
+base jet 49: pt=0.233553 rap=3.88086 phi=6.06142, flav = [cbar ]
+IFN jet  49: pt=0.233553 rap=3.88086 phi=6.06142, flav = [cbar ]
+constituents:
+  pt =   0.233553, orig. flav =  [cbar ], final flav =  [cbar ]
+
+base jet 50: pt=0.17563 rap=1.84172 phi=3.71244, flav = [sbar ]
+IFN jet  50: pt=0.17563 rap=1.84172 phi=3.71244, flav = [g]
+constituents:
+  pt =    0.17563, orig. flav =  [sbar ], final flav =      [g]

@@ -1,0 +1,8 @@
+2025/01/15: release of version 1.0.1
+- header file more readable
+
+2025/01/14: release of version 1.0.0 
+- First fjcontrib release of SDFPlugin
+- this is now the reference version for SDFPlugin
+superseding https://github.com/jetflav/SDFlavPlugin
+

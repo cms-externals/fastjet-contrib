@@ -1,0 +1,240 @@
+2024-12-11  Gregory Soyez  <soyez@fastjet.fr> + Gavin+Matteo
+
+	* NEWS:
+	* FJCONTRIB.cfg:
+	preparing 2.1.2 release
+
+2024-12-11  Gregory Soyez  <soyez@fastjet.fr>
+
+	* AUTHORS:
+	updated to reflect current maintainers (w Gavin and Matteo)
+
+	* FJCONTRIB.cfg:           *** ADDED ***
+	* VERSION:               *** REMOVED ***
+	replaced the VERSION file with the new syntax which is a
+	"version" line in FJCONTRIB.cfg
+
+	* LundGenerator.cc:
+	* LundWithSecondary.cc:
+	* RecursiveLundEEGenerator.cc:
+	* SecondaryLund.cc:
+	* example.cc:
+	* example_dpsi_collinear.cc:
+	* example_dpsi_slice.cc:
+	* example_secondary.cc:
+	* Makefile:
+	updated source code and build script to reflect the header
+	relocation
+
+	* LundEEHelpers.hh            -> include/fastjet/contrib/LundEEHelpers.hh
+	* LundGenerator.hh            -> include/fastjet/contrib/LundGenerator.hh
+	* LundJSON.hh                 -> include/fastjet/contrib/LundJSON.hh
+	* LundWithSecondary.hh        -> include/fastjet/contrib/LundWithSecondary.hh
+	* RecursiveLundEEGenerator.hh -> include/fastjet/contrib/RecursiveLundEEGenerator.hh
+	* SecondaryLund.hh            -> include/fastjet/contrib/SecondaryLund.hh
+	moved installed headers to the include/fastjet/contrib/ directory
+
+2024-12-09 Mon  <gavin.salam@physics.ox.ac.uk>
+
+	* Makefile:
+	fixed a bug in the `fastjet-config --libs` call, adding --plugins so that
+	one gets a consistent set of plugin libraries according to the
+	specific fastjet configuration.
+
+2024-02-28  Gregory Soyez  <soyez@fastjet.fr>
+
+	* example_dpsi_collinear.cc:  fixed maybe-uninitialized gcc warnings
+
+2024-01-18 Ludo Scyboz (+ minor contribs from Gregory Soyez + Gavin Salam)
+
+	* RecursiveLundEEGenerator.hh:
+	* example_dpsi_collinear.ref:
+	* example_dpsi_slice.ref:
+	* python/gen-test-event.py:
+	* NEWS:
+	another bug-fix for opposite hemispheres differences of psibar, where
+	a missing sign needed to be added in the second hemisphere. This
+	changes the reference files for opposite hemisphere dpsibar. For 
+	same-hemisphere dpsibar, the sign can change (depending on the hemisphere). 
+	Also updated python/gen-test-event.py  to have command-line options
+	for more flexibility in examining output and for testing explanation
+	of psibar absolute value in RecursiveLundEEGenerator comments.
+
+2024-01-10  Gavin Salam + Alexander Karlberg
+
+	* NEWS: 
+	* VERSION:
+	preparing for release 2.1.0 (NEWS still needs correct date to be added)
+
+    * AUTHORS:
+	added publication info for soft spin paper
+
+2024-01-10  Gavin Salam + Ludo Scyboz + Alexander Karlberg
+
+	* LundEEHelpers.hh:
+	extended the comments in the signed_angle_between_planes function
+
+	* RecursiveLundEEGenerator.hh:
+	changed definition of psibar, which fixes a bug in differences
+	of psibar values between opposite hemispheres. Differences
+	within a same hemisphere should stay the same.
+
+	* example_dpsi_collinear.cc:
+	added extra output showing the primary declustering in the 
+	second hemisphere. Also eliminated deprecated
+	dynamic_psi_reference argument in setting up the RecursiveLundEEGenerator.
+
+	* example_dpsi_collinear.ref:
+	* example_dpsi_slice.ref:
+	updated these reference files so that are consistent with 
+	the new definition of psibar. Note the delta psibar values
+	do not change. The collinear reference has acquired extra
+	output showing a primary declustering in the second hemisphere. 
+
+	* python/gen-test-event.py: *** ADDED ***
+	small script to generate test events for verifying output from
+	example_dpsi_collinear.ref
+
+2024-01-08  Gavin Salam  <gavin.salam@physics.ox.ac.uk>
+
+	* example_dpsi_slice.cc:
+	replaced a uint -> unsigned int, to resolve a compilation issue
+	with gcc-13 on MacOS
+
+2023-09-22 Fri  <gavin.salam@physics.ox.ac.uk>
+
+	* NEWS:
+	* VERSION:
+	preparing 2.0.4 release
+
+	* RecursiveLundEEGenerator.hh:
+	fixed const issue in in ternal lambda function (reported by Seryubin Seraphim)
+
+	* LundPlane.hh: *** ADDED ***
+	added this to provide a generic include for the main classes
+	(absence of such a standard-looking reported by Seryubin Seraphim)
+
+2022-10-04  Gregory Soyez  <soyez@fastjet.fr>
+
+	* example.cc:
+	* example_secondary.cc:
+	* example_dpsi_collinear.cc:
+	* example_dpsi_slice.cc:
+	removed (harmless) compilation warnings (+ minor uniformisation
+	of indentation)
+
+2022-10-04 Tue  <gavin.salam@physics.ox.ac.uk> + Ludo Scyboz
+
+	* VERSION:
+	* NEWS:
+	prepared for release 2.0.3
+
+	* EEHelpers.hh ->  LundEEHelpers.hh:
+	EEHelpers.hh was not being installed; given that it's a potentially 
+	common name, renamed it before including among the installation 
+	targets. 
+
+	Also placed whole contents in a new contrib::lund_plane namespace,
+	because of certain potentially common names like cross_product
+
+	* Makefile:
+	replaced EEHelpers.hh ->  LundEEHelpers.hh and made sure that
+	LundEEHelpers.hh gets installed (without which RecursiveLundEEGenerator.hh
+	cannot be used)
+
+	* example_dpsi_collinear.cc:
+	* example_dpsi_slice.cc:
+	use of things from LundEEHelpers.hh updated to use of new namespace
+
+	* RecursiveLundEEGenerator.hh:
+	* RecursiveLundEEGenerator.cc:
+	updated to use LundEEHelpers.hh (and associated namespace); 
+	also added a (protected) default constructor to LundEEDeclustering
+
+2022-08-20  Gavin Salam  <gavin.salam@physics.ox.ac.uk>
+
+	* VERSION:
+	* NEWS:
+	prepared for release 2.0.2
+
+	* Makefile:
+	updated some dependencies
+
+	* EEHelpers.hh:
+	added #include <limits>, as per request from Andy Buckley
+	for compilation with g++-12 on some systems
+
+2021-12-06  Gavin Salam  <gavin.salam@physics.ox.ac.uk>
+
+	* NEWS:
+        * VERSION:
+	prepared for release 2.0.1
+
+	* AUTHORS:
+	fixed missing names and publication info
+
+2021-12-06  Gregory Soyez  <soyez@fastjet.fr>
+
+	* SecondaryLund.cc:
+	fixed int v. unsigned int in loop over vector indices
+
+2021-12-06  Gavin Salam  <gavin.salam@physics.ox.ac.uk>
+
+	* example.py:
+	fixed name of executable in comments about how to execute
+	this (thanks to Matteo Cacciari)
+
+2021-11-09  Ludovic Scyboz <ludovic.scyboz@physics.ox.ac.uk>
+
+	* VERSION:
+	preparing for release of 2.0.0
+
+	* RecursiveLundEEGenerator.hh:
+	* RecursiveLundEEGenerator.cc:
+	class for recursive Lund declustering in e+e-
+	* example_dpsi_collinear.cc:
+	spin-sensitive collinear observable from 2103.16526
+	* example_dpsi_slice.cc:
+	spin-sensitive non-global observable from 2111.01161
+
+2020-02-23  Gavin Salam  <gavin.salam@cern.ch>
+
+	* NEWS:
+	* VERSION:
+	preparing for release of 1.0.3
+
+	* example.cc:
+	changed outfile open(filename) to outfile.open(filename.c_str());
+	to attempt to solve issue reported by Steven Schramm.
+
+2018-10-26  Gavin Salam <gavin.salam@cern.ch>
+
+	* read_lund_json.py:
+	removed extraneous normalisation of zeroth bin in
+	the LundImage class.
+	Added documentation.
+
+
+2018-08-30  Gavin Salam  <gavin.salam@cern.ch>
+
+	* VERSION: 
+	* NEWS:
+
+	Release of version 1.0.1
+
+2018-08-23  Gavin Salam  <gavin.salam@cern.ch>
+
+	* LundWithSecondary.hh:
+	* LundWithSecondary.cc:
+	added secondary_index(...), removed virtual qualifier from various
+	functions
+
+	* example_secondary.cc:
+	* example_secondary.ref:
+	example now prints out index of the primary declustering being
+	used for the secondary. Referemce file updated accordingly.
+
+2018-08-09  Frédéric Dreyer  <fdreyer@mit.edu>
+
+	First version of LundPlane.
+

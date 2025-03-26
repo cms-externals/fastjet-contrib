@@ -1,0 +1,3 @@
+2024/12/13: release of version 1.0.0
+- initial release of the CMPPlugin, implementing the CMP flavoured antikt
+  jet algorithm.

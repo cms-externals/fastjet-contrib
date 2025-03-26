@@ -1,0 +1,19 @@
+SignalFreeBackgroundEstimator is part of the fastjet-contrib project.
+
+The SignalFreeBackgroundEstimator class estimates pileup pT density (rho) with lower dependence on the signal particles, as described in
+
+   Pileup density estimate independent on jet multiplicity
+   Peter Berta, Juraj Smiesko, Martin Spousta
+   arXiv:2304.08383
+
+The code example.cc illustrates how to use the class on individual jets.
+It can be built using
+
+    make example
+
+example.cc makes use of an input datafile which is provided in the
+/data directory, and it should be run with
+
+   ./example < ../data/Pythia-Zp2jets-lhc-pileup-1ev.dat
+
+The expected output can be found in example.ref

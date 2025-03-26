@@ -1,0 +1,228 @@
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.2
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+! this analysis considers only b-flavour from input events !
+base jet definition: Longitudinally invariant anti-kt algorithm with R = 0.4 and E scheme recombination and net_flav flavour recombination 
+GHS jet definition:  
+ alpha = 1
+ omega = 2
+ (ptcut = 15 GeV)
+
+#---------------------------------------------------------------
+# read event 0 with 64 particles
+
+base jet 0: pt=160.77 rap=0.90783 phi=0.366217, flav = [g]
+GHS jet  0: pt=160.77 rap=0.90783 phi=0.366217, flav = [g]
+constituents:
+  pt =    114.031, orig. flav =      [g], final flav =      [g]
+  pt =    24.5336, orig. flav =      [g], final flav =      [g]
+  pt =    11.6832, orig. flav =      [g], final flav =      [g]
+  pt =    7.65296, orig. flav =      [g], final flav =      [g]
+  pt =    3.02296, orig. flav =      [g], final flav =      [g]
+  pt =   0.241429, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 1 with 91 particles
+
+base jet 0: pt=143.136 rap=1.00816 phi=0.315751, flav = [bbar ]
+GHS jet  0: pt=143.136 rap=1.00816 phi=0.315751, flav = [bbar ]
+constituents:
+  pt =     108.45, orig. flav =      [g], final flav =      [g]
+  pt =    20.9132, orig. flav =      [g], final flav =      [g]
+  pt =    7.55253, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =     6.1231, orig. flav =      [g], final flav =      [g]
+  pt =   0.428857, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 2 with 67 particles
+
+base jet 0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [g]
+GHS jet  0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [g]
+constituents:
+  pt =    18.6706, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    12.7679, orig. flav =      [g], final flav =      [g]
+  pt =    10.1756, orig. flav =      [g], final flav =      [g]
+  pt =    8.94454, orig. flav =      [g], final flav =      [g]
+  pt =    7.34392, orig. flav =      [g], final flav =      [g]
+  pt =    5.58361, orig. flav =      [g], final flav =      [g]
+  pt =    4.67571, orig. flav =     [b ], final flav =     [b ]
+  pt =    2.22102, orig. flav =      [g], final flav =      [g]
+  pt =    2.19169, orig. flav =      [g], final flav =      [g]
+  pt =   0.621727, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [bbar ]
+GHS jet  1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [bbar ]
+constituents:
+  pt =     9.5194, orig. flav =      [g], final flav =      [g]
+  pt =    8.99998, orig. flav =      [g], final flav =      [g]
+  pt =    4.95131, orig. flav =      [g], final flav =      [g]
+  pt =     3.5341, orig. flav =      [g], final flav =      [g]
+  pt =     2.1663, orig. flav =      [g], final flav =      [g]
+  pt =    1.41552, orig. flav =  [bbar ], final flav =  [bbar ]
+
+#---------------------------------------------------------------
+# read event 3 with 62 particles
+
+base jet 0: pt=113.596 rap=0.884767 phi=2.15347, flav = [bbar ]
+GHS jet  0: pt=113.596 rap=0.884767 phi=2.15347, flav = [bbar ]
+constituents:
+  pt =    84.5779, orig. flav =      [g], final flav =      [g]
+  pt =    18.8333, orig. flav =      [g], final flav =      [g]
+  pt =    6.43962, orig. flav =      [g], final flav =      [g]
+  pt =    2.05959, orig. flav =      [g], final flav =      [g]
+  pt =    1.07016, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =   0.670671, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 4 with 93 particles
+
+base jet 0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [g]
+GHS jet  0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [g]
+constituents:
+  pt =    41.6981, orig. flav =      [g], final flav =      [g]
+  pt =    5.50916, orig. flav =      [g], final flav =      [g]
+  pt =    3.68609, orig. flav =      [g], final flav =      [g]
+  pt =    3.67113, orig. flav =      [g], final flav =      [g]
+  pt =    2.92951, orig. flav =      [g], final flav =      [g]
+  pt =    2.68583, orig. flav =      [g], final flav =      [g]
+  pt =    1.77594, orig. flav =      [g], final flav =      [g]
+  pt =    1.29025, orig. flav =      [g], final flav =      [g]
+  pt =    1.09112, orig. flav =      [g], final flav =      [g]
+  pt =   0.549747, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [bbar ]
+GHS jet  1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [bbar ]
+constituents:
+  pt =     20.604, orig. flav =      [g], final flav =      [g]
+  pt =    16.7998, orig. flav =      [g], final flav =      [g]
+  pt =    5.36742, orig. flav =      [g], final flav =      [g]
+  pt =    4.42483, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    4.22446, orig. flav =      [g], final flav =      [g]
+  pt =    4.19527, orig. flav =      [g], final flav =      [g]
+  pt =    2.38599, orig. flav =      [g], final flav =      [g]
+  pt =    1.60754, orig. flav =      [g], final flav =      [g]
+  pt =    1.20698, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 5 with 104 particles
+
+base jet 0: pt=103.576 rap=0.670846 phi=5.56992, flav = [g]
+GHS jet  0: pt=103.576 rap=0.670846 phi=5.56992, flav = [g]
+constituents:
+  pt =    23.9763, orig. flav =      [g], final flav =      [g]
+  pt =    22.4901, orig. flav =      [g], final flav =      [g]
+  pt =    14.9044, orig. flav =      [g], final flav =      [g]
+  pt =    7.06066, orig. flav =      [g], final flav =      [g]
+  pt =    6.14926, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    5.69092, orig. flav =      [g], final flav =      [g]
+  pt =    4.89757, orig. flav =      [g], final flav =      [g]
+  pt =    3.99553, orig. flav =      [g], final flav =      [g]
+  pt =    2.26013, orig. flav =      [g], final flav =      [g]
+  pt =    1.89047, orig. flav =      [g], final flav =      [g]
+  pt =    1.86911, orig. flav =      [g], final flav =      [g]
+  pt =    1.81841, orig. flav =      [g], final flav =      [g]
+  pt =    1.71179, orig. flav =     [b ], final flav =     [b ]
+  pt =    1.69529, orig. flav =      [g], final flav =      [g]
+  pt =    1.31468, orig. flav =      [g], final flav =      [g]
+  pt =    1.25161, orig. flav =      [g], final flav =      [g]
+  pt =   0.604694, orig. flav =     [b ], final flav =     [b ]
+  pt =   0.492421, orig. flav =  [bbar ], final flav =  [bbar ]
+
+#---------------------------------------------------------------
+# read event 6 with 33 particles
+
+base jet 0: pt=108.088 rap=0.864675 phi=1.32688, flav = [g]
+GHS jet  0: pt=108.088 rap=0.864675 phi=1.32688, flav = [bbar ]
+constituents:
+  pt =    27.7343, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    25.2055, orig. flav =      [g], final flav =      [g]
+  pt =    14.7408, orig. flav =      [g], final flav =      [g]
+  pt =    7.16849, orig. flav =      [g], final flav =      [g]
+  pt =      6.876, orig. flav =      [g], final flav =      [g]
+  pt =    5.46076, orig. flav =      [g], final flav =      [g]
+  pt =    5.33612, orig. flav =      [g], final flav =      [g]
+  pt =     4.3037, orig. flav =      [g], final flav =      [g]
+  pt =    4.12394, orig. flav =     [b ], final flav =     [b ]
+  pt =    3.79226, orig. flav =      [g], final flav =      [g]
+  pt =    2.16871, orig. flav =      [g], final flav =      [g]
+  pt =    1.06538, orig. flav =      [g], final flav =      [g]
+  pt =   0.939285, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 7 with 94 particles
+
+base jet 0: pt=100.043 rap=0.69771 phi=5.94573, flav = [g]
+GHS jet  0: pt=100.043 rap=0.69771 phi=5.94573, flav = [b ]
+constituents:
+  pt =       71.3, orig. flav =     [b ], final flav =     [b ]
+  pt =    16.9088, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    5.72472, orig. flav =      [g], final flav =      [g]
+  pt =    4.14052, orig. flav =      [g], final flav =      [g]
+  pt =     2.1564, orig. flav =      [g], final flav =      [g]
+  pt =   0.359787, orig. flav =      [g], final flav =      [g]
+  pt =   0.184212, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [g]
+GHS jet  1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [g]
+constituents:
+  pt =    13.1922, orig. flav =      [g], final flav =      [g]
+  pt =    4.59694, orig. flav =      [g], final flav =      [g]
+  pt =    2.35363, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 8 with 54 particles
+
+base jet 0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [bbar ]
+GHS jet  0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [bbar ]
+constituents:
+  pt =    39.7603, orig. flav =      [g], final flav =      [g]
+  pt =    39.4111, orig. flav =      [g], final flav =      [g]
+  pt =    10.7681, orig. flav =  [bbar ], final flav =  [bbar ]
+  pt =    7.84577, orig. flav =      [g], final flav =      [g]
+  pt =    7.61929, orig. flav =      [g], final flav =      [g]
+  pt =    4.14959, orig. flav =      [g], final flav =      [g]
+  pt =    3.10819, orig. flav =      [g], final flav =      [g]
+  pt =    1.93998, orig. flav =      [g], final flav =      [g]
+  pt =    1.41042, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [g]
+GHS jet  1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [g]
+constituents:
+  pt =    13.3616, orig. flav =      [g], final flav =      [g]
+  pt =    4.08276, orig. flav =      [g], final flav =      [g]
+  pt =    2.34136, orig. flav =      [g], final flav =      [g]
+  pt =   0.330765, orig. flav =      [g], final flav =      [g]
+
+#---------------------------------------------------------------
+# read event 9 with 83 particles
+
+base jet 0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [g]
+GHS jet  0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [g]
+constituents:
+  pt =    86.4101, orig. flav =      [g], final flav =      [g]
+  pt =    26.5429, orig. flav =      [g], final flav =      [g]
+  pt =    12.3206, orig. flav =      [g], final flav =      [g]
+  pt =    8.32981, orig. flav =      [g], final flav =      [g]
+  pt =    7.39747, orig. flav =      [g], final flav =      [g]
+  pt =    5.29169, orig. flav =      [g], final flav =      [g]
+  pt =    5.24981, orig. flav =      [g], final flav =      [g]
+  pt =     1.0182, orig. flav =      [g], final flav =      [g]
+  pt =   0.700695, orig. flav =      [g], final flav =      [g]
+
+base jet 1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [g]
+GHS jet  1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [g]
+constituents:
+  pt =    22.2349, orig. flav =      [g], final flav =      [g]
+  pt =    5.39818, orig. flav =      [g], final flav =      [g]
+  pt =    4.62581, orig. flav =      [g], final flav =      [g]
+  pt =   0.575164, orig. flav =      [g], final flav =      [g]

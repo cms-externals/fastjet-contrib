@@ -1,0 +1,7 @@
+2024/12/13: release of version 1.0.4
+- bug fix release, remove spurious dependency in Makefile
+
+2024/12/12: release of version 1.0.3
+- First fjcontrib release of IFNPlugin
+- this is now the reference version for IFNPlugin
+  superseding https://github.com/jetflav/IFNPlugin

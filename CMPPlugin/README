@@ -1,0 +1,52 @@
+CMPPlugin 
+=========
+
+/// Implementation of the CMP flavoured anti-kt algorithm
+
+This code provides an implementation of the flavoured anti-kt algorithm
+from
+
+> Infrared-safe flavoured anti-kT jets,
+> by Michal Czakon, Alexander Mitov and Rene Poncelet
+> https://arxiv.org/pdf/2205.11879 (v2)
+
+including modifications to ensure IR-safety suggested in
+
+> Flavoured jets with exact anti-kt kinematics and tests of infrared and collinear safety,
+> by Fabrizio Caola, Radoslaw Grabarczyk, Maxwell Hutt, Gavin P. Salam, Ludovic Scyboz, and Jesse Thaler
+> https://arxiv.org/abs/2306.07314
+
+To learn how to use the library, the [`example-CMP.cc`](example-CMP.cc) code is
+a good place to get started.
+
+Main principles of CMP
+----------------------
+
+The CMP algorithm provides a anti-kT-like flavour safe jet clustering algorithm.
+IR safety is ensured through a modified pseudojet distance for "soft"
+flavour-anti-flavour pairs. Through this modification the clustering sequence is
+not exactly anti-kT. The modification can be steered by a parameter a (the limit
+a->0 recovers the IR flavour unsafe anti-kT algorithm).
+
+Code Structure
+--------------
+
+The main interface to the CMP algorithm is in [`CMPPlugin.hh`](CMPPlugin.hh):
+```cpp
+// create an CMPPlugin for a given a  and jetradius R
+double a = 0.1;
+double R = 0.4;
+JetDefinition jet_def(new CMPPlugin(R,a));
+jet_def.delete_plugin_when_unused();
+```
+
+The plugin can be used as standard with the FastJet package, e.g.:
+```cpp
+vector<PseudoJet> particles;
+// ... fill the particles ...
+auto jets = jet_def(particles);
+for (const auto & jet : jets) {
+  cout << "jet pt = " << jet.pt() 
+       << ", flav = " << FlavHistory::current_flavour_of(jet) << endl;
+}
+```
