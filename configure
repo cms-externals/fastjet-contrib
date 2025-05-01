@@ -357,7 +357,7 @@ else
     # the following more elaborate set of options requested by Alexander Puck Neuwirth
     # for compatibility with gentoo, cf. https://github.com/fjcontrib/fjcontrib/issues/4
     # plus https://github.com/fjcontrib/fjcontrib/issues/5
-    dynlibopt="-shared -Wl,--as-needed -Wl,-soname,libfastjetcontribfragile.so"
+    dynlibopt="-shared -Wl,-soname,libfastjetcontribfragile.so"
     dynlibext="so"
     dynlibpostproc="" # some dummy command needed
 fi
