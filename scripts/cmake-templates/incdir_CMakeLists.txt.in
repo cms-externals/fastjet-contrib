@@ -1,0 +1,5 @@
+install(FILES 
+          ${${FJCONTRIB_NAME_LOWER}_INCLUDES}
+        DESTINATION 
+          include/fastjet/contrib
+       )
