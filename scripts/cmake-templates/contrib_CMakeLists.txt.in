@@ -1,0 +1,60 @@
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${FJCONTRIB_NAME}/include)
+  add_subdirectory(include)
+  install(FILES
+            ${CMAKE_CURRENT_BINARY_DIR}/${FJCONTRIB_NAME}/include/${FJCONTRIB_NAME_LOWER}_defines.h
+          DESTINATION
+            include/fastjet/contrib
+         )
+else()
+  file(COPY ${${FJCONTRIB_NAME_LOWER}_INCLUDES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${FJCONTRIB_NAME}/include/fastjet/contrib)
+  install(FILES
+            ${${FJCONTRIB_NAME_LOWER}_INCLUDES}
+            ${CMAKE_CURRENT_BINARY_DIR}/${FJCONTRIB_NAME}/include/${FJCONTRIB_NAME_LOWER}_defines.h
+          DESTINATION
+            include/fastjet/contrib
+         )
+endif()
+
+if(${FJCONTRIB_NAME_LOWER}_SOURCES)
+
+
+  if (FASTJETCONTRIB_ENABLE_FRAGILELIB)
+    add_library(${FJCONTRIB_NAME} OBJECT ${${FJCONTRIB_NAME_LOWER}_SOURCES})
+  else()
+    add_library(${FJCONTRIB_NAME} SHARED ${${FJCONTRIB_NAME_LOWER}_SOURCES})
+  endif()
+  target_link_libraries(${FJCONTRIB_NAME} PUBLIC fastjet::fastjettools ${${FJCONTRIB_NAME_LOWER}_DEPENDENCIES})
+  if("${FJCONTRIB_NAME}" STREQUAL "SDFPlugin")
+    target_link_libraries(${FJCONTRIB_NAME} PUBLIC fastjet::fastjetplugins)
+  endif()
+  target_include_directories(${FJCONTRIB_NAME}
+                             PUBLIC
+                              $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${FJCONTRIB_NAME}/include>
+                              $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${FJCONTRIB_NAME}/include>
+                              $<INSTALL_INTERFACE:include>
+                             )
+
+  if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    set_target_properties(${FJCONTRIB_NAME} PROPERTIES INSTALL_RPATH "@loader_path")
+  elseif (NOT MSVC)
+    set_target_properties(${FJCONTRIB_NAME} PROPERTIES INSTALL_RPATH "$ORIGIN")
+  endif()
+
+  if (NOT FASTJETCONTRIB_ENABLE_FRAGILELIB)
+    add_library(fastjet::contrib::${FJCONTRIB_NAME} ALIAS ${FJCONTRIB_NAME})
+    install(TARGETS
+              ${FJCONTRIB_NAME}
+            EXPORT 
+              FastjetContribTargets
+            RUNTIME
+              COMPONENT Runtime
+              DESTINATION ${CMAKE_INSTALL_BINDIR}
+            LIBRARY
+              COMPONENT Runtime
+              DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            ARCHIVE
+              COMPONENT Development
+              DESTINATION ${CMAKE_INSTALL_LIBDIR}
+           )
+  endif()
+endif()
