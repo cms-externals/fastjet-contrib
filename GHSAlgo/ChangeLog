@@ -1,3 +1,12 @@
+2026-11-18 Nico Toikka
+
+           * GHSAlgo.cc, include/fastjet/contrib/GHSAlgo.hh:
+           new public dress_jets_GHS(jets, flavoured_inputs, alpha, omega,
+           flav_recombiner) that dresses given jets with given flavoured
+           inputs and a caller-chosen jet association (user_index 0 or
+           -(i+1)); run_GHS now prepares its inputs and calls it, with
+           unchanged output (example-GHS.ref).
+
 2025-01-27 Giovanni Stagnitto
 
            Initial creation

@@ -60,6 +60,30 @@ namespace contrib{
       double omega = 2.,
       const FlavRecombiner &flav_recombiner = FlavRecombiner());
 
+  /// dress a given set of jets with the flavour of a given set of flavoured
+  /// inputs (e.g. partons or heavy-flavour hadrons that were not themselves
+  /// clustered into the jets), with the jet association chosen by the caller.
+  /// run_GHS is this function applied to the hard jets and to the particles
+  /// of their ClusterSequence, associated through PseudoJet::is_inside.
+  ///
+  /// @param jets: the jets to be dressed (e.g. the hard jets of the event);
+  /// their user_index is preserved in the output
+  ///
+  /// @param flavoured_inputs: the flavour carriers, each with a FlavHistory
+  /// user info and a user_index of 0 (not associated with any jet) or
+  /// -(i+1) (associated with jets[i])
+  ///
+  /// @param alpha: power of (ktmax/ktmin) used in the flavour-kt distance
+  ///
+  /// @param omega: relative weighting of rapidity separation
+  ///
+  /// @returns the jets, in the input order, dressed with their flavour
+  std::vector<PseudoJet> dress_jets_GHS(
+      const std::vector<PseudoJet> &jets,
+      const std::vector<PseudoJet> &flavoured_inputs, double alpha = 1.,
+      double omega = 2.,
+      const FlavRecombiner &flav_recombiner = FlavRecombiner());
+
 } // namespace contrib
 
 FASTJET_END_NAMESPACE
