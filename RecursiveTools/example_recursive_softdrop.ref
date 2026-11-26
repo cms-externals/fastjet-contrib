@@ -1,0 +1,83 @@
+# read an event with 354 particles
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.2
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+RecursiveSoftDrop groomer is: recursive application of [Recursive Groomer with a symmetry cut scalar_z > 0.2 (theta/1)^0.5 [SoftDrop], no mass-drop requirement, recursion into the subjet with larger pt], applied N=4 times, with R0 dynamically scaled
+
+original             jet:  pt = 983.387 m = 39.9912 y = -0.867307 phi = 2.90511
+RecursiveSoftDropped jet:  pt = 811.261 m = 6.45947 y = -0.87094 phi = 2.9083
+
+Prongs with clustering information
+----------------------------------
+                 branch        branch N_groomed    max loc          substructure
+                     pt          mass  loc  tot      zdrop         zg     thetag
+ +-->          811.2615        6.4595   13   13     0.0294     0.1543     0.0200
+   +-->        669.6354        1.9839    2    2     0.0000
+   +-->        141.6273        0.7653    0    0     0.0000     0.1999     0.0073
+     +-->      113.3155        0.4629    0    0     0.0000     0.2089     0.0055
+     | +-->     89.6387        0.2119    0    0     0.0000
+     | +-->     23.6769        0.1396    0    0     0.0000
+     +-->       28.3123        0.1700    0    0     0.0000     0.2482     0.0045
+       +-->     21.2860        0.1396    0    0     0.0000
+       +-->      7.0264       -0.0000    0    0     0.0000
+
+Prongs without clustering information
+-------------------------------------
+(Raw) list of prongs:
+              pt          mass
+    0   669.6354        1.9839
+    1    89.6387        0.2119
+    2    21.2860        0.1396
+    3    23.6769        0.1396
+    4     7.0264       -0.0000
+
+Groomed prongs information:
+index            zg        thetag
+    1        0.1543        0.0200
+    2        0.1999        0.0073
+    3        0.2089        0.0055
+    4        0.2482        0.0045
+
+original             jet:  pt = 908.0979 m = 87.7124 y = 0.2195 phi = 6.0349
+RecursiveSoftDropped jet:  pt = 830.5173 m = 4.9104 y = 0.2231 phi = 6.0299
+
+Prongs with clustering information
+----------------------------------
+                 branch        branch N_groomed    max loc          substructure
+                     pt          mass  loc  tot      zdrop         zg     thetag
+ +-->          830.5173        4.9104   12   13     0.0232     0.0608     0.0154
+   +-->        778.7314        3.6648    0    1     0.0000     0.2350     0.0101
+   | +-->      599.1063        0.4038    1    1     0.0000
+   | +-->      179.6277        0.8534    0    1     0.0000     0.2577     0.0087
+   |   +-->    131.1504        0.3785    1    1     0.0607     0.3152     0.0042
+   |   | +-->   89.8058        0.1072    0    0     0.0000
+   |   | +-->   41.3448        0.1396    0    0     0.0000
+   |   +-->     48.4785        0.1396    0    0     0.0000
+   +-->         51.7916        0.1396    0    0     0.0000
+
+Prongs without clustering information
+-------------------------------------
+(Raw) list of prongs:
+              pt          mass
+    0   599.1063        0.4038
+    1    51.7916        0.1396
+    2    89.8058        0.1072
+    3    48.4785        0.1396
+    4    41.3448        0.1396
+
+Groomed prongs information:
+index            zg        thetag
+    1        0.0608        0.0154
+    2        0.2350        0.0101
+    3        0.2577        0.0087
+    4        0.3152        0.0042

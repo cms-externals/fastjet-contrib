@@ -1,0 +1,1484 @@
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+
+#---------------------------------------------------------------
+# read event 0 with 64 particles
+now do the sd...
+
+base jet 0: pt=160.77 rap=0.90783 phi=0.366217, flav = [u ]
+SD flav jet  0: pt=160.77 rap=0.90783 phi=0.366217, flav = [u ]
+
+base jet 1: pt=8.49978 rap=0.550912 phi=0.0241549, flav = [d u ]
+SD flav jet  1: pt=8.49978 rap=0.550912 phi=0.0241549, flav = [d u ]
+
+base jet 2: pt=7.96449 rap=1.98751 phi=4.56023, flav = [bbar bbar ]
+SD flav jet  2: pt=7.96449 rap=1.98751 phi=4.56023, flav = [bbar bbar ]
+
+base jet 3: pt=7.44626 rap=0.0690523 phi=0.605221, flav = [u s ]
+SD flav jet  3: pt=7.44626 rap=0.0690523 phi=0.605221, flav = [u s ]
+
+base jet 4: pt=7.3402 rap=0.00843489 phi=1.28811, flav = [dbar ubar ]
+SD flav jet  4: pt=7.3402 rap=0.00843489 phi=1.28811, flav = [dbar ubar ]
+
+base jet 5: pt=3.27161 rap=-0.407406 phi=4.65289, flav = [g]
+SD flav jet  5: pt=3.27161 rap=-0.407406 phi=4.65289, flav = [g]
+
+base jet 6: pt=3.21146 rap=0.501387 phi=4.22762, flav = [g]
+SD flav jet  6: pt=3.21146 rap=0.501387 phi=4.22762, flav = [g]
+
+base jet 7: pt=2.96585 rap=3.85741 phi=5.05258, flav = [d ]
+SD flav jet  7: pt=2.96585 rap=3.85741 phi=5.05258, flav = [d ]
+
+base jet 8: pt=2.84607 rap=1.24282 phi=1.60851, flav = [sbar ]
+SD flav jet  8: pt=2.84607 rap=1.24282 phi=1.60851, flav = [sbar ]
+
+base jet 9: pt=1.94069 rap=1.56491 phi=4.28638, flav = [g]
+SD flav jet  9: pt=1.94069 rap=1.56491 phi=4.28638, flav = [g]
+
+base jet 10: pt=1.87908 rap=3.51836 phi=5.38263, flav = [dbar ]
+SD flav jet  10: pt=1.87908 rap=3.51836 phi=5.38263, flav = [dbar ]
+
+base jet 11: pt=1.82013 rap=1.72083 phi=1.98468, flav = [g]
+SD flav jet  11: pt=1.82013 rap=1.72083 phi=1.98468, flav = [g]
+
+base jet 12: pt=1.71472 rap=-0.0741472 phi=3.83835, flav = [g]
+SD flav jet  12: pt=1.71472 rap=-0.0741472 phi=3.83835, flav = [g]
+
+base jet 13: pt=1.45959 rap=0.180121 phi=0.199993, flav = [cbar ]
+SD flav jet  13: pt=1.45959 rap=0.180121 phi=0.199993, flav = [cbar ]
+
+base jet 14: pt=1.44142 rap=-2.62404 phi=3.36924, flav = [sbar ]
+SD flav jet  14: pt=1.44142 rap=-2.62404 phi=3.36924, flav = [sbar ]
+
+base jet 15: pt=1.23947 rap=6.23036 phi=4.31063, flav = [d u ]
+SD flav jet  15: pt=1.23947 rap=6.23036 phi=4.31063, flav = [d u ]
+
+base jet 16: pt=1.21019 rap=-1.34209 phi=4.33514, flav = [bbar ]
+SD flav jet  16: pt=1.21019 rap=-1.34209 phi=4.33514, flav = [bbar ]
+
+base jet 17: pt=1.16347 rap=-0.368498 phi=2.92186, flav = [cbar ]
+SD flav jet  17: pt=1.16347 rap=-0.368498 phi=2.92186, flav = [cbar ]
+
+base jet 18: pt=1.15743 rap=0.113967 phi=5.07935, flav = [g]
+SD flav jet  18: pt=1.15743 rap=0.113967 phi=5.07935, flav = [g]
+
+base jet 19: pt=1.06287 rap=1.22708 phi=2.585, flav = [c ]
+SD flav jet  19: pt=1.06287 rap=1.22708 phi=2.585, flav = [c ]
+
+base jet 20: pt=1.02474 rap=-2.46634 phi=4.40107, flav = [g]
+SD flav jet  20: pt=1.02474 rap=-2.46634 phi=4.40107, flav = [g]
+
+base jet 21: pt=0.853336 rap=-0.301915 phi=1.00563, flav = [d ]
+SD flav jet  21: pt=0.853336 rap=-0.301915 phi=1.00563, flav = [d ]
+
+base jet 22: pt=0.769826 rap=-0.786678 phi=4.07458, flav = [u ]
+SD flav jet  22: pt=0.769826 rap=-0.786678 phi=4.07458, flav = [u ]
+
+base jet 23: pt=0.760885 rap=0.633055 phi=0.678284, flav = [g]
+SD flav jet  23: pt=0.760885 rap=0.633055 phi=0.678284, flav = [g]
+
+base jet 24: pt=0.67701 rap=2.89705 phi=5.54088, flav = [g]
+SD flav jet  24: pt=0.67701 rap=2.89705 phi=5.54088, flav = [g]
+
+base jet 25: pt=0.630838 rap=-1.60383 phi=3.31619, flav = [g]
+SD flav jet  25: pt=0.630838 rap=-1.60383 phi=3.31619, flav = [g]
+
+base jet 26: pt=0.576939 rap=-7.47203 phi=4.25877, flav = [d u ]
+SD flav jet  26: pt=0.576939 rap=-7.47203 phi=4.25877, flav = [d u ]
+
+base jet 27: pt=0.512529 rap=-2.37706 phi=1.70759, flav = [g]
+SD flav jet  27: pt=0.512529 rap=-2.37706 phi=1.70759, flav = [g]
+
+base jet 28: pt=0.50689 rap=0.940743 phi=5.67736, flav = [g]
+SD flav jet  28: pt=0.50689 rap=0.940743 phi=5.67736, flav = [g]
+
+base jet 29: pt=0.481995 rap=-1.11306 phi=2.77235, flav = [g]
+SD flav jet  29: pt=0.481995 rap=-1.11306 phi=2.77235, flav = [g]
+
+base jet 30: pt=0.44368 rap=1.07817 phi=4.91583, flav = [g]
+SD flav jet  30: pt=0.44368 rap=1.07817 phi=4.91583, flav = [g]
+
+base jet 31: pt=0.439767 rap=3.6931 phi=1.64782, flav = [c ]
+SD flav jet  31: pt=0.439767 rap=3.6931 phi=1.64782, flav = [c ]
+
+base jet 32: pt=0.417598 rap=-1.75011 phi=0.660275, flav = [d ]
+SD flav jet  32: pt=0.417598 rap=-1.75011 phi=0.660275, flav = [d ]
+
+base jet 33: pt=0.388286 rap=-6.47478 phi=0.45092, flav = [u ]
+SD flav jet  33: pt=0.388286 rap=-6.47478 phi=0.45092, flav = [u ]
+
+base jet 34: pt=0.386049 rap=1.39697 phi=0.0759585, flav = [dbar ]
+SD flav jet  34: pt=0.386049 rap=1.39697 phi=0.0759585, flav = [dbar ]
+
+base jet 35: pt=0.328926 rap=0.0540854 phi=6.06608, flav = [g]
+SD flav jet  35: pt=0.328926 rap=0.0540854 phi=6.06608, flav = [g]
+
+base jet 36: pt=0.318562 rap=2.26857 phi=2.89181, flav = [u ]
+SD flav jet  36: pt=0.318562 rap=2.26857 phi=2.89181, flav = [u ]
+
+base jet 37: pt=0.249964 rap=-0.616062 phi=2.05125, flav = [g]
+SD flav jet  37: pt=0.249964 rap=-0.616062 phi=2.05125, flav = [g]
+
+base jet 38: pt=0.247897 rap=2.10803 phi=5.56523, flav = [bbar ]
+SD flav jet  38: pt=0.247897 rap=2.10803 phi=5.56523, flav = [bbar ]
+
+base jet 39: pt=0.222556 rap=0.768118 phi=1.34336, flav = [g]
+SD flav jet  39: pt=0.222556 rap=0.768118 phi=1.34336, flav = [g]
+
+base jet 40: pt=0.0517697 rap=-1.69026 phi=4.56152, flav = [g]
+SD flav jet  40: pt=0.0517697 rap=-1.69026 phi=4.56152, flav = [g]
+
+base jet 41: pt=0.00736101 rap=0.780826 phi=3.63937, flav = [g]
+SD flav jet  41: pt=0.00736101 rap=0.780826 phi=3.63937, flav = [g]
+
+#---------------------------------------------------------------
+# read event 1 with 91 particles
+now do the sd...
+
+base jet 0: pt=143.136 rap=1.00816 phi=0.315751, flav = [bbar tbar ]
+SD flav jet  0: pt=143.136 rap=1.00816 phi=0.315751, flav = [bbar tbar ]
+
+base jet 1: pt=6.05867 rap=0.0649657 phi=3.29464, flav = [g]
+SD flav jet  1: pt=6.05867 rap=0.0649657 phi=3.29464, flav = [g]
+
+base jet 2: pt=3.58636 rap=0.193706 phi=5.36693, flav = [d ]
+SD flav jet  2: pt=3.58636 rap=0.193706 phi=5.36693, flav = [d ]
+
+base jet 3: pt=3.49044 rap=-0.149006 phi=0.716449, flav = [d b ]
+SD flav jet  3: pt=3.49044 rap=-0.149006 phi=0.716449, flav = [d b ]
+
+base jet 4: pt=3.41124 rap=2.29203 phi=3.90154, flav = [g]
+SD flav jet  4: pt=3.41124 rap=2.29203 phi=3.90154, flav = [g]
+
+base jet 5: pt=3.01848 rap=3.14716 phi=5.74679, flav = [g]
+SD flav jet  5: pt=3.01848 rap=3.14716 phi=5.74679, flav = [g]
+
+base jet 6: pt=2.82862 rap=-3.73093 phi=1.35695, flav = [d ]
+SD flav jet  6: pt=2.82862 rap=-3.73093 phi=1.35695, flav = [d ]
+
+base jet 7: pt=2.80011 rap=-0.469935 phi=2.60928, flav = [s ]
+SD flav jet  7: pt=2.80011 rap=-0.469935 phi=2.60928, flav = [s ]
+
+base jet 8: pt=2.77666 rap=0.391043 phi=6.2483, flav = [s c ]
+SD flav jet  8: pt=2.77666 rap=0.391043 phi=6.2483, flav = [s c ]
+
+base jet 9: pt=2.77306 rap=2.38653 phi=6.2755, flav = [d u ]
+SD flav jet  9: pt=2.77306 rap=2.38653 phi=6.2755, flav = [d u ]
+
+base jet 10: pt=2.68261 rap=-1.97425 phi=3.65305, flav = [u ]
+SD flav jet  10: pt=2.68261 rap=-1.97425 phi=3.65305, flav = [u ]
+
+base jet 11: pt=2.61389 rap=-1.62422 phi=0.381118, flav = [s ]
+SD flav jet  11: pt=2.61389 rap=-1.62422 phi=0.381118, flav = [s ]
+
+base jet 12: pt=2.29673 rap=-2.33543 phi=5.56451, flav = [g]
+SD flav jet  12: pt=2.29673 rap=-2.33543 phi=5.56451, flav = [g]
+
+base jet 13: pt=2.06971 rap=-3.70133 phi=4.17462, flav = [g]
+SD flav jet  13: pt=2.06971 rap=-3.70133 phi=4.17462, flav = [g]
+
+base jet 14: pt=1.92048 rap=0.53675 phi=0.960671, flav = [sbar ]
+SD flav jet  14: pt=1.92048 rap=0.53675 phi=0.960671, flav = [sbar ]
+
+base jet 15: pt=1.92 rap=-3.26105 phi=2.39568, flav = [cbar ]
+SD flav jet  15: pt=1.92 rap=-3.26105 phi=2.39568, flav = [cbar ]
+
+base jet 16: pt=1.48458 rap=1.55754 phi=2.47298, flav = [g]
+SD flav jet  16: pt=1.48458 rap=1.55754 phi=2.47298, flav = [g]
+
+base jet 17: pt=1.44491 rap=1.68236 phi=4.80464, flav = [dbar ]
+SD flav jet  17: pt=1.44491 rap=1.68236 phi=4.80464, flav = [dbar ]
+
+base jet 18: pt=1.38599 rap=0.335099 phi=4.26118, flav = [b ]
+SD flav jet  18: pt=1.38599 rap=0.335099 phi=4.26118, flav = [b ]
+
+base jet 19: pt=1.35669 rap=4.20634 phi=2.47973, flav = [d ]
+SD flav jet  19: pt=1.35669 rap=4.20634 phi=2.47973, flav = [d ]
+
+base jet 20: pt=1.22377 rap=2.75199 phi=5.85133, flav = [dbar ]
+SD flav jet  20: pt=1.22377 rap=2.75199 phi=5.85133, flav = [dbar ]
+
+base jet 21: pt=1.18313 rap=2.81888 phi=0.313522, flav = [g]
+SD flav jet  21: pt=1.18313 rap=2.81888 phi=0.313522, flav = [g]
+
+base jet 22: pt=1.17584 rap=-0.493954 phi=3.58193, flav = [g]
+SD flav jet  22: pt=1.17584 rap=-0.493954 phi=3.58193, flav = [g]
+
+base jet 23: pt=1.11816 rap=-2.10896 phi=0.526007, flav = [b ]
+SD flav jet  23: pt=1.11816 rap=-2.10896 phi=0.526007, flav = [b ]
+
+base jet 24: pt=1.08848 rap=-1.34539 phi=1.07665, flav = [g]
+SD flav jet  24: pt=1.08848 rap=-1.34539 phi=1.07665, flav = [g]
+
+base jet 25: pt=1.07877 rap=-4.11914 phi=4.3603, flav = [d ]
+SD flav jet  25: pt=1.07877 rap=-4.11914 phi=4.3603, flav = [d ]
+
+base jet 26: pt=0.953084 rap=-1.50513 phi=3.0102, flav = [g]
+SD flav jet  26: pt=0.953084 rap=-1.50513 phi=3.0102, flav = [g]
+
+base jet 27: pt=0.945861 rap=-5.4698 phi=6.12483, flav = [d ]
+SD flav jet  27: pt=0.945861 rap=-5.4698 phi=6.12483, flav = [d ]
+
+base jet 28: pt=0.878457 rap=2.69632 phi=2.31983, flav = [sbar ]
+SD flav jet  28: pt=0.878457 rap=2.69632 phi=2.31983, flav = [sbar ]
+
+base jet 29: pt=0.873632 rap=0.190396 phi=2.56701, flav = [bbar ]
+SD flav jet  29: pt=0.873632 rap=0.190396 phi=2.56701, flav = [bbar ]
+
+base jet 30: pt=0.856031 rap=1.2279 phi=4.62162, flav = [tbar tbar ]
+SD flav jet  30: pt=0.856031 rap=1.2279 phi=4.62162, flav = [tbar tbar ]
+
+base jet 31: pt=0.852897 rap=-0.654192 phi=1.43833, flav = [d s ]
+SD flav jet  31: pt=0.852897 rap=-0.654192 phi=1.43833, flav = [d s ]
+
+base jet 32: pt=0.782025 rap=-3.82596 phi=5.01091, flav = [sbar ]
+SD flav jet  32: pt=0.782025 rap=-3.82596 phi=5.01091, flav = [sbar ]
+
+base jet 33: pt=0.779432 rap=-1.7142 phi=5.49623, flav = [sbar ]
+SD flav jet  33: pt=0.779432 rap=-1.7142 phi=5.49623, flav = [sbar ]
+
+base jet 34: pt=0.771015 rap=4.3702 phi=1.83947, flav = [d ]
+SD flav jet  34: pt=0.771015 rap=4.3702 phi=1.83947, flav = [d ]
+
+base jet 35: pt=0.759793 rap=-4.63334 phi=0.348931, flav = [g]
+SD flav jet  35: pt=0.759793 rap=-4.63334 phi=0.348931, flav = [g]
+
+base jet 36: pt=0.743978 rap=-1.25191 phi=4.17609, flav = [t ]
+SD flav jet  36: pt=0.743978 rap=-1.25191 phi=4.17609, flav = [t ]
+
+base jet 37: pt=0.728298 rap=3.25587 phi=2.61844, flav = [ubar ]
+SD flav jet  37: pt=0.728298 rap=3.25587 phi=2.61844, flav = [ubar ]
+
+base jet 38: pt=0.719598 rap=-2.11331 phi=2.20152, flav = [g]
+SD flav jet  38: pt=0.719598 rap=-2.11331 phi=2.20152, flav = [g]
+
+base jet 39: pt=0.682855 rap=-1.90111 phi=1.64187, flav = [g]
+SD flav jet  39: pt=0.682855 rap=-1.90111 phi=1.64187, flav = [g]
+
+base jet 40: pt=0.668062 rap=-3.55152 phi=3.41624, flav = [g]
+SD flav jet  40: pt=0.668062 rap=-3.55152 phi=3.41624, flav = [g]
+
+base jet 41: pt=0.611448 rap=3.3453 phi=3.75899, flav = [dbar ]
+SD flav jet  41: pt=0.611448 rap=3.3453 phi=3.75899, flav = [dbar ]
+
+base jet 42: pt=0.591053 rap=7.16017 phi=1.91984, flav = [u ]
+SD flav jet  42: pt=0.591053 rap=7.16017 phi=1.91984, flav = [u ]
+
+base jet 43: pt=0.558173 rap=-4.24347 phi=3.66288, flav = [dbar ]
+SD flav jet  43: pt=0.558173 rap=-4.24347 phi=3.66288, flav = [dbar ]
+
+base jet 44: pt=0.487133 rap=2.1083 phi=2.35829, flav = [g]
+SD flav jet  44: pt=0.487133 rap=2.1083 phi=2.35829, flav = [g]
+
+base jet 45: pt=0.453849 rap=1.60355 phi=5.26047, flav = [g]
+SD flav jet  45: pt=0.453849 rap=1.60355 phi=5.26047, flav = [g]
+
+base jet 46: pt=0.431865 rap=5.46715 phi=3.61077, flav = [u ]
+SD flav jet  46: pt=0.431865 rap=5.46715 phi=3.61077, flav = [u ]
+
+base jet 47: pt=0.429176 rap=-1.22649 phi=2.33468, flav = [g]
+SD flav jet  47: pt=0.429176 rap=-1.22649 phi=2.33468, flav = [g]
+
+base jet 48: pt=0.391055 rap=-2.77206 phi=1.33661, flav = [t ]
+SD flav jet  48: pt=0.391055 rap=-2.77206 phi=1.33661, flav = [t ]
+
+base jet 49: pt=0.370242 rap=-2.85766 phi=4.76131, flav = [g]
+SD flav jet  49: pt=0.370242 rap=-2.85766 phi=4.76131, flav = [g]
+
+base jet 50: pt=0.361895 rap=1.96591 phi=3.55174, flav = [s ]
+SD flav jet  50: pt=0.361895 rap=1.96591 phi=3.55174, flav = [s ]
+
+base jet 51: pt=0.361562 rap=-1.46941 phi=1.61668, flav = [g]
+SD flav jet  51: pt=0.361562 rap=-1.46941 phi=1.61668, flav = [g]
+
+base jet 52: pt=0.352232 rap=0.692781 phi=2.85168, flav = [g]
+SD flav jet  52: pt=0.352232 rap=0.692781 phi=2.85168, flav = [g]
+
+base jet 53: pt=0.345302 rap=-5.77666 phi=5.7911, flav = [c ]
+SD flav jet  53: pt=0.345302 rap=-5.77666 phi=5.7911, flav = [c ]
+
+base jet 54: pt=0.297851 rap=2.7629 phi=1.8896, flav = [d ]
+SD flav jet  54: pt=0.297851 rap=2.7629 phi=1.8896, flav = [d ]
+
+base jet 55: pt=0.279278 rap=3.51562 phi=4.97096, flav = [g]
+SD flav jet  55: pt=0.279278 rap=3.51562 phi=4.97096, flav = [g]
+
+base jet 56: pt=0.213923 rap=1.06514 phi=1.18679, flav = [dbar ]
+SD flav jet  56: pt=0.213923 rap=1.06514 phi=1.18679, flav = [dbar ]
+
+base jet 57: pt=0.213736 rap=-6.54445 phi=5.44883, flav = [d u ]
+SD flav jet  57: pt=0.213736 rap=-6.54445 phi=5.44883, flav = [d u ]
+
+base jet 58: pt=0.202974 rap=-3.2913 phi=1.1752, flav = [ubar ]
+SD flav jet  58: pt=0.202974 rap=-3.2913 phi=1.1752, flav = [ubar ]
+
+base jet 59: pt=0.197693 rap=-2.4371 phi=4.07095, flav = [bbar ]
+SD flav jet  59: pt=0.197693 rap=-2.4371 phi=4.07095, flav = [bbar ]
+
+base jet 60: pt=0.196554 rap=2.53804 phi=1.55713, flav = [ubar ]
+SD flav jet  60: pt=0.196554 rap=2.53804 phi=1.55713, flav = [ubar ]
+
+base jet 61: pt=0.194348 rap=-1.67692 phi=4.83327, flav = [g]
+SD flav jet  61: pt=0.194348 rap=-1.67692 phi=4.83327, flav = [g]
+
+base jet 62: pt=0.173009 rap=3.47812 phi=3.29596, flav = [g]
+SD flav jet  62: pt=0.173009 rap=3.47812 phi=3.29596, flav = [g]
+
+base jet 63: pt=0.172712 rap=-6.74206 phi=4.07209, flav = [u ]
+SD flav jet  63: pt=0.172712 rap=-6.74206 phi=4.07209, flav = [u ]
+
+base jet 64: pt=0.159647 rap=-0.65415 phi=4.27448, flav = [g]
+SD flav jet  64: pt=0.159647 rap=-0.65415 phi=4.27448, flav = [g]
+
+base jet 65: pt=0.151099 rap=-2.34689 phi=3.37457, flav = [g]
+SD flav jet  65: pt=0.151099 rap=-2.34689 phi=3.37457, flav = [g]
+
+base jet 66: pt=0.0642579 rap=-3.11322 phi=1.7564, flav = [g]
+SD flav jet  66: pt=0.0642579 rap=-3.11322 phi=1.7564, flav = [g]
+
+#---------------------------------------------------------------
+# read event 2 with 67 particles
+now do the sd...
+
+base jet 0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [dbar u c ]
+SD flav jet  0: pt=72.6916 rap=0.0676305 phi=6.26665, flav = [dbar u c ]
+
+base jet 1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [ubar bbar t ]
+SD flav jet  1: pt=30.4721 rap=-1.2557 phi=1.37855, flav = [ubar bbar t ]
+
+base jet 2: pt=21.2516 rap=0.467594 phi=5.0756, flav = [cbar cbar ]
+SD flav jet  2: pt=21.2516 rap=0.467594 phi=5.0756, flav = [cbar cbar ]
+
+base jet 3: pt=20.9087 rap=0.858619 phi=5.39029, flav = [ubar ]
+SD flav jet  3: pt=20.9087 rap=0.858619 phi=5.39029, flav = [ubar ]
+
+base jet 4: pt=19.611 rap=1.0372 phi=1.25711, flav = [cbar b t ]
+SD flav jet  4: pt=19.611 rap=1.0372 phi=1.25711, flav = [cbar b t ]
+
+base jet 5: pt=18.1229 rap=0.951132 phi=6.13624, flav = [cbar cbar bbar ]
+SD flav jet  5: pt=18.1229 rap=0.951132 phi=6.13624, flav = [cbar cbar bbar ]
+
+base jet 6: pt=9.64769 rap=-0.34528 phi=5.73185, flav = [cbar ]
+SD flav jet  6: pt=9.64769 rap=-0.34528 phi=5.73185, flav = [cbar ]
+
+base jet 7: pt=6.70531 rap=0.415159 phi=0.886058, flav = [u cbar ]
+SD flav jet  7: pt=6.70531 rap=0.415159 phi=0.886058, flav = [u cbar ]
+
+base jet 8: pt=6.3585 rap=3.17208 phi=3.4689, flav = [sbar ]
+SD flav jet  8: pt=6.3585 rap=3.17208 phi=3.4689, flav = [sbar ]
+
+base jet 9: pt=3.52758 rap=-0.619235 phi=2.98305, flav = [c ]
+SD flav jet  9: pt=3.52758 rap=-0.619235 phi=2.98305, flav = [c ]
+
+base jet 10: pt=3.26785 rap=-1.98045 phi=1.33641, flav = [dbar ]
+SD flav jet  10: pt=3.26785 rap=-1.98045 phi=1.33641, flav = [dbar ]
+
+base jet 11: pt=2.95687 rap=-0.46936 phi=3.53134, flav = [bbar ]
+SD flav jet  11: pt=2.95687 rap=-0.46936 phi=3.53134, flav = [bbar ]
+
+base jet 12: pt=2.39443 rap=-1.04658 phi=1.77051, flav = [t ]
+SD flav jet  12: pt=2.39443 rap=-1.04658 phi=1.77051, flav = [t ]
+
+base jet 13: pt=2.17275 rap=2.71029 phi=4.02432, flav = [s ]
+SD flav jet  13: pt=2.17275 rap=2.71029 phi=4.02432, flav = [s ]
+
+base jet 14: pt=2.00771 rap=-2.66636 phi=1.9793, flav = [g]
+SD flav jet  14: pt=2.00771 rap=-2.66636 phi=1.9793, flav = [g]
+
+base jet 15: pt=1.68935 rap=0.54944 phi=1.45194, flav = [g]
+SD flav jet  15: pt=1.68935 rap=0.54944 phi=1.45194, flav = [g]
+
+base jet 16: pt=1.56645 rap=-2.45543 phi=0.857032, flav = [g]
+SD flav jet  16: pt=1.56645 rap=-2.45543 phi=0.857032, flav = [g]
+
+base jet 17: pt=1.25273 rap=2.2372 phi=4.98823, flav = [d ]
+SD flav jet  17: pt=1.25273 rap=2.2372 phi=4.98823, flav = [d ]
+
+base jet 18: pt=1.04324 rap=-0.0410581 phi=4.79549, flav = [g]
+SD flav jet  18: pt=1.04324 rap=-0.0410581 phi=4.79549, flav = [g]
+
+base jet 19: pt=0.98457 rap=-0.90234 phi=1.03741, flav = [g]
+SD flav jet  19: pt=0.98457 rap=-0.90234 phi=1.03741, flav = [g]
+
+base jet 20: pt=0.940359 rap=-7.05493 phi=4.47708, flav = [d u ]
+SD flav jet  20: pt=0.940359 rap=-7.05493 phi=4.47708, flav = [d u ]
+
+base jet 21: pt=0.656026 rap=7.36601 phi=2.83859, flav = [d u ]
+SD flav jet  21: pt=0.656026 rap=7.36601 phi=2.83859, flav = [d u ]
+
+base jet 22: pt=0.606412 rap=3.31014 phi=4.20996, flav = [s ]
+SD flav jet  22: pt=0.606412 rap=3.31014 phi=4.20996, flav = [s ]
+
+base jet 23: pt=0.572105 rap=-3.68589 phi=0.864249, flav = [b ]
+SD flav jet  23: pt=0.572105 rap=-3.68589 phi=0.864249, flav = [b ]
+
+base jet 24: pt=0.552919 rap=1.8734 phi=5.59751, flav = [g]
+SD flav jet  24: pt=0.552919 rap=1.8734 phi=5.59751, flav = [g]
+
+base jet 25: pt=0.522022 rap=1.66103 phi=1.55341, flav = [g]
+SD flav jet  25: pt=0.522022 rap=1.66103 phi=1.55341, flav = [g]
+
+base jet 26: pt=0.479117 rap=-4.48708 phi=5.41494, flav = [b ]
+SD flav jet  26: pt=0.479117 rap=-4.48708 phi=5.41494, flav = [b ]
+
+base jet 27: pt=0.474687 rap=0.934876 phi=4.28687, flav = [t ]
+SD flav jet  27: pt=0.474687 rap=0.934876 phi=4.28687, flav = [t ]
+
+base jet 28: pt=0.300278 rap=3.76919 phi=5.04174, flav = [b ]
+SD flav jet  28: pt=0.300278 rap=3.76919 phi=5.04174, flav = [b ]
+
+base jet 29: pt=0.288055 rap=1.21298 phi=2.73595, flav = [s ]
+SD flav jet  29: pt=0.288055 rap=1.21298 phi=2.73595, flav = [s ]
+
+base jet 30: pt=0.283717 rap=-2.51705 phi=2.86873, flav = [g]
+SD flav jet  30: pt=0.283717 rap=-2.51705 phi=2.86873, flav = [g]
+
+base jet 31: pt=0.277488 rap=-1.26759 phi=0.396167, flav = [g]
+SD flav jet  31: pt=0.277488 rap=-1.26759 phi=0.396167, flav = [g]
+
+base jet 32: pt=0.181345 rap=-3.192 phi=4.5503, flav = [g]
+SD flav jet  32: pt=0.181345 rap=-3.192 phi=4.5503, flav = [g]
+
+base jet 33: pt=0.0214389 rap=-0.76379 phi=2.51577, flav = [g]
+SD flav jet  33: pt=0.0214389 rap=-0.76379 phi=2.51577, flav = [g]
+
+#---------------------------------------------------------------
+# read event 3 with 62 particles
+now do the sd...
+
+base jet 0: pt=113.596 rap=0.884767 phi=2.15347, flav = [u sbar cbar bbar ]
+SD flav jet  0: pt=113.596 rap=0.884767 phi=2.15347, flav = [u sbar cbar bbar ]
+
+base jet 1: pt=3.10448 rap=3.11464 phi=3.8646, flav = [ubar sbar ]
+SD flav jet  1: pt=3.10448 rap=3.11464 phi=3.8646, flav = [ubar sbar ]
+
+base jet 2: pt=3.0582 rap=0.648404 phi=3.39078, flav = [d s ]
+SD flav jet  2: pt=3.0582 rap=0.648404 phi=3.39078, flav = [d s ]
+
+base jet 3: pt=2.69438 rap=0.14305 phi=2.06223, flav = [bbar ]
+SD flav jet  3: pt=2.69438 rap=0.14305 phi=2.06223, flav = [bbar ]
+
+base jet 4: pt=2.65086 rap=-4.60299 phi=0.987066, flav = [d ]
+SD flav jet  4: pt=2.65086 rap=-4.60299 phi=0.987066, flav = [d ]
+
+base jet 5: pt=2.08811 rap=-0.43226 phi=1.74763, flav = [s ]
+SD flav jet  5: pt=2.08811 rap=-0.43226 phi=1.74763, flav = [s ]
+
+base jet 6: pt=1.77403 rap=3.12402 phi=3.18288, flav = [d ]
+SD flav jet  6: pt=1.77403 rap=3.12402 phi=3.18288, flav = [d ]
+
+base jet 7: pt=1.66544 rap=-5.04812 phi=3.72053, flav = [d ]
+SD flav jet  7: pt=1.66544 rap=-5.04812 phi=3.72053, flav = [d ]
+
+base jet 8: pt=1.63373 rap=-0.82687 phi=2.08532, flav = [sbar ]
+SD flav jet  8: pt=1.63373 rap=-0.82687 phi=2.08532, flav = [sbar ]
+
+base jet 9: pt=1.5966 rap=-2.62067 phi=1.81629, flav = [ubar ]
+SD flav jet  9: pt=1.5966 rap=-2.62067 phi=1.81629, flav = [ubar ]
+
+base jet 10: pt=1.53071 rap=2.11665 phi=5.80676, flav = [g]
+SD flav jet  10: pt=1.53071 rap=2.11665 phi=5.80676, flav = [g]
+
+base jet 11: pt=1.38297 rap=2.92509 phi=4.83591, flav = [u ]
+SD flav jet  11: pt=1.38297 rap=2.92509 phi=4.83591, flav = [u ]
+
+base jet 12: pt=1.17851 rap=-5.30359 phi=1.19263, flav = [g]
+SD flav jet  12: pt=1.17851 rap=-5.30359 phi=1.19263, flav = [g]
+
+base jet 13: pt=1.16211 rap=-3.00612 phi=1.19331, flav = [u b ]
+SD flav jet  13: pt=1.16211 rap=-3.00612 phi=1.19331, flav = [u b ]
+
+base jet 14: pt=1.14817 rap=6.6527 phi=2.39345, flav = [s ]
+SD flav jet  14: pt=1.14817 rap=6.6527 phi=2.39345, flav = [s ]
+
+base jet 15: pt=1.12759 rap=2.0369 phi=4.74048, flav = [sbar b ]
+SD flav jet  15: pt=1.12759 rap=2.0369 phi=4.74048, flav = [sbar b ]
+
+base jet 16: pt=1.09642 rap=-0.67831 phi=5.89701, flav = [c bbar ]
+SD flav jet  16: pt=1.09642 rap=-0.67831 phi=5.89701, flav = [c bbar ]
+
+base jet 17: pt=1.08025 rap=-1.19107 phi=5.63343, flav = [ubar ]
+SD flav jet  17: pt=1.08025 rap=-1.19107 phi=5.63343, flav = [ubar ]
+
+base jet 18: pt=1.06428 rap=-0.289554 phi=0.999268, flav = [t ]
+SD flav jet  18: pt=1.06428 rap=-0.289554 phi=0.999268, flav = [t ]
+
+base jet 19: pt=1.0457 rap=6.05529 phi=1.52444, flav = [d u ]
+SD flav jet  19: pt=1.0457 rap=6.05529 phi=1.52444, flav = [d u ]
+
+base jet 20: pt=1.01488 rap=-1.44591 phi=4.03646, flav = [u ]
+SD flav jet  20: pt=1.01488 rap=-1.44591 phi=4.03646, flav = [u ]
+
+base jet 21: pt=0.993602 rap=-0.0869548 phi=4.15804, flav = [d bbar ]
+SD flav jet  21: pt=0.993602 rap=-0.0869548 phi=4.15804, flav = [d bbar ]
+
+base jet 22: pt=0.985143 rap=1.96485 phi=4.02595, flav = [g]
+SD flav jet  22: pt=0.985143 rap=1.96485 phi=4.02595, flav = [g]
+
+base jet 23: pt=0.945258 rap=-0.810838 phi=3.6483, flav = [u ]
+SD flav jet  23: pt=0.945258 rap=-0.810838 phi=3.6483, flav = [u ]
+
+base jet 24: pt=0.901582 rap=1.47923 phi=4.01952, flav = [g]
+SD flav jet  24: pt=0.901582 rap=1.47923 phi=4.01952, flav = [g]
+
+base jet 25: pt=0.856581 rap=-3.49619 phi=1.14963, flav = [g]
+SD flav jet  25: pt=0.856581 rap=-3.49619 phi=1.14963, flav = [g]
+
+base jet 26: pt=0.735732 rap=-1.52619 phi=1.92998, flav = [cbar ]
+SD flav jet  26: pt=0.735732 rap=-1.52619 phi=1.92998, flav = [cbar ]
+
+base jet 27: pt=0.714956 rap=-1.07483 phi=1.08822, flav = [bbar ]
+SD flav jet  27: pt=0.714956 rap=-1.07483 phi=1.08822, flav = [bbar ]
+
+base jet 28: pt=0.635763 rap=-2.31917 phi=0.438751, flav = [c ]
+SD flav jet  28: pt=0.635763 rap=-2.31917 phi=0.438751, flav = [c ]
+
+base jet 29: pt=0.616757 rap=0.233943 phi=1.47353, flav = [sbar ]
+SD flav jet  29: pt=0.616757 rap=0.233943 phi=1.47353, flav = [sbar ]
+
+base jet 30: pt=0.587412 rap=-4.58221 phi=3.70546, flav = [bbar ]
+SD flav jet  30: pt=0.587412 rap=-4.58221 phi=3.70546, flav = [bbar ]
+
+base jet 31: pt=0.538598 rap=0.369704 phi=2.99212, flav = [g]
+SD flav jet  31: pt=0.538598 rap=0.369704 phi=2.99212, flav = [g]
+
+base jet 32: pt=0.458607 rap=-0.371276 phi=2.87821, flav = [c ]
+SD flav jet  32: pt=0.458607 rap=-0.371276 phi=2.87821, flav = [c ]
+
+base jet 33: pt=0.367634 rap=-1.92733 phi=2.4454, flav = [sbar ]
+SD flav jet  33: pt=0.367634 rap=-1.92733 phi=2.4454, flav = [sbar ]
+
+base jet 34: pt=0.344187 rap=1.6731 phi=1.1241, flav = [g]
+SD flav jet  34: pt=0.344187 rap=1.6731 phi=1.1241, flav = [g]
+
+base jet 35: pt=0.326826 rap=-4.0666 phi=1.26604, flav = [cbar ]
+SD flav jet  35: pt=0.326826 rap=-4.0666 phi=1.26604, flav = [cbar ]
+
+base jet 36: pt=0.315411 rap=3.50524 phi=4.60533, flav = [ubar ]
+SD flav jet  36: pt=0.315411 rap=3.50524 phi=4.60533, flav = [ubar ]
+
+base jet 37: pt=0.282369 rap=0.0609496 phi=3.55799, flav = [g]
+SD flav jet  37: pt=0.282369 rap=0.0609496 phi=3.55799, flav = [g]
+
+base jet 38: pt=0.275342 rap=-1.41152 phi=4.65817, flav = [g]
+SD flav jet  38: pt=0.275342 rap=-1.41152 phi=4.65817, flav = [g]
+
+base jet 39: pt=0.270557 rap=-6.42821 phi=1.9268, flav = [d u ]
+SD flav jet  39: pt=0.270557 rap=-6.42821 phi=1.9268, flav = [d u ]
+
+base jet 40: pt=0.236389 rap=-1.39315 phi=1.53166, flav = [g]
+SD flav jet  40: pt=0.236389 rap=-1.39315 phi=1.53166, flav = [g]
+
+base jet 41: pt=0.180563 rap=-2.61987 phi=3.47406, flav = [s ]
+SD flav jet  41: pt=0.180563 rap=-2.61987 phi=3.47406, flav = [s ]
+
+base jet 42: pt=0.116413 rap=-3.54693 phi=5.82437, flav = [g]
+SD flav jet  42: pt=0.116413 rap=-3.54693 phi=5.82437, flav = [g]
+
+base jet 43: pt=0.0409862 rap=0.0572104 phi=6.27533, flav = [g]
+SD flav jet  43: pt=0.0409862 rap=0.0572104 phi=6.27533, flav = [g]
+
+base jet 44: pt=0.000367874 rap=-1.87847 phi=4.91532, flav = [g]
+SD flav jet  44: pt=0.000367874 rap=-1.87847 phi=4.91532, flav = [g]
+
+#---------------------------------------------------------------
+# read event 4 with 93 particles
+now do the sd...
+
+base jet 0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [u c tbar ]
+SD flav jet  0: pt=64.6815 rap=0.391394 phi=0.118011, flav = [u c tbar ]
+
+base jet 1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [d ubar bbar tbar ]
+SD flav jet  1: pt=60.6132 rap=0.448714 phi=0.539508, flav = [d ubar bbar tbar ]
+
+base jet 2: pt=8.27633 rap=-2.79808 phi=4.26636, flav = [g]
+SD flav jet  2: pt=8.27633 rap=-2.79808 phi=4.26636, flav = [g]
+
+base jet 3: pt=7.33896 rap=1.12216 phi=5.90749, flav = [g]
+SD flav jet  3: pt=7.33896 rap=1.12216 phi=5.90749, flav = [g]
+
+base jet 4: pt=5.6391 rap=-2.22665 phi=3.29502, flav = [dbar dbar t ]
+SD flav jet  4: pt=5.6391 rap=-2.22665 phi=3.29502, flav = [dbar dbar t ]
+
+base jet 5: pt=3.09749 rap=0.126394 phi=1.32143, flav = [d c ]
+SD flav jet  5: pt=3.09749 rap=0.126394 phi=1.32143, flav = [d c ]
+
+base jet 6: pt=3.07467 rap=-0.446667 phi=1.16557, flav = [d cbar ]
+SD flav jet  6: pt=3.07467 rap=-0.446667 phi=1.16557, flav = [d cbar ]
+
+base jet 7: pt=2.99946 rap=1.23103 phi=3.12769, flav = [g]
+SD flav jet  7: pt=2.99946 rap=1.23103 phi=3.12769, flav = [g]
+
+base jet 8: pt=2.72094 rap=1.77131 phi=1.80173, flav = [ubar sbar ]
+SD flav jet  8: pt=2.72094 rap=1.77131 phi=1.80173, flav = [ubar sbar ]
+
+base jet 9: pt=2.2549 rap=-2.18162 phi=0.109749, flav = [g]
+SD flav jet  9: pt=2.2549 rap=-2.18162 phi=0.109749, flav = [g]
+
+base jet 10: pt=2.1835 rap=0.0633507 phi=1.75445, flav = [t ]
+SD flav jet  10: pt=2.1835 rap=0.0633507 phi=1.75445, flav = [t ]
+
+base jet 11: pt=1.91865 rap=2.82374 phi=6.20892, flav = [t ]
+SD flav jet  11: pt=1.91865 rap=2.82374 phi=6.20892, flav = [t ]
+
+base jet 12: pt=1.77941 rap=-1.85137 phi=1.34849, flav = [g]
+SD flav jet  12: pt=1.77941 rap=-1.85137 phi=1.34849, flav = [g]
+
+base jet 13: pt=1.49371 rap=5.45794 phi=4.04488, flav = [u ]
+SD flav jet  13: pt=1.49371 rap=5.45794 phi=4.04488, flav = [u ]
+
+base jet 14: pt=1.40893 rap=-1.07484 phi=6.27594, flav = [u sbar ]
+SD flav jet  14: pt=1.40893 rap=-1.07484 phi=6.27594, flav = [u sbar ]
+
+base jet 15: pt=1.29223 rap=-0.416627 phi=2.9184, flav = [d ]
+SD flav jet  15: pt=1.29223 rap=-0.416627 phi=2.9184, flav = [d ]
+
+base jet 16: pt=1.22843 rap=-2.45955 phi=5.48621, flav = [u ]
+SD flav jet  16: pt=1.22843 rap=-2.45955 phi=5.48621, flav = [u ]
+
+base jet 17: pt=1.19431 rap=-5.62653 phi=2.95634, flav = [u ]
+SD flav jet  17: pt=1.19431 rap=-5.62653 phi=2.95634, flav = [u ]
+
+base jet 18: pt=1.09939 rap=-6.62034 phi=2.55075, flav = [d u ]
+SD flav jet  18: pt=1.09939 rap=-6.62034 phi=2.55075, flav = [d u ]
+
+base jet 19: pt=1.05201 rap=1.50084 phi=5.70623, flav = [g]
+SD flav jet  19: pt=1.05201 rap=1.50084 phi=5.70623, flav = [g]
+
+base jet 20: pt=0.943416 rap=-0.267713 phi=0.607747, flav = [sbar b ]
+SD flav jet  20: pt=0.943416 rap=-0.267713 phi=0.607747, flav = [sbar b ]
+
+base jet 21: pt=0.921789 rap=-2.5209 phi=4.8201, flav = [g]
+SD flav jet  21: pt=0.921789 rap=-2.5209 phi=4.8201, flav = [g]
+
+base jet 22: pt=0.875809 rap=0.61858 phi=2.22812, flav = [g]
+SD flav jet  22: pt=0.875809 rap=0.61858 phi=2.22812, flav = [g]
+
+base jet 23: pt=0.844818 rap=1.08393 phi=0.835088, flav = [g]
+SD flav jet  23: pt=0.844818 rap=1.08393 phi=0.835088, flav = [g]
+
+base jet 24: pt=0.833654 rap=2.58714 phi=5.13165, flav = [g]
+SD flav jet  24: pt=0.833654 rap=2.58714 phi=5.13165, flav = [g]
+
+base jet 25: pt=0.795921 rap=5.79971 phi=1.50809, flav = [u ]
+SD flav jet  25: pt=0.795921 rap=5.79971 phi=1.50809, flav = [u ]
+
+base jet 26: pt=0.771756 rap=3.82285 phi=1.35606, flav = [d ]
+SD flav jet  26: pt=0.771756 rap=3.82285 phi=1.35606, flav = [d ]
+
+base jet 27: pt=0.713651 rap=-3.72448 phi=4.96354, flav = [ubar ]
+SD flav jet  27: pt=0.713651 rap=-3.72448 phi=4.96354, flav = [ubar ]
+
+base jet 28: pt=0.707698 rap=1.99622 phi=5.55461, flav = [bbar ]
+SD flav jet  28: pt=0.707698 rap=1.99622 phi=5.55461, flav = [bbar ]
+
+base jet 29: pt=0.639731 rap=0.991284 phi=5.19785, flav = [g]
+SD flav jet  29: pt=0.639731 rap=0.991284 phi=5.19785, flav = [g]
+
+base jet 30: pt=0.639004 rap=6.11083 phi=3.66267, flav = [g]
+SD flav jet  30: pt=0.639004 rap=6.11083 phi=3.66267, flav = [g]
+
+base jet 31: pt=0.633122 rap=4.27978 phi=4.04482, flav = [g]
+SD flav jet  31: pt=0.633122 rap=4.27978 phi=4.04482, flav = [g]
+
+base jet 32: pt=0.605937 rap=5.37129 phi=3.26461, flav = [t ]
+SD flav jet  32: pt=0.605937 rap=5.37129 phi=3.26461, flav = [t ]
+
+base jet 33: pt=0.590525 rap=1.2242 phi=4.8405, flav = [c ]
+SD flav jet  33: pt=0.590525 rap=1.2242 phi=4.8405, flav = [c ]
+
+base jet 34: pt=0.581598 rap=4.38855 phi=1.48003, flav = [dbar u ]
+SD flav jet  34: pt=0.581598 rap=4.38855 phi=1.48003, flav = [dbar u ]
+
+base jet 35: pt=0.546297 rap=0.937221 phi=0.35331, flav = [g]
+SD flav jet  35: pt=0.546297 rap=0.937221 phi=0.35331, flav = [g]
+
+base jet 36: pt=0.543966 rap=-2.97743 phi=5.54568, flav = [ubar ]
+SD flav jet  36: pt=0.543966 rap=-2.97743 phi=5.54568, flav = [ubar ]
+
+base jet 37: pt=0.521387 rap=-1.65433 phi=0.707898, flav = [g]
+SD flav jet  37: pt=0.521387 rap=-1.65433 phi=0.707898, flav = [g]
+
+base jet 38: pt=0.480634 rap=5.95519 phi=2.61508, flav = [d ]
+SD flav jet  38: pt=0.480634 rap=5.95519 phi=2.61508, flav = [d ]
+
+base jet 39: pt=0.465609 rap=2.14305 phi=3.10075, flav = [bbar ]
+SD flav jet  39: pt=0.465609 rap=2.14305 phi=3.10075, flav = [bbar ]
+
+base jet 40: pt=0.442244 rap=3.11583 phi=5.25811, flav = [ubar ]
+SD flav jet  40: pt=0.442244 rap=3.11583 phi=5.25811, flav = [ubar ]
+
+base jet 41: pt=0.43722 rap=0.150514 phi=2.75431, flav = [g]
+SD flav jet  41: pt=0.43722 rap=0.150514 phi=2.75431, flav = [g]
+
+base jet 42: pt=0.42787 rap=0.436933 phi=1.57366, flav = [s ]
+SD flav jet  42: pt=0.42787 rap=0.436933 phi=1.57366, flav = [s ]
+
+base jet 43: pt=0.411842 rap=-1.26415 phi=2.08269, flav = [g]
+SD flav jet  43: pt=0.411842 rap=-1.26415 phi=2.08269, flav = [g]
+
+base jet 44: pt=0.400929 rap=3.63984 phi=2.14692, flav = [g]
+SD flav jet  44: pt=0.400929 rap=3.63984 phi=2.14692, flav = [g]
+
+base jet 45: pt=0.339731 rap=-1.62643 phi=4.26943, flav = [g]
+SD flav jet  45: pt=0.339731 rap=-1.62643 phi=4.26943, flav = [g]
+
+base jet 46: pt=0.323149 rap=3.35167 phi=3.43394, flav = [g]
+SD flav jet  46: pt=0.323149 rap=3.35167 phi=3.43394, flav = [g]
+
+base jet 47: pt=0.311072 rap=2.12474 phi=2.13269, flav = [g]
+SD flav jet  47: pt=0.311072 rap=2.12474 phi=2.13269, flav = [g]
+
+base jet 48: pt=0.309475 rap=-1.22922 phi=5.53698, flav = [s ]
+SD flav jet  48: pt=0.309475 rap=-1.22922 phi=5.53698, flav = [s ]
+
+base jet 49: pt=0.298757 rap=5.19963 phi=4.52078, flav = [u ]
+SD flav jet  49: pt=0.298757 rap=5.19963 phi=4.52078, flav = [u ]
+
+base jet 50: pt=0.278128 rap=3.94799 phi=3.03891, flav = [g]
+SD flav jet  50: pt=0.278128 rap=3.94799 phi=3.03891, flav = [g]
+
+base jet 51: pt=0.265764 rap=-0.885221 phi=2.64341, flav = [tbar ]
+SD flav jet  51: pt=0.265764 rap=-0.885221 phi=2.64341, flav = [tbar ]
+
+base jet 52: pt=0.241476 rap=-0.612924 phi=5.34811, flav = [g]
+SD flav jet  52: pt=0.241476 rap=-0.612924 phi=5.34811, flav = [g]
+
+base jet 53: pt=0.217796 rap=3.41688 phi=0.451923, flav = [sbar ]
+SD flav jet  53: pt=0.217796 rap=3.41688 phi=0.451923, flav = [sbar ]
+
+base jet 54: pt=0.162116 rap=-0.173813 phi=5.41056, flav = [g]
+SD flav jet  54: pt=0.162116 rap=-0.173813 phi=5.41056, flav = [g]
+
+base jet 55: pt=0.112512 rap=-0.0545497 phi=2.39963, flav = [g]
+SD flav jet  55: pt=0.112512 rap=-0.0545497 phi=2.39963, flav = [g]
+
+base jet 56: pt=0.0428028 rap=-1.882 phi=2.17436, flav = [g]
+SD flav jet  56: pt=0.0428028 rap=-1.882 phi=2.17436, flav = [g]
+
+base jet 57: pt=0.0182354 rap=1.83065 phi=4.04384, flav = [sbar ]
+SD flav jet  57: pt=0.0182354 rap=1.83065 phi=4.04384, flav = [sbar ]
+
+#---------------------------------------------------------------
+# read event 5 with 104 particles
+now do the sd...
+
+base jet 0: pt=103.576 rap=0.670846 phi=5.56992, flav = [ubar c c t ]
+SD flav jet  0: pt=103.576 rap=0.670846 phi=5.56992, flav = [ubar c c t ]
+
+base jet 1: pt=4.58178 rap=-1.90869 phi=2.36617, flav = [dbar ]
+SD flav jet  1: pt=4.58178 rap=-1.90869 phi=2.36617, flav = [dbar ]
+
+base jet 2: pt=3.3254 rap=1.18649 phi=5.73498, flav = [d c ]
+SD flav jet  2: pt=3.3254 rap=1.18649 phi=5.73498, flav = [d c ]
+
+base jet 3: pt=3.17718 rap=2.72848 phi=5.65978, flav = [d ]
+SD flav jet  3: pt=3.17718 rap=2.72848 phi=5.65978, flav = [d ]
+
+base jet 4: pt=3.07538 rap=-2.94002 phi=5.57259, flav = [cbar ]
+SD flav jet  4: pt=3.07538 rap=-2.94002 phi=5.57259, flav = [cbar ]
+
+base jet 5: pt=2.91546 rap=4.90048 phi=0.0643643, flav = [dbar b ]
+SD flav jet  5: pt=2.91546 rap=4.90048 phi=0.0643643, flav = [dbar b ]
+
+base jet 6: pt=2.79087 rap=-0.0839135 phi=3.72992, flav = [g]
+SD flav jet  6: pt=2.79087 rap=-0.0839135 phi=3.72992, flav = [g]
+
+base jet 7: pt=2.66046 rap=-1.36723 phi=2.09926, flav = [ubar ]
+SD flav jet  7: pt=2.66046 rap=-1.36723 phi=2.09926, flav = [ubar ]
+
+base jet 8: pt=2.56647 rap=3.36059 phi=5.47546, flav = [b ]
+SD flav jet  8: pt=2.56647 rap=3.36059 phi=5.47546, flav = [b ]
+
+base jet 9: pt=2.19566 rap=0.816755 phi=4.80042, flav = [cbar ]
+SD flav jet  9: pt=2.19566 rap=0.816755 phi=4.80042, flav = [cbar ]
+
+base jet 10: pt=1.90258 rap=-0.368807 phi=4.16633, flav = [b ]
+SD flav jet  10: pt=1.90258 rap=-0.368807 phi=4.16633, flav = [b ]
+
+base jet 11: pt=1.77874 rap=1.71841 phi=2.12888, flav = [g]
+SD flav jet  11: pt=1.77874 rap=1.71841 phi=2.12888, flav = [g]
+
+base jet 12: pt=1.75906 rap=-0.441818 phi=0.900447, flav = [u tbar ]
+SD flav jet  12: pt=1.75906 rap=-0.441818 phi=0.900447, flav = [u tbar ]
+
+base jet 13: pt=1.66894 rap=-0.0808496 phi=2.67093, flav = [ubar ]
+SD flav jet  13: pt=1.66894 rap=-0.0808496 phi=2.67093, flav = [ubar ]
+
+base jet 14: pt=1.65914 rap=-1.10639 phi=1.73822, flav = [u ]
+SD flav jet  14: pt=1.65914 rap=-1.10639 phi=1.73822, flav = [u ]
+
+base jet 15: pt=1.57407 rap=0.375704 phi=0.286954, flav = [b ]
+SD flav jet  15: pt=1.57407 rap=0.375704 phi=0.286954, flav = [b ]
+
+base jet 16: pt=1.56625 rap=-0.638066 phi=2.98326, flav = [g]
+SD flav jet  16: pt=1.56625 rap=-0.638066 phi=2.98326, flav = [g]
+
+base jet 17: pt=1.53099 rap=0.666093 phi=2.54593, flav = [s ]
+SD flav jet  17: pt=1.53099 rap=0.666093 phi=2.54593, flav = [s ]
+
+base jet 18: pt=1.52508 rap=-1.62383 phi=1.52316, flav = [g]
+SD flav jet  18: pt=1.52508 rap=-1.62383 phi=1.52316, flav = [g]
+
+base jet 19: pt=1.48377 rap=4.79271 phi=2.36556, flav = [g]
+SD flav jet  19: pt=1.48377 rap=4.79271 phi=2.36556, flav = [g]
+
+base jet 20: pt=1.48009 rap=0.430208 phi=5.19574, flav = [g]
+SD flav jet  20: pt=1.48009 rap=0.430208 phi=5.19574, flav = [g]
+
+base jet 21: pt=1.38769 rap=3.19928 phi=0.885113, flav = [g]
+SD flav jet  21: pt=1.38769 rap=3.19928 phi=0.885113, flav = [g]
+
+base jet 22: pt=1.37067 rap=4.3294 phi=4.95068, flav = [ubar ]
+SD flav jet  22: pt=1.37067 rap=4.3294 phi=4.95068, flav = [ubar ]
+
+base jet 23: pt=1.33857 rap=2.90865 phi=6.11471, flav = [g]
+SD flav jet  23: pt=1.33857 rap=2.90865 phi=6.11471, flav = [g]
+
+base jet 24: pt=1.3384 rap=-0.684202 phi=2.09932, flav = [ubar t ]
+SD flav jet  24: pt=1.3384 rap=-0.684202 phi=2.09932, flav = [ubar t ]
+
+base jet 25: pt=1.25816 rap=2.68646 phi=4.78388, flav = [sbar b ]
+SD flav jet  25: pt=1.25816 rap=2.68646 phi=4.78388, flav = [sbar b ]
+
+base jet 26: pt=1.20045 rap=3.36562 phi=2.312, flav = [u ]
+SD flav jet  26: pt=1.20045 rap=3.36562 phi=2.312, flav = [u ]
+
+base jet 27: pt=1.1616 rap=2.31063 phi=0.674491, flav = [g]
+SD flav jet  27: pt=1.1616 rap=2.31063 phi=0.674491, flav = [g]
+
+base jet 28: pt=1.16047 rap=-1.91441 phi=3.09778, flav = [u t ]
+SD flav jet  28: pt=1.16047 rap=-1.91441 phi=3.09778, flav = [u t ]
+
+base jet 29: pt=1.13847 rap=0.117427 phi=4.26462, flav = [g]
+SD flav jet  29: pt=1.13847 rap=0.117427 phi=4.26462, flav = [g]
+
+base jet 30: pt=1.13016 rap=1.72204 phi=4.21821, flav = [g]
+SD flav jet  30: pt=1.13016 rap=1.72204 phi=4.21821, flav = [g]
+
+base jet 31: pt=1.12958 rap=1.40598 phi=0.188041, flav = [dbar ]
+SD flav jet  31: pt=1.12958 rap=1.40598 phi=0.188041, flav = [dbar ]
+
+base jet 32: pt=0.953686 rap=5.34921 phi=0.943114, flav = [d ]
+SD flav jet  32: pt=0.953686 rap=5.34921 phi=0.943114, flav = [d ]
+
+base jet 33: pt=0.926798 rap=2.70564 phi=1.28736, flav = [ubar ]
+SD flav jet  33: pt=0.926798 rap=2.70564 phi=1.28736, flav = [ubar ]
+
+base jet 34: pt=0.915089 rap=-0.973834 phi=3.47696, flav = [u ]
+SD flav jet  34: pt=0.915089 rap=-0.973834 phi=3.47696, flav = [u ]
+
+base jet 35: pt=0.863148 rap=3.05011 phi=0.304023, flav = [t ]
+SD flav jet  35: pt=0.863148 rap=3.05011 phi=0.304023, flav = [t ]
+
+base jet 36: pt=0.849618 rap=-3.29141 phi=3.95914, flav = [d ]
+SD flav jet  36: pt=0.849618 rap=-3.29141 phi=3.95914, flav = [d ]
+
+base jet 37: pt=0.845184 rap=-0.197754 phi=1.6774, flav = [g]
+SD flav jet  37: pt=0.845184 rap=-0.197754 phi=1.6774, flav = [g]
+
+base jet 38: pt=0.741224 rap=0.481294 phi=1.33954, flav = [cbar ]
+SD flav jet  38: pt=0.741224 rap=0.481294 phi=1.33954, flav = [cbar ]
+
+base jet 39: pt=0.736037 rap=-1.90851 phi=4.50608, flav = [u ]
+SD flav jet  39: pt=0.736037 rap=-1.90851 phi=4.50608, flav = [u ]
+
+base jet 40: pt=0.681616 rap=5.45311 phi=3.53289, flav = [u u ]
+SD flav jet  40: pt=0.681616 rap=5.45311 phi=3.53289, flav = [u u ]
+
+base jet 41: pt=0.620594 rap=-0.716159 phi=2.52013, flav = [g]
+SD flav jet  41: pt=0.620594 rap=-0.716159 phi=2.52013, flav = [g]
+
+base jet 42: pt=0.611938 rap=4.29183 phi=0.984259, flav = [d ]
+SD flav jet  42: pt=0.611938 rap=4.29183 phi=0.984259, flav = [d ]
+
+base jet 43: pt=0.573457 rap=4.45941 phi=2.65817, flav = [dbar ]
+SD flav jet  43: pt=0.573457 rap=4.45941 phi=2.65817, flav = [dbar ]
+
+base jet 44: pt=0.55851 rap=1.78007 phi=4.71025, flav = [g]
+SD flav jet  44: pt=0.55851 rap=1.78007 phi=4.71025, flav = [g]
+
+base jet 45: pt=0.524854 rap=1.09899 phi=5.12445, flav = [sbar ]
+SD flav jet  45: pt=0.524854 rap=1.09899 phi=5.12445, flav = [sbar ]
+
+base jet 46: pt=0.524141 rap=1.92472 phi=6.10194, flav = [d ]
+SD flav jet  46: pt=0.524141 rap=1.92472 phi=6.10194, flav = [d ]
+
+base jet 47: pt=0.51969 rap=-0.568329 phi=3.69806, flav = [t ]
+SD flav jet  47: pt=0.51969 rap=-0.568329 phi=3.69806, flav = [t ]
+
+base jet 48: pt=0.501863 rap=1.06045 phi=1.63218, flav = [dbar ]
+SD flav jet  48: pt=0.501863 rap=1.06045 phi=1.63218, flav = [dbar ]
+
+base jet 49: pt=0.490545 rap=-1.52154 phi=3.80641, flav = [cbar ]
+SD flav jet  49: pt=0.490545 rap=-1.52154 phi=3.80641, flav = [cbar ]
+
+base jet 50: pt=0.455524 rap=3.31398 phi=1.5314, flav = [dbar ]
+SD flav jet  50: pt=0.455524 rap=3.31398 phi=1.5314, flav = [dbar ]
+
+base jet 51: pt=0.432599 rap=3.61361 phi=1.03093, flav = [g]
+SD flav jet  51: pt=0.432599 rap=3.61361 phi=1.03093, flav = [g]
+
+base jet 52: pt=0.417599 rap=0.300434 phi=2.8921, flav = [c ]
+SD flav jet  52: pt=0.417599 rap=0.300434 phi=2.8921, flav = [c ]
+
+base jet 53: pt=0.404257 rap=-1.24984 phi=2.84145, flav = [c ]
+SD flav jet  53: pt=0.404257 rap=-1.24984 phi=2.84145, flav = [c ]
+
+base jet 54: pt=0.371215 rap=3.30524 phi=3.6266, flav = [g]
+SD flav jet  54: pt=0.371215 rap=3.30524 phi=3.6266, flav = [g]
+
+base jet 55: pt=0.356397 rap=-7.75615 phi=4.44784, flav = [d u ]
+SD flav jet  55: pt=0.356397 rap=-7.75615 phi=4.44784, flav = [d u ]
+
+base jet 56: pt=0.333612 rap=-3.56714 phi=3.02511, flav = [sbar ]
+SD flav jet  56: pt=0.333612 rap=-3.56714 phi=3.02511, flav = [sbar ]
+
+base jet 57: pt=0.285804 rap=-4.56977 phi=2.47844, flav = [u ]
+SD flav jet  57: pt=0.285804 rap=-4.56977 phi=2.47844, flav = [u ]
+
+base jet 58: pt=0.278429 rap=-0.558429 phi=0.073587, flav = [g]
+SD flav jet  58: pt=0.278429 rap=-0.558429 phi=0.073587, flav = [g]
+
+base jet 59: pt=0.24573 rap=4.30836 phi=1.38816, flav = [g]
+SD flav jet  59: pt=0.24573 rap=4.30836 phi=1.38816, flav = [g]
+
+base jet 60: pt=0.191944 rap=0.853899 phi=2.0019, flav = [g]
+SD flav jet  60: pt=0.191944 rap=0.853899 phi=2.0019, flav = [g]
+
+base jet 61: pt=0.163946 rap=3.50701 phi=5.0516, flav = [g]
+SD flav jet  61: pt=0.163946 rap=3.50701 phi=5.0516, flav = [g]
+
+base jet 62: pt=0.0922454 rap=1.64675 phi=2.57917, flav = [g]
+SD flav jet  62: pt=0.0922454 rap=1.64675 phi=2.57917, flav = [g]
+
+base jet 63: pt=0.077441 rap=3.56506 phi=4.58451, flav = [ubar ]
+SD flav jet  63: pt=0.077441 rap=3.56506 phi=4.58451, flav = [ubar ]
+
+base jet 64: pt=0.0505622 rap=1.78424 phi=0.528645, flav = [u ]
+SD flav jet  64: pt=0.0505622 rap=1.78424 phi=0.528645, flav = [u ]
+
+base jet 65: pt=0.000136378 rap=0.33941 phi=2.23264, flav = [g]
+SD flav jet  65: pt=0.000136378 rap=0.33941 phi=2.23264, flav = [g]
+
+#---------------------------------------------------------------
+# read event 6 with 33 particles
+now do the sd...
+
+base jet 0: pt=108.088 rap=0.864675 phi=1.32688, flav = [d u cbar tbar ]
+SD flav jet  0: pt=108.088 rap=0.864675 phi=1.32688, flav = [d u cbar tbar ]
+
+base jet 1: pt=2.86396 rap=-1.68539 phi=4.29098, flav = [cbar ]
+SD flav jet  1: pt=2.86396 rap=-1.68539 phi=4.29098, flav = [cbar ]
+
+base jet 2: pt=2.39178 rap=4.42295 phi=3.66959, flav = [cbar ]
+SD flav jet  2: pt=2.39178 rap=4.42295 phi=3.66959, flav = [cbar ]
+
+base jet 3: pt=1.54024 rap=6.46583 phi=3.96646, flav = [u u ]
+SD flav jet  3: pt=1.54024 rap=6.46583 phi=3.96646, flav = [u u ]
+
+base jet 4: pt=1.39411 rap=0.46637 phi=1.18941, flav = [sbar ]
+SD flav jet  4: pt=1.39411 rap=0.46637 phi=1.18941, flav = [sbar ]
+
+base jet 5: pt=1.10904 rap=-0.112969 phi=1.10605, flav = [bbar ]
+SD flav jet  5: pt=1.10904 rap=-0.112969 phi=1.10605, flav = [bbar ]
+
+base jet 6: pt=0.975215 rap=3.92022 phi=0.426372, flav = [g]
+SD flav jet  6: pt=0.975215 rap=3.92022 phi=0.426372, flav = [g]
+
+base jet 7: pt=0.90555 rap=1.66034 phi=2.35185, flav = [s ]
+SD flav jet  7: pt=0.90555 rap=1.66034 phi=2.35185, flav = [s ]
+
+base jet 8: pt=0.893624 rap=4.05149 phi=0.0378413, flav = [ubar ]
+SD flav jet  8: pt=0.893624 rap=4.05149 phi=0.0378413, flav = [ubar ]
+
+base jet 9: pt=0.695739 rap=1.86191 phi=5.44268, flav = [g]
+SD flav jet  9: pt=0.695739 rap=1.86191 phi=5.44268, flav = [g]
+
+base jet 10: pt=0.678007 rap=4.60405 phi=1.05842, flav = [g]
+SD flav jet  10: pt=0.678007 rap=4.60405 phi=1.05842, flav = [g]
+
+base jet 11: pt=0.600427 rap=-6.75668 phi=4.98589, flav = [d ]
+SD flav jet  11: pt=0.600427 rap=-6.75668 phi=4.98589, flav = [d ]
+
+base jet 12: pt=0.576369 rap=-5.61554 phi=4.04283, flav = [u u ]
+SD flav jet  12: pt=0.576369 rap=-5.61554 phi=4.04283, flav = [u u ]
+
+base jet 13: pt=0.533192 rap=1.68684 phi=4.03219, flav = [sbar ]
+SD flav jet  13: pt=0.533192 rap=1.68684 phi=4.03219, flav = [sbar ]
+
+base jet 14: pt=0.498602 rap=-3.10784 phi=2.04505, flav = [b ]
+SD flav jet  14: pt=0.498602 rap=-3.10784 phi=2.04505, flav = [b ]
+
+base jet 15: pt=0.293106 rap=3.03148 phi=0.86342, flav = [sbar ]
+SD flav jet  15: pt=0.293106 rap=3.03148 phi=0.86342, flav = [sbar ]
+
+base jet 16: pt=0.247259 rap=-7.77504 phi=4.93117, flav = [d ]
+SD flav jet  16: pt=0.247259 rap=-7.77504 phi=4.93117, flav = [d ]
+
+base jet 17: pt=0.196 rap=-0.543337 phi=3.95017, flav = [g]
+SD flav jet  17: pt=0.196 rap=-0.543337 phi=3.95017, flav = [g]
+
+base jet 18: pt=0.132232 rap=-2.46262 phi=1.16502, flav = [ubar ]
+SD flav jet  18: pt=0.132232 rap=-2.46262 phi=1.16502, flav = [ubar ]
+
+base jet 19: pt=0.110357 rap=5.42352 phi=0.391056, flav = [g]
+SD flav jet  19: pt=0.110357 rap=5.42352 phi=0.391056, flav = [g]
+
+#---------------------------------------------------------------
+# read event 7 with 94 particles
+now do the sd...
+
+base jet 0: pt=100.043 rap=0.69771 phi=5.94573, flav = [s ]
+SD flav jet  0: pt=100.043 rap=0.69771 phi=5.94573, flav = [s ]
+
+base jet 1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [d t ]
+SD flav jet  1: pt=20.1253 rap=-0.0197745 phi=6.19708, flav = [d t ]
+
+base jet 2: pt=6.10882 rap=0.418633 phi=0.0728016, flav = [cbar b ]
+SD flav jet  2: pt=6.10882 rap=0.418633 phi=0.0728016, flav = [cbar b ]
+
+base jet 3: pt=6.0838 rap=0.00974429 phi=5.55987, flav = [dbar ]
+SD flav jet  3: pt=6.0838 rap=0.00974429 phi=5.55987, flav = [dbar ]
+
+base jet 4: pt=5.01801 rap=-0.709537 phi=1.47505, flav = [dbar cbar bbar ]
+SD flav jet  4: pt=5.01801 rap=-0.709537 phi=1.47505, flav = [dbar cbar bbar ]
+
+base jet 5: pt=4.02914 rap=2.68799 phi=5.45891, flav = [u ]
+SD flav jet  5: pt=4.02914 rap=2.68799 phi=5.45891, flav = [u ]
+
+base jet 6: pt=3.7647 rap=-0.051307 phi=2.18793, flav = [tbar ]
+SD flav jet  6: pt=3.7647 rap=-0.051307 phi=2.18793, flav = [g]
+
+base jet 7: pt=3.35288 rap=-3.29726 phi=4.71972, flav = [tbar ]
+SD flav jet  7: pt=3.35288 rap=-3.29726 phi=4.71972, flav = [tbar ]
+
+base jet 8: pt=3.08731 rap=-1.48716 phi=2.65707, flav = [d tbar ]
+SD flav jet  8: pt=3.08731 rap=-1.48716 phi=2.65707, flav = [d tbar ]
+
+base jet 9: pt=2.64693 rap=-4.17746 phi=5.98502, flav = [g]
+SD flav jet  9: pt=2.64693 rap=-4.17746 phi=5.98502, flav = [g]
+
+base jet 10: pt=2.51591 rap=2.12214 phi=1.06596, flav = [b ]
+SD flav jet  10: pt=2.51591 rap=2.12214 phi=1.06596, flav = [b ]
+
+base jet 11: pt=2.12986 rap=2.50003 phi=2.81918, flav = [g]
+SD flav jet  11: pt=2.12986 rap=2.50003 phi=2.81918, flav = [g]
+
+base jet 12: pt=2.09818 rap=3.38805 phi=5.80633, flav = [g]
+SD flav jet  12: pt=2.09818 rap=3.38805 phi=5.80633, flav = [g]
+
+base jet 13: pt=2.04001 rap=-1.08864 phi=1.58205, flav = [g]
+SD flav jet  13: pt=2.04001 rap=-1.08864 phi=1.58205, flav = [g]
+
+base jet 14: pt=2.02355 rap=2.8502 phi=3.3782, flav = [d s ]
+SD flav jet  14: pt=2.02355 rap=2.8502 phi=3.3782, flav = [d s ]
+
+base jet 15: pt=1.89426 rap=-3.98317 phi=3.07242, flav = [bbar ]
+SD flav jet  15: pt=1.89426 rap=-3.98317 phi=3.07242, flav = [bbar ]
+
+base jet 16: pt=1.65567 rap=0.847511 phi=3.14292, flav = [sbar ]
+SD flav jet  16: pt=1.65567 rap=0.847511 phi=3.14292, flav = [sbar ]
+
+base jet 17: pt=1.54193 rap=-1.84395 phi=5.93289, flav = [u b ]
+SD flav jet  17: pt=1.54193 rap=-1.84395 phi=5.93289, flav = [u ]
+
+base jet 18: pt=1.53931 rap=-3.71442 phi=6.17119, flav = [dbar ]
+SD flav jet  18: pt=1.53931 rap=-3.71442 phi=6.17119, flav = [dbar ]
+
+base jet 19: pt=1.53742 rap=0.314811 phi=5.82036, flav = [g]
+SD flav jet  19: pt=1.53742 rap=0.314811 phi=5.82036, flav = [g]
+
+base jet 20: pt=1.45927 rap=0.91276 phi=0.67525, flav = [dbar s s ]
+SD flav jet  20: pt=1.45927 rap=0.91276 phi=0.67525, flav = [dbar s s ]
+
+base jet 21: pt=1.39796 rap=-0.818449 phi=1.00365, flav = [g]
+SD flav jet  21: pt=1.39796 rap=-0.818449 phi=1.00365, flav = [g]
+
+base jet 22: pt=1.3216 rap=2.1139 phi=1.88361, flav = [g]
+SD flav jet  22: pt=1.3216 rap=2.1139 phi=1.88361, flav = [g]
+
+base jet 23: pt=1.30306 rap=-1.67021 phi=4.0526, flav = [g]
+SD flav jet  23: pt=1.30306 rap=-1.67021 phi=4.0526, flav = [g]
+
+base jet 24: pt=1.26129 rap=0.141311 phi=3.50041, flav = [g]
+SD flav jet  24: pt=1.26129 rap=0.141311 phi=3.50041, flav = [g]
+
+base jet 25: pt=1.25112 rap=4.81576 phi=3.55546, flav = [u ]
+SD flav jet  25: pt=1.25112 rap=4.81576 phi=3.55546, flav = [u ]
+
+base jet 26: pt=1.15424 rap=-1.97734 phi=1.69049, flav = [cbar ]
+SD flav jet  26: pt=1.15424 rap=-1.97734 phi=1.69049, flav = [cbar ]
+
+base jet 27: pt=1.15412 rap=-1.08305 phi=0.168866, flav = [g]
+SD flav jet  27: pt=1.15412 rap=-1.08305 phi=0.168866, flav = [g]
+
+base jet 28: pt=1.07441 rap=-2.87871 phi=5.70802, flav = [g]
+SD flav jet  28: pt=1.07441 rap=-2.87871 phi=5.70802, flav = [g]
+
+base jet 29: pt=1.07243 rap=1.20838 phi=5.47757, flav = [sbar sbar ]
+SD flav jet  29: pt=1.07243 rap=1.20838 phi=5.47757, flav = [sbar sbar ]
+
+base jet 30: pt=0.944379 rap=1.96605 phi=3.56808, flav = [g]
+SD flav jet  30: pt=0.944379 rap=1.96605 phi=3.56808, flav = [g]
+
+base jet 31: pt=0.937456 rap=1.17551 phi=4.98034, flav = [d ]
+SD flav jet  31: pt=0.937456 rap=1.17551 phi=4.98034, flav = [d ]
+
+base jet 32: pt=0.793721 rap=6.97727 phi=3.90913, flav = [d u ]
+SD flav jet  32: pt=0.793721 rap=6.97727 phi=3.90913, flav = [d u ]
+
+base jet 33: pt=0.75007 rap=-1.31398 phi=1.99757, flav = [cbar ]
+SD flav jet  33: pt=0.75007 rap=-1.31398 phi=1.99757, flav = [cbar ]
+
+base jet 34: pt=0.693642 rap=2.03927 phi=5.73989, flav = [ubar ]
+SD flav jet  34: pt=0.693642 rap=2.03927 phi=5.73989, flav = [ubar ]
+
+base jet 35: pt=0.656282 rap=-6.61917 phi=2.88598, flav = [d ]
+SD flav jet  35: pt=0.656282 rap=-6.61917 phi=2.88598, flav = [d ]
+
+base jet 36: pt=0.628089 rap=-0.557147 phi=0.642404, flav = [g]
+SD flav jet  36: pt=0.628089 rap=-0.557147 phi=0.642404, flav = [g]
+
+base jet 37: pt=0.612467 rap=-1.38571 phi=3.28684, flav = [c ]
+SD flav jet  37: pt=0.612467 rap=-1.38571 phi=3.28684, flav = [c ]
+
+base jet 38: pt=0.518823 rap=-0.635398 phi=1.98669, flav = [g]
+SD flav jet  38: pt=0.518823 rap=-0.635398 phi=1.98669, flav = [g]
+
+base jet 39: pt=0.512144 rap=-6.29505 phi=2.25328, flav = [u u ]
+SD flav jet  39: pt=0.512144 rap=-6.29505 phi=2.25328, flav = [u u ]
+
+base jet 40: pt=0.496233 rap=1.49261 phi=1.67568, flav = [g]
+SD flav jet  40: pt=0.496233 rap=1.49261 phi=1.67568, flav = [g]
+
+base jet 41: pt=0.496007 rap=-1.15019 phi=5.85232, flav = [g]
+SD flav jet  41: pt=0.496007 rap=-1.15019 phi=5.85232, flav = [g]
+
+base jet 42: pt=0.451954 rap=1.84306 phi=6.20175, flav = [g]
+SD flav jet  42: pt=0.451954 rap=1.84306 phi=6.20175, flav = [g]
+
+base jet 43: pt=0.398146 rap=-2.95606 phi=3.49302, flav = [dbar ]
+SD flav jet  43: pt=0.398146 rap=-2.95606 phi=3.49302, flav = [dbar ]
+
+base jet 44: pt=0.385503 rap=2.02407 phi=3.03554, flav = [bbar ]
+SD flav jet  44: pt=0.385503 rap=2.02407 phi=3.03554, flav = [bbar ]
+
+base jet 45: pt=0.383139 rap=-0.363772 phi=2.73817, flav = [cbar ]
+SD flav jet  45: pt=0.383139 rap=-0.363772 phi=2.73817, flav = [cbar ]
+
+base jet 46: pt=0.365497 rap=-3.62612 phi=1.73476, flav = [c ]
+SD flav jet  46: pt=0.365497 rap=-3.62612 phi=1.73476, flav = [c ]
+
+base jet 47: pt=0.353789 rap=-5.04981 phi=3.60919, flav = [ubar ]
+SD flav jet  47: pt=0.353789 rap=-5.04981 phi=3.60919, flav = [ubar ]
+
+base jet 48: pt=0.34127 rap=1.4751 phi=3.85587, flav = [sbar ]
+SD flav jet  48: pt=0.34127 rap=1.4751 phi=3.85587, flav = [sbar ]
+
+base jet 49: pt=0.337966 rap=-1.54452 phi=1.55881, flav = [bbar ]
+SD flav jet  49: pt=0.337966 rap=-1.54452 phi=1.55881, flav = [bbar ]
+
+base jet 50: pt=0.316298 rap=-2.26544 phi=6.03144, flav = [g]
+SD flav jet  50: pt=0.316298 rap=-2.26544 phi=6.03144, flav = [g]
+
+base jet 51: pt=0.276263 rap=-2.49165 phi=0.129153, flav = [dbar ]
+SD flav jet  51: pt=0.276263 rap=-2.49165 phi=0.129153, flav = [dbar ]
+
+base jet 52: pt=0.27515 rap=0.950918 phi=2.10485, flav = [g]
+SD flav jet  52: pt=0.27515 rap=0.950918 phi=2.10485, flav = [g]
+
+base jet 53: pt=0.247699 rap=0.8706 phi=1.59508, flav = [g]
+SD flav jet  53: pt=0.247699 rap=0.8706 phi=1.59508, flav = [g]
+
+base jet 54: pt=0.240553 rap=3.53152 phi=4.14137, flav = [ubar ]
+SD flav jet  54: pt=0.240553 rap=3.53152 phi=4.14137, flav = [ubar ]
+
+base jet 55: pt=0.233844 rap=-2.51833 phi=2.57197, flav = [g]
+SD flav jet  55: pt=0.233844 rap=-2.51833 phi=2.57197, flav = [g]
+
+base jet 56: pt=0.178675 rap=-2.11337 phi=3.56086, flav = [s ]
+SD flav jet  56: pt=0.178675 rap=-2.11337 phi=3.56086, flav = [s ]
+
+base jet 57: pt=0.168943 rap=-4.88523 phi=1.45096, flav = [g]
+SD flav jet  57: pt=0.168943 rap=-4.88523 phi=1.45096, flav = [g]
+
+base jet 58: pt=0.145181 rap=0.113626 phi=1.7583, flav = [b ]
+SD flav jet  58: pt=0.145181 rap=0.113626 phi=1.7583, flav = [b ]
+
+base jet 59: pt=0.144486 rap=-3.69514 phi=5.05525, flav = [dbar ]
+SD flav jet  59: pt=0.144486 rap=-3.69514 phi=5.05525, flav = [dbar ]
+
+base jet 60: pt=0.0509278 rap=-2.3873 phi=3.06938, flav = [ubar ]
+SD flav jet  60: pt=0.0509278 rap=-2.3873 phi=3.06938, flav = [ubar ]
+
+base jet 61: pt=0.034093 rap=-1.49812 phi=4.68863, flav = [g]
+SD flav jet  61: pt=0.034093 rap=-1.49812 phi=4.68863, flav = [g]
+
+#---------------------------------------------------------------
+# read event 8 with 54 particles
+now do the sd...
+
+base jet 0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [s s bbar ]
+SD flav jet  0: pt=115.562 rap=-0.0319995 phi=0.98162, flav = [s s bbar ]
+
+base jet 1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [d ]
+SD flav jet  1: pt=19.9284 rap=-0.828988 phi=2.77712, flav = [d ]
+
+base jet 2: pt=18.6118 rap=-1.09124 phi=4.95011, flav = [u ]
+SD flav jet  2: pt=18.6118 rap=-1.09124 phi=4.95011, flav = [u ]
+
+base jet 3: pt=6.47879 rap=-2.08208 phi=6.09873, flav = [bbar ]
+SD flav jet  3: pt=6.47879 rap=-2.08208 phi=6.09873, flav = [bbar ]
+
+base jet 4: pt=4.70221 rap=0.0216587 phi=1.47711, flav = [ubar t ]
+SD flav jet  4: pt=4.70221 rap=0.0216587 phi=1.47711, flav = [ubar t ]
+
+base jet 5: pt=3.13994 rap=-0.691291 phi=4.50375, flav = [dbar s bbar ]
+SD flav jet  5: pt=3.13994 rap=-0.691291 phi=4.50375, flav = [dbar s bbar ]
+
+base jet 6: pt=2.35082 rap=-1.1166 phi=1.72703, flav = [bbar tbar ]
+SD flav jet  6: pt=2.35082 rap=-1.1166 phi=1.72703, flav = [bbar tbar ]
+
+base jet 7: pt=1.95982 rap=2.64586 phi=6.04213, flav = [t ]
+SD flav jet  7: pt=1.95982 rap=2.64586 phi=6.04213, flav = [t ]
+
+base jet 8: pt=1.70931 rap=1.69105 phi=4.08583, flav = [g]
+SD flav jet  8: pt=1.70931 rap=1.69105 phi=4.08583, flav = [g]
+
+base jet 9: pt=1.50529 rap=-6.76882 phi=1.10563, flav = [d u ]
+SD flav jet  9: pt=1.50529 rap=-6.76882 phi=1.10563, flav = [d u ]
+
+base jet 10: pt=1.44324 rap=-0.30942 phi=4.30172, flav = [dbar tbar ]
+SD flav jet  10: pt=1.44324 rap=-0.30942 phi=4.30172, flav = [dbar tbar ]
+
+base jet 11: pt=1.3805 rap=6.97565 phi=3.57174, flav = [u u ]
+SD flav jet  11: pt=1.3805 rap=6.97565 phi=3.57174, flav = [u u ]
+
+base jet 12: pt=1.16537 rap=-0.543484 phi=0.899606, flav = [g]
+SD flav jet  12: pt=1.16537 rap=-0.543484 phi=0.899606, flav = [g]
+
+base jet 13: pt=1.09978 rap=0.671207 phi=0.274905, flav = [g]
+SD flav jet  13: pt=1.09978 rap=0.671207 phi=0.274905, flav = [g]
+
+base jet 14: pt=0.790334 rap=-1.87131 phi=0.749723, flav = [d ]
+SD flav jet  14: pt=0.790334 rap=-1.87131 phi=0.749723, flav = [d ]
+
+base jet 15: pt=0.709179 rap=-1.28386 phi=3.63873, flav = [b ]
+SD flav jet  15: pt=0.709179 rap=-1.28386 phi=3.63873, flav = [b ]
+
+base jet 16: pt=0.60555 rap=4.24212 phi=1.46277, flav = [g]
+SD flav jet  16: pt=0.60555 rap=4.24212 phi=1.46277, flav = [g]
+
+base jet 17: pt=0.587027 rap=-1.37446 phi=1.18073, flav = [dbar ]
+SD flav jet  17: pt=0.587027 rap=-1.37446 phi=1.18073, flav = [dbar ]
+
+base jet 18: pt=0.577642 rap=-0.094035 phi=2.99253, flav = [g]
+SD flav jet  18: pt=0.577642 rap=-0.094035 phi=2.99253, flav = [g]
+
+base jet 19: pt=0.454481 rap=-2.56721 phi=5.28579, flav = [g]
+SD flav jet  19: pt=0.454481 rap=-2.56721 phi=5.28579, flav = [g]
+
+base jet 20: pt=0.355623 rap=2.4533 phi=1.26269, flav = [g]
+SD flav jet  20: pt=0.355623 rap=2.4533 phi=1.26269, flav = [g]
+
+base jet 21: pt=0.327886 rap=2.64178 phi=2.3723, flav = [d ubar ]
+SD flav jet  21: pt=0.327886 rap=2.64178 phi=2.3723, flav = [d ubar ]
+
+base jet 22: pt=0.263993 rap=2.92169 phi=3.4442, flav = [s ]
+SD flav jet  22: pt=0.263993 rap=2.92169 phi=3.4442, flav = [s ]
+
+base jet 23: pt=0.247987 rap=2.70088 phi=0.929617, flav = [g]
+SD flav jet  23: pt=0.247987 rap=2.70088 phi=0.929617, flav = [g]
+
+base jet 24: pt=0.242465 rap=-1.04439 phi=5.86004, flav = [c ]
+SD flav jet  24: pt=0.242465 rap=-1.04439 phi=5.86004, flav = [c ]
+
+base jet 25: pt=0.236598 rap=-0.611796 phi=3.18595, flav = [u ]
+SD flav jet  25: pt=0.236598 rap=-0.611796 phi=3.18595, flav = [u ]
+
+base jet 26: pt=0.208228 rap=0.375969 phi=0.962109, flav = [g]
+SD flav jet  26: pt=0.208228 rap=0.375969 phi=0.962109, flav = [g]
+
+base jet 27: pt=0.15822 rap=0.68517 phi=3.07155, flav = [dbar u ]
+SD flav jet  27: pt=0.15822 rap=0.68517 phi=3.07155, flav = [dbar u ]
+
+base jet 28: pt=0.113457 rap=-2.47296 phi=5.92295, flav = [g]
+SD flav jet  28: pt=0.113457 rap=-2.47296 phi=5.92295, flav = [g]
+
+base jet 29: pt=0.0639358 rap=-3.32117 phi=2.44455, flav = [g]
+SD flav jet  29: pt=0.0639358 rap=-3.32117 phi=2.44455, flav = [g]
+
+base jet 30: pt=0.0495317 rap=-2.63427 phi=2.85586, flav = [g]
+SD flav jet  30: pt=0.0495317 rap=-2.63427 phi=2.85586, flav = [g]
+
+base jet 31: pt=0.0399471 rap=-1.31163 phi=0.434634, flav = [bbar ]
+SD flav jet  31: pt=0.0399471 rap=-1.31163 phi=0.434634, flav = [bbar ]
+
+#---------------------------------------------------------------
+# read event 9 with 83 particles
+now do the sd...
+
+base jet 0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [d ubar t ]
+SD flav jet  0: pt=152.951 rap=-1.12892 phi=3.71297, flav = [d ubar t ]
+
+base jet 1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [sbar ]
+SD flav jet  1: pt=32.7921 rap=-1.47995 phi=3.14857, flav = [sbar ]
+
+base jet 2: pt=14.5434 rap=-0.236368 phi=4.20355, flav = [s ]
+SD flav jet  2: pt=14.5434 rap=-0.236368 phi=4.20355, flav = [s ]
+
+base jet 3: pt=5.86654 rap=-0.108314 phi=0.65315, flav = [g]
+SD flav jet  3: pt=5.86654 rap=-0.108314 phi=0.65315, flav = [g]
+
+base jet 4: pt=5.74416 rap=-2.32732 phi=0.756969, flav = [dbar ]
+SD flav jet  4: pt=5.74416 rap=-2.32732 phi=0.756969, flav = [dbar ]
+
+base jet 5: pt=5.17296 rap=2.12147 phi=1.68231, flav = [ubar ]
+SD flav jet  5: pt=5.17296 rap=2.12147 phi=1.68231, flav = [ubar ]
+
+base jet 6: pt=4.33602 rap=0.46465 phi=2.86917, flav = [b ]
+SD flav jet  6: pt=4.33602 rap=0.46465 phi=2.86917, flav = [g]
+
+base jet 7: pt=2.73099 rap=1.78889 phi=1.08078, flav = [dbar s b ]
+SD flav jet  7: pt=2.73099 rap=1.78889 phi=1.08078, flav = [dbar s b ]
+
+base jet 8: pt=2.62421 rap=-3.75302 phi=0.131404, flav = [sbar ]
+SD flav jet  8: pt=2.62421 rap=-3.75302 phi=0.131404, flav = [sbar ]
+
+base jet 9: pt=2.5069 rap=-3.13063 phi=0.752968, flav = [d ]
+SD flav jet  9: pt=2.5069 rap=-3.13063 phi=0.752968, flav = [d ]
+
+base jet 10: pt=2.41865 rap=-5.27363 phi=5.52323, flav = [u ]
+SD flav jet  10: pt=2.41865 rap=-5.27363 phi=5.52323, flav = [u ]
+
+base jet 11: pt=2.36685 rap=0.783227 phi=4.1126, flav = [dbar ]
+SD flav jet  11: pt=2.36685 rap=0.783227 phi=4.1126, flav = [dbar ]
+
+base jet 12: pt=1.72118 rap=-2.04639 phi=1.19137, flav = [g]
+SD flav jet  12: pt=1.72118 rap=-2.04639 phi=1.19137, flav = [g]
+
+base jet 13: pt=1.60989 rap=-2.05891 phi=3.72483, flav = [cbar ]
+SD flav jet  13: pt=1.60989 rap=-2.05891 phi=3.72483, flav = [cbar ]
+
+base jet 14: pt=1.60656 rap=2.3736 phi=5.60829, flav = [ubar ]
+SD flav jet  14: pt=1.60656 rap=2.3736 phi=5.60829, flav = [ubar ]
+
+base jet 15: pt=1.58014 rap=0.352163 phi=3.36355, flav = [d ]
+SD flav jet  15: pt=1.58014 rap=0.352163 phi=3.36355, flav = [d ]
+
+base jet 16: pt=1.41626 rap=1.13344 phi=1.36331, flav = [g]
+SD flav jet  16: pt=1.41626 rap=1.13344 phi=1.36331, flav = [g]
+
+base jet 17: pt=1.37282 rap=-0.174236 phi=3.40338, flav = [g]
+SD flav jet  17: pt=1.37282 rap=-0.174236 phi=3.40338, flav = [g]
+
+base jet 18: pt=1.25878 rap=0.843536 phi=0.276936, flav = [g]
+SD flav jet  18: pt=1.25878 rap=0.843536 phi=0.276936, flav = [g]
+
+base jet 19: pt=1.08516 rap=1.45988 phi=0.801117, flav = [g]
+SD flav jet  19: pt=1.08516 rap=1.45988 phi=0.801117, flav = [g]
+
+base jet 20: pt=1.03617 rap=0.344136 phi=3.85723, flav = [s ]
+SD flav jet  20: pt=1.03617 rap=0.344136 phi=3.85723, flav = [s ]
+
+base jet 21: pt=0.993687 rap=1.28638 phi=2.04483, flav = [g]
+SD flav jet  21: pt=0.993687 rap=1.28638 phi=2.04483, flav = [g]
+
+base jet 22: pt=0.916153 rap=4.35779 phi=3.16858, flav = [d ]
+SD flav jet  22: pt=0.916153 rap=4.35779 phi=3.16858, flav = [d ]
+
+base jet 23: pt=0.893929 rap=7.10653 phi=2.90556, flav = [d u ]
+SD flav jet  23: pt=0.893929 rap=7.10653 phi=2.90556, flav = [d u ]
+
+base jet 24: pt=0.826875 rap=3.76396 phi=3.0137, flav = [g]
+SD flav jet  24: pt=0.826875 rap=3.76396 phi=3.0137, flav = [g]
+
+base jet 25: pt=0.816938 rap=2.12442 phi=2.24043, flav = [g]
+SD flav jet  25: pt=0.816938 rap=2.12442 phi=2.24043, flav = [g]
+
+base jet 26: pt=0.766619 rap=-1.35887 phi=4.55501, flav = [t ]
+SD flav jet  26: pt=0.766619 rap=-1.35887 phi=4.55501, flav = [t ]
+
+base jet 27: pt=0.766349 rap=-3.28078 phi=3.72099, flav = [sbar ]
+SD flav jet  27: pt=0.766349 rap=-3.28078 phi=3.72099, flav = [sbar ]
+
+base jet 28: pt=0.70842 rap=-1.08317 phi=4.24765, flav = [dbar ]
+SD flav jet  28: pt=0.70842 rap=-1.08317 phi=4.24765, flav = [dbar ]
+
+base jet 29: pt=0.694449 rap=-1.18419 phi=2.49964, flav = [g]
+SD flav jet  29: pt=0.694449 rap=-1.18419 phi=2.49964, flav = [g]
+
+base jet 30: pt=0.693864 rap=2.74422 phi=1.60533, flav = [g]
+SD flav jet  30: pt=0.693864 rap=2.74422 phi=1.60533, flav = [g]
+
+base jet 31: pt=0.693266 rap=0.908004 phi=3.67408, flav = [c ]
+SD flav jet  31: pt=0.693266 rap=0.908004 phi=3.67408, flav = [c ]
+
+base jet 32: pt=0.6169 rap=-2.53755 phi=3.33819, flav = [g]
+SD flav jet  32: pt=0.6169 rap=-2.53755 phi=3.33819, flav = [g]
+
+base jet 33: pt=0.5545 rap=1.44401 phi=4.53297, flav = [g]
+SD flav jet  33: pt=0.5545 rap=1.44401 phi=4.53297, flav = [g]
+
+base jet 34: pt=0.551647 rap=-6.46023 phi=3.54711, flav = [u ]
+SD flav jet  34: pt=0.551647 rap=-6.46023 phi=3.54711, flav = [u ]
+
+base jet 35: pt=0.537698 rap=2.14596 phi=4.69463, flav = [cbar ]
+SD flav jet  35: pt=0.537698 rap=2.14596 phi=4.69463, flav = [cbar ]
+
+base jet 36: pt=0.52627 rap=-0.847703 phi=1.80341, flav = [g]
+SD flav jet  36: pt=0.52627 rap=-0.847703 phi=1.80341, flav = [g]
+
+base jet 37: pt=0.493958 rap=4.44654 phi=4.38025, flav = [u ]
+SD flav jet  37: pt=0.493958 rap=4.44654 phi=4.38025, flav = [u ]
+
+base jet 38: pt=0.473269 rap=-1.08771 phi=3.03462, flav = [d ]
+SD flav jet  38: pt=0.473269 rap=-1.08771 phi=3.03462, flav = [d ]
+
+base jet 39: pt=0.451606 rap=1.48924 phi=5.63162, flav = [u ]
+SD flav jet  39: pt=0.451606 rap=1.48924 phi=5.63162, flav = [u ]
+
+base jet 40: pt=0.444205 rap=2.39205 phi=3.23499, flav = [cbar ]
+SD flav jet  40: pt=0.444205 rap=2.39205 phi=3.23499, flav = [cbar ]
+
+base jet 41: pt=0.433439 rap=-3.2787 phi=5.1718, flav = [g]
+SD flav jet  41: pt=0.433439 rap=-3.2787 phi=5.1718, flav = [g]
+
+base jet 42: pt=0.385991 rap=3.60074 phi=5.50009, flav = [dbar b ]
+SD flav jet  42: pt=0.385991 rap=3.60074 phi=5.50009, flav = [dbar b ]
+
+base jet 43: pt=0.303439 rap=0.859124 phi=2.02855, flav = [s ]
+SD flav jet  43: pt=0.303439 rap=0.859124 phi=2.02855, flav = [s ]
+
+base jet 44: pt=0.303365 rap=0.0119964 phi=2.88992, flav = [dbar ]
+SD flav jet  44: pt=0.303365 rap=0.0119964 phi=2.88992, flav = [dbar ]
+
+base jet 45: pt=0.294963 rap=-0.0219949 phi=0.145883, flav = [t ]
+SD flav jet  45: pt=0.294963 rap=-0.0219949 phi=0.145883, flav = [t ]
+
+base jet 46: pt=0.276345 rap=-1.04361 phi=0.382641, flav = [u ]
+SD flav jet  46: pt=0.276345 rap=-1.04361 phi=0.382641, flav = [u ]
+
+base jet 47: pt=0.265727 rap=-2.20735 phi=5.83133, flav = [g]
+SD flav jet  47: pt=0.265727 rap=-2.20735 phi=5.83133, flav = [g]
+
+base jet 48: pt=0.263552 rap=-0.85791 phi=1.10944, flav = [g]
+SD flav jet  48: pt=0.263552 rap=-0.85791 phi=1.10944, flav = [g]
+
+base jet 49: pt=0.233553 rap=3.88086 phi=6.06142, flav = [cbar ]
+SD flav jet  49: pt=0.233553 rap=3.88086 phi=6.06142, flav = [cbar ]
+
+base jet 50: pt=0.17563 rap=1.84172 phi=3.71244, flav = [sbar ]
+SD flav jet  50: pt=0.17563 rap=1.84172 phi=3.71244, flav = [sbar ]

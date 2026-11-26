@@ -1,0 +1,27 @@
+This plugin implements an inclusive, spherically-invariant
+generalised-kt jet algorithm for Deep Inelastic Scattering, defined in
+the Breit frame.  This family of jet algorithms was introduced in
+[arXiv:XXXX.YYYY](https://arxiv.org/abs/XXXX.YYYY) ("A generalised-kt
+jet algorithm for Deep Inelastic Scattering", Melissa van Beekveld,
+Silvia Ferrario Ravasio, Alexander Karlberg, Darcy Peake), with the
+angular-ordered variant presented already in
+[arXiv:2305.08645](https://arxiv.org/abs/2305.08645)
+("Next-to-leading-logarithmic PanScales showers for Deep Inelastic
+Scattering and Vector Boson Fusion", Melissa van Beekveld, Silvia
+Ferrario Ravasio)
+
+The family of algorithms is governed by a parameter $p>=0$.  The
+distance between two pseudo-jets is given by $d_{ij} = 2
+\min(E_i^{2p},E_j^{2p})(1-\cos(\theta_{ij}))$, while the distance with
+a pseudo-jet and a beam is given by $d_{iB} = 2
+E_i^{2p}(1-\cos(\theta_{iB}))$. 
+
+The FJcontrib also implements a function called `sorted_by_zjet` that
+orders the jets maximising the light-cone component along the original
+struck quark momentum in the Breit frame.
+
+The jet algorithm is invoked in a similar way to native FastJet
+algorithms. We refer the user to [`example.cc`](example.cc) for a detailed example.
+
+For bug reports, comments, or questions please send the authors an
+email (see [`AUTHORS.md`](AUTHORS.md)).

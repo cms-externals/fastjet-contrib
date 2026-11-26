@@ -1,0 +1,52 @@
+GHSAlgo
+=========
+
+This code provides an implementation of the flavour dressing algorithm (v2) from
+
+> Flavor Identification of Reconstructed Hadronic Jets,
+> by Rhorry Gauld, Alexander Huss and Giovanni Stagnitto
+> https://arxiv.org/abs/2208.11138 (v2)
+> Phys.Rev.Lett. 130 (2023) 16, 161901; Phys.Rev.Lett. 132 (2024) 15, 159901 (erratum)
+
+In v2 of the algorithm, we have corrected issues in the original formulation that led
+to an IRC unsafety, as was pointed out in
+
+> Flavoured jets with exact anti-kt kinematics and tests of infrared and collinear safety,
+> by Fabrizio Caola, Radoslaw Grabarczyk, Maxwell Hutt,
+> Gavin P. Salam, Ludovic Scyboz, and Jesse Thaler
+> https://arxiv.org/abs/2306.07314
+> Phys.Rev.D 108 (2023) 9, 094010
+
+Main principles of GHS
+----------------------
+
+The flavour dressing algorithm (aka GHS) allows to assign flavour to a set of flavour
+agnostic jets. It is IRC safe to all orders in perturbation theory and it can be combined
+with any IRC safe definition of a jet, as the flavour assignment procedure is factorised
+from the jet reconstruction.
+
+Code Structure
+--------------
+
+The main interface to the GHS algorithm is in [`GHSAlgo.hh`](GHSAlgo.hh),
+providing a function `run_GHS` to perform flavour assignment to reconstructed jets:
+```cpp
+std::vector<PseudoJet> run_GHS(const std::vector<PseudoJet> &jets_base, double ptcut,
+                               double alpha = 1., double omega = 2.,
+			       const FlavRecombiner &flav_recombiner = FlavRecombiner());
+```
+
+Given a list of base-jets (before applying a hardness cut) in the event (jets_base),
+return the jets with "dressed" flavour information.
+The arguments are:
+
+- `jets_base`: the input base-jets (the full list of event particles and associated
+               flavours will be deduced from ClusterSequence associated with these jets).
+- `ptcut`: this parameter applies a hardness cut on the base-jets
+           and should be chosen to match the fiducial jet definition.
+- `alpha`: power of (ktmax/ktmin) used in the flavour-kt distance (as in 2306.07314)
+- `omega`: relative weighting of rapidity separation (as in 2306.07314)
+- `flav_recombiner`: instance of a FlavRecombiner object, to define how to recombine
+                     flavour  (default is net flavour handling, see FlavInfo.hh in IFNPlugin)
+
+Please have a look at [`example-GHS.cc`](example-GHS.cc) for an example of usage.

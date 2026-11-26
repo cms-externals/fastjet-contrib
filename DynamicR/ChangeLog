@@ -1,0 +1,12 @@
+2026-06-24 <tousiksamui@gmail.com>
+    * DynamicR.hh, DynamicR.cc, example.cc:
+        renamed ExtraInfo to DynamicRGlobalInfo and
+        MoreInfo to DynamicRJetInfo to avoid polluting the common
+        fastjet::contrib namespace.
+    * NEWS: reordered version entries in reverse chronological order.
+
+2026-03-26 <tousiksamui@gmail.com>
+    * Removed unused variables and fixed warnings.
+
+2026-03-23 <tousiksamui@gmail.com>
+    * Initial creation

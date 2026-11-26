@@ -1,0 +1,125 @@
+## QCD-aware truth jet clustering
+
+QCD-aware clustering is a partonic (including lepton and photon)
+scheme which considers and propagates particle flavour through
+clusterings, restricted to physical 2->1 Feynman rules so as to
+reconstruct a physically consistent underlying event topology from a
+flavour-labelled set of inputs.
+
+From version 2.0, clustering of charged-lepton pairs to off-shell
+photons is supported, QCD clusterings include colour factors, and both
+QED and QCD clusterings include (running) coupling factors.
+
+
+### Concept
+
+The intended clustering inputs are the final partons which either
+undergo hadronization or, in the case of photons and leptons, are
+themselves stable.
+
+At each clustering step, the pseudojet pair undergoing combination is
+checked for compatibility with Standard Model QCD and QED interaction
+vertices; if the pair are indeed compatible, the pseudojets are
+combined, and the resulting pseudojet is given the appropriate
+flavor. All the allowed clusterings have unique flavour
+transformations, making the algorithm deterministic.
+
+For instance, two pseudojets labeled respectively as an up-quark and
+gluon are allowed to cluster into an up-quark pseudojet; an up-quark
+and anti-up-quark may similarly cluster into a gluon pseudojet;
+however, there is no QCD vertex corresponding to the combination of
+up- and strange-quark pseudojets, so such a clustering is rejected by
+the algorithm. The distance measure used for the recombination is
+independent of the labeling.
+
+The result of the QCDAware clustering is, just as in traditional jet
+recombination algorithms, a collection of final pseudojets. However,
+each QCDAware pseudojet also carries with it a flavor label that
+depends on its constituents and clustering history.
+
+This algorithm is equivalent to the "bland" algorithm discussed in
+hep-ph/0601139 without the flavour-kt modifications to the distance
+measure, and extended to allow for QED clustering, and to include
+colour and QCD/EM coupling factors.
+
+
+### Distance modifications
+
+The underlying clustering is based on standard jet clustering
+algorithms, with angular and momentum terms in the distance
+measure. This is extended multiplicatively to include factors based on
+the flavour labels, which are encoded in the `PseudoJet::user_index`
+(see below for details). For physical purposes, the kT underlying
+distance is probably the best choice in most applications.
+
+- Only the following binary clusterings are supported: `q g -> q`, `g
+  g -> g`, `q qbar -> g`, `q y -> q`, `l y- > l`, `l+ l- ->y` (`y`
+  here standing for "photon"; note that `q qbar -> y` is not supported
+  as determinism demands a single resulting flavour, for which the QCD
+  clustering to a gluon is favoured due to the much stronger coupling.)
+
+  Unsupported clusterings, e.g. `q q'` or `l g` are multiplied by
+  infinity to give an infinite distance measure that will never
+  cluster.  Clusterings to create high-mass objects such as quarks and
+  leptons to EW bosons are not supported as the collinear resummation
+  regime would not apply.  The four-gluon vertex cannot be implemented
+  due to the restriction to 2->1 binary clusterings.
+
+- QCD and EM clustering distances are scaled by the inverses of the
+  appropriate running coupling at the Q^2 = (pT_i)^2 scale of the
+  particle with the pT value chosen (by the underlying clustering
+  measure) as representative of the splitting.
+
+- The multiplicative flavour and coupling factor is raised to a 
+  user-configurable exponent, controlled by the parameter 
+  `coupling_power`. By default this exponent is set to –2.0. The use of 
+  this scaling can be enabled at construction time or subsequently via 
+  the method `set_use_couplings`, and the exponent itself can be 
+  adjusted with `set_coupling_power`.
+
+- QCD clusterings' distances are further scaled by the reciprocals of
+  the appropriate SU(3) colour factors.
+
+- In comparisons to the single-particle "beam distance", only pT
+  scales are used as the flavour-specific coupling terms cannot be
+  unambiguously determined.
+
+
+### Flavour labels
+
+The `user_index` of a pseudojet is used for the flavor label, in the
+PDG MC numbering scheme. Splitting/combination rules are implemented
+for particle IDs 1..6 and 11,13,15 (and their negatives) for
+quarks/antiquarks and charged leptons, 21 for gluons, and 22 for
+photons.
+
+The inputs to the algorithm should have these user indices set to the
+PDG ID code of the corresponding parton. The flavor label of the
+resulting pseudojets is also stored in their `user_index` variables.
+
+`user_index` is encoded as: user_index = 1000000 * `object_id` + 
+`pdg_id`so that `object_id` can be used to identify the original 
+source object from any external framework or internal labeling strategy.
+This approach allows multiplexing of all conceivable SM clustering 
+flavours with an index to re-identify the constituents with their 
+originals in the calling code.
+
+
+### Running couplings
+
+The plugin supports running coupling constants for both QCD and QED.
+In order 0, the couplings are fixed to user-specified reference values. 
+In order 1, the couplings run at one-loop order, using the implementation 
+provided in the code. For QCD, this includes simple flavour-threshold 
+matching, while for QED a slow logarithmic running is applied. The values 
+and loop orders of the couplings can be specified either in the 
+constructor or at runtime using the methods `set_alpha_s` and 
+`set_running_coupling_order_alpha_s` for QCD and similar for QED.
+
+
+## Disabling combinations
+
+The plugin allows selective disabling of QCD or QED clustering via the 
+methods `set_enable_qcd` and `set_enable_qed`. If either flag
+is set to false, the corresponding type of clustering is completely 
+forbidden.

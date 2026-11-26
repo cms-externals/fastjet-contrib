@@ -1,0 +1,26 @@
+2024-12-12  Rene Poncelet
+
+	* AUTHORS:
+	corrected attributions
+
+	* README:
+	Reflect corrected structure of a single plugin
+
+	* include/fastjet/contrib/CMPPlugin.hh:
+	Fixed authorship in headers
+
+	* example-CMP.cc:
+	Fixed authorship in headers
+
+2024-12-11  Gavin Salam
+
+	* example-CMP.cc:
+	changed example line to reflect actual usage
+
+	* include/fastjet/contrib/CMPPlugin.hh:
+	added fastjet/contrib to #include "FlavInfo.hh"
+
+2024-12-11 Rene Poncelet:
+	* [many files]:
+	Initial creation and import of CMPPlugin version 1.0.0 from 
+	git@github.com:jetflav/CMPPlugin.git (7673166d9dc)

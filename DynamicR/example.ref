@@ -1,0 +1,238 @@
+# This file is used by make check. It should be replaced with the
+# output from 
+#
+#    ./example < YOUR_CHECK_INPUT
+# 
+# YOUR_CHECK_INPUT is to be specified in the "check:" entry of the
+# Makefile and should be included in the distribution.
+#
+# The top-level part of fjconfig includes some sample data files in
+# its data/ directory to help with your checks. These are
+# automatically distributed with fjcontrib.
+############################################################
+Event # 1.
+------------------------------------------------------------
+# read an event with 64 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.89      0.35         169.89      0.71
+    2      0.03      0.89          15.89      0.76
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.89      0.35         169.52      0.70
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.88      0.35         171.24      0.73
+------------------------------------------------------------
+
+############################################################
+Event # 2.
+------------------------------------------------------------
+# read an event with 91 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      1.01      0.32         143.14      0.57
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      1.01      0.32         143.14      0.57
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      1.01      0.32         143.14      0.57
+------------------------------------------------------------
+
+############################################################
+Event # 3.
+------------------------------------------------------------
+# read an event with 67 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.07      6.27          72.69      0.62
+    2      0.67      5.25          42.67      0.71
+    3     -1.23      1.40          33.62      0.65
+    4      1.00      1.27          21.27      0.64
+    5      0.96      6.16          16.89      0.62
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.07      6.27          72.69      0.62
+    2      0.66      5.23          41.64      0.69
+    3     -1.23      1.40          33.62      0.65
+    4      1.04      1.26          19.61      0.61
+    5      0.95      6.14          18.12      0.62
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.07      6.27          72.69      0.62
+    2      0.65      5.22          42.59      0.72
+    3     -1.23      1.40          33.62      0.65
+    4      1.01      1.28          21.77      0.67
+    5      0.95      6.14          18.12      0.62
+------------------------------------------------------------
+
+############################################################
+Event # 4.
+------------------------------------------------------------
+# read an event with 62 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.88      2.15         113.60      0.56
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.88      2.15         113.60      0.56
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.88      2.15         113.60      0.56
+------------------------------------------------------------
+
+############################################################
+Event # 5.
+------------------------------------------------------------
+# read an event with 93 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.42      0.32         123.33      0.68
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.42      0.32         122.53      0.68
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.42      0.32         123.33      0.68
+------------------------------------------------------------
+
+############################################################
+Event # 6.
+------------------------------------------------------------
+# read an event with 104 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.68      5.56         107.96      0.64
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.67      5.56         104.96      0.61
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.69      5.57         108.71      0.65
+------------------------------------------------------------
+
+############################################################
+Event # 7.
+------------------------------------------------------------
+# read an event with 33 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.86      1.33         109.47      0.65
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.86      1.33         109.47      0.65
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.86      1.33         109.47      0.65
+------------------------------------------------------------
+
+############################################################
+Event # 8.
+------------------------------------------------------------
+# read an event with 94 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.68      5.96         106.30      0.59
+    2     -0.01      6.21          21.14      0.61
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.68      5.96         106.30      0.59
+    2     -0.01      6.21          21.14      0.61
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1      0.68      5.97         107.19      0.63
+    2     -0.02      6.20          20.13      0.54
+------------------------------------------------------------
+
+############################################################
+Event # 9.
+------------------------------------------------------------
+# read an event with 54 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -0.03      1.00         120.88      0.64
+    2     -0.83      2.78          20.15      0.57
+    3     -1.08      4.94          19.35      0.50
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -0.03      1.00         119.72      0.64
+    2     -0.83      2.78          20.15      0.57
+    3     -1.09      4.95          18.61      0.50
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -0.03      1.00         121.09      0.65
+    2     -0.83      2.78          20.15      0.57
+    3     -1.09      4.95          18.61      0.50
+------------------------------------------------------------
+
+############################################################
+Event # 10.
+------------------------------------------------------------
+# read an event with 83 particles
+------------------------------------------------------------
+Output of Dynamic Radius (AK) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -1.19      3.62         182.47      0.78
+    2     -0.22      4.19          15.08      0.63
+------------------------------------------------------------
+
+Output of Dynamic Radius (CA) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -1.13      3.72         153.56      0.60
+    2     -1.47      3.15          33.26      0.58
+    3     -0.24      4.20          14.54      0.60
+------------------------------------------------------------
+
+Output of Dynamic Radius (KT) Jet algorithm with R0 = 0.5.
+jet #  rapidity       phi       pt (GeV)        Rd
+    1     -1.13      3.72         153.56      0.60
+    2     -1.47      3.15          33.26      0.58
+    3     -0.20      4.18          15.52      0.69
+------------------------------------------------------------
+

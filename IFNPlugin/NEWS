@@ -1,0 +1,11 @@
+2026/09/30: release of version 1.0.5
+            Batch application of patch from Juan Mighel Carceller & Jesse 
+            Thaler(+Claude) to resolve compilation issues with MacOS27/C++23
+
+2024/12/13: release of version 1.0.4
+- bug fix release, remove spurious dependency in Makefile
+
+2024/12/12: release of version 1.0.3
+- First fjcontrib release of IFNPlugin
+- this is now the reference version for IFNPlugin
+  superseding https://github.com/jetflav/IFNPlugin

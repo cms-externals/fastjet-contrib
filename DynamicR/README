@@ -1,0 +1,56 @@
+----------------------------------------------------------------------
+  DynamicR FastJet Contrib
+----------------------------------------------------------------------
+This directory contain Dynamic Radius Jet Algorithm contrib. It is
+based on
+  JHEP 04 (2023) 019,  arXiv: 2301.13074 [hep-ph]. 
+
+Source files:
+  DynamicR.hh - header file.
+  DynamicR.cc - c++ implementation.
+  example.cc  - basic example usage. 
+
+Note:
+  Although the paper refers to $\Delta R_{ij}$ as a distance in the
+  eta-phi plane, the FastJet contrib implementation uses FastJet's
+  `plain_distance()`, which computes the distance in the rapidity-phi
+  plane. This is the correct choice for a longitudinally invariant
+  algorithm and follows standard FastJet conventions.
+
+Example:
+  The code example.cc illustrates basic usage of the class.
+
+    make example
+
+  example.cc uses an input datafile provided in the /data directory
+  After compilation, it can be run as
+
+    ./example < ../data/pythia8_Zq_vshort.dat
+
+  The reference output can be found in example.ref
+
+Citations:
+  If you use the Dynamic Radius Jet Algorithm, please cite the
+  original algorithm paper:
+    B. Mukhopadhyaya, T. Samui, R. K. Singh
+    Dynamic Radius Jet Clustering Algorithm  
+    JHEP 04 (2023) 019 [10.1007/JHEP04(2023)019]
+
+  The algorithm has been used in several phenomenological studies in
+  different collider environments. If relevant to your work, please
+  consider citing the following papers:
+
+  Studies with realistic LHC pile-up:
+    A. Ghosh, S. Ghosh, S. Mitra, T. Samui, R. K. Singh
+    Improving Sensitivity of Vectorlike Top Partner Searches with Jet Substructure
+    Physical Review D 113 (2026) 035034 [10.1103/dhs6-gcn9]
+
+  Zero pile-up studies:
+    B. Mukhopadhyaya, S. Samanta, T. Samui, R. K. Singh
+    Improving probes of hAA coupling in the Type-X two Higgs doublet model scenario: The crucial role of tau-jet charge identification
+    Physics Letters B 856 (2024) 138949 [10.1016/j.physletb.2024.138949]
+
+    A. Ghosh, P. Konar, T. Samui, R. K. Singh
+    Jet substructure probe on scalar leptoquark models via top polarization
+    JHEP 07 (2025) 145 [10.1007/JHEP07(2025)145]
+

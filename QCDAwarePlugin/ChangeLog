@@ -1,0 +1,25 @@
+2026-03-03  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Release version 2.0.0.
+
+2025-09-17  Barry Tan  <x.tan.1@research.gla.ac.uk>
+
+	* Add QED running couplings to distance measures.
+
+	* Add options to disable QED or QCD clustering.
+
+2025-08-18  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Update documentation to cover new features.
+
+2025-08-14  Barry Tan  <x.tan.1@research.gla.ac.uk>
+
+	* Add modulo-arithmetic multiplexing of the user_index flavour label.
+
+	* Add QCD colour factors and running couplings to distance measures.
+
+	* Add l+ l- -> photon combination rule.
+
+2015-01-23 Chris Pollard <cpollard@cern.ch>
+
+        * Release version 1.0.0.

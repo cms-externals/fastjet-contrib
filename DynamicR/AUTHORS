@@ -1,0 +1,12 @@
+------------------------------------------------------------------------
+The DynamicR FastJet contrib is written, developed, and maintained by:
+
+  Tousik Samui [tousiksamui@gmail.com]
+
+------------------------------------------------------------------------
+For physics details, please see:
+
+  Dynamic Radius Jet Clustering Algorithm
+  Biswarup Mukhopadhyaya, Tousik Samui, and Ritesh K. Singh
+  JHEP 04 (2023) 019,  arXiv: 2301.13074 [hep-ph]
+------------------------------------------------------------------------

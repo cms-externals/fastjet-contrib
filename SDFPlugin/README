@@ -1,0 +1,75 @@
+SDFPlugin
+=========
+
+This code provides an implementation of the SoftDrop Flavour (SDF)
+algorithm presented in 
+
+> Practical Jet Flavour Through NNLO,
+> by Simone Caletti, Andrew J. Larkoski, Simone Marzani and Daniel Reichelt
+> https://arxiv.org/pdf/2205.01109
+
+To learn how to use the library, the ['example-SDF.cc'](example-SDF.cc) code is
+a good place to get started
+
+**The SDFPlugin code needs FastJet ≥ 3.4.1 to compile**
+**The SDFPlugin depends on the IFNPlugin and the RecursiveTools contrib, which are also distributed with fjcontrib**
+
+Specifically
+
+- It relies on the flavour structure implemented in FlavInfo.cc from IFNPlugin
+- It uses the Soft Drop algorithm and the reclusterings implemented in RecursiveTools
+
+Main principles of SDF
+---------------------
+
+The SDF algorithm uses a base jet (clustered with any IRC safe algorithm)
+and assign a flavour label to such a jet in an IRC safe way, 
+at least up to NNLO QCD.
+The flavour label is built as the net flavour of the particles surviving
+the Soft Drop procedure. 
+Differently from the standard Soft Drop procedure, in the SDF algorithm 
+the jet is reclustered using the JADE algorithm, instead of C/A as customary.
+The Soft Drop procedure applied by SDF is used just for the flavour assignement
+and must be applied again (with the desired algorithm for the reclustering)
+if the user wants to look at the properties of the groomed jet.
+
+Code Structure
+--------------
+
+The main interface to the SDF algorithm is ['SDFPlugin.hh'](SDFPlugin.hh)
+
+  // we start with a base jet definition (should be either
+  // antikt_algorithm or cambridge_algorithm, or their e+e- variants)
+  JetDefinition base_jet_def(antikt_algorithm, 0.4);
+  // enable it to track flavours (default is net flavour)
+  FlavRecombiner flav_recombiner;
+  base_jet_def.set_recombiner(&flav_recombiner);
+
+  SDFlavourCalc sdFlavCalc;
+
+  vector<PseudoJet> sdflav_jets = base_jet_def(event);
+  sdFlavCalc(sdflav_jets);
+
+The SDFlavourCalc class can be found in include/fastjet/contrib/SDFPlugin.hh
+and returns the Soft Drop Flavour applying JADE reclustering and Soft Drop
+to the original jet.
+
+Default parameters used by the Soft Drop and the reclustering procedures are
+- beta = 2
+- zcut = 0.1
+- R = 0.4
+
+They can be changed when defining the SDFlavourCalc object, e.g.
+
+  SDFlavourCalc sdFlavCalc(1,0.2,0.5);
+
+where the new parameters are
+- beta = 1
+- zcut = 0.2
+- R = 0.5
+
+Pushing zcut very close to zero one can check that the SDFPlugin returns
+the same flavour as the standard net flavour of the initial jet.
+
+Note: SDF is only defined for beta > 0
+

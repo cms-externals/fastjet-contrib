@@ -1,0 +1,9 @@
+2026/09/30: release of version 1.0.2
+            Batch application of patch from Juan Mighel Carceller & Jesse 
+            Thaler(+Claude) to resolve compilation issues with MacOS27/C++23
+
+2024/06/10: release of version 1.0.1
+            - fixed the bug causing that the signal seeds were not updated in each event
+            - added option to disable using weights when computing median
+
+2024/02/01: release of version 1.0.0
