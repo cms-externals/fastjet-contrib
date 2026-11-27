@@ -37,6 +37,8 @@
 #else
 #include "Recluster.hh"
 #endif
+#include <atomic>
+
 
 /** \mainpage RecursiveTools contrib 
 
@@ -215,7 +217,7 @@ public:
   class StructureType;
 
   /// for testing 
-  static bool _verbose;
+  static std::atomic<bool> _verbose;
 
 protected:
   // the methods below have to be defined by deerived classes
