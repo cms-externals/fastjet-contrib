@@ -258,28 +258,18 @@ namespace contrib{
 
   LimitedWarning ghs_fiducial_warning(10);
 
-  std::vector<PseudoJet> run_GHS(const std::vector<PseudoJet> &jets_base,
-                                 double ptcut, double alpha, double omega,
-                                 const FlavRecombiner &flav_recombiner) {
-    if (jets_base.size() == 0) return jets_base;
+  std::vector<PseudoJet> dress_jets_GHS(
+      const std::vector<PseudoJet> &jets,
+      const std::vector<PseudoJet> &flavoured_inputs, double alpha,
+      double omega, const FlavRecombiner &flav_recombiner) {
+    if (jets.size() == 0) return jets;
 
-#ifdef VERBOSE
-    cout << " -- apply pt threshold & define particles -- " << endl;
-#endif
-
-    const ClusterSequence &cs = *(jets_base[0].associated_cs());
-    vector<PseudoJet> inputs(cs.jets().begin(),
-                              cs.jets().begin() + cs.n_particles());
-
-    // ghs_fiducial_warning.warn("Watch out: in run_GHS a fiducial selector is
-    // being applied to jets_base (this should be removed; but then run_GHS needs
-    // to get a list of all particles)");
-
-    Selector select_pt = SelectorPtMin(ptcut);
-    vector<PseudoJet> jets_hard = select_pt(jets_base);
-
-    if (jets_hard.size() == 0) {
-      return jets_hard;
+    for (const auto &c : flavoured_inputs) {
+      if (!c.has_user_info<FlavHistory>())
+        throw Error("dress_jets_GHS: every flavoured input needs a FlavHistory user info");
+      if (c.user_index() > 0 || -c.user_index() > int(jets.size()))
+        throw Error("dress_jets_GHS: flavoured input user_index must be 0 "
+                    "(unassociated) or -(i+1) for jet i");
     }
 
 #ifdef VERBOSE
@@ -287,7 +277,7 @@ namespace contrib{
 #endif
 
     vector<PseudoJet> all;
-    vector<PseudoJet> final_jets = jets_hard;
+    vector<PseudoJet> final_jets = jets;
     vector<FlavInfo> jet_flavs(final_jets.size(), 0);
     int njets = final_jets.size();
 
@@ -307,20 +297,7 @@ namespace contrib{
       j.set_user_index(1);  //< the signal that it is a jet
       all.push_back(j);
     }
-    for (auto &c : inputs) {
-      //> value <= 0 indicates that we're dealing with a flavour cluster
-      //>   0:  flavour cluster not associated with a jet
-      //>  -i:  flavour cluster associated with jet `i`
-      c.set_user_index(0);  //> start with an unassociated cluster
-      for (unsigned i = 0; i < final_jets.size(); i++) {
-        if (c.is_inside(final_jets[i])) {
-          c.set_user_index(-1 -
-                           i);  //> need -1 offset since counting starts at 0
-          break;
-        }
-      }
-      all.push_back(c);
-    }
+    all.insert(all.end(), flavoured_inputs.begin(), flavoured_inputs.end());
 
     if (all.size() == 0) {
       return all;
@@ -423,7 +400,7 @@ namespace contrib{
       jet_flavs[i].update_flavourless_attribute();
       final_jets[i].set_user_info(new FlavHistory(FlavInfo(jet_flavs[i])));
       // restore user index to what it was
-      final_jets[i].set_user_index(jets_hard[i].user_index());
+      final_jets[i].set_user_index(jets[i].user_index());
     }
 
 #ifdef VERBOSE
@@ -435,6 +412,47 @@ namespace contrib{
 #endif
 
     return final_jets;
+  }
+
+  std::vector<PseudoJet> run_GHS(const std::vector<PseudoJet> &jets_base,
+                                 double ptcut, double alpha, double omega,
+                                 const FlavRecombiner &flav_recombiner) {
+    if (jets_base.size() == 0) return jets_base;
+
+#ifdef VERBOSE
+    cout << " -- apply pt threshold & define particles -- " << endl;
+#endif
+
+    const ClusterSequence &cs = *(jets_base[0].associated_cs());
+    vector<PseudoJet> inputs(cs.jets().begin(),
+                              cs.jets().begin() + cs.n_particles());
+
+    // ghs_fiducial_warning.warn("Watch out: in run_GHS a fiducial selector is
+    // being applied to jets_base (this should be removed; but then run_GHS needs
+    // to get a list of all particles)");
+
+    Selector select_pt = SelectorPtMin(ptcut);
+    vector<PseudoJet> jets_hard = select_pt(jets_base);
+
+    if (jets_hard.size() == 0) {
+      return jets_hard;
+    }
+
+    //> value <= 0 indicates that we're dealing with a flavour cluster
+    //>   0:  flavour cluster not associated with a jet
+    //>  -i:  flavour cluster associated with jet `i`
+    for (auto &c : inputs) {
+      c.set_user_index(0);  //> start with an unassociated cluster
+      for (unsigned i = 0; i < jets_hard.size(); i++) {
+        if (c.is_inside(jets_hard[i])) {
+          c.set_user_index(-1 -
+                           i);  //> need -1 offset since counting starts at 0
+          break;
+        }
+      }
+    }
+
+    return dress_jets_GHS(jets_hard, inputs, alpha, omega, flav_recombiner);
   }
 
 } // namespace contrib
